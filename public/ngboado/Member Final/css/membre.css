@@ -1,0 +1,386 @@
+/* for th tolity of the page */
+*{
+
+	background-color: white;
+}
+
+body{
+	padding: 0;
+	margin-left: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #019939,  #336699);
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  display: block;
+}
+/* the fixed menu div witch will be replace by the boostrap div */
+.menu{
+	position: fixed;
+	z-index: 1000;
+	display: none;
+	width: 100%;
+	height: 50px;
+	background:white;
+}
+
+/* the descriptive cover div on the top of the page */
+.coverparent{
+	height: 600px;
+	width: 100%;
+	background: url("../images/honneur.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	transition: all 1s;
+}
+.cover{
+	padding-top: 50px;
+	height: 600px;
+	width: 100%;
+	background: linear-gradient(90deg, #3D952B, #336699);
+	opacity: .6;
+}
+.coverContent{
+	display: none;
+	color: white;
+	margin-top: 150px;
+	margin-left: 10%;
+	max-width: 700px;
+	min-width: 500px;
+	height: 300px;
+	background-color: transparent;
+}
+.coverContent p{
+	background-color: transparent;
+}
+.coverContent h4{
+	background-color: transparent;
+}
+.coverTilte{
+	color: black;
+}
+.bouton{
+	width: 150px;
+	height: 40px;
+ 	border-radius: 30px;
+ 	color: #019939;
+ 	background:#fff;
+}
+
+/***================= FIN DU SUPRFUX =======================***/
+
+/********+++++++++++++++ THE SWITCHING MENU +++++++++++++++++++******/
+.SecondMenu{
+	width: 100%;
+	height: 50px;
+	margin-top: 1%;
+	/*background:yellow;*/
+	display: flex;
+	justify-content: center;
+
+}
+.boutton{ /*le boutons du menu */
+	margin-left: 10px;
+	width: 120px;
+	height: 80%;
+	padding-top: auto;
+	margin-top: 20px;
+	font-size: 13px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+ 	border-radius: 30px;
+ 	transition: all 1s;
+ 	cursor: pointer;
+}
+.boutton:focus{
+	border-radius: 0px;
+	font-weight: bold;
+}
+
+/************* la seachBar *********************/
+
+form{
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid #019939;
+    padding: 2px;
+    margin-top: 40px;
+    margin-left: 130px;
+}
+
+input{
+    position: absolute;
+		color: #019939;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 32.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa{
+    box-sizing: border-box;
+		background-color: white;
+    padding: 10px;
+    width: 32.5px;
+    height: 32.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #019939;
+    text-align: center;
+    font-size: 1em;
+    transition: all 1s;
+}
+
+form:hover{
+    width: 200px;
+    cursor: pointer;
+}
+
+form:hover input{
+    display: block;
+}
+
+form:hover .fa{
+    color: #019939;
+}
+
+
+
+/*********************** FIN de la SEACHbAR
+
+
+/********+++++++++++++++ THE REAL LISTE MAIN CONTAINER +++++++++++++++++++******/
+#contenerPrincipal{
+	background-color: white;
+	margin-top: 4%;
+	margin-left: 10%;
+}
+.main{
+	padding-top: 50px;
+	display: none;
+}
+
+.style1{
+	/*background: yellow;*/
+	padding-right: auto;
+	margin-bottom: 100px;
+}
+.style1 h5{
+	font-size: 20px;
+	margin-top: 50px;
+}
+.style1 p{
+	font-size: 15px;
+}
+
+       		/************ contnue texte************/
+
+.style1 .contentText{
+	/*background-color: red;*/
+}
+
+       		/************ separateur************/
+
+.style1 .separateur{
+	/*background-color: blue;*/
+}
+.style1 .boule{
+	margin-left: 20px;
+	margin-top: 110px;
+	height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #019939,  #336699);
+}
+
+.style1 .boule::before{ /**** barre dde separation ****/
+	content: '';
+    display: block;
+    position: relative;
+    width: 2px;
+    height: 250px;
+    background: linear-gradient(90deg, #019939,  #336699);
+    left: 45.5%;
+    top: 35px;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+
+               /************ contnue image ************/
+
+.style1 .contentImg{
+	/*background-color: green;*/
+}
+.style1 .content{
+	width: 100%;
+}
+.style1 .content::after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: -200px;
+	left: 100px;
+	z-index: -1;
+	background-color: grey;
+	opacity: 0.4;
+}
+
+.style1 .contentImg img{
+	width: 100%;
+	height: 100%;
+}
+
+
+/********+++++++++++++++ THE REAL LISTE  FOR STYLE2 +++++++++++++++++++******/
+
+.style2{
+	/*background: yellow; */
+	margin-bottom: 50px;
+}
+
+.style2 h5{
+	margin-top: 50px;
+}
+
+
+			/************ contnue image ************/
+
+.style2 .contentImg{
+	/*background-color: red;*/
+}
+
+.style2 .content{
+	width: 100%;
+	/*background-color: pink;*/
+}
+
+.style2 .content::after{ /* la sorte de ombre grise */
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: -250px;
+	left: -110px;
+	z-index: -1;
+	background-color: grey;
+	opacity: 0.4;
+}
+
+.style2 .contentImg img{
+	width: 100%;
+	height: 100%;
+}
+
+
+			/************ separateur************/
+
+.style2 .boule{
+	margin-left: 20px;
+	margin-top: 110px;
+	height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #019939,  #336699);
+}
+
+.style2 .boule::before{ /**** barre dde separation ****/
+	content: '';
+    display: block;
+    position: relative;
+    width: 2px;
+    height: 230px;
+    background: linear-gradient(90deg, #019939,  #336699);
+    left: 45.5%;
+    top: 35px;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.style2 .separateur{
+	/*background-color: blue;*/
+}
+
+
+
+			/************ contnue texte************/
+.style2 .contentText{
+	/*background-color: green;*/
+}
+
+
+/***********************************==================== SWITHING MODE ======================********************/
+
+.CoverActive{
+	display: block;
+}
+.mainActive{
+	display: block;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #273746;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #273746;
+}
+
+
+
+
+/****************************** SIMPLE RESPONSIVE **********************/
+
+@media screen and (min-width: 442px) and (max-width: 562px){
+
+	.style1 .contentText p{
+		font-size: 12px
+	/*background-color: red;*/
+	}
+
+	.style2 .contentText p{
+		font-size: 12px
+	/*background-color: red;*/
+	}
+
+}
