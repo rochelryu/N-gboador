@@ -1,0 +1,1387 @@
+/*
+	<!--------------------------------------------->
+	<!--    		CSS BEGINNING CODE   		 -->
+	<!--------------------------------------------->
+*/
+
+body{
+	font-family: 'Encode Sans Condensed', sans-serif;
+	background-color: #E0E0E0;
+	 font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar{
+	background: linear-gradient(90deg, #3D952B, #336699);
+	margin-top: -1px;
+	border-radius: 0px;
+	margin-left: -15px;
+	border: none;
+	width: 102.25%;
+}
+
+.icons-services-icons{
+	margin-top: 0.8%;
+	margin-left: 2.5%;
+}
+
+/*Notifs*/
+.dropright-notifications, .dropright-shop, .dropright-services{
+	margin-top: -17%;
+	margin-left: 21%;
+	display: none;
+}
+
+.btn{
+	margin-top: 11px;
+	font-weight: bold;
+	height: 28px;
+	font-size: 12px;
+	font-family: 'Jua', sans-serif;
+}
+
+#navbar-2{
+	background: rgba(39,55,70,.55);
+	border-radius: 0px;
+	margin-top: -20px;
+	margin-left: -15px;
+	border: none;
+	width: 102.25%;
+}
+
+/************* la seachBar *********************/
+
+.form{
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50%;
+		background-color: #E0E0E0;
+    height: 35px;
+		position: relative;
+		top: 14px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid #019939;
+    padding: 2px;
+    margin-top: 0px;
+    left: 32.4%;
+}
+
+.input{
+    position: absolute;
+		background-color: #E0E0E0;
+		color: gray;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 32.5px;
+		line-height: 30px;
+		outline: 0;
+		border: 0;
+		font-size: 0.9em;
+		border-radius: 20px;
+		padding: 0 20px;
+	}
+
+
+.form .glyphicon{
+    box-sizing: border-box;
+		background-color: #E0E0E0;
+    padding: 10px;
+    width: 32.5px;
+    height: 32.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #019939;
+    text-align: center;
+    font-size: 1em;
+    transition: all 1s;
+}
+
+.form:hover{
+    width: 65%;
+    cursor: pointer;
+		background: rgba(224, 224, 224, .5);
+		color: gray;
+}
+
+.form:hover .input{
+    display: block;
+		background: rgba(224, 224, 224, .5);
+		color: gray;
+}
+
+
+
+
+/*********************** FIN de la SEACHbAR******************/
+
+#navbar-chat{
+	background: linear-gradient(90deg, #3D952B, #336699);
+	border-radius: 0px;
+	margin-top: -20px;
+	margin-left: -15px;
+	border: none;
+	width: 102.25%;
+}
+
+.categories-members
+{
+	visibility: ;
+	margin-left: 1.8%;
+	width: 18%;
+}
+
+.container-categories-members{
+	background-color: #273746;
+	height: 170px;
+	width: 100%;
+}
+
+.left-side-publicity-down{
+	height: 250px;
+	width: 87%;
+	background-color: white;
+	margin-left: 15px;
+	padding-bottom: -8px;
+}
+
+.members-text-funders-and-honors{
+	font-family: 'Jua', sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 20px;
+
+}
+
+.members-text-active-and-sympathizing{
+	font-family: 'Jua', sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+
+}
+/* subgroup active */
+.subgroup-active-active{
+	font-family: 'Jua', sans-serif;
+	font-size: 0.6em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+}
+
+.subgroup-active-ambassadors{
+	font-family: 'Jua', sans-serif;
+	font-size: 0.6em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+	margin-left: -18px;"
+}
+
+.subgroup-active-ministers{
+	font-family: 'Jua', sans-serif;
+	font-size: 0.6em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+	margin-left: -13px;
+}
+
+/* subgroup sympathizing */
+.subgroup-sympathizing-benevoles{
+	font-family: 'Jua', sans-serif;
+	font-size: 0.5em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+	margin-left: 3px;
+}
+
+.subgroup-sympathizing-mentors{
+	font-family: 'Jua', sans-serif;
+	font-size: 0.5em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+	margin-left: 0px;
+}
+
+.subgroup-sympathizing-volonteers{
+	font-family: 'Jua', sans-serif;
+	font-size: 0.5em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+	margin-left: -13px;
+}
+
+.subgroup-sympathizing-parrains{
+	font-family: 'Jua', sans-serif;
+	font-size: 0.5em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 15px;
+	margin-left: -15px;"
+}
+
+#blue-bar-container-chat{
+	visibility: visible;
+}
+
+#artciles-container{
+	margin-top: -65px;
+	margin-left: -6.5%;
+	width: 54%;
+	margin-bottom: 50px;
+}
+
+blockquote{
+	margin-left: 10px;
+	height: 60px;
+	width: 150%;
+}
+
+.right-side-block{
+	background-color: white;
+	margin-left: 3%;
+	width: 18.5%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	visibility: ;
+}
+
+.right-side-suggestion-profil-icon{
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+}
+
+.right-side-suggestion-profil-name{
+	margin-top: 6px;
+	font-size: 13px;
+	margin-left: -10px;
+}
+
+.right-side-suggestion-profil-add{
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-left: -12px;
+}
+
+.friend-suggestion-slide{
+	margin-bottom: 30px;
+	margin-left: -2.1px;
+	visibility:
+
+}
+
+.slide-requests-icon{
+	height: 40px;
+	width: 40px;
+}
+
+.friend-chat-container{
+	margin-top: 3.5px;
+	cursor: pointer;
+	margin-left: 0%;
+	margin-right: -4%;
+}
+
+.friend-chat-icon{
+	border-radius: 50%;
+	border: 2px solid #019939;
+}
+
+.friend-chat-name{
+	text-align: center;
+	color: white;
+	width: 80%;
+	margin-top: -20px;
+	font-size: 0.8em;
+	margin-left: -9.3%
+}
+
+.setting-chat-icon{
+	cursor: pointer;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.logout-chat-icon{
+	cursor: pointer;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.last-chat-text{
+	color: white;
+	margin-top: 15px;
+}
+
+.friend-name-last-chat{
+	color: white;
+	width: 100%;
+	margin-top: 5px;
+	margin-left: 2px;
+}
+
+.friend-name-last-chat{
+	font-size: 11px;
+}
+
+.friend-icon-last-chat{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.emoji-chat-icon, .send-chat-icon{
+	width: 15px;
+}
+
+.emoji-chat-container{
+	margin-left: -2px; margin-top: 9px; cursor: pointer;
+}
+
+/***container search input***/
+
+#container_search_input{
+
+}
+
+#search_input{
+	border: none;
+	height: 100%;
+	border-radius: 2px;
+	background: rgba(39,55,70,.3);
+	width: 100%;
+	color: gray;
+	font-family: 'Jua', sans-serif;
+	padding: 15px;
+}
+
+.input-search-div .col-md-6 #container_search_input{
+	width: 80%;
+}
+
+#standard-cover-container{
+	margin-left: 0px;
+	margin-top: -30px;
+	width: 100%;
+	background-color: #CB4335;
+	padding-right: -100px;
+	box-shadow: 1px -1px 5px 5px #273746;
+}
+
+.image{
+	height: 275px;
+}
+
+#body-container{
+	margin-top: 30px;
+}
+
+.inbox-block{
+	width: 19%;
+	margin-left: 3.1%;
+	margin-top: -15.5%;
+	position: fixed;
+	display: none;
+}
+
+.comments-container{
+	height: 200px;
+	width: 40%;
+	background-color: white;
+	position: fixed;
+	top: 230px;
+	left: 28.5%;
+	border-radius: 3px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.title-answer-text{
+	background-color: white;
+	height: 30px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	width: 98%;
+	margin-left: 1%;
+	margin-top: 1%;
+	opacity: .5px;
+}
+
+.poster-profil-with-commmented-post {
+	background-color: #273746;
+	height: 110px;
+	width: 98%;
+	margin-left: 1%;
+	margin-top: 1%;
+	opacity: .5px;
+}
+
+/*
+	<!--------------------------------------------->
+	<!--    	GROUPS CONTAINER CODE   		 -->
+	<!--------------------------------------------->
+*/
+
+.bloc {
+
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#plus{
+	width: 50%;
+	padding-top: 10px;
+}
+
+#overlay-plus {
+
+	height: 119%;
+
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 11%;
+	right: 0;
+	height: 100%;
+	width: 78%;
+	opacity: 0;
+	transition: .5s ease;
+	background-color: #273746;
+}
+
+.bloc:hover .overlay {
+ 	opacity: .6;
+}
+
+.text {
+	color: white;
+	font-size: 12px;
+	width: 100%;
+	font-family: 'Jua', sans-serif;
+	font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #273746;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #273746;
+}
+
+/****ECRAN TABLETTE 8 POUCES A 9.99 POUCES******/
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+{
+	.active-member-button{
+		position: absolute;
+		left: -6%;
+	}
+	.icons-services-icons{
+		position: absolute;
+		left: 28%;
+	}
+	.logo-icon-container{
+		position: absolute;
+		left: -3%;
+	}
+	#logo-icon{
+		width: 20px;
+		height: 20px;
+	}
+	.search-input-div{
+		width: 60%;
+		position: absolute;
+		left: 32%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -55px;
+	}
+	.profil-icon{
+		margin-left: -20px;
+	}
+	.setting-icon{
+		margin-left: 5px;
+	}
+
+}
+
+@media screen and (min-width: 993px) and (max-width: 1057px)
+{
+	.active-member-button{
+		position: absolute;
+		left: -6%;
+	}
+	.icons-services-icons{
+		position: absolute;
+		left: 28%;
+	}
+	.logo-icon-container{
+		position: absolute;
+		left: -3%;
+	}
+	#logo-icon{
+		width: 20px;
+		height: 20px;
+	}
+	.search-input-div{
+		width: 60%;
+		position: absolute;
+		left: 32%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -55px;
+	}
+	.profil-icon{
+		margin-left: -20px;
+	}
+	.setting-icon{
+		margin-left: 5px;
+	}
+
+}
+
+/*SMALL*/
+@media screen and (min-width: 414px) and (max-width: 767px)
+{
+
+
+	#navbar-2{
+		margin-top: -14px;
+	}
+	.icons-services-icons{
+		display: none;
+	}
+	.active-member-button{
+		position: absolute;
+		left: -6%;
+	}
+
+	.logo-icon-container{
+		position: absolute;
+		left: -6%;
+	}
+	#logo-icon{
+		width: 20px;
+		height: 20px;
+	}
+	.search-input-div{
+		width: 60%;
+		position: absolute;
+		left: 32%;
+	}
+	#search-icon-logo{
+		margin-left: -5%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -55px;
+	}
+	.profil-icon{
+		margin-left: -20px;
+	}
+	.setting-icon{
+		margin-left: 5px;
+	}
+
+}
+
+/*SMALL IPHONE7 PLUS*/
+@media screen and (min-width: 320px) and (max-width: 528px)
+{
+
+	.logo-icon-container{
+		position: absolute;
+		left: -16%;
+	}
+
+	.search-input-div{
+		width: 75%;
+		position: absolute;
+		left: 20%;
+	}
+	#search-icon-logo{
+		margin-left: -5%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -65px;
+	}
+	.profil-icon{
+		margin-left: -30px;
+	}
+	.setting-icon{
+		margin-left: 6px;
+	}
+
+}
+
+/*SMALL IPHONE7 PLUS*/
+@media screen and (min-width: 320px) and (max-width: 413px)
+{
+
+	#navbar-2{
+		margin-top: -14px;
+	}
+
+}
+
+/*SMALL IPHONE7 PLUS*/
+@media screen and (min-width: 320px) and (max-width: 332px)
+{
+
+	#navbar-2{
+		margin-top: -14px;
+	}
+
+	.logo-icon-container{
+		position: absolute;
+		left: -25%;
+	}
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767.99px)
+{
+	.categories-members
+	{
+		display: none;
+		margin-left: 20px;
+	}
+
+	#blue-bar-container-chat{
+		display: none;
+	}
+
+	.right-side-block{
+		background-color: white;
+		margin-left: 35px;
+		width: 260px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: none;
+	}
+
+	#navbar{
+		background-color: orange;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	#artciles-container{
+		margin-top: 80px;
+		margin-left: 2.6%;
+		width: 95%;
+		margin-bottom: 50px;
+	}
+
+	#standard-cover-container{
+			display: none;
+	}
+
+	blockquote{
+		margin-left: 20px;
+		height: 60px;
+		width: 150%;
+	}
+
+
+	.friend-suggestion-slide{
+		margin-bottom: 30px;
+		margin-left: -2.1px;
+		display: ;
+
+	}
+
+	.slide-requests-icon{
+		height: 20px;
+		width: 20px;
+	}
+
+
+}
+
+@media screen and (min-width: 414px) and (max-width: 588px)
+{
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+}
+
+@media screen and (min-width: 589px) and (max-width: 699px)
+{
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+}
+
+@media screen and (min-width: 450px) and (max-width: 699px)
+{
+	.slide-requests-icon{
+		height: 28px;
+		width: 28px;
+	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+{
+
+	#navbar{
+		background-color: blue;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	#artciles-container{
+		margin-left: 21.75%;
+		margin-bottom: 50px;
+		margin-top: -960px;
+		width: 54.3%;
+		visibility: ;
+	}
+
+	.categories-members{
+		visibility: ;
+		margin-left: -0.8%;
+		width: 23%;
+	}
+
+	.container-categories-members{
+		background-color: #273746;
+		height: 150px;
+		width: 100%;
+	}
+
+	.left-side-publicity-down{
+		height: 210px;
+		width: 82%;
+		background-color: white;
+
+	}
+
+	.members-text-funders-and-honors{
+		font-size: 11px;
+
+	}
+
+	.members-text-active-and-sympathizing{
+		font-size: 11px;
+
+	}
+
+	/* subgroup active */
+	.subgroup-active-active{
+		font-size: 7px;
+		margin-top: 15px;
+	}
+
+	.subgroup-active-ambassadors{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -16px;"
+	}
+
+	.subgroup-active-ministers{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	/*subgroup-sympathizing*/
+	.subgroup-sympathizing-container{
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-benevoles{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: 3px;
+	}
+
+	.subgroup-sympathizing-mentors{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-volonteers{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: -15px;
+	}
+
+	.subgroup-sympathizing-parrains{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	.friend-chat-container{
+		margin-top: 3.5px;
+		cursor: pointer;
+		margin-left: 0%;
+		margin-right: -3%;
+	}
+
+	.friend-chat-icon{
+		border-radius: 50%;
+		border: 2px solid #019939;
+	}
+
+	.friend-chat-name{
+		text-align: center;
+		color: white;
+		width: 80%;
+		margin-top: -18px;
+		font-size: 0.6em;
+		margin-left: 2%
+	}
+
+	#dixineuvieme-friend-chat, #vingtieme-friend-chat, #vingtetunieme-friend-chat, #vigntdeuxiieme-friend-chat{
+		display: none;
+	}
+
+	.right-side-block{
+		background-color: white;
+		width: 21.3%;
+		position: absolute;
+		right: 1.5%;
+		top: 0px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		visibility: visible;
+	}
+
+	.right-side-suggestion-profil-icon{
+		height: 25px;
+		width: 25px;
+	}
+
+	.right-side-suggestion-profil-name{
+		margin-top: 6px;
+		font-size: 10px;
+		margin-left: -5px;
+	}
+
+	.right-side-suggestion-profil-add{
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		margin-left: -15px;
+		margin-top: 1px;
+	}
+
+	.friend-suggestion-slide{
+		margin-bottom: 30px;
+		margin-left: -2.1px;
+		visibility:
+
+	}
+
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+	.slide-requests-icon{
+		height: 28px;
+		width: 28px;
+	}
+
+	h4{
+		font-size: 14px;
+	}
+
+	.inbox-block{
+		width: 20%;
+		margin-left: 3.1%;
+		margin-top: -13%;
+		position: fixed;
+		top: 40%;
+		display: ;
+	}
+
+	.setting-chat-icon{
+		cursor: pointer;
+		border-radius: 50%;
+		border: 1px solid grey;
+	}
+
+	.logout-chat-icon{
+		cursor: pointer;
+		border-radius: 50%;
+		border: 1px solid grey;
+		margin-top: -42px;
+		margin-left: 28px;
+	}
+
+	.container-icons-settings{
+		margin-left: -17px;
+	}
+
+	.last-chat-text{
+		color: grey;
+		margin-top: 0px;
+	}
+
+	.friend-name-last-chat-container{
+		color: grey;
+		width: 100%;
+		margin-top: 5px;
+		margin-left: 2px;
+	}
+
+	.friend-name-last-chat{
+		font-size: 0.6em;
+		margin-left: -12px;
+	}
+
+	.friend-icon-last-chat{
+		height: 30px;
+		width: 30px;
+		border-radius: 50%;
+		margin-left: -12px;
+	}
+
+	#second-friend-last-chat{
+		margin-left: -12px;
+	}
+
+	.emoji-chat-container{
+		margin-left: -9px;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+
+	.emoji-chat-icon, .send-chat-icon{
+		height: 10px;
+		width: 10px;
+		position: absolute;
+		top: ;
+	}
+
+	.send-chat-icon{
+		left: 32px;
+		top: -1px;
+	}
+
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 844px)
+{
+	.right-side-suggestion-profil-add{
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		margin-left: 125px;
+		margin-top: -60px;
+	}
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1030px)
+{
+
+	#navbar{
+		background-color: yellow;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	.icons-services-icons{
+		margin-top: 1.1%;
+		margin-left: 8.5%;
+	}
+
+	/*Notifs*/
+	.dropright-notifications, .dropright-shop, .dropright-services{
+		margin-top: -24%;
+		margin-left: 21%;
+		display: none;
+	}
+
+	#artciles-container{
+		margin-top: -65px;
+		margin-left: -8.5%;
+		width: 53%;
+		margin-bottom: 50px;
+	}
+
+	.categories-members{
+		visibility: ;
+		margin-left: -0.5%;
+		width: 23%;
+	}
+
+	.container-categories-members{
+		background-color: #273746;
+		height: 150px;
+		width: 100%;
+	}
+
+	.left-side-publicity-down{
+		height: 235px;
+		width: 85%;
+		background-color: white;
+
+	}
+
+	.members-text-funders-and-honors{
+		font-size: 11px;
+
+	}
+
+	.members-text-active-and-sympathizing{
+		font-size: 11px;
+
+	}
+
+	/* subgroup active */
+	.subgroup-active-active{
+		font-size: 7px;
+		margin-top: 15px;
+	}
+
+	.subgroup-active-ambassadors{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -16px;"
+	}
+
+	.subgroup-active-ministers{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	/*subgroup-sympathizing*/
+	.subgroup-sympathizing-container{
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-benevoles{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: 3px;
+	}
+
+	.subgroup-sympathizing-mentors{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-volonteers{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -15px;
+	}
+
+	.subgroup-sympathizing-parrains{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	.friend-chat-container{
+		margin-top: 3.5px;
+		cursor: pointer;
+		margin-left: 0%;
+		margin-right: -4%;
+	}
+
+	.friend-chat-icon{
+		border-radius: 50%;
+		border: 2px solid #019939;
+	}
+
+	.friend-chat-name{
+		text-align: center;
+		color: white;
+		width: 80%;
+		margin-top: -18px;
+		font-size: 0.6em;
+		margin-left: -5.3%
+	}
+
+	.right-side-block{
+		background-color: white;
+		margin-left: 1.5%;
+		width: 22%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		visibility: ;
+	}
+
+	.right-side-suggestion-profil-icon{
+		height: 25px;
+		width: 25px;
+	}
+
+	.right-side-suggestion-profil-name{
+		margin-top: 6px;
+		font-size: 10px;
+		margin-left: -5px;
+	}
+
+	.right-side-suggestion-profil-add{
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		margin-left: -15px;
+		margin-top: 1px;
+	}
+
+	.friend-suggestion-slide{
+		margin-bottom: 30px;
+		margin-left: -2.1px;
+		visibility: ;
+
+	}
+
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+	.slide-requests-icon{
+		height: 28px;
+		width: 28px;
+	}
+
+	h4{
+		font-size: 14px;
+	}
+
+	.inbox-block{
+		width: 19%;
+		margin-left: 3.1%;
+		margin-top: -13%;
+		position: fixed;
+		display: none;
+	}
+
+
+}
+
+@media screen and (min-width: 1031px) and (max-width: 1153px)
+{
+
+	#navbar{
+		background-color: violet;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	.icons-services-icons{
+		margin-top: 1.1%;
+		margin-left: 8.3%;
+	}
+
+	/*Notifs*/
+	.dropright-notifications, .dropright-shop, .dropright-services{
+		margin-top: -22.5%;
+		margin-left: 21%;
+		display: none;
+	}
+
+	.categories-members {
+		visibility: ;
+		margin-left: -0.5%;
+		width: 22.5%;
+	}
+	.container-categories-members{
+		background-color: #273746;
+		height: 170px;
+		width: 100%;
+	}
+
+	.subgroup-active-active{
+		font-size: 0.6em;
+		margin-top: 15px;
+	}
+
+	.subgroup-active-ambassadors{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -16px;
+	}
+
+	.subgroup-active-ministers{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	.subgroup-sympathizing-benevoles{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: 2px;
+	}
+
+	.subgroup-sympathizing-mentors{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-volonteers{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -16px;
+	}
+
+	.subgroup-sympathizing-parrains{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -15px;"
+	}
+
+	.left-side-publicity-down{
+		height: 250px;
+		width: 86.7%;
+		background-color: white;
+		margin-left: 15px;
+		padding-bottom: -8px;
+	}
+
+	blockquote{
+		margin-left: 25px;
+		height: 60px;
+		width: 150%;
+	}
+
+	#artciles-container{
+		margin-top: -65px;
+		margin-left: -7.9%;
+		width: 53%;
+		margin-bottom: 50px;
+	}
+
+	.right-side-block{
+		background-color: white;
+		margin-left: 1.7%;
+		width: 22%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		visibility: ;
+	}
+
+	.inbox-block{
+		width: 19%;
+		margin-left: 3.1%;
+		margin-top: -13.8%;
+		position: fixed;
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1031px) and (max-width: 1297px)
+{
+	.friend-chat-container{
+		margin-top: 3.5px;
+		cursor: pointer;
+		margin-left: 0%;
+		margin-right: -4%;
+	}
+
+	.friend-chat-icon{
+		border-radius: 50%;
+		border: 2px solid #019939;
+	}
+
+	.friend-chat-name{
+		text-align: center;
+		color: white;
+		width: 80%;
+		margin-top: -18px;
+		font-size: 0.6em;
+		margin-left: -5.3%
+	}
+}

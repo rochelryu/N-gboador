@@ -1,0 +1,72 @@
+body{
+    background:url(../../medias/images/price4.jpg) no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    background-size:100% 100%;
+}
+section.fourth-w3ls {
+    -webkit-background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    -o-background-size:100% 100%;
+    -ms-background-size:100% 100%;
+    padding: 100px 0;
+}
+section.fourth-w3ls h4 {
+    font-size:40px;
+    font-weight:normal;
+    text-align:center;
+    color:#fff;
+    padding-bottom:30px;
+    font-family: 'Exo 2', sans-serif;
+}
+.col-lg-4.col-md-4.calendar-agileinfo {
+    padding-left: 0;
+}
+.col-lg-4.col-md-4.hotel-agileinfo {
+    padding-right: 0;
+}
+li{
+    list-style: none;
+}
+ul, ul li em{
+    padding-left: 0 !important;
+}
+.cd-pricing-features ul li span .fa{
+    font-size: x-large;
+}
+.cd-pricing-features ul li span .fa{
+    font-size: 50px;
+}
+.redI{
+    color: #f44336;
+}
+.greenI{
+    color: #3fa044;
+}
+.no{
+    cursor: no-drop !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #273746;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #273746;
+}

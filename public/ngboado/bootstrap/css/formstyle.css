@@ -1,0 +1,1597 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+a{
+  text-decoration: none;
+  color: #3f4652;
+}
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+input, button {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+input{
+  border: none;
+  outline: none;
+  background: none;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+/*.tip {
+  font-size: 20px;
+  margin: 40px auto 50px;
+  text-align: center;
+}*/
+
+/************************Ajout fonds ********************/
+.fontSlide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.fontSlide img{
+  width:100%;
+  height: 100%;
+  float: left;
+  /* Préfixes vendeurs */
+  -webkit-filter: blur(2.5px);
+}
+
+.fontCover{
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.4;
+}
+
+/************************Ajout LOGO ********************/
+
+.logo{
+  position: relative;
+  z-index: 1;
+ /* top: 50px;
+  left: 320px;*/
+  top: 40px;
+  left: 60px;
+  width: 90px;
+  height: 90px;
+  margin-left: 30px;
+  border-radius: 100px;
+  background:white;
+}
+.logo:hover img{
+  transform: rotateX(60);
+}
+.logo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+}
+
+/**======================*************fin ajout**************==================**/
+
+.cont {
+  overflow: hidden;
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  margin: -10px 140px;
+  background: white;
+}
+
+.form {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  padding: 50px 30px 0;
+  background: white;
+}
+
+.sub-cont {
+  overflow: hidden;
+  position: absolute;
+  left: 400px;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  padding-left: 260px;
+  background: white;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+.cont.s--signup .sub-cont {
+  -webkit-transform: translate3d(-400px, 0, 0);
+          transform: translate3d(-400px, 0, 0);
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 36px;
+  border-radius: 30px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.img {
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 210px;
+  height: 100%;
+  padding-top: 363px; /* 51 185 118  plus pur -> 45 166 105*/
+}
+.img:before {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  width: 610px;
+  height: 100%;
+  background-image: url("../../medias/images/slide2.jpg");
+  background-size: cover;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+.img:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.cont.s--signup .img:before {
+  -webkit-transform: translate3d(400px, 0, 0);
+          transform: translate3d(400px, 0, 0);
+}
+.img__text {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+.img__text h2 {
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+.img__text p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.cont.s--signup .img__text.m--in {
+  -webkit-transform: translateX(370px);
+          transform: translateX(370px);
+}
+.img__text.m--up {
+  -webkit-transform: translateX(-370px);
+          transform: translateX(-370px);
+}
+.cont.s--signup .img__text.m--up {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.img__btn {
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  width: 130px;
+  height: 36px;
+  margin: 0 auto;
+  background: transparent;
+  color:white;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+}
+.img__btn:after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+.img__btn span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: -webkit-transform 1.2s;
+  transition: transform 1.2s;
+  transition: transform 1.2s, -webkit-transform 1.2s;
+}
+.img__btn span.m--up {
+  -webkit-transform: translateY(-72px);
+          transform: translateY(-72px);
+}
+.cont.s--signup .img__btn span.m--up {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.cont.s--signup .img__btn span.m--in {
+  -webkit-transform: translateY(72px);
+          transform: translateY(72px);
+}
+
+h2 {
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  width: 260px;
+  margin: 25px auto 0;
+  text-align: center;
+}
+label span {
+  font-size: 12px;
+  color: #3f4652;
+  text-transform: uppercase;
+  position: relative;
+  top: -25px;
+  left:0;
+  pointer-events: none;
+  transition-duration: 0.5s;
+}
+.selectLabel{
+  display: flex;
+  justify-content: space-between;
+  margin-top: -25px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  border-bottom: 1.4px solid #d7d7d7;
+  border-right: 1.4px solid #d7d7d7;
+  border-left: 1.4px solid #d7d7d7;
+  border-top: 1.4px solid #d7d7d7;
+  border-radius: 7px;
+  text-align: center;
+}
+.inputEtape2{
+  margin-bottom: 0;
+  margin-top: 0px;
+}
+
+input:focus ~ span,
+input:valid ~ span{
+  top: -50px;
+  left: -45px;
+  color: rgba(0,128,64,0.7);
+  font-size: 11px;
+}
+
+select{
+  display: block;
+  width: 26%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
+  border-bottom: 1.4px solid #d7d7d7;
+  border-right: 1.4px solid #d7d7d7;
+  border-left: 1.4px solid #d7d7d7;
+  border-top: 1.4px solid #d7d7d7;
+  border-radius: 7px;
+  text-align: center;
+  color: #3f4652;
+}
+
+option:hover {
+  background: red;
+}
+.forgot-pass {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(0,128,64,0.7);
+}
+
+.RadioLabel span {
+  pointer-events: painted;
+}
+/*.RadioLabel input:after {
+  content: " ";
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: green;
+  opacity: 0.5;
+}
+.RadioLabel input:hover ~ .RadioLabel input:after{
+  background-color: black;
+
+}
+
+/*.RadioLabel .checkmark { Create a custom radio button
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    height: 12px;
+    width: 12px;
+    background-color: red;
+    border-radius: 50%;
+
+}*/
+.submit {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: rgba(0,128,64,0.7);
+  text-transform: uppercase;
+}
+.submit1{
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: rgba(0,128,64,0.7);
+  text-transform: uppercase;
+}
+.submit2{
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.boutonContinuer{
+  margin-top: 5px;
+}
+
+.fb-btn {
+  border: 2px solid #d3dae9;
+  color: #8fa1c7;
+  margin-top: -10px;
+}
+.fb-btn span {
+  font-weight: bold;
+  color: #455a81;
+}
+
+.sign-up {
+  transition-timing-function: ease-out;
+}
+.sign-up h2 {
+  color: #3f4652;
+  padding-bottom:15px;
+}
+
+.cont.s--signup .sign-up {
+  transition-timing-function: ease-in-out;
+  transition-duration: 1.2s;
+  -webkit-transform: translate3d(600px, 0, 0);
+          transform: translate3d(600px, 0, 0);
+}
+
+.sign-in {
+  margin-top: 50px;
+  -webkit-transform: translate3d(-600px, 0, 0);
+          transform: translate3d(-600px, 0, 0);
+}
+.sign-in label .label2{
+  margin-top: 960px;
+}
+.sign-in h2 {
+  color: #3f4652;
+  margin-bottom: 80px;
+}
+.cont.s--signup .sign-in {
+  -webkit-transform: translate3d(-50px, 0, 0);
+          transform: translate3d(-50px, 0, 0);
+}
+
+/****** les oubliers***/
+
+.sign-up-2{
+  padding-top: 20px;
+  background:  white;
+  display: none;
+}
+
+.conditions{
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 10px;
+  text-align: center;
+}
+.conditions a{
+  color:rgba(0,128,64,0.5);
+}
+
+.genre{
+  display: inline-block;
+}
+
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.footer{
+  position: absolute;
+  top: 700px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 0;
+  padding: 10px;
+  font-size: 11px;
+  text-align: center;
+  background: linear-gradient(90deg, #3D952B, #336699);
+  opacity: 0.5;
+}
+.footer span {
+  font-size: 15px;
+}
+
+/*************== PUBICATION ====*******/
+
+
+.postcontent{
+  position: absolute;
+  left: 25%;
+  top: 580px;
+  width: 800px;
+  height: 60px;
+  font-size: 13px;
+  background: linear-gradient(90deg, #3D952B, #336699);
+}
+/*.multimediats{
+  width: 220px;
+  height: 120px;
+  margin-left: 95px;
+  border-color: #336699;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: 2px 1px 10px 3px;
+  background-color: blue;
+  overflow: hidden;
+}
+.multimediats img{
+  width: 100%;
+  height: 100%;
+}*/
+.text{
+  width: 800px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 3px;
+  word-spacing: -1px;
+  line-height: 17px;
+  font-size: 13px;
+}
+.backotte{
+  font-size: 20px;
+  font-weight: bold;
+}
+.senderProfilbox{
+  position: relative;
+  top: -65px;
+  left: -150px;
+  width: 140px;
+  height: 100px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.senderProfil{
+  /*position: relative;
+  top: -65px;
+  left: -80px;*/
+  width: 65px;
+  height: 65px;
+  margin-left: 30px;
+  border-radius: 100px;
+  border-style: solid;
+  border-color: #3D952B;
+}
+.senderProfil:hover{
+  border: none;
+}
+.senderProfil img{
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+}
+
+
+/*****************lllllllllllllllllllllllll**********************/
+.textAside{
+  width: 335px;
+  height:264px;
+  color: #d7d7d7;
+  position: relative;
+  left: 850px;
+  top: 120px;
+}
+.textAside .text1{
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-top: -80px;
+  font-weight: 600;
+}
+.textAside .text2{
+  font-size: 16px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-top: 65px;
+}
+.textAside .text3{
+  font-size: 16px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-top: 90px;
+}
+.quotes__cite{
+  font-size: 12px;
+  text-shadow: 2px 2px 4px #000000;
+  font-style: italic;
+  color: white;
+}
+.quotes__cite:before{
+  content: '- ';
+}
+
+
+
+
+
+
+
+
+
+/***********************************===================================================================***************************************/
+/***********************************========== LE RESPONSIVE ecrant petit ordi AVEC LES MEDIAS QUERY ===================********************************/
+/***********************************===================================================================***************************************/
+
+
+
+/*****===========================*******/
+/***==== RESPONSIVE FOR SUPER-SCREEN =====***/
+/*****===========================*******/
+
+@media screen and (min-width: 1500px) and (max-width: 1920px)
+{
+  .logo{
+  position: relative;
+  z-index: 1;
+ /* top: 50px;
+  left: 320px;*/
+  top: 120px;
+  left: 16%;
+  width: 90px;
+  height: 90px;
+  margin-left: 30px;
+  border-radius: 100px;
+  background:white;
+  }
+
+  .cont{
+  overflow: hidden;
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  margin: 75px 20%;
+  background: white;
+  }
+
+  .textAside{
+  width: 335px;
+  height:264px;
+  color: #d7d7d7;
+  position: relative;
+  left: 55%;
+  top: 170px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****===========================*******/
+/***==== RESPONSIVE POUR LACTOP =====***/
+/*****===========================*******/
+
+@media screen and (min-width: 1016px) and (max-width: 1114px)
+{
+  .cont {
+    overflow: hidden;
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    margin: -10px 65px;
+    background: white;
+  }
+
+  .logo{
+    position: relative;
+    z-index: 1;
+   /* top: 50px;
+    left: 320px;*/
+    top: 40px;
+    left: 65px;
+    width: 90px;
+    height: 90px;
+    margin-left: -38px;
+    border-radius: 100px;
+    background:white;
+  }
+
+  .textAside{
+  width: 335px;
+  height:264px;
+  color: #d7d7d7;
+  position: relative;
+  left: 680px;
+  top: 120px;
+}
+
+}
+
+/*****===========================*******/
+/***==== FIN      RESPONSIVE POUR LACTOP =====***/
+/*****===========================*******/
+
+/***********=============================***********/
+/***==== RESPONSIVE FOR TABLET =====***/
+/***********=============================***********/
+
+@media screen and (min-width: 600px/*768px*/) and (max-width: 1015px){
+
+  /************************Ajout fonds ********************/
+  .fontSlide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.fontSlide img{
+  width:100%;
+  height: 100%;
+  float: left;
+  /* Préfixes vendeurs */
+  -webkit-filter: blur(2.5px);
+}
+
+.fontCover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.5;
+}
+
+
+/************************Ajout logo********************
+
+  /* logo */
+  .logo{
+    position: relative;
+    z-index: 1;
+   /* top: 50px;
+    left: 320px;*/
+    top: 40px;
+    left: 65px;
+    width: 75px;
+    height: 75px;
+    margin-left: -38px;
+    border-radius: 100px;
+    background:white;
+  }
+
+  /*contenaire principal*/
+  .cont {
+    overflow: hidden;
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    margin: -10px 65px;
+    background: white;
+  }
+
+  .form {    /* la balise qui contient les 2 formulaires */
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  padding: 50px 30px 0;
+  }
+
+  .sub-cont { /* ".sub-cont" se trouve à l'iterieur de .cont, à les mêmes dimension que ".cont" */
+  overflow: hidden;
+  position: absolute;
+  left: 300px; /* il est déplacé de 400px vers la droite */   /*modif 400*/
+  top: 0;
+  width: 400px; /*modif 600*/
+  height: 100%;
+  padding-left: 100px; /* represente aussi l'espace gauche occupé par la div qui permet de switché */
+  background: white;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+ }
+
+ .cont.s--signup .sub-cont { /*(1) -> .sub-cont se deplace vers la gauche de 400px, et recouvre complètement ".cont"*/ /*modif*/
+  -webkit-transform: translate3d(-300px, 0, 0);
+          transform: translate3d(-300px, 0, 0);
+ }
+
+ .img { /* c'est la div qui permet de swithé */
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px; /*modif 250*/
+  height: 100%;
+  padding-top: 340px; /* détermine la position des bouttons d'appels */  /*modif*/
+}
+
+ .img:before { /* ce before represente l'image qu'on voit au swithing, et recouvre complètement ".cont"  */
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 0;
+  width: 420px; /* d'ou sa largeur légèrement supérieur ou egale à celle de ".cont" */    /*modif*/
+  height: 100%;
+  background-image: url("../../medias/images/slide2.jpg");
+  background-size: cover;
+  transition: -webkit-transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out;
+  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.cont.s--signup .img:before {  /*(2) -> "img:before" se deplace vers la droite de 400px, et recouvre avec une marge de 210px ".cont"*/
+  -webkit-transform: translate3d(320px, 0, 0);/*modif 400*/
+          transform: translate3d(320px, 0, 0);
+}
+
+.img__text h2 { /*modifier*/
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 0px;
+}
+.img__text p {/*modifier*/
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.img__btn { /* c'est la div qui contient les boutons d'appels */
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+  width: 100px;
+  height: 36px;
+  margin: 0 auto;
+  background: transparent;
+  color:white;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+h2 {
+  width: 100%;
+  font-size: 26px; /*modif*/
+  text-align: center;
+}
+.messageDeBienvenue{ /*modif*/
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.inputEtape2{
+  margin-bottom: 0;
+  margin-top: 0px;
+}
+
+
+.submit { /*modif debut*/
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: rgba(0,128,64,0.7);
+  text-transform: uppercase;
+}
+.submit1{
+  width: 150px;
+  margin-top: 20px; /*modif */
+  margin-bottom: 20px;
+  background: rgba(0,128,64,0.7);
+  text-transform: uppercase;
+}
+.submit2{
+  width: 150px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.boutonContinuer{
+  width: 150px;
+  margin-top: -4px;
+}
+
+.fb-btn {
+  height: 30px;
+  width: 150px;
+  border: 2px solid #d3dae9;
+  color: #8fa1c7;
+  margin-top: -10px;
+}
+.fb-btn span {
+  font-weight: bold;
+  color: #455a81;
+} /*mofif fin*/
+
+.sign-up-1-label{ /*modif debut*/
+  margin-top: 20px;
+}
+.sign-up-2-label{
+  margin-top: 10px;
+}
+.sign-in label .label2{
+  margin-top: 960px;
+}
+.sign-in h2 {
+  color: #3f4652;
+  margin-bottom: 60px;
+}
+.sign-up-1{
+  padding-top: 20px;
+  background:  white;
+  }
+.sign-up-2{
+  padding-top: 20px;
+  background:  white;
+  display: none;
+} /*modif fin*/
+
+.sign-in {  /* "sign-in" est initialement décalé de 600px vers la gouche, laissant la place à "sign-up" */
+  margin-top: 10px;
+  -webkit-transform: translate3d(-400px, 0, 0);
+          transform: translate3d(-400px, 0, 0);
+}
+
+.cont.s--signup .sign-in { /*(8) -> et "sign-in" reprend sa position initiale libérer par "sign-up", avec un ajustement de 50px*/
+  -webkit-transform: translate3d(-20px, 0, 0);
+          transform: translate3d(-20px, 0, 0);
+}
+
+.textAside{ /*modif debut*/
+  width: 235px;
+  height:264px;
+  color: #d7d7d7;
+  position: relative;
+  left: 510px;
+  top: 120px;
+}
+.textAside .text1{
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: 600;
+}
+.textAside .text2{
+  font-size: 12px;
+  margin-top: 15px;
+}
+.textAside .text3{ /*modif fin*/
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+}
+
+/*****===========================*******/
+/***==== FIN      RESPONSIVE FOR TABLET =====***/
+/*****===========================*******/
+
+
+
+/***********=============================***********/
+/***==== RESPONSIVE POUR SMALL TABLET =====***/
+/***********=============================***********/
+
+@media screen and (min-width: 600px) and (max-width: 767px){
+
+  /* logo */
+  .logo{
+    position: relative;
+    z-index: 1;
+   /* top: 50px;
+    left: 320px;*/
+    top: 65px;
+    left: 120px;
+    width: 75px;
+    height: 75px;
+    margin-left: -38px;
+    border-radius: 100px;
+    background:white;
+  }
+
+  /*contenaire principal*/
+  .cont {
+    overflow: hidden;
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    margin: 30px 120px;
+    background: white;
+  }
+
+  .textAside{ /*modif debut*/
+    display: none;
+  }
+
+}
+
+/*****===========================*******/
+/***==== FIN      RESPONSIVE FOR SMALL TABLET =====***/
+/*****===========================*******/
+
+
+
+/***********=============================***********/
+/***==== RESPONSIVE POUR SMARTPHONE =====***/
+/***********=============================***********/
+
+
+@media screen and (min-width: 320px) and (max-width: 599px){
+
+  .fontSlide{
+    display: none;
+}
+
+.fontCover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.5;
+}
+
+    /* logo */
+  .logo{
+    position: relative;
+    z-index: 1;
+   /* top: 50px;
+    left: 320px;*/
+    top: 55px;
+    left: 50px;
+    width: 75px;
+    height: 75px;
+    margin-left: -38px;
+    border-radius: 100px;
+    background:white;
+  }
+
+  .cont {
+    overflow: hidden;
+    position: absolute;
+    width: 370px;
+    height: 500px;
+    margin: 10px 30px;
+    background: white;
+  }
+
+  .form {
+    position: absolute;
+    width: 370px;
+    height: 100%;
+    transition: -webkit-transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+    padding: 50px 30px 0;
+    background: white;
+  }
+
+  .sub-cont { /* ".sub-cont" se trouve à l'iterieur de .cont, à les mêmes dimension que ".cont"  et contien le ".sign-in*/
+  overflow: hidden;
+  position: absolute;
+  left: 0px;  /*il est déplacé de 400px vers la droite */   /*modif 400*/
+  top: 0;
+  width: 400px; /*modif 600*/
+  height: 100%;
+ /*padding-left: 100px;  represente aussi l'espace gauche occupé par la div qui permet de switché */
+  background: white;
+}
+
+
+  button {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 36px;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .img {
+    display: none;
+  }
+
+
+  h2 {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    width: 260px;
+    margin: 25px auto 0;
+    text-align: center;
+  }
+  label span {
+    font-size: 12px;
+    color: #3f4652;
+    text-transform: uppercase;
+    position: relative;
+    top: -25px;
+    left:0;
+    pointer-events: none;
+    transition-duration: 0.5s;
+  }
+  .selectLabel{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -25px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    border-bottom: 1.4px solid #d7d7d7;
+    border-right: 1.4px solid #d7d7d7;
+    border-left: 1.4px solid #d7d7d7;
+    border-top: 1.4px solid #d7d7d7;
+    border-radius: 7px;
+    text-align: center;
+  }
+  .inputEtape2{
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  input:focus ~ span,
+  input:valid ~ span{
+    top: -50px;
+    left: -45px;
+    color: rgba(0,128,64,0.7);
+    font-size: 11px;
+  }
+
+  select{
+    display: block;
+    width: 26%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    border-bottom: 1.4px solid #d7d7d7;
+    border-right: 1.4px solid #d7d7d7;
+    border-left: 1.4px solid #d7d7d7;
+    border-top: 1.4px solid #d7d7d7;
+    border-radius: 7px;
+    text-align: center;
+    color: #3f4652;
+  }
+
+  option:hover {
+    background: red;
+  }
+  .forgot-pass {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(0,128,64,0.7);
+  }
+
+  .RadioLabel span {
+    pointer-events: painted;
+  }
+
+  .submit {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: rgba(0,128,64,0.7);
+    text-transform: uppercase;
+  }
+  .submit1{
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: rgba(0,128,64,0.7);
+    text-transform: uppercase;
+  }
+  .submit2{
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .boutonContinuer{
+    margin-top: 5px;
+  }
+
+  .fb-btn {
+    border: 2px solid #d3dae9;
+    color: #8fa1c7;
+    margin-top: -10px;
+  }
+  .fb-btn span {
+    font-weight: bold;
+    color: #455a81;
+  }
+  .passerAInscription{
+    border: 2px solid #d3dae9;
+    color: #8fa1c7;
+    margin-top: -10px;
+  }
+  .passerAInscription span {
+    font-weight: bold;
+    color: #455a81;
+  }
+
+  .sign-up {
+    transition-timing-function: ease-out;
+  }
+  .sign-up h2 {
+    color: #3f4652;
+    padding-bottom:15px;
+  }
+
+  .sign-in {
+  margin-top: 10px;
+  margin-left: 340px;
+  background-color: white;
+  }
+   .cont.s--signup .sign-up {
+    transition-timing-function: ease-in-out;
+    transition-duration: 1.2s;
+    -webkit-transform: translate3d(600px, 0, 0);
+            transform: translate3d(600px, 0, 0);
+  }
+  .sign-in label .label2{
+    margin-top: 960px;
+  }
+  .sign-in h2 {
+    color: #3f4652;
+    margin-bottom: 80px;
+  }
+  .cont.s--signup .sign-in {
+    -webkit-transform: translate3d(-50px, 0, 0);
+            transform: translate3d(-50px, 0, 0);
+  }
+
+  /****** les oubliers***/
+
+  .sign-up-2{
+    padding-top: 20px;
+    background:  white;
+    display: none;
+  }
+
+  .conditions{
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 10px;
+    text-align: center;
+  }
+  .conditions a{
+    color:rgba(0,128,64,0.5);
+  }
+
+  .genre{
+    display: inline-block;
+  }
+
+  .unstyled::-webkit-inner-spin-button,
+  .unstyled::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+  }
+
+
+.textAside{
+  display: none;
+}
+
+}
+
+/*****===========================*******/
+/***==== FIN      RESPONSIVE FOR SMAPHONE =====***/
+/*****===========================*******/
+
+/***********=============================***********/
+/***==== RESPONSIVE POUR OLD SMARTPHONE =====***/
+/***********=============================***********/
+
+
+@media screen and (min-width: 375px) and (max-width: 413px){
+
+   /* logo */
+  .logo{
+    position: relative;
+    z-index: 1;
+   /* top: 50px;
+    left: 320px;*/
+    top: 30px;
+    left: 50px;
+    width: 75px;
+    height: 75px;
+    margin-left: -38px;
+    border-radius: 100px;
+    background:white;
+  }
+
+  .cont {
+    overflow: hidden;
+    position: absolute;
+    width: 370px;
+    height: 500px;
+    margin: 10px 10px;
+    background: white;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px){
+
+  .logo{
+    position: relative;
+    z-index: 1;
+   /* top: 50px;
+    left: 320px;*/
+    top: 30px;
+    left: 50px;
+    width: 75px;
+    height: 75px;
+    margin-left: -38px;
+    border-radius: 100px;
+    background:white;
+  }
+  .cont {
+    overflow: hidden;
+    position: absolute;
+    width: 370px;
+    height: 500px;
+    margin: 10px -18px;
+    background: white;
+  }
+}
+
+
+
+/*****===========================*******/
+/***==== FIN      OLD RESPONSIVE FOR SMAPHONE =====***/
+/*****===========================*******/
+
+/*****===========================*******/
+/***==== RESPONSIVE FOR SMAPHONE (LANDSCAPE) =====***/
+/*****===========================*******/
+
+@media screen and (min-height: 375px) and (max-height: 415px){
+
+   .fontSlide{
+    display: none;
+}
+
+.fontCover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.5;
+}
+
+    /* logo */
+  .logo{
+    position: relative;
+    z-index: 1;
+   /* top: 50px;
+    left: 320px;*/
+    top: 5px;
+    left: 50px;
+    width: 75px;
+    height: 75px;
+    margin-left: -10px;
+    border-radius: 100px;
+    background:white;
+  }
+
+  .cont {
+    overflow: hidden;
+    position: absolute;
+    width: 370px;
+    height: 500px;
+    margin-top: -80px;
+    margin-left: 20%;
+    background: white;
+  }
+
+  .form {
+    position: absolute;
+    width: 370px;
+    height: 100%;
+    transition: -webkit-transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+    padding: 50px 30px 0;
+    background: white;
+  }
+
+  .sub-cont { /* ".sub-cont" se trouve à l'iterieur de .cont, à les mêmes dimension que ".cont"  et contien le ".sign-in*/
+  overflow: hidden;
+  position: absolute;
+  left: 0px;  /*il est déplacé de 400px vers la droite */   /*modif 400*/
+  top: 0;
+  width: 400px; /*modif 600*/
+  height: 100%;
+ /*padding-left: 100px;  represente aussi l'espace gauche occupé par la div qui permet de switché */
+  background: white;
+}
+
+
+  button {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 36px;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .img {
+    display: none;
+  }
+
+
+  h2 {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    width: 260px;
+    margin: 25px auto 0;
+    text-align: center;
+  }
+  label span {
+    font-size: 12px;
+    color: #3f4652;
+    text-transform: uppercase;
+    position: relative;
+    top: -25px;
+    left:0;
+    pointer-events: none;
+    transition-duration: 0.5s;
+  }
+  .selectLabel{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -25px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    border-bottom: 1.4px solid #d7d7d7;
+    border-right: 1.4px solid #d7d7d7;
+    border-left: 1.4px solid #d7d7d7;
+    border-top: 1.4px solid #d7d7d7;
+    border-radius: 7px;
+    text-align: center;
+  }
+  .inputEtape2{
+    margin-bottom: 0;
+    margin-top: 0px;
+  }
+
+  input:focus ~ span,
+  input:valid ~ span{
+    top: -50px;
+    left: -45px;
+    color: rgba(0,128,64,0.7);
+    font-size: 11px;
+  }
+
+  select{
+    display: block;
+    width: 26%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    border-bottom: 1.4px solid #d7d7d7;
+    border-right: 1.4px solid #d7d7d7;
+    border-left: 1.4px solid #d7d7d7;
+    border-top: 1.4px solid #d7d7d7;
+    border-radius: 7px;
+    text-align: center;
+    color: #3f4652;
+  }
+
+  option:hover {
+    background: red;
+  }
+  .forgot-pass {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(0,128,64,0.7);
+  }
+
+  .RadioLabel span {
+    pointer-events: painted;
+  }
+
+  .submit {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: rgba(0,128,64,0.7);
+    text-transform: uppercase;
+  }
+  .submit1{
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: rgba(0,128,64,0.7);
+    text-transform: uppercase;
+  }
+  .submit2{
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .boutonContinuer{
+    margin-top: 5px;
+  }
+
+  .fb-btn {
+    border: 2px solid #d3dae9;
+    color: #8fa1c7;
+    margin-top: -10px;
+  }
+  .fb-btn span {
+    font-weight: bold;
+    color: #455a81;
+  }
+  .passerAInscription{
+    border: 2px solid #d3dae9;
+    color: #8fa1c7;
+    margin-top: -10px;
+  }
+  .passerAInscription span {
+    font-weight: bold;
+    color: #455a81;
+  }
+
+  .sign-up {
+    transition-timing-function: ease-out;
+  }
+  .sign-up h2 {
+    color: #3f4652;
+    padding-bottom:15px;
+  }
+
+  .sign-in {
+  margin-top: 10px;
+  margin-left: 340px;
+  background-color: white;
+  }
+   .cont.s--signup .sign-up {
+    transition-timing-function: ease-in-out;
+    transition-duration: 1.2s;
+    -webkit-transform: translate3d(600px, 0, 0);
+            transform: translate3d(600px, 0, 0);
+  }
+  .sign-in label .label2{
+    margin-top: 960px;
+  }
+  .sign-in h2 {
+    color: #3f4652;
+    margin-bottom: 80px;
+  }
+  .cont.s--signup .sign-in {
+    -webkit-transform: translate3d(-50px, 0, 0);
+            transform: translate3d(-50px, 0, 0);
+  }
+
+  /****** les oubliers***/
+
+  .sign-up-2{
+    padding-top: 20px;
+    background:  white;
+    display: none;
+  }
+
+  .conditions{
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 10px;
+    text-align: center;
+  }
+  .conditions a{
+    color:rgba(0,128,64,0.5);
+  }
+
+  .genre{
+    display: inline-block;
+  }
+
+  .unstyled::-webkit-inner-spin-button,
+  .unstyled::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+  }
+
+
+.textAside{
+  display: none;
+}
+
+}

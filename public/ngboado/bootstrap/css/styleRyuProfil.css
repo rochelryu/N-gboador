@@ -1,0 +1,1706 @@
+*{
+    box-sizing: border-box;
+}
+body{
+	background: #e0e0e0;
+}
+.mt-80{
+    margin-top: 80px;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color:#000;
+    opacity: 1;
+    background: rgba(0,0,0,0.2);
+}
+.swiper-pagination-bullet-active {
+    color:#fff;
+    background: linear-gradient(90deg, #3D952B, #336699);
+}
+.m-r-5{
+    margin-right: 10px !important;
+}
+.des{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+.position-relative > span {
+    position: absolute;
+    top: -20px;
+}
+/******   FIN D'AJOut****/
+#ele{
+	margin-top: 20px;
+}
+
+.waves-Profil{
+    background: linear-gradient(90deg, #3D952B, #336699);
+    height: 270px !important;
+    min-width: 100% !important;
+}
+.biblio-edit{height: 30px; color: #3c3c3c; cursor: pointer;}
+.waves-Profil:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("../../medias/images/profil_svg.png") no-repeat bottom;
+    background-size: 100% 100%;
+}
+.position-absolute{
+	position: absolute;
+}
+.card-titl.ngboador-color-fondu-bleu{
+	font-size: xx-large;
+	color: #336699;
+    text-transform: capitalize;
+}
+.position-relative{
+	position: relative;
+}
+.img-profil {
+    width: 150px !important;
+    height: 150px !important;
+    position: absolute !important;
+    top: -150px !important;
+    left: 45%;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 1s;
+}
+.img-profil:hover{
+    -webkit-filter: drop-shadow(8px 8px 10px gray);
+}
+.overTrue{
+    overflow: visible !important;
+}
+.taille_absolue_profile{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -110px;
+    padding: 21px;
+    text-align: center;
+}
+.taille_absolue_profile p {
+    color: #ffffff;
+    font-size: small;
+}
+.recommandation_profil{
+    width: 100px;
+
+}
+.taille_absolue_profile p span{
+    font-weight: bold;
+    font-size: x-large;
+}
+.friend_count{
+    left: 38%;
+    background-color: #3D952B;
+    box-shadow: 10px 10px 10px gray;
+}
+.public_post{
+    padding: 1rem;
+}
+.group_count{
+    right: 36%;
+    background-color: #336699;
+    box-shadow: -10px 10px 10px gray;
+}
+.sub_icon{
+    top: -180px;
+    width: 40px;
+    height: 40px;
+}
+.icon_image{
+    width: 100%;
+    height: 100%;
+}
+.admin_validate{
+    left: 42%;
+}
+.recommandation_profil{
+    right: 41%;
+    top: -176px;
+    width: 40px;
+    height: 40px;
+}
+.boxTabs{
+    width: 80%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -85px;
+    left: 9%;
+}
+.boxTabs ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: auto;
+}
+.boxTabs ul li{
+    margin: 0 10px;
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    padding: 0;
+}
+.boxTabs ul li .surcouche{
+    min-width: 100%;
+    min-height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 102, 153,.7);
+    padding: 20% 10px;
+}
+.surcouche h2{
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: medium;
+}
+.surcouche small{
+    color: #fff;
+}
+/*.tile_volet{
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    margin-top: -30px;
+    background-color: rgba(61,149,43,0.5);
+}*/
+.boxTabs ul li:hover{
+}
+.boxTabs ul li.affiche{
+    color: #ad95f9;
+}
+.hide{
+    display: none;
+}
+.m-4{
+	margin: 4px 0px !important;
+}
+.reaction{
+    border: 2px solid white;
+    border-radius: 50%;
+    left: 36%;
+    position: absolute !important;
+    cursor: pointer;
+}
+.m-4 .flot{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.content-dashbord{
+    margin-bottom: 150px;
+}
+.p-4{
+	padding-top: 20px !important;
+}
+.affiche{
+    display: block !important;
+}
+/* CONCERNANT LA PUBLICATION D4UN UTILISATEUR */
+.img-publication-int{
+    width: 42px;
+    height: 42px;
+    float: right;
+    cursor: pointer;
+}
+.img-publication-ext{
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+}
+.res{
+    margin-top: 35px;
+}
+#meta{
+    width: 100% !important;
+    border-radius: 10px;
+    border: none;
+    height: 42px;
+}
+.navbar-fixed-top{
+	position: fixed !important;
+    z-index: 9999 !important;
+}
+.navbar-fixed-bottom{
+	position: fixed !important;
+	bottom: 0;
+  z-index: 9999 !important;
+
+}
+.inv{
+    display: none;
+}
+.closed{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+#abs{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#test{
+    position: relative;
+    height: auto;
+    background: #fff;
+}
+.bord-right{
+    border-right: 1px solid #999;
+    padding: 10px;
+    width: 70%
+}
+.md-form ul{
+    list-style: none;
+    padding-bottom: 0px;
+    display: inline;
+}
+#input-pub{
+    height: 70px;
+}
+.md-form ul li{
+    float: left;
+    margin: 0 10px;
+}
+.btn-share{
+    width: 95px !important;
+}
+.icon_pub{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+.bord_none{
+    background: none;
+    border: none;
+}
+.m-150{
+	margin-top: 100px !important;
+}
+.flot p {
+    text-align: left !important;
+}
+.reset{
+    list-style: none;
+    float: right;
+}
+.m-t-0{
+    margin-top: 0px !important;
+}
+.m-t-10{
+    margin-top: 10px !important;
+}
+.m-l-10{
+    margin-left: 10px !important;
+}
+.p-b-80{
+    padding-bottom: 80px !important;
+}
+.published{
+    z-index: 1;
+}
+#galler, #abou{
+    padding: 10px;
+}
+.boxNone{
+    box-shadow: none !important;
+    border-radius: 2px !important;
+    background-color: #F4F4F4 !important;
+}
+/*
+bloc de publication
+ */
+.text-left span{
+    color: #ffffff;
+    font-size: large;
+    text-decoration: underline;
+}
+.text-left span i{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.img_publication{
+    width: 60px !important;
+    height: 60px !important;
+}
+.hour-pub p{
+    color: #ffffff;
+    font-size: medium;
+}
+.leftR{
+    margin: 10px 5px;
+    float: left;
+}
+.time{
+    color: #777;
+    font-size: smaller;
+    margin-left: 10px;
+}
+.image_publication{
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+.pub_div{
+}
+.md-form .like{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s; }
+.md-form .like.active {
+    color: #4285f4; }
+.m-b-20{
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: 0;
+}
+.m-rl-5{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    margin-top: -20px;
+    background-color: #ffffff;
+    padding-bottom: 5px !important;
+}
+.noBack{
+	background: rgba(255,255,255,0.0) !important;
+    box-shadow: none;
+    height: 200px;
+    width: 100%;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.la_carte{
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+/*.la_carte:hover{
+    transform: rotateY(180deg);
+}*/
+.tourne{
+    transform: rotateY(180deg);
+}
+
+.frontend_rec{
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    background-color: #F4F4F4;
+}
+.backend_rec{
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: yellow;
+}
+.fixed{
+    position: fixed;
+	top: 100px;
+	width: 320px;
+}
+.recom_ul{
+    list-style: none;
+}
+.recom_ul li{
+    display: inline-block;
+}
+.social-meta span{
+    margin-right: 20px !important;
+}
+
+/*
+POUR LES TABS DE PROFIL: GALERY APROPOS, ETC...
+ */
+#tabs_one{
+    background: url("../../medias/images/AndroidPIT-htc-10-contacts.jpg") no-repeat center;
+    background-size: cover;
+}
+#tabs_two{
+    background: url("../../medias/images/soso.jpeg") no-repeat center;
+    background-size: 100% 100%;
+}
+#tabs_three{
+    background: url("../../medias/images/apropos.jpg") no-repeat center;
+    background-size: cover;
+}
+#tabs_four{
+    background: url("../../medias/images/74.jpg") no-repeat center;
+    background-size: cover;
+}
+.rightC{
+    float: right;
+}
+.recommandation_img_profil{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px !important;
+    margin: 0 auto;
+}
+.img_comment{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.btnNgboador{
+    width: 50px;
+    height: 30px;
+    background: linear-gradient(90deg, #3D952B, #336699);
+    padding: 5px;
+}
+.fa-heart{
+    color: #336699;
+}
+.fa-comment{
+    color: #3D952B;
+}
+
+/**DEBUT DE MOT***/
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+    .boxTabs{
+        width: 100%;
+        top: -85px;
+        left: 0%;
+    }
+    .sub_icon {
+        top: -165px;
+    }
+    .recommandation_profil {
+        top: -155px;
+        left: 60%;
+    }
+    .taille_absolue_profile {
+        width: 65px;
+        height: 65px;
+        top: -70px;
+        padding: 5px;
+    }
+    .friend_count {
+        left: 19%;
+    }
+    .group_count {
+        left: 63%;
+    }
+    .admin_validate {
+        left: 30%;
+    }
+    .recommandation_profil {
+        left: 61%;
+    }
+    .img-profil {
+        width: 120px !important;
+        height: 120px !important;
+        left: 34%;
+        top: -130px !important;
+    }
+
+ }
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {
+    .surcouche h2{
+        font-size: small;
+    }
+    .taille_absolue_profile {
+        width: 65px;
+        height: 65px;
+        top: -70px;
+        padding: 5px;
+    }
+    .friend_count {
+        left: 28%;
+    }
+    .group_count {
+        left: 61%;
+    }
+    .admin_validate {
+        left: 38%;
+    }
+    .recommandation_profil {
+        left: 61%;
+    }
+    .img-profil {
+        width: 120px !important;
+        height: 120px !important;
+        left: 40%;
+        top: -120px !important;
+    }
+
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .taille_absolue_profile {
+        width: 70px;
+        height: 70px;
+        top: -100px;
+        padding: 10px;
+    }
+    .friend_count {
+        left: 37%;
+    }
+    .group_count {
+        left: 64%;
+    }
+    .admin_validate {
+        left: 44%;
+    }
+    .recommandation_profil {
+        left: 61%;
+    }
+    .img-profil {
+        width: 120px !important;
+        height: 120px !important;
+        left: 47%;
+        top: -130px !important;
+    }
+ }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .taille_absolue_profile {
+        padding: 10px;
+    }
+    .friend_count {
+        left: 37%;
+    }
+    .group_count {
+        left: 62%;
+    }
+    .admin_validate {
+        left: 44%;
+    }
+    .recommandation_profil {
+        left: 61%;
+    }
+    .img-profil {
+        left: 47%;
+    }
+    .sub_icon {
+        top: -195px;
+    }
+    .recommandation_profil {
+        right: 40%;
+        top: -186px;
+    }
+ }
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) and (max-width: 1365px) {
+
+ }
+
+
+ /********* GOUROU PART ************/
+ #navbar{
+	background-color: #CB4335;
+	margin-top: -1px;
+	border-radius: 0px;
+	margin-left: -15px;
+	border: none;
+	width: 102.25%;
+}
+
+
+.btn{
+	margin-top: 11px;
+	font-weight: bold;
+	height: 28px;
+	font-size: 12px;
+	font-family: 'Jua', sans-serif;
+}
+
+#navbar-2{
+	background: rgba(39,55,70,.55);
+	border-radius: 0px;
+	margin-top: -20px;
+	margin-left: -15px;
+	border: none;
+	width: 102.25%;
+}
+
+#navbar-chat{
+	background: rgba(39,55,70,.7);
+	border-radius: 0px;
+	margin-top: -20px;
+	margin-left: -15px;
+	border: none;
+	width: 102.25%;
+}
+
+.friend-chat-container{
+	margin-top: 3.5px;
+	cursor: pointer;
+	margin-left: 0%;
+	margin-right: -4%;
+	display: inline;
+	float: left;
+}
+
+.friend-chat-icon{
+	border-radius: 50%;
+	border: 2px solid #019939;
+}
+
+.friend-chat-name{
+	text-align: center;
+	color: white;
+	width: 80%;
+	margin-top: -20px;
+	font-size: 0.8em;
+	margin-left: -9.3%
+}
+
+.setting-chat-icon{
+	cursor: pointer;
+	border-radius: 50%;
+	border: 1px solid grey;
+}
+
+.logout-chat-icon{
+	cursor: pointer;
+	border-radius: 50%;
+	border: 1px solid grey;
+}
+
+.last-chat-text{
+	color: grey;
+	margin-top: 15px;
+}
+
+.friend-name-last-chat{
+	color: grey;
+	width: 100%;
+	margin-top: 5px;
+	margin-left: 2px;
+}
+
+.friend-name-last-chat{
+	font-size: 11px;
+}
+
+.friend-icon-last-chat{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+}
+
+.emoji-chat-icon, .send-chat-icon{
+	width: 15px;
+}
+
+.emoji-chat-container{
+	margin-left: -2px; margin-top: 9px; cursor: pointer;
+}
+
+/***container search input***/
+
+#container_search_input{
+	height: 30px;
+	width: 65%;
+	border-radius: 2px;
+	background-color: #273746;
+	border: 1px solid gray;
+}
+
+#search_input{
+	border: none;
+	height: 100%;
+	border-radius: 2px;
+	background: rgba(39,55,70,.3);
+	width: 100%;
+	color: gray;
+	font-family: 'Jua', sans-serif;
+	padding: 15px;
+}
+
+.input-search-div .col-md-6 #container_search_input{
+	width: 80%;
+}
+blockquote{
+	margin-top: 0 !important;
+	margin-right: 0 !important;
+	margin-left: 30px !important;
+}
+
+
+#body-container{
+	margin-top: 30px;
+}
+
+.inbox-block{
+	width: 19%;
+	margin-left: 3.1%;
+	margin-bottom: 0%;
+	top: 125px;
+	position: fixed;
+	display: none;
+}
+
+
+
+
+/*<!---------------------------------------------------------------------->
+<!----    END OF THE BARS'S CODE (navbar red, navbar blue, chat bar)   --->
+<!------------------------------------------------------------------------>*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #273746;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #273746;
+}
+
+/****ECRAN TABLETTE 8 POUCES A 9.99 POUCES******/
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+{
+	.active-member-button{
+		position: absolute;
+		left: -6%;
+	}
+	.icons-services-icons{
+		position: absolute;
+		left: 28%;
+	}
+	.logo-icon-container{
+		position: absolute;
+		left: -3%;
+	}
+	#logo-icon{
+		width: 20px;
+		height: 20px;
+	}
+	.search-input-div{
+		width: 60%;
+		position: absolute;
+		left: 32%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -55px;
+	}
+	.profil-icon{
+		margin-left: -20px;
+	}
+	.setting-icon{
+		margin-left: 5px;
+	}
+
+}
+
+@media screen and (min-width: 993px) and (max-width: 1057px)
+{
+	.active-member-button{
+		position: absolute;
+		left: -6%;
+	}
+	.icons-services-icons{
+		position: absolute;
+		left: 28%;
+	}
+	.logo-icon-container{
+		position: absolute;
+		left: -3%;
+	}
+	#logo-icon{
+		width: 20px;
+		height: 20px;
+	}
+	.search-input-div{
+		width: 60%;
+		position: absolute;
+		left: 32%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -55px;
+	}
+	.profil-icon{
+		margin-left: -20px;
+	}
+	.setting-icon{
+		margin-left: 5px;
+	}
+
+}
+
+/*SMALL*/
+@media screen and (min-width: 414px) and (max-width: 767px)
+{
+    .container-fluid{
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .p-4{
+        padding: 0px;
+    }
+    .mt-80{
+        margin-top: 0px;
+    }
+    /*.boxTabs ul li {
+        width: 90px;
+        margin-right: 32px !important;
+        margin-left: -20px !important;
+    }*/
+
+	#navbar-2{
+		margin-top: -14px;
+	}
+	.icons-services-icons{
+		display: none;
+	}
+	.active-member-button{
+		position: absolute;
+		left: -6%;
+	}
+
+	.logo-icon-container{
+		position: absolute;
+		left: -6%;
+	}
+	#logo-icon{
+		width: 20px;
+		height: 20px;
+	}
+	.search-input-div{
+		width: 60%;
+		position: absolute;
+		left: 32%;
+	}
+	#search-icon-logo{
+		margin-left: -5%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -55px;
+	}
+	.profil-icon{
+		margin-left: -20px;
+	}
+	.setting-icon{
+		margin-left: 5px;
+	}
+
+}
+
+/*SMALL IPHONE7 PLUS*/
+@media screen and (min-width: 320px) and (max-width: 528px)
+{
+    .p-2 .card-text{
+        font-size: smaller;
+    }
+    .mt-80{
+        margin-top: 0 !important;
+    }
+
+    .surcouche h2{
+        font-size: x-small;
+    }
+    /*.boxTabs ul li {
+        width: 90px;
+        margin-right: 32px !important;
+        margin-left: -20px !important;
+    }*/
+    .boxTabs ul li .surcouche{
+        padding: 1% 5px;
+    }
+	.logo-icon-container{
+		position: absolute;
+		left: -16%;
+	}
+
+	.search-input-div{
+		width: 75%;
+		position: absolute;
+		left: 20%;
+	}
+	#search-icon-logo{
+		margin-left: -5%;
+	}
+	.home-icons-container{
+		position: absolute;
+	}
+	.home-icon{
+		margin-left: -65px;
+	}
+	.profil-icon{
+		margin-left: -30px;
+	}
+	.setting-icon{
+		margin-left: 6px;
+	}
+
+}
+
+/*SMALL IPHONE7 PLUS*/
+@media screen and (min-width: 320px) and (max-width: 413px)
+{
+
+	#navbar-2{
+		margin-top: -14px;
+	}
+
+}
+
+/*SMALL IPHONE7 PLUS*/
+@media screen and (min-width: 320px) and (max-width: 332px)
+{
+
+	#navbar-2{
+		margin-top: -14px;
+	}
+
+	.logo-icon-container{
+		position: absolute;
+		left: -25%;
+	}
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767.99px)
+{
+    .waves-Profil{
+        height: 200px !important;
+    }
+    .fixed{
+        position: relative;
+    }
+
+    blockquote p{
+        width: 100px;
+        margin-top: -10px;
+        margin-left: -10px;
+    }
+    blockquote small{
+        width: 100px;
+    }
+	.categories-members
+	{
+		display: none;
+		margin-left: 20px;
+	}
+
+	#blue-bar-container-chat{
+		display: none;
+	}
+
+	.right-side-block{
+		background-color: white;
+		margin-left: 35px;
+		width: 260px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: none;
+	}
+
+	#navbar{
+		background-color: orange;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	#artciles-container{
+		margin-top: -15px;
+		margin-left: 2.6%;
+		width: 95%;
+		margin-bottom: 50px;
+	}
+
+	blockquote{
+		margin-left: 10px !important;
+		height: 60px;
+		width: 150%;
+	}
+
+
+	.friend-suggestion-slide{
+		margin-bottom: 30px;
+		margin-left: -2.1px;
+		display: ;
+
+	}
+
+	.slide-requests-icon{
+		height: 20px;
+		width: 20px;
+	}
+
+
+}
+
+@media screen and (min-width: 414px) and (max-width: 588px)
+{
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+}
+
+@media screen and (min-width: 589px) and (max-width: 699px)
+{
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+}
+
+@media screen and (min-width: 450px) and (max-width: 699px)
+{
+	.slide-requests-icon{
+		height: 28px;
+		width: 28px;
+	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+{
+
+	#navbar{
+		background-color: blue;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	#artciles-container{
+		margin-left: 21.75%;
+		margin-bottom: 50px;
+		margin-top: -960px;
+		width: 54.3%;
+		visibility: ;
+	}
+
+	.categories-members{
+		visibility: ;
+		margin-left: -0.8%;
+		width: 23%;
+	}
+
+	.container-categories-members{
+		background-color: #273746;
+		height: 150px;
+		width: 100%;
+	}
+
+	.left-side-publicity-down{
+		height: 210px;
+		width: 82%;
+		background-color: white;
+
+	}
+
+	.members-text-funders-and-honors{
+		font-size: 11px;
+
+	}
+
+	.members-text-active-and-sympathizing{
+		font-size: 11px;
+
+	}
+
+	/* subgroup active */
+	.subgroup-active-active{
+		font-size: 7px;
+		margin-top: 15px;
+	}
+
+	.subgroup-active-ambassadors{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -16px;"
+	}
+
+	.subgroup-active-ministers{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	/*subgroup-sympathizing*/
+	.subgroup-sympathizing-container{
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-benevoles{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: 3px;
+	}
+
+	.subgroup-sympathizing-mentors{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-volonteers{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: -15px;
+	}
+
+	.subgroup-sympathizing-parrains{
+		font-size: 0.45em;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	.friend-chat-container{
+		margin-top: 3.5px;
+		cursor: pointer;
+		margin-left: 0%;
+		margin-right: -3%;
+	}
+
+	.friend-chat-icon{
+		border-radius: 50%;
+		border: 2px solid #019939;
+	}
+
+	.friend-chat-name{
+		text-align: center;
+		color: white;
+		width: 80%;
+		margin-top: -18px;
+		font-size: 0.6em;
+		margin-left: 2%
+	}
+
+	#dixineuvieme-friend-chat, #vingtieme-friend-chat, #vingtetunieme-friend-chat, #vigntdeuxiieme-friend-chat{
+		display: none;
+	}
+
+	.right-side-block{
+		background-color: white;
+		width: 21.3%;
+		position: absolute;
+		right: 1.5%;
+		top: 0px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		visibility: visible;
+	}
+
+	.right-side-suggestion-profil-icon{
+		height: 25px;
+		width: 25px;
+	}
+
+	.right-side-suggestion-profil-name{
+		margin-top: 6px;
+		font-size: 10px;
+		margin-left: -5px;
+	}
+
+	.right-side-suggestion-profil-add{
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		margin-left: -15px;
+		margin-top: 1px;
+	}
+
+	.friend-suggestion-slide{
+		margin-bottom: 30px;
+		margin-left: -2.1px;
+		visibility:
+
+	}
+
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+	.slide-requests-icon{
+		height: 28px;
+		width: 28px;
+	}
+
+	h4{
+		font-size: 14px;
+	}
+
+	.inbox-block{
+		width: 20%;
+		margin-left: 3.1%;
+		margin-top: -13%;
+		position: fixed;
+		top: 40%;
+		display: ;
+	}
+
+	.setting-chat-icon{
+		cursor: pointer;
+		border-radius: 50%;
+		border: 1px solid grey;
+	}
+
+	.logout-chat-icon{
+		cursor: pointer;
+		border-radius: 50%;
+		border: 1px solid grey;
+		margin-top: -42px;
+		margin-left: 28px;
+	}
+
+	.container-icons-settings{
+		margin-left: -17px;
+	}
+
+	.last-chat-text{
+		color: grey;
+		margin-top: 0px;
+	}
+
+	.friend-name-last-chat-container{
+		color: grey;
+		width: 100%;
+		margin-top: 5px;
+		margin-left: 2px;
+	}
+
+	.friend-name-last-chat{
+		font-size: 0.6em;
+		margin-left: -12px;
+	}
+
+	.friend-icon-last-chat{
+		height: 30px;
+		width: 30px;
+		border-radius: 50%;
+		margin-left: -12px;
+	}
+
+	#second-friend-last-chat{
+		margin-left: -12px;
+	}
+
+	.emoji-chat-container{
+		margin-left: -9px;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+
+	.emoji-chat-icon, .send-chat-icon{
+		height: 10px;
+		width: 10px;
+		position: absolute;
+		top: ;
+	}
+
+	.send-chat-icon{
+		left: 32px;
+		top: -1px;
+	}
+
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 844px)
+{
+	.right-side-suggestion-profil-add{
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		margin-left: 125px;
+		margin-top: -60px;
+	}
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1030px)
+{
+
+	#navbar{
+		background-color: yellow;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	#artciles-container{
+		margin-top: -65px;
+		margin-left: -8.5%;
+		width: 53%;
+		margin-bottom: 50px;
+	}
+
+	.categories-members{
+		visibility: ;
+		margin-left: -0.5%;
+		width: 23%;
+	}
+
+	.container-categories-members{
+		background-color: #273746;
+		height: 150px;
+		width: 100%;
+	}
+
+	.left-side-publicity-down{
+		height: 235px;
+		width: 85%;
+		background-color: white;
+
+	}
+
+	.members-text-funders-and-honors{
+		font-size: 11px;
+
+	}
+
+	.members-text-active-and-sympathizing{
+		font-size: 11px;
+
+	}
+
+	/* subgroup active */
+	.subgroup-active-active{
+		font-size: 7px;
+		margin-top: 15px;
+	}
+
+	.subgroup-active-ambassadors{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -16px;"
+	}
+
+	.subgroup-active-ministers{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	/*subgroup-sympathizing*/
+	.subgroup-sympathizing-container{
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-benevoles{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: 3px;
+	}
+
+	.subgroup-sympathizing-mentors{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-volonteers{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -15px;
+	}
+
+	.subgroup-sympathizing-parrains{
+		font-size: 7px;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	.friend-chat-container{
+		margin-top: 3.5px;
+		cursor: pointer;
+		margin-left: 0%;
+		margin-right: -4%;
+	}
+
+	.friend-chat-icon{
+		border-radius: 50%;
+		border: 2px solid #019939;
+	}
+
+	.friend-chat-name{
+		text-align: center;
+		color: white;
+		width: 80%;
+		margin-top: -18px;
+		font-size: 0.6em;
+		margin-left: -5.3%
+	}
+
+	.right-side-block{
+		background-color: white;
+		margin-left: 1.5%;
+		width: 22%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		visibility: ;
+	}
+
+	.right-side-suggestion-profil-icon{
+		height: 25px;
+		width: 25px;
+	}
+
+	.right-side-suggestion-profil-name{
+		margin-top: 6px;
+		font-size: 10px;
+		margin-left: -5px;
+	}
+
+	.right-side-suggestion-profil-add{
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		margin-left: -15px;
+		margin-top: 1px;
+	}
+
+	.friend-suggestion-slide{
+		margin-bottom: 30px;
+		margin-left: -2.1px;
+		visibility: ;
+
+	}
+
+	blockquote{
+		margin-left: 45px;
+		height: 60px;
+		width: 150%;
+	}
+
+	.slide-requests-icon{
+		height: 28px;
+		width: 28px;
+	}
+
+	h4{
+		font-size: 14px;
+	}
+
+	.inbox-block{
+		width: 19%;
+		margin-left: 3.1%;
+		margin-top: -13%;
+		position: fixed;
+		display: none;
+	}
+
+
+}
+
+@media screen and (min-width: 1031px) and (max-width: 1153px)
+{
+
+	#navbar{
+		background-color: violet;
+		margin-top: -1px;
+		border-radius: 0px;
+		margin-left: -15px;
+		border: none;
+		width: 102.25%;
+	}
+
+	.categories-members {
+		visibility: ;
+		margin-left: -0.5%;
+		width: 22.5%;
+	}
+	.container-categories-members{
+		background-color: #273746;
+		height: 170px;
+		width: 100%;
+	}
+
+	.subgroup-active-active{
+		font-size: 0.6em;
+		margin-top: 15px;
+	}
+
+	.subgroup-active-ambassadors{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -16px;
+	}
+
+	.subgroup-active-ministers{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -13px;"
+	}
+
+	.subgroup-sympathizing-benevoles{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: 2px;
+	}
+
+	.subgroup-sympathizing-mentors{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -2px;
+	}
+
+	.subgroup-sympathizing-volonteers{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -16px;
+	}
+
+	.subgroup-sympathizing-parrains{
+		font-size: 0.6em;
+		margin-top: 15px;
+		margin-left: -15px;"
+	}
+
+	.left-side-publicity-down{
+		height: 250px;
+		width: 86.7%;
+		background-color: white;
+		margin-left: 15px;
+		padding-bottom: -8px;
+	}
+
+	blockquote{
+		margin-left: 25px;
+		height: 60px;
+		width: 150%;
+	}
+
+	#artciles-container{
+		margin-top: -65px;
+		margin-left: -7.9%;
+		width: 53%;
+		margin-bottom: 50px;
+	}
+
+	.right-side-block{
+		background-color: white;
+		margin-left: 1.7%;
+		width: 22%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		visibility: ;
+	}
+
+	.inbox-block{
+		width: 19%;
+		margin-left: 3.1%;
+		margin-top: -13.8%;
+		position: fixed;
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1031px) and (max-width: 1297px)
+{
+	.friend-chat-container{
+		margin-top: 3.5px;
+		cursor: pointer;
+		margin-left: 0%;
+		margin-right: -4%;
+	}
+
+	.friend-chat-icon{
+		border-radius: 50%;
+		border: 2px solid #019939;
+	}
+
+	.friend-chat-name{
+		text-align: center;
+		color: white;
+		width: 80%;
+		margin-top: -18px;
+		font-size: 0.6em;
+		margin-left: -5.3%
+	}
+}
+/*********** END GOUROU PART***********/
