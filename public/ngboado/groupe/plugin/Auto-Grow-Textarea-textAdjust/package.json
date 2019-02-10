@@ -1,0 +1,34 @@
+{
+  "name": "@onuo/jquery.textadjust",
+  "version": "0.0.1",
+  "description": "Plugin for jquery: Adjust textarea rows based on value",
+  "main": "jquery.textAdjust",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onuo/jquery.textAdjust.git"
+  },
+  "keywords": [
+    "jquery",
+    "textarea",
+    "text",
+    "grow",
+    "expand",
+    "expander",
+    "fit",
+    "height",
+    "value"
+  ],
+  "author": "Christian Schmid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onuo/jquery.textAdjust/issues"
+  },
+  "homepage": "https://github.com/onuo/jquery.textAdjust#readme",
+  "devDependencies": {
+    "grunt": "~1.0.3",
+    "grunt-contrib-uglify": "~4.0.0"
+  }
+}

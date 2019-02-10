@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recherche dynamique</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="asset/css/style_search.css">
+  <!-- <link rel="stylesheet" href="asset/css/mdb.min.css"> -->  
+  <script src="asset/js/bootstrap.min.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+        crossorigin="anonymous">
+  </script>
+  <script src="dist/jquery.autobox.js"></script>
+  <!-- <script src="asset/js/mdb.min.js"></script> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    body{
+      background: #F3F3F3 url() 0 0 no-repeat;
+    }    
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse" style="z-index: 300; width: 100%;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="background-image: url('image/icon/logo/Logo_Ngboado-png.png'); background-size: cover;"><span style="color: #2B2A2A">Logo</span></a>
+      </div>
+      <!-- /*premiere barre barre de recherche*/ -->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#"><i class="fas fa-home" style="font-size: 20px;"></i> Home</a></li>
+          <li><a href="#">Messages</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group input-group">
+            <input type="text" class="form-control" placeholder="Search..">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" style="background-color: #23BE89;">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- le corps de la page -->
+
+  <div class=" bg-success text-center" style="position: relative; top : -20px; padding: 7px 14px;">
+    <h3 class="">Resultat des recherches... <i class="fa fa-search"></i></h3>
+  </div>
+  <div class="container">
+    <div class="row">      
+          <!-- #################le corps############# -->
+      <div class="panel panel-body">
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="row">          
+            <div class="panel-group">
+              <div class="panel panel-body"  style="box-shadow: 4px 3px 8px rgba(0,0,0, .2); border-radius: 0;">
+                <div class="panel text-left" id="person-result">
+                  <div class="panel-heading">
+                    <i class="material-icons" style="font-size:36px">person_pin</i><span style="position: relative; top: -4px; margin-left: 12px;" class="">Membres</span>
+                  </div>
+
+                  <div class="panel-body person-result" style="border: none;"> 
+                    <div class="row">                                  
+                      <div class="col-sm-3 col-xs-4" >
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                      <div class="col-sm-3 col-xs-4">
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                      <div class="col-sm-3 col-xs-4">
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                      <div class="col-sm-3 col-xs-4">
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                    </div>
+                  </div>   
+            <div class="panel-body person-add text-center" style="height: ;"> 
+              <!-- <span><a href="" style="display: inline-block;">Voir plus</a>...</span> -->
+              <a href="" title="voir plus"><i class="material-icons" style="color:; font-size: 36px;">add_circle</i></a>                
+            </div>
+                </div> 
+              </div>
+              <hr>         
+              <div class="panel panel-body" style="box-shadow: 4px 3px 8px rgba(0,0,0, .2); border-radius: 0;">
+                <div class="panel text-left" id="person-result">
+                  <div class="panel-heading">
+                    <i class="material-icons" style="font-size:36px">person_pin</i><span style="position: relative; top: -4px; margin-left: 12px;" class="">Membres</span>
+                  </div>
+
+                  <div class="panel-body person-result" style="border: none;"> 
+                    <div class="row">                                  
+                      <div class="col-sm-3 col-xs-4" >
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                      <div class="col-sm-3 col-xs-4">
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                      <div class="col-sm-3 col-xs-4">
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                      <div class="col-sm-3 col-xs-4">
+                        <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                          <div class="caption">
+                            <p>
+                              <span><strong>Name of person, </strong> </span>
+                              <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                              <span>Recommandation <i class="badge">5</i></span>
+                            </p>
+                          </div>
+                        </a>                    
+                      </div>
+                    </div>
+                  </div>   
+                  <div class="panel-body person-add text-center" style="height: ;"> 
+                    <!-- <span><a href="" style="display: inline-block;">Voir plus</a>...</span> -->
+                    <a href="" title="voir plus"><i class="material-icons" style="color:; font-size: 36px;">add_circle</i></a>                
+                  </div>
+                </div> 
+              </div>
+              <hr>
+              <div class="panel panel-body"  style="box-shadow: 0px 3px 0px rgba(0,0,0, .2); border-radius: 0;">
+              <div class="panel text-left" id="person-result">
+                <div class="panel-heading">
+                  <i class="material-icons" style="font-size:36px">person_pin</i><span style="position: relative; top: -4px; margin-left: 12px;" class="">Membres</span>
+                </div>
+
+                <div class="panel-body person-result" style="border: none;"> 
+                  <div class="row">                                  
+                    <div class="col-sm-3 col-xs-4" >
+                      <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                        <div class="caption">
+                          <p>
+                            <span><strong>Name of person, </strong> </span>
+                            <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                            <span>Recommandation <i class="badge">5</i></span>
+                          </p>
+                        </div>
+                      </a>                    
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                      <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                        <div class="caption">
+                          <p>
+                            <span><strong>Name of person, </strong> </span>
+                            <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                            <span>Recommandation <i class="badge">5</i></span>
+                          </p>
+                        </div>
+                      </a>                    
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                      <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                        <div class="caption">
+                          <p>
+                            <span><strong>Name of person, </strong> </span>
+                            <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                            <span>Recommandation <i class="badge">5</i></span>
+                          </p>
+                        </div>
+                      </a>                    
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                      <a href="" class="thumbnail"><img src="image/recherche/baby.jpg" class="img-responsive" style="width: 100%" alt="">
+                        <div class="caption">
+                          <p>
+                            <span><strong>Name of person, </strong> </span>
+                            <span><strong>Sympatisant depuis 18/10/03.</strong><br></span>
+                            <span>Recommandation <i class="badge">5</i></span>
+                          </p>
+                        </div>
+                      </a>                    
+                    </div>
+                  </div>
+                </div>   
+                <div class="panel-body person-add text-center" style="height: ;"> 
+                  <!-- <span><a href="" style="display: inline-block;">Voir plus</a>...</span> -->
+                  <a href="" title="voir plus"><i class="material-icons" style="color:; font-size: 36px;">add_circle</i></a>                
+                </div>
+              </div> 
+              </div>              
+            </div>                      
+          </div>
+        </div>          
+      </div>      
+    </div>
+  </div>q
+
+  <script>
+    $(document).ready(function(){
+      
+    });
+  </script>
+</body>
+</html>
