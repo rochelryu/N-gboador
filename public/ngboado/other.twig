@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>N'gboadô | Profil</title>
+    {% include '../ngboado/partial/header.twig' %}
+    <div class="card m-150 m-5 p-b-80" id="prev" align="center" style="background-color: #fff;">
+
+        <!--Card image-->
+        <div class="view overlay hm-white-slight waves-Profil">
+            <!--img src="assets/img/test/w2.jpg" class="img-fluid" alt="" style="min-width: 100%; height: 298px"-->
+            <a href="#">
+                <div class="mask"></div>
+            </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body position-relative changeContent">
+            <div class="position-absolute admin_validate sub_icon">
+                <a href="" title="Confirmé Par Super-Admin"><span class="badge badge-default">15</span><img src="../medias/images/admin1.png" class="icon_image" style="border-radius: 50%; background-color: #019939; margin-top: 5px;" alt=""></a>
+            </div>
+            <div class="position-absolute recommandation_profil">
+                <a href="" title="Recommandation"><span class="badge badge-default" style="float: right">{{ info.NumberRec }}</span><img src="../medias/images/values.png" style="margin-top: 5px; margin-left: 6px;" class="icon_image" alt=""></a>
+            </div>
+            <div class="friend_count taille_absolue_profile">
+                <p><span class="text-center">{{ info.ami }}</span><br>{{ (info.ami > 1)? 'Abonnés':'Abonné' }}</p>
+            </div>
+            <div class="group_count taille_absolue_profile">
+                <p><span class="text-center">{{ info.group }}</span><br>{{ (info.group > 1)? 'Groupes':'Groupe' }}</p>
+            </div>
+            <a href="#" data-toggle="modal" data-target=""><img src="../medias/icon/user%20profil/africa/{{ profil.profil }}" class="img-thumbnail img-profil img-fluid" alt=""></a>
+            <div align="center" class="p-2">
+                <h4 class="card-titl ngboador-color-fondu-bleu">{{ profil.nom }}</h4>
+                <p class="card-text" style="padding: 0 15%;">{{ (profil.biblio == null)? 'Aucune Biblio Sur vous. "Une Biblio est une phrase voir deux max qui decrit votre Manière de Voir les chose, Quelque chose de concret, concis, palpable, féerique qui vous décrit le mieux"' : profil.biblio }}</p>
+                <br>
+                {% if info.stateFollow == 4 %}
+                    <button class="btn btn-danger a_demo_four">Retirer</button>
+                {% elseif info.stateFollow == 1 %}
+                    <button class="btn btn-primary a_demo_four">Annuler</button>
+                {% else %}
+                <button class="btn btn-outline-primary a_demo_four">Suivre</button>
+                {% endif %}
+
+                <button id="tchat_icon" type="button" class="btn btn-primary waves-effect btn-radius"><i class="fas fa-comments" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <br>
+    <div class="content-dashbord">
+        <div class="view overlay hm-white-slight overTrue">
+            <div class="boxTabs">
+                <ul>
+                    <li id="tabs_one" class="affiche">
+                        <div class="surcouche">
+                            <h2 class="">publication</h2>
+                            <small>{{ info.publi }} {{ (info.publi > 1) ? 'publications': 'publication' }}</small>
+                        </div>
+                    </li>
+                    <li id="tabs_two">
+                        <div class="surcouche">
+                            <h2 class="">galerie</h2>
+                        </div>
+                    </li>
+                    <li id="tabs_three">
+                        <div class="surcouche">
+                            <h2 class="">à propos</h2>
+                            <small></small>
+                        </div>
+                    </li>
+                    <li id="tabs_four" class="affiche">
+                        <div class="surcouche verou">
+                            <h2 class="">aucune idée</h2>
+                            <small></small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--img src="assets/img/test/w2.jpg" class="img-fluid" alt="" style="min-width: 100%; height: 298px"-->
+            <div class="container-fluid p-4">
+                <div class="row p-4 mt-80">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                        <!-- Container -->
+                        <div class="row">
+
+                            <!-- Column -->
+                            <div class="col-md-12 d-flex align-items-stretch affiche">
+                                <div class="card text-center z-depth-2 boxNone" id="journal">
+                                    <div class="card-body">
+                                        <div class="m-4 text-left">
+                                            <!--span><i class="fa fa-trophy"></i> Membre Honneur</span-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <section class="my-5" id="ele" >
+                                            <div class="row">
+                                                <div class="col-md-1">
+
+                                                </div>
+                                                <div class="col-md-7 inv" id="test">
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <input type="hidden" value="{{ profil.emailcrypt }}" id="unless" readonly disabled>
+                                        <input type="hidden" value="{{ user.emailcrypt }}" id="del" readonly disabled>
+                                        <br>
+                                        <section class="">
+                                            <div class="container-fluid">
+                                                <!-- Grid row -->
+                                                <div class="row m-4">
+                                                    <!-- Grid column -->
+                                                    {% if info.published|length > 0 %}
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                                        <div class="row">
+                                                            <!-------------------------------------------->
+                                                            <!--  			 ARTICLE ONE BLOCK  		-->
+                                                            <!-------------------------------------------->
+                                                            {% for pub in info.published %}
+                                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 flot" style="padding-top: 15px; background-color: white;  padding-bottom: 15px; margin-bottom: 30px;">
+
+                                                                    <div class="row">
+                                                                        {% if pub.file1 == undefined and pub.file2 == undefined and pub.file3 == undefined and pub.file4 == undefined and pub.file5 == undefined and pub.file6 == undefined and pub.file7 == undefined and pub.file8 == undefined and pub.file9 == undefined and pub.file10 == undefined and pub.file11 == undefined and pub.file12 == undefined and pub.file13 == undefined and pub.file14 == undefined and pub.file15 == undefined and pub.file16 == undefined and pub.file17 == undefined and pub.file18 == undefined and pub.file19 == undefined %}
+                                                                        {% else %}
+                                                                            <!--======-- media container (image) --======-->
+                                                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                <center>
+                                                                                    <div class="swiper-container">
+                                                                                        <div class="swiper-wrapper">
+                                                                                            {% if pub.file1 != undefined %}
+                                                                                                <div class="swiper-slide">
+                                                                                                    {% set foo1 = pub.file1|split('.') %}
+                                                                                                    {% if foo1[foo1.length - 1] == "mp4" or foo1[foo1.length - 1] == "MP4" or foo1[foo1.length - 1] == "avi" or foo1[foo1.length - 1] == "AVI" or foo1[foo1.length - 1] == "MKV" or foo1[foo1.length - 1] == "mkv"  or foo1[foo1.length - 1] == "3gp" or foo1[foo1.length - 1] == "3GP" %}
+                                                                                                        <video src="../medias/images/{{ pub.file1 }}" width="95%" height="310" controls style=""></video>
+                                                                                                    {% elseif foo1[foo1.length - 1] == "pdf" or foo1[foo1.length - 1] == "PDF" %}
+                                                                                                        <a href="../medias/images/{{ pub.file1 }}">
+                                                                                                            <img src="../medias/images/71.jpg" class="img-responsive"/>
+                                                                                                        </a>
+                                                                                                    {% elseif foo1[foo1.length - 1] == "jpeg" or foo1[foo1.length - 1] == "JPEG" or foo1[foo1.length - 1] == "jpg" or foo1[foo1.length - 1] == "JPG" or foo1[foo1.length - 1] == "png" or foo1[foo1.length - 1] == "PNG" or foo1[foo1|length - 1] == "gif" or foo1[foo1.length - 1] == "GIF" %}
+                                                                                                        <a class="viewEngine" data-big="../medias/images/{{ pub.file1 }}" href="">
+                                                                                                            <img src="../medias/images/{{ pub.file1 }}" class="img-responsive"/>
+                                                                                                        </a>
+                                                                                                    {% endif %}
+                                                                                                </div>
+                                                                                            {% endif %}
+                                                                                            {% if pub.file2 != undefined %}
+                                                                                                <div class="swiper-slide">
+                                                                                                    {% set foo2 = pub.file2|split('.') %}
+                                                                                                    {% if foo2[foo2.length - 1] == "mp4" or foo2[foo2.length - 1] == "MP4" or foo2[foo2.length - 1] == "avi" or foo2[foo2.length - 1] == "AVI" or foo2[foo2.length - 1] == "MKV" or foo2[foo2.length - 1] == "mkv"  or foo2[foo2.length - 1] == "3gp" or foo2[foo2.length - 1] == "3GP" %}
+                                                                                                        <video src="../medias/images/{{ pub.file2 }}" width="95%" height="310" controls style=""></video>
+                                                                                                    {% elseif foo2[foo2.length - 1] == "pdf" or foo2[foo2.length - 1] == "PDF" %}
+                                                                                                        <a href="../medias/images/{{ pub.file2 }}">
+                                                                                                            <img src="../medias/images/71.jpg" class="img-responsive"/>
+                                                                                                        </a>
+                                                                                                    {% elseif foo2[foo2.length - 1] == "jpeg" or foo2[foo2.length - 1] == "JPEG" or foo2[foo2.length - 1] == "jpg" or foo2[foo2.length - 1] == "JPG" or foo2[foo2.length - 1] == "png" or foo2[foo2.length - 1] == "PNG" or foo2[foo2|length - 1] == "gif" or foo2[foo2.length - 1] == "GIF" %}
+                                                                                                        <a class="viewEngine" data-big="../medias/images/{{ pub.file2 }}" href="">
+                                                                                                            <img src="../medias/images/{{ pub.file2 }}" class="img-responsive"/>
+                                                                                                        </a>
+                                                                                                    {% endif %}
+                                                                                                </div>
+                                                                                            {% endif %}
+                                                                                            {% if pub.file3 != undefined %}
+                                                                                                <div class="swiper-slide">
+                                                                                                    {% set foo3 = pub.file3|split('.') %}
+                                                                                                    {% if foo3[foo3.length - 1] == "mp4" or foo3[foo3.length - 1] == "MP4" or foo3[foo3.length - 1] == "avi" or foo3[foo3.length - 1] == "AVI" or foo3[foo3.length - 1] == "MKV" or foo3[foo3.length - 1] == "mkv"  or foo3[foo3.length - 1] == "3gp" or foo3[foo3.length - 1] == "3GP" %}
+                                                                                                        <video src="../medias/images/{{ pub.file3 }}" width="95%" height="310" controls style=""></video>
+                                                                                                    {% elseif foo3[foo3.length - 1] == "pdf" or foo3[foo3.length - 1] == "PDF" %}
+                                                                                                        <a href="../medias/images/{{ pub.file3 }}">
+                                                                                                            <img src="../medias/images/71.jpg" class="img-responsive"/>
+                                                                                                        </a>
+                                                                                                    {% elseif foo3[foo3.length - 1] == "jpeg" or foo3[foo3.length - 1] == "JPEG" or foo3[foo3.length - 1] == "jpg" or foo3[foo3.length - 1] == "JPG" or foo3[foo3.length - 1] == "png" or foo3[foo3.length - 1] == "PNG" or foo3[foo3|length - 1] == "gif" or foo3[foo3.length - 1] == "GIF" %}
+                                                                                                        <a class="viewEngine" data-big="../medias/images/{{ pub.file3 }}" href="">
+                                                                                                            <img src="../medias/images/{{ pub.file3 }}" class="img-responsive"/>
+                                                                                                        </a>
+                                                                                                    {% endif %}
+                                                                                                </div>
+                                                                                            {% endif %}
+                                                                                            <!--
+                                                                                            ///////////////////////////////////////////////
+
+                                                                                                    A CONTINUER JUSQUA 19 car il y a 19 file max en upload
+
+                                                                                            //////////////////////////////////////////////
+                                                                                            -->
+
+                                                                                        </div>
+                                                                                        <!-- Add Pagination -->
+                                                                                        <div class="swiper-pagination"></div>
+                                                                                    </div>
+                                                                                </center>
+                                                                            </div>
+                                                                        {% endif %}
+                                                                        <!--======-- poster's profil picture and name container--======-->
+                                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+                                                                            <div class="row">
+                                                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 13px; cursor: pointer;">
+                                                                                    <img src="../medias/icon/user profil/africa/{{ profil.profil }}" height="40" width="40" style="border-radius: 50%;">
+                                                                                </div>
+
+                                                                                <div class="name-profils-infos col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 col-xs-pull-2 col-sm-pull-2 col-md-pull-2 col-lg-pull-2 col-xl-pull-2" style="margin-top: 4px">
+                                                                                    <blockquote>
+                                                                                        <p style="font-weight: bold; font-size: 12px;">{{ profil.nom }}</p>
+                                                                                        <small style="font-size: 10px;">
+                                                                                            <script>horodatage("{{ pub.register_date }}")</script></small>
+                                                                                    </blockquote>
+                                                                                </div>
+
+                                                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-top: 4px; cursor: pointer; float: right">
+                                                                                    <img src="../medias/icon/logo/menu.png" height="40" width="40">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!--======-- text container --======-->
+                                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <p style="font-size: 13px; margin: 0 0 20px">
+                                                                                {{ pub.content_text }}
+                                                                            </p>
+                                                                        </div>
+
+                                                                        <!--======-- reactions icons --======-->
+                                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="row">
+                                                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-8 col-xs-push-7 col-sm-push-7 col-md-push-8 col-lg-push-8 col-xl-push-8">
+                                                                                    <div class="row">
+                                                                                        <div class="coments col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative" >
+                                                                                            <span class="mont">{{ pub.nombreComment }}</span>
+                                                                                            <img src="../medias/icon/reactions/coment.png" alt="coment icon" height="25" class="reaction Comments" >
+                                                                                        </div>
+
+                                                                                        <div class="com col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
+                                                                                            <span class="mont">{{ pub.nombreFolie }}</span>
+                                                                                            <img src="../medias/icon/reactions/like1.png" alt="like icon" height="25" class="Comments reaction {{ (pub.isLike == 0)? 'des' : 'true' }}">
+                                                                                        </div>
+
+                                                                                        <div class="ford col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
+                                                                                            <span class="mont">{{ pub.nombreLike }}</span>
+                                                                                            <img src="../medias/icon/reactions/sad.png" alt="sad icon" height="25" class="reaction des {{ (pub.isDoute == 0)? 'des' : 'true' }}">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--======-- reactions icons end --======-->
+                                                                        </div>
+
+                                                                        <!--======-- row article one block end --======-->
+                                                                    </div>
+
+                                                                    <!--------------------------------------------->
+                                                                    <!--  			 ARTICLE ONE BLOCK END 	 -->
+                                                                    <!-------------------------------------------->
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                    {% else %}
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="row" align="center">
+
+                                                            <!-------------------------------------------->
+                                                            <!--  			 ARTICLE ONE BLOCK  		-->
+                                                            <!-------------------------------------------->
+                                                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12" style="padding-top: 15px; background-color: white;  padding-bottom: 15px; margin-bottom: 30px;">
+
+                                                                <div class="row">
+                                                                    <!--======-- media container (image) --======-->
+                                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <center>
+                                                                            <img src="../medias/images/aucuneP.gif" class="img-responsive"/>
+                                                                        </center>
+                                                                    </div>
+                                                                    <!--======-- poster's profil picture and name container--======-->
+                                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 13px; cursor: pointer;">
+                                                                                <img src="../medias/icon/user profil/africa/userGirl05.jpg" height="40" width="40" style="border-radius: 50%;">
+                                                                            </div>
+
+                                                                            <div class="name-profils-infos col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 col-xs-pull-2 col-sm-pull-2 col-md-pull-2 col-lg-pull-2 col-xl-pull-2" style="margin-top: 4px; margin-left: -70px;">
+                                                                                <blockquote>
+                                                                                    <p style="font-weight: bold; font-size: 12px;">Evelyne Anguy</p>
+                                                                                    <small style="font-size: 10px;">Il y a 1 jour</small>
+                                                                                </blockquote>
+                                                                            </div>
+
+                                                                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-push-4 col-sm-push-4 col-md-push-4 col-lg-push-4 col-xl-push-4" style="margin-top: 4px; margin-left: 6px; cursor: pointer;">
+                                                                                <img src="../medias/icon/logo/menu.png" height="40" width="40">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!--======-- text container --======-->
+                                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <p style="font-size: 13px;">
+                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia, massa porta ornare accumsan, est odio feugiat libero, at posuere enim
+                                                                            eros non eros. Pellentesque nec iaculis lacus. Vestibulum vel efficitur justo. Etiam laoreet rutrum metus. Fusce eget lorem vel quam convallis mattis
+                                                                            ac sed ipsum. Nunc dictum aliquam libero, eu feugiat justo. Aliquam pellentesque nisl vitae elit lacinia tempor. Cras quis tellus id purus dapibus scelerisque ac
+                                                                            at sem. Curabitur laoreet quam quis massa tincidunt, et fringilla urna placerat. Cras iaculis erat sem, aliquam varius magna facilisis vitae.
+                                                                        </p>
+                                                                    </div>
+
+                                                                    <!--======-- reactions icons --======-->
+                                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 col-xs-push-8 col-sm-push-8 col-md-push-8 col-lg-push-8 col-xl-push-8">
+                                                                                <div class="row">
+                                                                                    <div class="coments col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                        <img src="../medias/icon/reactions/coment.png" alt="coment icon" height="25" id="coment_icon" style="border: 2px solid white; border-radius: 50%; right: 32%; position: absolute; cursor: pointer;">
+                                                                                    </div>
+
+                                                                                    <div class="com col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                        <img src="../medias/icon/reactions/like1.png" alt="like icon" height="25" id="like_icon" style="border: 2px solid white; border-radius: 50%;right: 85%; position: absolute; cursor: pointer;">
+                                                                                    </div>
+
+                                                                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                                                        <img src="../medias/icon/reactions/sad.png" alt="sad icon" height="25" id="sad_icon" style="border: 2px solid white; border-radius: 50%;right: 133%; position: absolute; cursor: pointer;">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--======-- reactions icons end --======-->
+                                                                    </div>
+
+                                                                    <!--======-- row article one block end --======-->
+                                                                </div>
+
+                                                                <!--------------------------------------------->
+                                                                <!--  			 ARTICLE ONE BLOCK END 	 -->
+                                                                <!-------------------------------------------->
+                                                            </div>
+                                                            {% endif %}
+                                                        </div>
+                                                        <!-- Grid row -->
+                                                    </div>
+                                        </section>
+                                        <!-- Section: Social card with video-->
+                                    </div>
+                                </div>
+                                <div class="card text-center z-depth-2 boxNone none" id="galler">
+                                    <div class="row">
+                                        {% if info.gallery != "" %}
+
+                                            {% for pub in info.gallery %}
+                                                {% if pub.file1 != undefined %}
+                                                    {% set foo111 = pub.file1|split('.') %}
+                                                    {% if foo111[foo111|length - 1] == "jpeg" or foo111[foo111|length - 1] == "JPEG" or foo111[foo111|length - 1] == "jpg" or foo111[foo111|length - 1] == "JPG"  or foo111[foo111|length - 1] == "png" or foo111[foo111|length - 1] == "PNG" or foo111[foo111|length - 1] == "gif" or foo111[foo111|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            <a href="../medias/images/{{ pub.file1 }}" class="sb">
+                                                                <figure>
+                                                                    <img src="../medias/images/{{ pub.file1 }}" alt=" " class="img-fluid" />
+                                                                </figure>
+                                                            </a>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endif %}
+                                                {% if pub.file2 != undefined %}
+                                                    {% set foo211 = pub.file2|split('.') %}
+                                                    {% if foo211[foo211|length - 1] == "jpeg" or foo211[foo211|length - 1] == "JPEG" or foo211[foo211|length - 1] == "jpg" or foo211[foo211|length - 1] == "JPG"  or foo211[foo211|length - 1] == "png" or foo211[foo211|length - 1] == "PNG" or foo211[foo211|length - 1] == "gif" or foo211[foo211|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            <a href="../medias/images/{{ pub.file2 }}" class="sb">
+                                                                <figure>
+                                                                    <img src="../medias/images/{{ pub.file2 }}" alt=" " class="img-fluid" />
+                                                                </figure>
+                                                            </a>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endif %}
+                                                {% if pub.file3 != undefined %}
+                                                    {% set foo311 = pub.file3|split('.') %}
+                                                    {% if foo311[foo311|length - 1] == "jpeg" or foo311[foo311|length - 1] == "JPEG" or foo311[foo311|length - 1] == "jpg" or foo311[foo311|length - 1] == "JPG"  or foo311[foo311|length - 1] == "png" or foo311[foo311|length - 1] == "PNG" or foo311[foo311|length - 1] == "gif" or foo311[foo311|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file3 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file3 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+                                                {% if pub.file4 != undefined %}
+                                                    {% set foo411 = pub.file4|split('.') %}
+                                                    {% if foo411[foo411|length - 1] == "jpeg" or foo411[foo411|length - 1] == "JPEG" or foo411[foo411|length - 1] == "jpg" or foo411[foo411|length - 1] == "JPG"  or foo411[foo411|length - 1] == "png" or foo411[foo411|length - 1] == "PNG" or foo411[foo411|length - 1] == "gif" or foo411[foo411|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file4 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file4 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+
+                                                {% if pub.file5 != undefined %}
+                                                    {% set foo511 = pub.file5|split('.') %}
+                                                    {% if foo511[foo511|length - 1] == "jpeg" or foo511[foo511|length - 1] == "JPEG" or foo511[foo511|length - 1] == "jpg" or foo511[foo511|length - 1] == "JPG"  or foo511[foo511|length - 1] == "png" or foo511[foo511|length - 1] == "PNG" or foo511[foo511|length - 1] == "gif" or foo511[foo511|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file5 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file5 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+
+                                                {% if pub.file6 != undefined %}
+                                                    {% set foo611 = pub.file6|split('.') %}
+                                                    {% if foo611[foo611|length - 1] == "jpeg" or foo611[foo611|length - 1] == "JPEG" or foo611[foo611|length - 1] == "jpg" or foo611[foo611|length - 1] == "JPG"  or foo611[foo611|length - 1] == "png" or foo611[foo611|length - 1] == "PNG" or foo611[foo611|length - 1] == "gif" or foo611[foo611|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file6 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file6 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+
+                                                {% if pub.file7 != undefined %}
+                                                    {% set foo711 = pub.file7|split('.') %}
+                                                    {% if foo711[foo711|length - 1] == "jpeg" or foo711[foo711|length - 1] == "JPEG" or foo711[foo711|length - 1] == "jpg" or foo711[foo711|length - 1] == "JPG"  or foo711[foo711|length - 1] == "png" or foo711[foo711|length - 1] == "PNG" or foo711[foo711|length - 1] == "gif" or foo711[foo711|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file7 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file7 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+
+                                                {% if pub.file8 != undefined %}
+                                                    {% set foo811 = pub.file8|split('.') %}
+                                                    {% if foo811[foo811|length - 1] == "jpeg" or foo811[foo811|length - 1] == "JPEG" or foo811[foo811|length - 1] == "jpg" or foo811[foo811|length - 1] == "JPG"  or foo811[foo811|length - 1] == "png" or foo811[foo811|length - 1] == "PNG" or foo811[foo811|length - 1] == "gif" or foo811[foo811|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file8 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file8 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+                                                {% if pub.file9 != undefined %}
+                                                    {% set foo911 = pub.file9|split('.') %}
+                                                    {% if foo911[foo911|length - 1] == "jpeg" or foo911[foo911|length - 1] == "JPEG" or foo911[foo911|length - 1] == "jpg" or foo911[foo911|length - 1] == "JPG"  or foo911[foo911|length - 1] == "png" or foo911[foo911|length - 1] == "PNG" or foo911[foo911|length - 1] == "gif" or foo911[foo911|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file9 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file9 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+                                                {% if pub.file10 != undefined %}
+                                                    {% set foo011 = pub.file10|split('.') %}
+                                                    {% if foo011[foo011|length - 1] == "jpeg" or foo011[foo011|length - 1] == "JPEG" or foo011[foo011|length - 1] == "jpg" or foo011[foo011|length - 1] == "JPG"  or foo011[foo011|length - 1] == "png" or foo011[foo011|length - 1] == "PNG" or foo011[foo011|length - 1] == "gif" or foo011[foo011|length - 1] == "GIF" %}
+                                                        <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        <a href="../medias/images/{{ pub.file10 }}" class="sb">
+                                                            <figure>
+                                                                <img src="../medias/images/{{ pub.file10 }}" alt=" " class="img-fluid" />
+                                                            </figure>
+                                                        </a>
+                                                        </div>{% endif %}
+                                                {% endif %}
+                                                <!-- A continuer jusqu'au 19 files-->
+                                            {% endfor %}
+                                        {% else %}
+                                            <div class="card">
+
+                                                <!-- Card image -->
+                                                <div class="view overlay">
+                                                    <img class="card-img-top" style="min-width: 100%; height: 450px" src="medias/images/71.jpg" alt="Card image cap">
+                                                    <a href="#!">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                    </a>
+                                                </div>
+
+                                                <!-- Card content -->
+                                                <div class="card-body" align="center" style="background: #fff;">
+
+                                                    <!-- Title -->
+                                                    <h4 class="card-title">Aucune Gallery Pour le moment 👨🏼‍💻</h4>
+                                                    <!-- Text -->
+
+                                                </div>
+
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="card text-center z-depth-2 boxNone none" id="abou"></div>
+                                <div class="card text-center z-depth-2 boxNone none" id="aucune"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                        <div class="row">
+                            <div>
+                                <!-- Card -->
+                                <div class="col-md-12 m-b-20" id="recommandation_profil">
+                                    {% for pub in info.recomandation %}
+                                        <div class="card noBack">
+                                            <!-- Card image -->
+                                            <div class="la_carte">
+                                                <div class="view overlay">
+                                                    <img class="card-img-top recommandation_img_profil" src="medias/icon/user%20profil/africa/{{ pub.profil }}" alt="">
+                                                    <a href="/ownL/{{ pub.emailcrypt }}">
+                                                        <div class="mask rgba-white-slight"></div>
+                                                    </a>
+                                                </div>
+                                                <div class="frontend_rec">
+                                                    <div class="card-body text-center">
+
+                                                        <!-- Title -->
+                                                        <h4 class="card-title"><strong>{{ pub.nom }}</strong></h4>
+                                                        <!-- Subtitle -->
+                                                        <h6 class="font-weight-bold indigo-text py-2">{{ pub.profession }}</h6>
+                                                        <!-- Text -->
+                                                        <p class="card-text">{{ pub.content }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="backend_rec">
+                                                    <div class="card-body text-center">
+                                                        <form id="contact" name="contact-form" action="" method="POST">
+                                                            <div class="row">
+                                                                <div class="col-md-1">
+                                                                    <div class="view overlay">
+                                                                        <img class="img_comment" src="medias/icon/user%20profil/arabe/{{ pub.profil }}" alt="Card image cap">
+                                                                        <a href="/ownL/{{ pub.emailcrypt }}">
+                                                                            <div class="mask rgba-white-slight"></div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-11">
+                                                                    <div align="center">
+                                                                        <p class="cat-member">{{ pub.name }}</p>
+                                                                    </div>
+                                                                    <div align="right">
+                                                                        <small class="cat-member">
+                                                                            <script>horodatage("{{ pub.register }}")</script></small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <!-- Card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!------------------------------------------------->
+    <!-- THIRD BAR CONTAINER (chat bar fixed bottom) -->
+    <!-------------------------------------------------->
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" id="blue-bar-container-chat">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <nav class="navbar navbar-default navbar-fixed-bottom" id="navbar-chat" role="navigation" style="overflow-y: scroll;">
+                    <div style="width: 100%; height: 100%; background-color: ;">
+                        <div style="width: 300%; height: 100%; overflow-y: scroll; margin-left: 0.5%">
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userBoy09.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Gilles Quentin Gourou
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/arabe/userGirl0.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Fatim Myriam Sanogo
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/arabe/userGirl13.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Karidjatou Awa Mandy
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/arabe/userBoy02.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Emir Mokthar Alioun
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/blanc/userBoy05.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Severino Andrès Zabim
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/blanc/userGirl04.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Marie Claire Delafausse
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/blanc/userGirl3.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Sylvienne Jean Zigler
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/blanc/userBoy8.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Antoine Faure Leonard
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl05.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Baunom Eve Gnepo
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="medias/icon/user profil/africa/userGirl25.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Stéphanie André N'cho
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl09.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Andréa Téré Christelle
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="medias/icon/user profil/africa/userBoy18.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Lionel Dogny Kokora
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl06.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Manuella Carine Koua
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl02.jpeg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Regina Elvyra Loba
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl07.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Carine Gisèle Kouamé
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl08.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Armelle Cynthia Diako
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl29.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Emmanuelle Ma Goh
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userChildBoy0.jpeg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Kyllian Samuel N'tep
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="dixineuvieme-friend-chat">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userBoy10.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Rochel Ryu Wilfried
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="vingtieme-friend-chat">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userBoy23.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Etienne Yahou Dibi
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="vingtetunieme-friend-chat">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userGirl08.jpg" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Armelle Cynthia Diako
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="vigntdeuxiieme-friend-chat">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+                                        <img src="../medias/icon/user profil/africa/userBoy18.png" height="26" width="26" class="friend-chat-icon">
+                                    </div>
+
+                                    <div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        Lionel Dogny Kokora
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------------------->
+    <!-- THIRD BAR CONTAINER END(chat bar fixed bottom) -->
+    <!---------------------------------------------------->
+
+
+    <!------------------------------------------------->
+    <!-- 			CHAT'S COMMENTS COVER 			 -->
+    <!------------------------------------------------->
+    <div class="comments-cover col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #273746; width: 100%; height: 100%; background-size: cover; position: fixed; left: 0%; top: 0px; opacity: .6; display: none">
+
+        <!------------------------------------------------->
+        <!-- 			CHAT'S COMMENTS END COVER		 -->
+        <!------------------------------------------------->
+    </div>
+
+    <!------------------------------------------------->
+    <!-- 			  INBOX CHAT CONTAINER           -->
+    <!------------------------------------------------->
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-push-9 col-sm-push-9 col-md-push-9 col-lg-push-9 col-xl-push-9 inbox-block">
+        <div class="row">
+            <!--======-- inbox container --======-->
+            <div class="col-lg-12" style="">
+                <div class="row">
+                    <!--======-- div top with #273746 background color --======-->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: linear-gradient(70deg, #336699, #3D952B); opacity: .9; height: 180px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                        <div class="row">
+                            <!--======-- exit and settings chat container --======-->
+                            <div class="container-icons-settings col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 col-xs-push-7 col-sm-push-7 col-md-push-7 col-lg-push-7 col-xl-push-7" style="margin-top: 5px;">
+                                <div class="row">
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <img src="../medias/icon/icon services/parametres/settings.png" height="17" class="setting-chat-icon">
+                                    </div>
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 closeChat" style="padding-top: 1px;">
+                                        <img src="../medias/icon/icon services/logout/cloz.png" height="18" class="logout-chat-icon" title="log out">
+                                    </div>
+
+                                </div>
+                                <!--======-- exit and settings chat container end --======-->
+                            </div>
+
+                            <!--======-- text of last chat --======-->
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="row">
+
+                                    <div class="last-chat-text col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <center><h4>Vos dernières causeries</h4></center>
+                                    </div>
+
+                                </div>
+                                <!--======-- text of last chat end --======-->
+                            </div>
+
+                            <!--======-- last chat profil's container --======-->
+                            <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11 col-xs-push-1 col-sm-push-1 col-md-push-1 col-lg-push-1 col-xl-push-1" style="margin-left: 10px; margin-top: 10px;">
+                                <div class="row">
+
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div class="row" style="cursor: pointer;">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <img class="friend-icon-last-chat" src="../medias/icon/user profil/africa/{{ user.profil }}">
+                                            </div>
+
+                                            <div class="friend-name-last-chat-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <p class="friend-name-last-chat">Evelyne</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div class="row" style="cursor: pointer;">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <img class="friend-icon-last-chat" src="medias/icon/user profil/africa/userGirl07.jpg" id="second-friend-last-chat">
+                                            </div>
+
+                                            <div class="friend-name-last-chat-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <p class="friend-name-last-chat">Cynthia</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div class="row" style="cursor: pointer;">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <img class="friend-icon-last-chat" src="medias/icon/user profil/africa/{{ user.profil }}">
+                                            </div>
+
+                                            <div class="friend-name-last-chat-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <p class="friend-name-last-chat">Quentin</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--======-- last chat profil's container --======-->
+                            </div>
+
+                        </div>
+                        <!--======-- div top with #273746 background color end --======-->
+                    </div>
+
+                    <!--======-- sent and received messages container --======-->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: white; height: 190px;">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 190px; overflow-x: hidden; overflow-y: scroll;">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 300%; margin-left: -13px; width: 150%; ">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--======-- sent and received messages container end --======-->
+                    </div>
+
+                    <!--======-- input message --======-->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: white; height: 45px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top: 1px solid silver;">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin-left: 2px;">
+                                <input type="text" class="form-control" id="" aria-describedby="textHelp" placeholder="Envoyer un message..." style="border: none; margin-left: -14px; height: 42px; width: 125%; font-size: 0.8em;">
+                            </div>
+
+                            <div class="emoji-chat-container col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <img class="emoji-chat-icon" src="../medias/icon/reactions/emoji.png">
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <img class="send-chat-icon" src="../medias/icon/reactions/sent.png">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--======-- input message end --======-->
+                    </div>
+                </div>
+                <!--======-- inbox container end --======-->
+            </div>
+        </div>
+        <!------------------------------------------------->
+        <!-- 			INBOX CHAT CONTAINER END         -->
+        <!------------------------------------------------->
+    </div>
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-push-9 col-sm-push-9 col-md-push-9 col-lg-push-9 col-xl-push-9 inbox-block box-block">
+        <div class="row">
+            <!--======-- inbox container --======-->
+            <div class="col-lg-12" style="">
+                <div class="row">
+                    <!--======-- div top with #273746 background color --======-->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: linear-gradient(70deg, #336699, #3D952B); opacity: .9; height: 100px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                        <div class="row">
+                            <!--======-- exit and settings chat container --======-->
+                            <div class="container-icons-settings col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 col-xs-push-7 col-sm-push-7 col-md-push-7 col-lg-push-7 col-xl-push-7" style="margin-top: 5px;">
+                                <div class="row">
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <img src="../medias/icon/icon services/parametres/settings.png" height="17" class="setting-chat-icon">
+                                    </div>
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 closeChat" style="padding-top: 1px;">
+                                        <img src="../medias/icon/icon services/logout/cloz.png" height="18" class="logout-chat-icon" title="log out">
+                                    </div>
+
+                                </div>
+                                <!--======-- exit and settings chat container end --======-->
+                            </div>
+
+
+                            <!--======-- last chat profil's container --======-->
+                            <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11 col-xs-push-1 col-sm-push-1 col-md-push-1 col-lg-push-1 col-xl-push-1" style="margin-left: 10px; margin-top: 10px;">
+                                <div class="row" align="center">
+
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <div class="row" style="cursor: pointer;">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <img class="friend-icon-last-chat" src="../medias/icon/user profil/africa/{{ profil.profil }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <div class="friend-name-last-chat-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <p class="friend-name-last-chat">{{ profil.nom }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--======-- last chat profil's container --======-->
+                            </div>
+
+                        </div>
+                        <!--======-- div top with #273746 background color end --======-->
+                    </div>
+
+                    <!--======-- sent and received messages container --======-->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: white; height: 280px;">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 280px; overflow-x: hidden; overflow-y: scroll;">
+                                <div id="core" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px; margin-left: -13px">
+                                    <div class="team1">
+                                        <div class="col-xs-4 team-img1">
+                                            <img src="../medias/icon/user%20profil/africa/{{ profil.profil }}" alt="" />
+                                        </div>
+                                        <div class="col-xs-8 team-info" data-animate-scroll='{"x": "100","y":"100","rotation":"-25","alpha": "0","duration": "1.5", "scaleX": "0", "scaleY": "0"}'>
+                                            <p>Salu Frère comment tu vas</p>
+                                            <div class="social-icons">
+                                                <a href="#"><i class="fa fa-dashcube" aria-hidden="true"></i></a>
+                                            </div>
+                                            <div class="timesTchat" align="right">
+                                                <small>il y a 2H</small>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--======-- sent and received messages container end --======-->
+                    </div>
+
+                    <!--======-- input message --======-->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: white; height: 45px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top: 1px solid silver;">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin-left: 2px;">
+                                <input type="text" class="form-control" id="tchatInt" aria-describedby="textHelp" placeholder="Envoyer un message..." style="border: none; margin-left: -14px; height: 42px; width: 125%; font-size: 0.8em;">
+                            </div>
+
+                            <div class="emoji-chat-container col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <img class="emoji-chat-icon" src="../medias/icon/reactions/emoji.png">
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <img class="send-chat-icon" id="sendM" src="../medias/icon/reactions/sent.png">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--======-- input message end --======-->
+                    </div>
+                </div>
+                <!--======-- inbox container end --======-->
+            </div>
+        </div>
+        <!------------------------------------------------->
+        <!-- 			INBOX CHAT CONTAINER END         -->
+        <!------------------------------------------------->
+    </div>
+    <!------------------------------------------------->
+    <!-- 			   POSTS COMMENTS           	 -->
+    <!------------------------------------------------->
+    <div class="posts-comments-great-container col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9 col-xs-push-3 col-sm-push-3 col-md-push-3 col-lg-push-3 col-xl-push-3" style="display: none;">
+        <div class="row">
+            <div class="comments-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+
+                    <!------------------------------------------------->
+                    <!-- 			 TITLE POSTS COMMENTS            -->
+                    <!------------------------------------------------->
+                    <div class="title-answer-text col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4><center> Repondre à Mondesir Coré </center></h4>
+                        <!------------------------------------------------->
+                        <!-- 		    TITLE POSTS COMMENTS END         -->
+                        <!------------------------------------------------->
+                    </div>
+
+                    <!------------------------------------------------------------>
+                    <!--   POST-COMMENTED WITH POSTER PROFIL AND THE POST       -->
+                    <!------------------------------------------------------------>
+                    <div class="poster-profil-with-commmented-post col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-top: 36px;">
+                                <img src="../medias/icon/user profil/africa/userBoy09.jpg" height="40" width="40" style="border-radius: 50%; margin-left: 16px; border: 1px solid white;">
+                            </div>
+
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 24px; margin-left: -80px;">
+                                <blockquote>
+                                    <p style="font-weight: bold; font-size: 12px; color: white; width: 160%;">Mondesir Coré</p>
+                                    <small style="font-size: 10px; color: white;">il y a 2 jours</small>
+                                </blockquote>
+                            </div>
+
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="height: 110px; width: 30%; margin-left: 140px; margin-top: 3px;">
+                                <div class="row">
+                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                                        <center>
+                                            <img src="../medias/images/benevoles.jpg" class="img-responsive" style="opacity: .5; margin-left: 15px; margin-bottom: 5px;"/>
+                                        </center>
+                                    </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <small style="font-size: 9px; color: silver; line-height: 10px;">
+                                            <center>
+                                                et fringilla urna placerat. Cras et fringilla urna placerat. Cras urna placerat. Cras......
+                                            </center>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------>
+                        <!--  POST-COMMENTED WITH POSTER PROFIL AND THE POST END    -->
+                        <!------------------------------------------------------------>
+                    </div>
+
+                    <!------------------------------------------------->
+                    <!-- 			  SEND MESSAGE INPUT          	 -->
+                    <!------------------------------------------------->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left: -2.5%;">
+                        <input type="text" class="form-control" id="" aria-describedby="textHelp" placeholder="Ecrire un commentaire..." style="border-radius: none; height: 48px; width: 105.5%; font-size: 1em; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------------->
+        <!-- 			   POSTS COMMENTS           	 -->
+        <!------------------------------------------------->
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/popper.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/js/fontawesome-all.js"></script>
+    <script src="../bootstrap/js/mdb.js"></script>
+    <script src="../bootstrap/js/scripts_actualite.js"></script>
+    <script src="../bootstrap/js/swipe.js"></script>
+    <script src="../bootstrap/js/jquery.pan.min.js"></script>
+    <script src="../bootstrap/js/jquery.prettyPhoto.js"></script>
+    <script src="../bootstrap/js/scriptR.js"></script>
+    <script>
+        //j'utilise ce script pour fixer mes remmandations
+        var rc_pr = document.querySelector('#recommandation_profil');
+        var prev = document.querySelector('#prev');
+
+        function scrolled() {
+            var cuurentScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            rc_pr.className = (cuurentScroll >= prev.clientHeight + 197) ? "fixed" : "";
+        }
+        addEventListener("scroll", scrolled, false);
+        $(document).ready(function(){
+            $('#tools').tooltip({ boundary: 'window' })
+            $('.la_carte').on("click", function () {
+                $(this).addClass("tourne");
+            });
+            $('.la_carte').on("dblclick",function () {
+                $(this).removeClass("tourne");
+            });
+
+
+            $('.img-publication-int').click(function(){
+                $('#test').removeClass('inv').addClass('animated slideInDown slower');
+                $(this).addClass('inv');
+            });
+            $('#context').keyup(function(){
+                $('.reset').find('li button').removeClass('inv');
+            });
+            $('#abs').click(function(){
+                $('#test').removeClass('slideInDown').addClass('bounceOutRight');
+                setTimeout(function(){
+                    $('#test').addClass('inv');
+                },900)
+
+            });
+
+            $(".friend-chat-container").click(function(){
+                $(".inbox-block").fadeIn(1000);
+            });
+
+            $(".closeChat").click(function(){
+                $(".inbox-block").fadeOut(1000);
+            });
+
+            $("#tchat_icon").click(function(){
+                $(".inbox-block.box-block").fadeIn(1000);
+            });
+
+            $(".closeChat").click(function(){
+                $(".inbox-block.box-block").fadeOut(1000);
+            });
+            $('.viewEngine').pan();
+            var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    },
+                },
+            });
+        })
+    </script>
+    </body>
+</html>
