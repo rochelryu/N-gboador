@@ -50,7 +50,7 @@ let User = class {
 
     static getAllUserLocal(lieu,user_id){
         return new Promise((next) =>{
-            db.query("SELECT CONCAT(name, ' ', firstname) nom, profil, emailcrypt FROM user WHERE lieu REGEXP ? AND id != ?", [lieu, parseInt(user_id, 10)])
+            db.query("SELECT CONCAT(name, ' ', firstname) nom, profil, email, emailcrypt FROM user WHERE lieu REGEXP ? AND id != ?", [lieu, parseInt(user_id, 10)])
                 .then((result) =>{
                     next(result);
                 }).catch((error) => {
@@ -191,6 +191,8 @@ let User = class {
                 })
         })
     }
+
+   
 
     static getTwoLastRecommandation(emailcrypt){
         return new Promise((next)=>{
@@ -498,4 +500,33 @@ let User = class {
                 }).catch((error) =>next(error));
         })
     }
+     static setRecommandation(emailcrypt1, emailcrypt2, content){
+        return new Promise((next)=>{
+             db.query("SELECT id FROM user WHERE emailcrypt = ?", [emailcrypt1])
+                .then((results)=>{
+                    if (results[0] != undefined){
+                         db.query("SELECT id FROM user WHERE emailcrypt = ?", [emailcrypt2])
+                            .then((result)=>{
+                                if (result[0] != undefined){
+                                    console.log(results[0].id + '  ' + result[0].id)
+                                    db.query("INSERT INTO recommandation(userV_id,userC_id,content) VALUES (?,?,?)", [result[0].id,results[0].id, content])
+                                    .then((ress)=>{
+                                        next(ress)
+                                    }).catch((error)=>{
+                                        next(error)
+                                    })
+                                }
+                                else{
+                                    next(new Error('Aucun'))
+                                }
+                            }).catch((err)=>{
+                                next(err)
+                            })
+                    }
+                    else{
+                        next(new Error('Aucun'))
+                    }
+                }).catch((err)=>{next(err)})
+    })
+     }
 }

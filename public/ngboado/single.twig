@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--------------------------------------------->
+		<!-- 		       META'S BALISES            -->
+		<!--------------------------------------------->
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<!--------------------------------------------->
+		<!-- 		      CSS'S BALISES            	 -->
+		<!--------------------------------------------->
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/style_actualite.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/swiper.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/jquery.pan.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/smoothbox.css">
+		<!--------------------------------------------->
+		<!-- 	    IMPORTED CSS'S BALISES           -->
+		<!--------------------------------------------->
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+		<!--------------------------------------------->
+		<!-- 	  GOOGLE FONT IMPORTED BALISES       -->
+		<!--------------------------------------------->
+		<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+		<!--------------------------------------------->
+		<!-- 		   LOGO  NGBOADO ICON            -->
+		<!--------------------------------------------->
+		<link rel="icon" type="image/png" href="../medias/icon/logo/logo.png" />
+		<!--------------------------------------------->
+		<!-- 		        PAGES'S TITLE            -->
+		<!--------------------------------------------->
+		<title>N'gboadô | Accueil</title>
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+            function hideURLbar(){ window.scrollTo(0,1); }
+            function formatxSmall(data) {
+                data = data.substring(0, 30);
+                document.write(data);
+            }
+            function formatmedium(data) {
+                data = data.substring(0, 100);
+                document.write(data+'...');
+            }
+            function horodatage(date) {
+                var post = new Date(date).getTime();
+                var month = new Date(date).getMonth();
+                var day = new Date(date).getDay();
+                var year = new Date(date).getFullYear();
+                var hour = new Date(date).getHours();
+                var min = new Date(date).getMinutes();
+                var atMoment = new Date().getTime();
+                post /= 1000;
+                atMoment /= 1000;
+                var fior = parseInt((atMoment - post), 10);
+                if (fior >= 86400) {
+                    if (parseInt((fior/86400), 10) == 1){
+
+                        document.write("Hier, " + hour + "H:"+ min +"min");
+                    }
+                    else{
+                        document.write("Le " + day +"-"+ month +"-"+ year +", "+ hour + "H:"+ min +"min");
+                    }
+                }
+                else if(fior >= 3600 && fior < 86400){
+                    if(parseInt((fior/3600), 10) == 1){
+                        document.write("il y a " + parseInt((fior/3600), 10) + " Hr");
+                    }
+                    else{
+                        document.write("il y a " + parseInt((fior/3600), 10) + " Hrs");
+                    }
+                }
+                else if(fior >= 60 && fior < 3600){
+                    if(parseInt((fior/60), 10) == 1)
+                        document.write("il y a " + parseInt((fior/60), 10) + " Min");
+                    else
+                        document.write("il y a " + parseInt((fior/60), 10) + " Mins");
+                }
+                else{
+                    if (fior == 0){
+                        document.write("A l'instant");
+                    }
+                    document.write("il y a " + fior + " Sec");
+                }
+            }
+        </script>
+	</head>
+
+	<!--------------------------------------------->
+	<!-- 		    BOODY'S BEGINNING            -->
+	<!--------------------------------------------->
+	<body style="">
+
+		<!--------------------------------------------->
+		<!-- 		    GLOBAL CONTAINER             -->
+		<!--------------------------------------------->
+
+		<div class="container-fluid" id="Global-container">
+			<div class="row">
+				<!--------------------------------------------->
+				<!--    MENUS CONTAINER (two firsts bars)    -->
+				<!--------------------------------------------->
+
+				<div class="container-fluid navigation">
+					<div class="row navigation">
+						<!--======-- red bar container --======-->
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="red-bar-container">
+							<nav class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+								<div class="row">
+									<!--======--green suscribe button container--======-->
+									<div class="active-member-button col-xl-3 col-lg-3 col-md-3 col-sm-2 col-xs-2  col-xs-3 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xl-offset-1" id="container-button">
+										<button class="btn btn-danger">DEVIENS UN MEMBRE ACTIF</button>
+									</div>
+
+									<!--======--parents icons container--======-->
+									<div class="icons-services-icons col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="">
+										<div class="row">
+
+											<!--======--notification icons container--======-->
+											<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+												<div class="notification-icon">
+													<img src="../medias/icon/icon services/notification/notification1.png" title="notifications" height="25" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+												</div>
+
+												<div class="row dropright-notifications">
+
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<img src="../medias/icon/icon services/notification/message4.png" title="messages" height="22" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+														</div>
+
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<img src="../medias/icon/icon services/notification/friend.png" title="relations" height="22" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+														</div>
+
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<img src="../medias/icon/icon services/notification/testimony.jpg" title="recommandations" height="22" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+														</div>
+
+												</div>
+
+											<!--======--notification icons container--======-->
+											</div>
+
+											<!--======--shop icons container--======-->
+											<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+												<div class="shop-icon">
+													<img src="../medias/icon/icon services/shop/shop5.png" height="25" title="n'gboadô Shopping" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+												</div>
+
+												<div class="row dropright-shop">
+
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<img src="../medias/icon/icon services/shop/music1.png" height="22" title="plateforme de musique" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+														</div>
+
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<img src="../medias/icon/icon services/shop/events1.png" height="22" title="events market" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+														</div>
+
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<img src="../medias/images/add.png" height="22" title="plus" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+														</div>
+
+												</div>
+
+											<!--======--shop icons container--======-->
+											</div>
+
+											<!--======--services icons container--======-->
+											<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+													<div class="services-icon">
+														<img src="../medias/icon/icon services/services/services.jpg" height="25" title="services" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+													</div>
+
+													<div class="row dropright-services">
+
+															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																	<img src="../medias/icon/icon services/services/just.png" height="22" title="assistance juridique" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+															</div>
+
+															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																	<img src="../medias/images/add.png" height="22" title="plus" style="border: 2px solid white; border-radius: 50%; cursor: pointer;">
+															</div>
+
+													</div>
+
+
+											<!--======--service icons container--======-->
+											</div>
+
+										</div>
+									<!--======--parents icons container end--======-->
+									</div>
+
+									<!--======--collapse small device icon--======-->
+									<div class="navbar-header" style="position: relative; left: -2%;">
+										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#monMenu">
+											<span class="glyphicon glyphicon glyphicon-th"></span>
+										</button>
+									<!--======--collapse small device icon end--======-->
+									</div>
+
+									<!--======-- navbar-collapse of droopdown small device --======-->
+									<div class="collapse navbar-collapse" id="monMenu">
+
+									<!--======-- navbar-collapse of droopdown small device end--======-->
+									</div>
+
+								</div>
+							</nav>
+
+						<!--======-- red bar container end--======-->
+						</div>
+
+						<!--======-- second bar container (#CB4335 navbar) --======-->
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" id="blue-bar-container">
+
+							<nav class="navbar navbar-default navbar-fixed-top" id="navbar-2" role="navigation" style="position: fixed; top: 69px;">
+								<!--======--logo icon--======-->
+								<div class="logo-icon-container col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xl-offset-1" style="padding-left: 60px; margin-top: 4px; margin-left: 9%; ">
+									<div class="row">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<img src="../medias/icon/logo/logo.png" alt="logo icon" id="logo-icon" style="border-radius: 50%; border: 1px solid #28B463; width: 42px; height: 42px;">
+										</div>
+									</div>
+								<!--======--logo icon end--======-->
+								</div>
+
+								<!--======--search input container--======-->
+								<div class="search-input-div col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-left: 10px; margin-top: 10px;">
+									<div class="row">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div id="container_search_input" style="">
+												<form action="" class="form"> <input type="search" class="input" placeholder="Rechercher membre | communauté ..."> <span class="glyphicon glyphicon-search"></span> </form>
+											</div>
+
+										</div>
+									</div>
+								<!--======--search input container end --======-->
+								</div>
+
+								<!--======--home, setting and profils icons --======-->
+								<div class="home-icons-container col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 col-xs-pull-1 col-sm-pull-1 col-md-pull-1 col-lg-pull-1 col-xl-pull-1" style=" margin-top: 13px; margin-left: 30px;">
+									<div class="row" class="">
+										<!--======-- home icon ---======-->
+										<div class="home-icon col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+											<img src="../medias/icon/icon services/services/home1.png" alt="home icon" height="25" id="home_icon" height="22" style="border-radius: 50%; border: 2px solid white; cursor: pointer;">
+										<!--======--home icon end --======-->
+										</div>
+
+										<!--======--profil icons --======-->
+										<div class="profil-icon col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+											<a href="/profil"><img src="../medias/icon/user profil/africa/{{ user.profil }}" alt="user icon" height="25" id="profil_icon" height="22" style="border-radius: 50%; border: 2px solid white; cursor: pointer;"></a>
+										<!--======--profil icons end --======-->
+										</div>
+
+										<!--======--setting icon --======-->
+										<div class="setting-icon col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+											<img src="../medias/icon/icon services/parametres/icone7.png" alt="parametre icon" height="26" id="parametre_icon" height="22" style="border-radius: 50%; border: 2px solid white; cursor: pointer;">
+										<!--======--setting icon end--======-->
+										</div>
+									</div>
+
+								<!--======--home, setting and profils icons end --======-->
+								</div>
+							</nav>
+
+						<!--======-- second bar container end (#CB4335 navbar) --======-->
+						</div>
+
+						<!------------------------------------------------->
+						<!-- THIRD BAR CONTAINER (chat bar fixed bottom) -->
+						<!------------------------------------------------->
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" id="blue-bar-container-chat">
+							<div class="row">
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+									<nav class="navbar navbar-default navbar-fixed-bottom" id="navbar-chat" role="navigation" style="overflow-y: scroll;">
+										<div style="width: 100%; height: 100%; background-color: ;">
+											<div style="width: 300%; height: 100%; overflow-y: scroll; margin-left: 0.5%">
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userBoy09.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Gilles Quentin Gourou
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/arabe/userGirl0.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Fatim Myriam Sanogo
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/arabe/userGirl13.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Karidjatou Awa Mandy
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/arabe/userBoy02.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Emir Mokthar Alioun
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/blanc/userBoy05.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Severino Andrès Zabim
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/blanc/userGirl04.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Marie Claire Delafausse
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/blanc/userGirl3.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Sylvienne Jean Zigler
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/blanc/userBoy8.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Antoine Faure Leonard
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl05.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Baunom Eve Gnepo
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl25.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Stéphanie André N'cho
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl09.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Andréa Téré Christelle
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userBoy18.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Lionel Dogny Kokora
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl06.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Manuella Carine Koua
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl02.jpeg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Regina Elvyra Loba
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl07.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Carine Gisèle Kouamé
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl08.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Armelle Cynthia Diako
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl29.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Emmanuelle Ma Goh
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userChildBoy0.jpeg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Kyllian Samuel N'tep
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="dixineuvieme-friend-chat">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userBoy10.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Rochel Ryu Wilfried
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="vingtieme-friend-chat">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userBoy23.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Etienne Yahou Dibi
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="vingtetunieme-friend-chat">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userGirl08.jpg" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Armelle Cynthia Diako
+														</div>
+													</div>
+												</div>
+
+												<div class="friend-chat-container col-xl-1 col-lg-1 col-md-1 col-sm-1" id="vigntdeuxiieme-friend-chat">
+													<div class="row">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6" style="margin-top: 7px;">
+															<img src="../medias/icon/user profil/africa/userBoy18.png" height="26" width="26" class="friend-chat-icon">
+														</div>
+
+														<div class="friend-chat-name col-xl-6 col-lg-6 col-md-6 col-sm-6">
+															Lionel Dogny Kokora
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</nav>
+								</div>
+							</div>
+						</div>
+
+					<!---------------------------------------------------->
+					<!-- THIRD BAR CONTAINER END(chat bar fixed bottom) -->
+					<!---------------------------------------------------->
+					</div>
+
+
+				<!--------------------------------------------->
+				<!--  MENUS CONTAINER (two firsts bars) END  -->
+				<!--------------------------------------------->
+				</div>
+
+				<!--------------------------------------------->
+				<!--  			STANDARD COVER IMAGE  		 -->
+				<!--------------------------------------------->
+				<div class="container-fluid" id="standard-cover-container">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-lg-xs">
+							<img src="../medias/images/cover4.jpg" class="img-responsive cover" width="100%" height="100%"/>
+						</div>
+					</div>
+				<!--------------------------------------------->
+				<!--  		STANDARD COVER IMAGE END  		 -->
+				<!--------------------------------------------->
+				</div>
+
+				<!--------------------------------------------->
+				<!--  			 BODY'S CONTAINER  		     -->
+				<!--------------------------------------------->
+				<div class="container-fluid" id="body-container">
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<!--------------------------------------------->
+								<!--  			 MEMBERS CATEGORIES  		 -->
+								<!--------------------------------------------->
+								<div class="col-xl-2 col-lg-2 col-md-2 col-sm-0 col-xs-0 categories-members" style="">
+									<div class="row">
+										<!--======-- funders members --======-->
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="cursor: pointer;">
+											<div class="container-categories-members">
+												<div class="row">
+													<!--======-- funders icon --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<center>
+															<img src="../medias/icon/user profil/admin/ambassadeur2.png" width="50" style="border-radius: 50%; border: 2px dashed white; margin-top: 35px;">
+														</center>
+													</div>
+													<!--======-- funders text --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<p class="members-text-funders-and-honors">
+															MEMBRES FONDATEURS
+														</p>
+													</div>
+												</div>
+											</div><br/>
+										<!--======-- funders members end --======-->
+										</div>
+
+										<!--======-- Honors members --======-->
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="cursor: pointer;">
+											<div class="container-categories-members">
+												<div class="row">
+													<!--======-- honors icon --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<center>
+															<img src="../medias/icon/user profil/admin/honor3.jpg" width="50" style="border-radius: 50%; border: 2px dashed white; margin-top: 35px;">
+														</center>
+													</div>
+													<!--======-- honors text --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<p class="members-text-funders-and-honors">
+															MEMBRES D'HONNEURS
+														</p>
+													</div>
+												</div>
+											</div><br/>
+										<!--======-- Honors members end --======-->
+										</div>
+
+										<!--======-- active members --======-->
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="cursor: pointer;">
+											<div class="container-categories-members">
+												<div class="row">
+													<!--======-- active icon --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<center>
+															<img src="../medias/icon/user profil/admin/sympathisant3.png" width="50" style="border-radius: 50%; border: 2px dashed white; margin-top: 25px;">
+														</center>
+													</div>
+													<!--======-- active text --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<p class="members-text-active-and-sympathizing">
+															MEMBRES ACTIFS
+														</p>
+													</div>
+
+													<!--======-- active subgroup (sous-group) --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<div class="row">
+															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<p class="subgroup-active-active">
+																	ACTIFS
+																</p>
+															</div>
+															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<p class="subgroup-active-ambassadors">
+																	AMBASSADEURS
+																</p>
+															</div>
+															<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																<p class="subgroup-active-ministers">
+																	MINISTRES
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div><br/>
+										<!--======-- active members end --======-->
+										</div>
+
+										<!--======-- sympathizing members --======-->
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="cursor: pointer;">
+											<div class="container-categories-members">
+												<div class="row">
+													<!--======-- sympathizing icon --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<center>
+															<img src="../medias/icon/user profil/admin/volunter2.png" width="50" style="border-radius: 50%; border: 2px dashed white; margin-top: 25px;">
+														</center>
+													</div>
+													<!--======-- sympathizing text --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<p class="members-text-active-and-sympathizing">
+															MEMBRES SYMPATHISANTS
+														</p>
+													</div>
+
+													<!--======-- sympathizing subgroup (sous-group) --======-->
+													<div class="subgroup-sympathizing-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<div class="row">
+															<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																<p class="subgroup-sympathizing-benevoles">
+																	BENEVOLES
+																</p>
+															</div>
+
+															<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																<p class="subgroup-sympathizing-mentors">
+																	MENTORS
+																</p>
+															</div>
+
+															<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																<p class="subgroup-sympathizing-volonteers">
+																	VOLONTAIRES
+																</p>
+															</div>
+
+															<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																<p class="subgroup-sympathizing-parrains">
+																	PARRAINS
+																</p>
+															</div>
+
+														</div>
+													<!--======-- sympathizing subgroup (sous-group) end --======-->
+													</div>
+												</div>
+											</div><br/>
+										<!--======-- sympathizing members end --======-->
+										</div>
+
+										<!------------------------------------------------->
+										<!-- 	   PUBLICITY CAROUSEL BOTTOM LEFT  		 -->
+										<!------------------------------------------------->
+										<div class="left-side-publicity-down col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+												<div class="row">
+
+													<!--======-- HR top friends suggestions --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<hr size="1" style="margin-bottom: 0.5px;"/>
+													</div>
+
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<h6 style="font-weight: bold;">PUBLICITE</h6>
+													</div>
+
+													<!--======-- HR top friends suggestions --======-->
+													<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+														<hr size="1" style="margin-bottom: 15px; margin-top: -4px;"/>
+													</div>
+
+												</div>
+
+											</div>
+
+											<div id="monCarousel" class="carousel slide" data-ride="carousel" style="padding-bottom: 30px; cursor: pointer;">
+
+										        <div class="carousel-inner" role="listbox">
+
+											        <div class="item active" style="">
+										            	<img src="../medias/images/cicr1.jpg" class="img-responsive"/>
+										            	<div class="carous-caption"></div>
+										            	<h5 style="text-align: center;">Visa Pour l'image</h5>
+											        </div>
+
+											          <div class="item" style="">
+										            	<img src="../medias/images/cicr3.png" class="img-responsive"/>
+										            	<div class="carous-caption"></div>
+										            	<h5 style="text-align: center;">Recrutement CICR</h5>
+											          </div>
+
+											        <div class="item" style="">
+										            	<img src="../medias/images/hrw1.jpg" class="img-responsive"/>
+										            	<div class="carous-caption"></div>
+										            	<h5 style="text-align: center;">Human Right Council</h5>
+											        </div>
+
+											        <div class="item" style="">
+											            <img src="../medias/images/pnud1.jpg" class="img-responsive"/>
+											            <div class="carous-caption"></div>
+											            <h5 style="text-align: center;">Election PNUD</h5>
+											        </div>
+
+											        <a href="#monCarousel" class="left carousel-control" role="button" data-slide="prev">
+											          	<span class="glyphicon glyphicon-chevron-left"></span>
+											        </a>
+
+											        <a href="#monCarousel" class="right carousel-control" role="button" data-slide="next">
+											          	<span class="glyphicon glyphicon-chevron-right"></span>
+											        </a>
+										        </div>
+
+									    	</div>
+									    <!------------------------------------------------->
+										<!-- 	PUBLICITY CAROUSEL BOTTOM LEFT END 		 -->
+										<!------------------------------------------------->
+										</div>
+
+									</div>
+
+								<!--------------------------------------------->
+								<!--  		 MEMBERS CATEGORIES END  		 -->
+								<!--------------------------------------------->
+								</div>
+
+								<!--------------------------------------------->
+								<!--  			 ARTICLES CONTAINER  		 -->
+								<!--------------------------------------------->
+								<div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 col-xs-push-0 col-sm-push-0 col-md-push-1 col-lg-push-1 col-xl-push-1" id="artciles-container" style="">
+									<div class="row" id="again">
+
+										<!--------------------------------------------->
+										<!--  			 ARTICLE ONE BLOCK  		 -->
+										<!--------------------------------------------->
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 15px; background-color: white;  padding-bottom: 15px; margin-bottom: 30px;">
+
+											<div class="row">
+												<!--======-- media container (image) --======-->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<center>
+                                                        <div class="swiper-container">
+                                                            <div class="swiper-wrapper">
+                                                                {% if pub.file1 != undefined %}
+                                                                    <div class="swiper-slide">
+                                                                        {% set foo1 = pub.file1|split('.') %}
+                                                                        {% if foo1[foo1.length - 1] == "mp4" or foo1[foo1.length - 1] == "MP4" or foo1[foo1.length - 1] == "avi" or foo1[foo1.length - 1] == "AVI" or foo1[foo1.length - 1] == "MKV" or foo1[foo1.length - 1] == "mkv"  or foo1[foo1.length - 1] == "3gp" or foo1[foo1.length - 1] == "3GP" %}
+                                                                            <video src="../medias/images/{{ pub.file1 }}" width="95%" height="310" controls style=""></video>
+                                                                        {% elseif foo1[foo1.length - 1] == "pdf" or foo1[foo1.length - 1] == "PDF" %}
+                                                                            <a href="../medias/images/{{ pub.file1 }}">
+                                                                                <img src="../medias/images/71.jpg" class="img-responsive"/>
+                                                                            </a>
+                                                                        {% elseif foo1[foo1.length - 1] == "jpeg" or foo1[foo1.length - 1] == "JPEG" or foo1[foo1.length - 1] == "jpg" or foo1[foo1.length - 1] == "JPG" or foo1[foo1.length - 1] == "png" or foo1[foo1.length - 1] == "PNG" or foo1[foo1|length - 1] == "gif" or foo1[foo1.length - 1] == "GIF" %}
+                                                                            <a class="viewEngine" data-big="../medias/images/{{ pub.file1 }}" href="">
+                                                                                <img src="../medias/images/{{ pub.file1 }}" class="img-responsive"/>
+                                                                            </a>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if pub.file2 != undefined %}
+                                                                    <div class="swiper-slide">
+                                                                        {% set foo2 = pub.file2|split('.') %}
+                                                                        {% if foo2[foo2.length - 1] == "mp4" or foo2[foo2.length - 1] == "MP4" or foo2[foo2.length - 1] == "avi" or foo2[foo2.length - 1] == "AVI" or foo2[foo2.length - 1] == "MKV" or foo2[foo2.length - 1] == "mkv"  or foo2[foo2.length - 1] == "3gp" or foo2[foo2.length - 1] == "3GP" %}
+                                                                            <video src="../medias/images/{{ pub.file2 }}" width="95%" height="310" controls style=""></video>
+                                                                        {% elseif foo2[foo2.length - 1] == "pdf" or foo2[foo2.length - 1] == "PDF" %}
+                                                                            <a href="../medias/images/{{ pub.file2 }}">
+                                                                                <img src="../medias/images/71.jpg" class="img-responsive"/>
+                                                                            </a>
+                                                                        {% elseif foo2[foo2.length - 1] == "jpeg" or foo2[foo2.length - 1] == "JPEG" or foo2[foo2.length - 1] == "jpg" or foo2[foo2.length - 1] == "JPG" or foo2[foo2.length - 1] == "png" or foo2[foo2.length - 1] == "PNG" or foo2[foo2|length - 1] == "gif" or foo2[foo2.length - 1] == "GIF" %}
+                                                                            <a class="viewEngine" data-big="medias/images/{{ pub.file2 }}" href="">
+                                                                                <img src="../medias/images/{{ pub.file2 }}" class="img-responsive"/>
+                                                                            </a>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                {% if pub.file3 != undefined %}
+                                                                    <div class="swiper-slide">
+                                                                        {% set foo3 = pub.file3|split('.') %}
+                                                                        {% if foo3[foo3.length - 1] == "mp4" or foo3[foo3.length - 1] == "MP4" or foo3[foo3.length - 1] == "avi" or foo3[foo3.length - 1] == "AVI" or foo3[foo3.length - 1] == "MKV" or foo3[foo3.length - 1] == "mkv"  or foo3[foo3.length - 1] == "3gp" or foo3[foo3.length - 1] == "3GP" %}
+                                                                            <video src="../medias/images/{{ pub.file3 }}" width="95%" height="310" controls style=""></video>
+                                                                        {% elseif foo3[foo3.length - 1] == "pdf" or foo3[foo3.length - 1] == "PDF" %}
+                                                                            <a href="../medias/images/{{ pub.file3 }}">
+                                                                                <img src="../medias/images/71.jpg" class="img-responsive"/>
+                                                                            </a>
+                                                                        {% elseif foo3[foo3.length - 1] == "jpeg" or foo3[foo3.length - 1] == "JPEG" or foo3[foo3.length - 1] == "jpg" or foo3[foo3.length - 1] == "JPG" or foo3[foo3.length - 1] == "png" or foo3[foo3.length - 1] == "PNG" or foo3[foo3|length - 1] == "gif" or foo3[foo3.length - 1] == "GIF" %}
+                                                                            <a class="viewEngine" data-big="../medias/images/{{ pub.file3 }}" href="">
+                                                                                <img src="../medias/images/{{ pub.file3 }}" class="img-responsive"/>
+                                                                            </a>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                {% endif %}
+                                                                <!--
+                                                                ///////////////////////////////////////////////
+
+                                                                        A CONTINUER JUSQUA 19 car il y a 19 file max en upload
+
+                                                                //////////////////////////////////////////////
+                                                                -->
+
+                                                            </div>
+                                                            <!-- Add Pagination -->
+                                                            <div class="swiper-pagination"></div>
+                                                        </div>
+                                                    </center>
+												</div>
+												<!--======-- poster's profil picture and name container--======-->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
+													<div class="row">
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 13px; cursor: pointer;">
+                                                            <a href="/ownL/{{ pub.emailcrypt }}"><img src="../medias/icon/user profil/africa/{{ pub.profil }}" height="40" width="40" style="border-radius: 50%;"></a>
+														</div>
+
+														<div class="name-profils-infos col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 col-xs-pull-2 col-sm-pull-2 col-md-pull-2 col-lg-pull-2 col-xl-pull-2" style="margin-top: 4px; margin-left: -70px;">
+															<blockquote>
+                                                                <a href="/ownL/{{ pub.emailcrypt }}"><p style="font-weight: bold; font-size: 12px;">{{ pub.nom }}</p></a>
+																<small style="font-size: 10px;"><script>horodatage("{{ pub.register_date }}")</script></small>
+															</blockquote>
+														</div>
+
+														<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-push-4 col-sm-push-4 col-md-push-4 col-lg-push-4 col-xl-push-4" style="margin-top: 4px; margin-left: 6px; cursor: pointer;">
+															<img src="../medias/icon/logo/menu.png" height="40" width="40">
+														</div>
+													</div>
+												</div>
+
+												<!--======-- text container --======-->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<p style="font-size: 13px;">
+                                                        {{ pub.content }}
+													</p>
+												</div>
+
+                                                <!--======-- reactions icons --======-->
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-8 col-xs-push-7 col-sm-push-7 col-md-push-8 col-lg-push-8 col-xl-push-8">
+                                                            <div class="row">
+                                                                <div class="coments col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative" >
+                                                                    <span class="mont">{{ pub.nombreComment }}</span>
+                                                                    <img src="../medias/icon/reactions/coment.png" alt="coment icon" height="25" class="reaction Comments" >
+                                                                </div>
+
+                                                                <div class="com col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
+                                                                    <span class="mont">{{ pub.nombreFolie }}</span>
+                                                                    <img src="../medias/icon/reactions/like1.png" alt="like icon" height="25" class="Comments reaction {{ (pub.isLike == 0)? 'des' : 'true' }}">
+                                                                </div>
+
+                                                                <div class="ford col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
+                                                                    <span class="mont">{{ pub.nombreLike }}</span>
+                                                                    <img src="../medias/icon/reactions/sad.png" alt="sad icon" height="25" class="reaction {{ (pub.isDoute == 0)? 'des' : 'true' }}">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--======-- reactions icons end --======-->
+												</div>
+
+											<!--======-- row article one block end --======-->
+											</div>
+
+										<!--------------------------------------------->
+										<!--  			 ARTICLE ONE BLOCK END 		 -->
+										<!--------------------------------------------->
+										</div>
+										
+
+									</div>
+								<!--------------------------------------------->
+								<!--  		 ARTICLES CONTAINER END  		 -->
+								<!--------------------------------------------->
+								</div>
+
+								<!------------------------------------------------->
+								<!-- 	RIGHT SIDE BLOCK (with friend request )  -->
+								<!------------------------------------------------->
+								<div class="col-xl-3 col-lg-3 col-md-3 col-sm-0 col-xs-0 col-xs-push-0 col-sm-push-0 col-md-push-1 col-lg-push-1 col-xl-push-1 right-side-block" id="" style="">
+									<div class="row">
+										<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div class="row">
+												<!------------------------------------------------->
+												<!-- 			PUBLICITY CAROUSEL TOP  		 -->
+												<!------------------------------------------------->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+													<div id="myCarousel" class="carousel slide" data-ride="carousel" style="padding-bottom: 30px; cursor: pointer;">
+
+												        <div class="carousel-inner" role="listbox">
+
+													        <div class="item active" style="">
+												            	<img src="../medias/images/cicr1.jpg" class="img-responsive"/>
+												            	<div class="carous-caption"></div>
+												            	<h5 style="text-align: center;">Visa Pour l'image</h5>
+													        </div>
+
+													          <div class="item" style="">
+												            	<img src="../medias/images/cicr3.png" class="img-responsive"/>
+												            	<div class="carous-caption"></div>
+												            	<h5 style="text-align: center;">Recrutement CICR</h5>
+													          </div>
+
+													        <div class="item" style="">
+												            	<img src="../medias/images/hrw1.jpg" class="img-responsive"/>
+												            	<div class="carous-caption"></div>
+												            	<h5 style="text-align: center;">Human Right Council</h5>
+													        </div>
+
+													        <div class="item" style="">
+													            <img src="../medias/images/pnud1.jpg" class="img-responsive"/>
+													            <div class="carous-caption"></div>
+													            <h5 style="text-align: center;">Election PNUD</h5>
+													        </div>
+
+													        <a href="#myCarousel" class="left carousel-control" role="button" data-slide="prev">
+													          	<span class="glyphicon glyphicon-chevron-left"></span>
+													        </a>
+
+													        <a href="#myCarousel" class="right carousel-control" role="button" data-slide="next">
+													          	<span class="glyphicon glyphicon-chevron-right"></span>
+													        </a>
+												        </div>
+
+											    	</div>
+											    <!------------------------------------------------->
+												<!-- 			PUBLICITY CAROUSEL TOP END 		 -->
+												<!------------------------------------------------->
+												</div>
+
+												<!------------------------------------------------->
+												<!-- 			RANDOM FRIENDS SUGGESTION  		 -->
+												<!------------------------------------------------->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="row">
+														<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="row">
+
+																<!--======-- HR top friends suggestions --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<hr size="1" style="margin-bottom: 0.5px;"/>
+																</div>
+
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<h6 style="font-weight: bold;">SUGGESTION D'AMIS</h6>
+																</div>
+
+																<!--======-- HR down friends suggestions --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<hr size="1" style="margin-top: -0.5px;"/>
+																</div>
+																<!--======-- suggestion one --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/africa/userGirl01.jpeg">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Sonia Assamoua</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2" style="">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion one end --======-->
+																</div>
+
+																<!--======-- suggestion two --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/africa/userBoy18.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Brice Cesar Gnanago</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion two end --======-->
+																</div>
+
+																<!--======-- suggestion three --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/africa/userBoy13.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Isidor Tuo</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion three end --======-->
+																</div>
+
+																<!--======-- suggestion four --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/blanc/userChildBoy2.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Prince Detorcy Jr</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion four end --======-->
+																</div>
+
+																<!--======-- suggestion five --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/blanc/userBoy7.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Hermann Seri Brice</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion five end --======-->
+																</div>
+
+																<!--======-- suggestion six --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/blanc/userBoy07.jpg">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Julien Moulin Pierre</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion six end --======-->
+																</div>
+
+																<!--======-- suggestion six --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/blanc/userBoy8.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Steven Saint Eloi</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion six end --======-->
+																</div>
+
+																<!--======-- suggestion seven --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/africa/userGirl07.jpg">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Martiale Gourou</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion seven end --======-->
+																</div>
+
+																<!--======-- suggestion eight --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/blanc/userGirl3.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Marie Sawadogo</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion eight end --======-->
+																</div>
+
+																<!--======-- suggestion nine --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/africa/userBoy17.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Ange Agou Hermann</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion nine end --======-->
+																</div>
+
+																<!--======-- suggestion ten --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer; margin-bottom: 5px;">
+																	<div class="row">
+																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																			<img class="right-side-suggestion-profil-icon" src="../medias/icon/user profil/africa/userGirl25.png">
+																		</div>
+
+																		<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-7">
+																			<p class="right-side-suggestion-profil-name">Nadia Traoré</p>
+																		</div>
+
+																		<div class="right-side-suggestion-profil-name-container col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+																			<img class="right-side-suggestion-profil-add" src="../medias/images/add3.png">
+																		</div>
+																	</div>
+																<!--======-- suggestion ten end --======-->
+																</div>
+
+																<!--======-- HR top our groups --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<hr size="1" style="margin-bottom: 0.5px;"/>
+																</div>
+
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<h6 style="font-weight: bold;">COMMUNAUTES</h6>
+																</div>
+
+																<!--======-- HR down our groups --======-->
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<hr size="1" style="margin-top: -0.5px;"/>
+																</div>
+
+															</div>
+														</div>
+													</div>
+												<!------------------------------------------------->
+												<!-- 		RANDOM FRIENDS SUGGESTION END  		 -->
+												<!------------------------------------------------->
+												</div>
+
+												<!------------------------------------------------->
+												<!-- 			MEMBER GROUPS VIEWS  		 	 -->
+												<!------------------------------------------------->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px; margin-left: 6px;">
+													<div class="row">
+														<!--======-- groupe one --======-->
+														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%;">
+															<div class="bloc">
+																<img src="../medias/images/group10.jpg" alt="Avatar" class="image">
+																<div class="overlay">
+																	<div class="text">Nos Enfants</div>
+																</div>
+															</div>
+														</div>
+
+														<!--======-- groupe two --======-->
+														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-left: -11px;">
+															<div class="bloc">
+																<img src="../medias/images/group1.jpg" alt="Avatar" class="image">
+																<div class="overlay">
+																	<div class="text">Helping Children</div>
+																</div>
+															</div>
+														</div>
+
+														<!--======-- groupe three --======-->
+														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-top: 15px;">
+															<div class="bloc">
+																<img src="../medias/images/group12.jpeg" alt="Avatar" class="image">
+																<div class="overlay">
+																	<div class="text">L'autre Regard</div>
+																</div>
+															</div>
+														</div>
+
+														<!--======-- groupe four --======-->
+														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-left: -11px; margin-top: 15px;">
+															<div class="bloc">
+																<img src="../medias/images/benevoles.jpg" alt="Avatar" class="image">
+																<div class="overlay">
+																	<div class="text">Leadership</div>
+																</div>
+															</div>
+														</div>
+
+														<!--======-- groupe five --======-->
+														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-top: 15px;">
+															<div class="bloc">
+																<img src="../medias/images/group3.jpg" alt="Avatar" class="image">
+																<div class="overlay">
+																	<div class="text">Hello World</div>
+																</div>
+															</div>
+														</div>
+
+														<!--======-- groupe size --======-->
+														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-left: -11px; margin-top: 15px;">
+															<div class="bloc">
+																<center><img src="../medias/images/add5.png" alt="Avatar" class="image" id="plus"></center>
+																<div class="overlay" id="overlay-plus">
+																	<div class="text">Voir plus</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												<!------------------------------------------------->
+												<!-- 			MEMBER GROUPS VIEWS END  		 -->
+												<!------------------------------------------------->
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+								<!------------------------------------------------->
+								<!-- RIGHT SIDE BLOCK END (with friend request ) -->
+								<!------------------------------------------------->
+								</div>
+                                <input type="hidden" value="false" id="microLan" disabled>
+                                <input type="hidden" value="{{ user.emailcrypt }}" id="del" disabled>
+                                <input type="hidden" value="{{ user.keyconfirm }}" id="pel" disabled>
+
+								<!------------------------------------------------->
+								<!-- 			CHAT'S COMMENTS COVER 			 -->
+								<!------------------------------------------------->
+								<div class="comments-cover col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #273746; width: 100%; height: 100%; background-size: cover; position: fixed; top: 0px; opacity: .6; display: none">
+
+								<!------------------------------------------------->
+								<!-- 			CHAT'S COMMENTS END COVER		 -->
+								<!------------------------------------------------->
+								</div>
+
+								<!------------------------------------------------->
+								<!-- 			  INBOX CHAT CONTAINER           -->
+								<!------------------------------------------------->
+								<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-push-9 col-sm-push-9 col-md-push-9 col-lg-push-9 col-xl-push-9 inbox-block">
+									<div class="row">
+										<!--======-- inbox container --======-->
+										<div class="col-lg-12" style="">
+											<div class="row">
+												<!--======-- div top with #273746 background color --======-->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: linear-gradient(70deg, #336699, #3D952B); opacity: .9; height: 180px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
+													<div class="row">
+														<!--======-- exit and settings chat container --======-->
+														<div class="container-icons-settings col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 col-xs-push-7 col-sm-push-7 col-md-push-7 col-lg-push-7 col-xl-push-7" style="margin-top: 5px;">
+															<div class="row">
+
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+																	<img src="../medias/icon/icon services/parametres/settings.png" title="paramètres" height="17" class="setting-chat-icon">
+																</div>
+
+																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 closeChat" style="padding-top: 1px;">
+																	<img src="../medias/icon/icon services/logout/cloz.png" height="18" title="fermer" class="logout-chat-icon">
+																</div>
+
+															</div>
+														<!--======-- exit and settings chat container end --======-->
+														</div>
+
+														<!--======-- text of last chat --======-->
+														<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+															<div class="row">
+
+																<div class="last-chat-text col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<center><h4>Vos dernières causeries</h4></center>
+																</div>
+
+															</div>
+														<!--======-- text of last chat end --======-->
+														</div>
+
+														<!--======-- last chat profil's container --======-->
+														<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-11 col-xs-push-1 col-sm-push-1 col-md-push-1 col-lg-push-1 col-xl-push-1" style="margin-left: 10px; margin-top: 10px;">
+															<div class="row">
+
+																<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																	<div class="row" style="cursor: pointer;">
+																		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																			<img class="friend-icon-last-chat" src="../medias/icon/user profil/africa/userGirl05.jpg">
+																		</div>
+
+																		<div class="friend-name-last-chat-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																			<p class="friend-name-last-chat">Evelyne</p>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																	<div class="row" style="cursor: pointer;">
+																		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																			<img class="friend-icon-last-chat" src="../medias/icon/user profil/africa/userGirl07.jpg" id="second-friend-last-chat">
+																		</div>
+
+																		<div class="friend-name-last-chat-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																			<p class="friend-name-last-chat">Cynthia</p>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+																	<div class="row" style="cursor: pointer;">
+																		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																			<img class="friend-icon-last-chat" src="../medias/icon/user profil/africa/userBoy09.jpg">
+																		</div>
+
+																		<div class="friend-name-last-chat-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																			<p class="friend-name-last-chat">Quentin</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														<!--======-- last chat profil's container --======-->
+														</div>
+
+													</div>
+												<!--======-- div top with #273746 background color end --======-->
+												</div>
+
+												<!--======-- sent and received messages container --======-->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: white; height: 190px;">
+													<div class="row">
+														<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 190px; overflow-x: hidden; overflow-y: scroll;">
+															<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 300%; margin-left: -13px; width: 150%; ">
+
+															</div>
+														</div>
+													</div>
+												<!--======-- sent and received messages container end --======-->
+												</div>
+
+												<!--======-- input message --======-->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: white; height: 45px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-top: 1px solid silver;">
+													<div class="row">
+														<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin-left: 2px;">
+															<input type="text" class="form-control" id="" aria-describedby="textHelp" placeholder="Envoyer un message..." style="border: none; margin-left: -14px; height: 42px; width: 125%; font-size: 0.8em;">
+														</div>
+
+														<div class="emoji-chat-container col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+															<div class="row">
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																	<img class="emoji-chat-icon" src="../medias/icon/reactions/emoji.png">
+																</div>
+
+																<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+																	<img class="send-chat-icon" src="../medias/icon/reactions/sent.png">
+																</div>
+
+															</div>
+														</div>
+													</div>
+												<!--======-- input message end --======-->
+												</div>
+											</div>
+										<!--======-- inbox container end --======-->
+										</div>
+									</div>
+								<!------------------------------------------------->
+								<!-- 			INBOX CHAT CONTAINER END         -->
+								<!------------------------------------------------->
+								</div>
+
+								<!------------------------------------------------->
+								<!-- 			   POSTS COMMENTS           	 -->
+								<!------------------------------------------------->
+								<div class="posts-comments-great-container col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9 col-xs-push-3 col-sm-push-3 col-md-push-3 col-lg-push-3 col-xl-push-3" style="display: none">
+									<div class="row">
+										<div class="comments-container col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+											<div class="row">
+
+												<!------------------------------------------------->
+												<!-- 			 TITLE POSTS COMMENTS            -->
+												<!------------------------------------------------->
+												<div class="title-answer-text col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<h4><center> Repondre à Lionel Kokora </center></h4>
+												<!------------------------------------------------->
+												<!-- 		    TITLE POSTS COMMENTS END         -->
+												<!------------------------------------------------->
+												</div>
+
+												<!------------------------------------------------------------>
+												<!--   POST-COMMENTED WITH POSTER PROFIL AND THE POST       -->
+												<!------------------------------------------------------------>
+												<div class="poster-profil-with-commmented-post col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+													<div class="row">
+														<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-top: 36px;">
+															<img src="../medias/icon/user profil/africa/userBoy09.jpg" height="40" width="40" style="border-radius: 50%; margin-left: 3px; border: 1px solid white;">
+														</div>
+
+														<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 24px; margin-left: -80px;">
+															<blockquote>
+																<p style="font-weight: bold; font-size: 12px; color: white;">Lionel Kokora</p>
+																<small style="font-size: 10px; color: white;">il y a 2 jours</small>
+															</blockquote>
+														</div>
+
+														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="height: 110px; width: 30%; margin-left: 140px; margin-top: 3px;">
+															<div class="row">
+																<div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+																	<center>
+																		<img src="../medias/images/benevoles.jpg" class="img-responsive" style="opacity: .5; margin-left: 15px; margin-bottom: 5px;"/>
+																	</center>
+																</div>
+
+																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																	<small style="font-size: 9px; color: silver; line-height: 10px;">
+																		<center>
+																			et fringilla urna placerat. Cras et fringilla urna placerat. Cras urna placerat. Cras......
+																		</center>
+																	</small>
+																</div>
+															</div>
+														</div>
+													</div>
+												<!------------------------------------------------------------>
+												<!--  POST-COMMENTED WITH POSTER PROFIL AND THE POST END    -->
+												<!------------------------------------------------------------>
+												</div>
+
+												<!------------------------------------------------->
+												<!-- 			  SEND MESSAGE INPUT          	 -->
+												<!------------------------------------------------->
+												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left: -2.5%;">
+													<input type="text" class="form-control" id="" aria-describedby="textHelp" placeholder="Ecrire un commentaire..." style="border-radius: none; height: 48px; width: 105.5%; font-size: 1em; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+												</div>
+
+											</div>
+										</div>
+									</div>
+								<!------------------------------------------------->
+								<!-- 			   POSTS COMMENTS           	 -->
+								<!------------------------------------------------->
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				<!--------------------------------------------->
+				<!--  		  BODY'S CONTAINER  END		     -->
+				<!--------------------------------------------->
+				</div>
+
+			</div>
+
+		<!--------------------------------------------->
+		<!-- 		    GLOBAL CONTAINER END         -->
+		<!--------------------------------------------->
+		</div>
+
+		<!--------------------------------------------->
+		<!--		    JAVASCRIPT BALISES  		 -->
+		<!--------------------------------------------->
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="bootstrap/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+        <script src="bootstrap/js/swipe.js"></script>
+        <script src="bootstrap/js/jquery.notify.min.js"></script>
+        <script src="bootstrap/js/jquery.pan.min.js"></script>
+        <script src="bootstrap/js/smoothbox.jquery2.js"></script>
+        <script type="text/javascript" src="bootstrap/js/scripts_actualite.js"></script>
+        <script src="bootstrap/js/scriptR.js"></script>
+		<!--------------------------------------------->
+		<!-- 	 IMPORTED JAVASCRIPT'S BALISES       -->
+		<!--------------------------------------------->
+        <script>
+            $(document).ready(function () {
+                $('.viewEngine').pan();
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                            return '<span class="' + className + '">' + (index + 1) + '</span>';
+                        },
+                    },
+                });
+            })
+        </script>
+
+	</body>
+</html>
