@@ -338,9 +338,9 @@ let User = class {
         )
     }
     // retourne tout les groupes au plus grand level
-    static getAllBestLevelGroup(){
+    static getAllBestLevelGroup(pays){
         return new Promise((next) =>{
-            db.query("SELECT * from groupe WHERE level=1 LIMIT 2")
+            db.query("SELECT * from groupe WHERE level = 1 AND lieu = ? LIMIT 2", [pays])
                 .then((result) =>{                    
                     next(result);
                 }).catch((error) => {
@@ -350,7 +350,7 @@ let User = class {
     }
     static getPictureProfileOfUser(user_id){
         return new Promise((next) =>{
-            db.query("SELECT profil from user WHERE id= ?", [parseInt(user_id)])
+            db.query("SELECT profil from user WHERE id = ?", [parseInt(user_id)])
                 .then((result) => {                    
                     next(result[0]);
                 }).catch((error) => {
@@ -359,14 +359,26 @@ let User = class {
         })
     }
 
-    static getCoverOfGroupOfUser(group_id){
+    static getGroupOfUser(group_crypt){
         return new Promise((next) =>{
-            db.query("SELECT couverture from groupe WHERE id= ?", [parseInt(group_id)])
+            db.query("SELECT * from groupe WHERE crypt = ?", [group_crypt])
                 .then((result) => {                    
                     next(result[0]);
                 }).catch((error) => {
                 next(error);
             });
+        })
+    }
+
+
+    static getAllMemberOfThisGroup(group_id){
+        return new Promise((next)=>{
+            db.query("SELECT CONCAT(user.name, ' ', user.firstname) nom , user.profil ,user.emailcrypt FROM follow_group LEFT JOIN user ON follow_group.user_id = user.id WHERE follow_group.group_id = 1 ORDER BY follow_group.register_date DESC", [parseInt(group_id, 10)])
+            .then((result)=>{
+                next(result)
+            }).then((err)=>{
+                next(err)
+            })
         })
     }
     // retourne tous les groupe auquel appartien l'utilisateur connecté
@@ -456,6 +468,21 @@ let User = class {
         })
     }
 
+    static getAllPublicationofGroup(group_id, beg, end){
+        return new Promise((next) =>{
+            db.query("SELECT events.id as id,DAY(events.Mois) as jr, MONTH(events.Mois) as mt, HOUR(events.Heur) as hr, MINUTE(events.Heur) as mn, events.id as id, events.title as title, events.content_text as content, events.file1 as file1, events.file2 as file2, events.file3 as file3,  events.register_date as register_date, DAY(events.register_date) as jour, CONCAT(user.name, ' ', user.firstname) as nom, user.profil as profil, user.emailcrypt as emailcrypt FROM events LEFT JOIN user ON events.user_id = user.id WHERE events.team_id = ? ORDER BY id DESC LIMIT ?, ?", [parseInt(group_id, 10), parseInt(beg, 10), parseInt(end, 10)])
+                .then((result) =>{
+                    for(let i in result){
+                        result[i].content = ent.decode(result[i].content);
+                        continue;
+                    }
+                    next(result);
+                }).catch((error) => {
+                next(error);
+            });
+        })
+    }
+
     //Of comment FROM PUBLICATION OR OTHER
 
     static getAllCommentByPublicationId(publication_id) {
@@ -528,6 +555,27 @@ let User = class {
                 }).catch((error) =>next(error));
         })
     }
+
+
+    static isAdmin(group_crypt, user_id) {
+        return new Promise((next) => {
+            db.query("SELECT level FROM follow_group WHERE follow_group.group_id = ? AND follow_group.user_id = ? ", [group_crypt, parseInt(user_id, 10)])
+                .then((result)=>{
+                    next(result[0]);
+                }).catch((error) =>next(error));
+        })
+    }
+
+    static getNumberLikeGroup(publication_id) {
+        return new Promise((next) => {
+            db.query("SELECT COUNT(id) as NumberLike FROM nbre_like_group WHERE pub_id = ?", [parseInt(publication_id, 10)])
+                .then((result)=>{
+                    next(result[0]);
+                }).catch((error) =>next(error));
+        })
+    }
+
+
     static getNumberDoute(publication_id) {
         return new Promise((next) => {
             db.query("SELECT COUNT(id) as NumberDoute FROM nbre_doute WHERE publication_id = ?", [parseInt(publication_id, 10)])

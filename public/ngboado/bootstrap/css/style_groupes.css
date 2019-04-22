@@ -11,9 +11,10 @@ a{
 }
 
 .img-cover{
-	max-height: 400px;
+	height: 400px;
 	margin: 0;
 	padding: 0;
+	background-size: cover !important;
 	position: relative;
 }
 

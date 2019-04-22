@@ -1415,73 +1415,18 @@
 												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px; margin-left: 6px;">
 													<div class="row">
 														<!--======-- groupe one --======-->
-														{% if info %}
 															{% for group in info.two_best_level_group %}
 																<a href="/Community/{{ group.crypt }}"> <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%;">
 																	<div class="bloc">
 																		<img src="medias/images/{{group.couverture}}" alt="Avatar" class="image">
 																		<div class="overlay">
-																			<div class="text">{{group.id}}</div>
+																			<div class="text">{{group.name}}</div>
 																		</div>
 																	</div>
 																</div>
 																</a>														
 															{% endfor %}
-															{% if info.two_best_level_group|length != 1  %}
-																{% for group in info.two_best_level_group %}
-																
-																{% endfor %}
-															{% endif %}
-														{% endif %}														
-														<!--======-- groupe two --======-->
-														<div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; ">
-															<div class="bloc">
-																<img src="medias/images/group1.jpg" alt="Avatar" class="image">
-																<div class="overlay">
-																	<div class="text">Helping Children</div>
-																</div>
-															</div>
-														</div>
-
-														<!--======-- groupe three --======-->
-														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
-															<div class="bloc">
-																<img src="medias/images/group12.jpeg" alt="Avatar" class="image">
-																<div class="overlay">
-																	<div class="text">L'autre Regard</div>
-																</div>
-															</div>
-														</div>
-
-														<!--======-- groupe four --======-->
-														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
-															<div class="bloc">
-																<img src="medias/images/benevoles.jpg" alt="Avatar" class="image">
-																<div class="overlay">
-																	<div class="text">Leadership</div>
-																</div>
-															</div>
-														</div>
-
-														<!--======-- groupe five --======-->
-														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
-															<div class="bloc">
-																<img src="medias/images/group3.jpg" alt="Avatar" class="image">
-																<div class="overlay">
-																	<div class="text">Hello World</div>
-																</div>
-															</div>
-														</div>
-
-														<!--======-- groupe size --======-->
-														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
-															<div class="bloc">
-																<center><img src="medias/images/add5.png" alt="Avatar" class="image" id="plus"></center>
-																<div class="overlay" id="overlay-plus">
-																	<div class="text">Voir plus</div>
-																</div>															
-															</div>
-														</div>
+													
 														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
 															<div class="bloc">
 																<center><img src="medias/images/add5.png" alt="Avatar" class="image" id="plus"></center>

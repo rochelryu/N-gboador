@@ -140,21 +140,21 @@ mysql.createConnection({
     });
     // End validation formulaire signin
     app.get('/Community/:id', async (req, res) => {
-        console.log("identifiant demandé : " + req.params.id);
         if( req.session.ngboador ){
             let info = {};
             let id = req.params.id;
-            let getPictureProfileOfUser = await User.getPictureProfileOfUser(id);
-            let getCoverOfGroupOfUser = await User.getCoverOfGroupOfUser(id)
-            info.profil = getPictureProfileOfUser.profil;
-            info.cover = getCoverOfGroupOfUser.couverture;
-             console.log(info);
-             console.log("Lien photo de couverture : " + info.cover);
-            // let getAllMemberOfThisGroup = await User.getAllMemberOfThisGroup();
-            // let getCoverPictureOfThisGroup = await User.getCoverPictureOfThisGroup();
-            // info.getLoadPictureProfile = {}
-            // info.getPictureProfileOfUser();
-            
+            info.group = await User.getGroupOfUser(id)
+             let admin = await User.isAdmin(id, req.session.ngboador.id)
+            let getAllMemberOfThisGroup = await User.getAllMemberOfThisGroup(info.group.id);
+            let publish = await User.getAllPublicationofGroup(info.group.id, 0, 9)
+            for(let i in publish){
+                const number = await User.getNumberLikeGroup(publish[i].id)
+                publish[i].numberLike = number.NumberLike;
+                continue
+            }
+            info.publish = publish;
+            info.membre = getAllMemberOfThisGroup;
+            info.isAdmin = admin.level
             res.render(`${__dirname}/public/ngboado/groupes.twig`, {user: req.session.ngboador, info : info})
         }
         else{
@@ -169,6 +169,7 @@ mysql.createConnection({
             let NumberPublication = await User.getAllPublicationUsers(0,9);
             let sugl = await User.getAllSuggest(ll[0], req.session.ngboador.id, 0, 3);
             let sugl2 = await User.getAllSuggest(ll[0], req.session.ngboador.id, 3, 3);
+            info.two_best_level_group = await User.getAllBestLevelGroup(ll[0])
             /*for(let i = 0; i< 6; i++){
                 const ele = Math.floor(Math.random() * Math.floor(sugTotal.length));
                 console.log(sugTotal[ele - 1]);
