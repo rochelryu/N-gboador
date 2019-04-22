@@ -1,0 +1,714 @@
+body{
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.navbar{
+	background: linear-gradient(90deg, #3D952B, #336699);
+	border:black;
+}
+
+/*logo and text container*/
+.logo_and_text_container{
+  margin-left: 10%;
+}
+
+/*logo icon*/
+.logo_icon{
+  margin-top: 5.5px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/*logo text */
+.logo_text{
+  margin-top: 8px;
+  font-weight: bold;
+  margin-left: -43%;
+}
+
+.logo_text > h5{
+  font-weight: bold;
+	font-family: 'Nunito Sans', sans-serif;
+	color: white;
+}
+
+
+
+/********************* COVER PART ************************/
+
+.CoverContainer{
+	margin-top: 50px;
+}
+
+.Cover{
+	background: url('../../medias/active-activity-adult-1430116.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 92.5vh;
+	overflow: hidden;
+}
+
+.textSlide{
+	text-align: center;
+	height: 100%;
+	/*margin-top: 13vh;*/
+	color: white;
+	background: rgba(0,0,0, 0.5);
+}
+
+.title1{
+	margin-top: 20vh;
+	font-size: 4.3em;
+	font-weight: 600;
+}
+.title2{
+	font-size: 2.3em;
+}
+
+.Leboutton{
+	background: #D35400;
+	width: 200px;
+	border:0;
+	border-radius: 16px;
+	margin-top: 50px;
+	height: 30px;
+	line-height: 15px;
+}
+
+/***********===========********** END OF THE COVER PART ************==========***********/
+
+/***************************** EXPLAIN MENUE ******************************/
+
+.detailsMenu{
+	background: linear-gradient(90deg, #3D952B, #336699);
+	color: white;
+	overflow: hidden;
+	height: 45vh;
+}
+
+.detailsDiv{
+	padding-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 40px;
+	padding-top: 20px;
+}
+
+.detailsDiv div{
+	height: 100%;
+	width: 97%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.detailsImg{
+	/*margin-top: 40px;*/
+	height: 6.5vh;
+	width: 6.5vh;
+	/*margin-left: 150px;
+	margin-bottom: -30px;*/
+}
+.detailsTitle{
+	font-size: 24px;
+	text-align: center;
+	padding-top: 0px;
+	/*margin-top: 50px;*/
+}
+.details{
+	font-size: 1em;
+	text-align: justify;
+}
+
+/*******************========********** END OF EXPLAIN MENUE *********=========*********************/
+
+/***************************** 	LEGAL ASSISTANCE REQUEST  ******************************/
+
+
+
+/**************************IMAGE*****************************/
+.legalAssistanceRequest{
+	height: 870px;/*123.5vh*//*96.2*//*105vh*//*900px*//*700px*/
+	transition: .5s;
+}
+
+.requestImage{
+	background: url("../../medias/adult-banking-blonde-1059119.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	transition: .5s;
+	/*height: 100%; 205.5vh  115vh    193.5*/
+}
+
+
+
+/**************************FORM*****************************/
+						/************ IN GENERAL *********************/
+
+.requestForm{
+	background-image: linear-gradient(to right top, #2c3e50, #1d4455, #074a54, #004f4f, #0b5345);
+	padding-top: 5vh;
+	height: 100%;
+	color: white;
+	transition-duration: 200ms;
+}
+
+.requestForm h2{
+	margin-bottom: 35px;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.requestForm form{
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+
+.requestForm label { /********* tout les " labels " sont maintenant comme des "DIV" *******************/
+  /*display: block;*/
+  width: 30%;
+  margin: 25px auto 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.requestForm label p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.requestForm input{
+  display: block;
+  height: 34px;
+  border: 1.4px solid white;
+  border-radius: 3px;
+  outline: none;
+  background: transparent;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 14px;
+  /*padding-left: 5px;*/
+  text-align: center;
+  width: 100%;
+}
+
+.requestForm select{
+  display: block;
+  height: 34px;
+  width: 80%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  border: 1.4px solid white;
+  border-radius: 3px;
+  text-align: center;
+  color: white; /*#3f4652*/
+  background: transparent;
+   width: 100%;
+}
+
+.requestForm textarea{
+	border: 1px solid white;
+	width: 100%;
+  border-radius: 3px;
+  background: transparent;
+  color: white;
+
+}
+
+
+
+
+/******************* requesteur personal Information ********************/
+
+.requesteurInfo{
+	/*background: yellow;*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+
+	/**********END Of requesteur personal Information ************/
+
+
+
+/********************** Who Request Is It *******************/
+.WhoRequestIsIt{
+	text-align: center;
+	margin-top: 5vh;
+}
+.WhoRequestIsIt h4{
+	font-size: 16px;
+}
+.WhoRequestIsItOptions{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 50%;
+	line-height: 30px;
+	font-size: 14px;
+	margin-left: 25%;
+	margin-top: 25px;
+}
+.option{
+	height: 30px;
+	width: 31px;
+	border: 1px solid white;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.myself{
+	background: transparent;
+}
+.myself img{
+	height: 100%;width: 100%;
+}
+.otherpeople{
+	background: transparent;
+}
+.otherpeople img{
+	height: 100%;width: 100%;
+	display: none;
+}
+
+
+	/**********END Of requesteur personal Information ************/
+
+/********************** What Type Of Assistance It Is *******************/
+
+
+.WhatTypeOfAssistanceItIs{
+	text-align: center;
+	margin-top: 5vh;
+}
+
+.WhatTypeOfAssistanceItIs h4{
+	font-size: 16px;
+}
+
+.WhatTypeOfAssistanceItIsOptions{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 50%;
+	line-height: 30px;
+	font-size: 14px;
+	margin-left: 25%;
+	margin-top: 25px;
+}
+
+.preocupation{
+	background: transparent;
+}
+.preocupation img{
+	height: 100%;width: 100%;
+	display: none;
+}
+.Affaire{
+	background: transparent;
+}
+.Affaire img{
+	height: 100%;width: 100%;
+}
+
+
+
+	/**********END Of Type of assistance choice ************/
+
+/********************** Concerned Information *******************/
+
+
+.preocupationDetailsTitle{
+	text-align: center;
+	margin-top: 5vh;
+	font-size: 18px;
+}
+.preocupationDetail{
+	display: flex;
+	justify-content: center;
+}
+.preocupationDetail textarea{
+	width: 80%;
+	text-align: left;
+	padding-left: 0;
+}
+
+/********************** Concerned Information *******************/
+
+.ConcernedInfo{
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+
+	/**********END Of Concerned Information ************/
+
+
+
+/********************** LOCATION *******************/
+
+.location{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: -15px;
+}
+
+/**********END Of LOCATION ************/
+
+
+/********************** resquest Detail *******************/
+
+.FormdetailsTitle{
+	text-align: center;
+	margin-top: 5vh;
+	font-size: 18px;
+}
+
+.Formdetail{
+	display: flex;
+	justify-content: center;
+}
+.Formdetail textarea{
+	width: 80%;
+	text-align: left;
+	padding-left: 0;
+}
+
+.resquestDetail{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+
+
+.submitdiv{
+	display: flex;
+	padding-left: 55px;
+	margin-top: 10px;
+}
+.submitdiv input{
+	background: #3D952B;
+	border-color: #3D952B;
+}
+/********************** END of resquest Detail *******************/
+
+
+
+
+
+
+/*******************========********** END OF LEGAL ASSISTANCE REQUEST *********=========*********************/
+
+/***************************** BECOME AN LEGAL ASSISTANTE CONDITIONS ******************************/
+
+.legalAssistanceRequestCondition{
+	margin-top: 50px;
+	margin-bottom: 60px;
+	color: gray;
+}
+
+.ConditionTitle{
+	font-size: 30px;
+	padding-top: 50px;
+	padding-bottom: 48px;
+	text-align: center;
+}
+
+.conditionItem{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 50px;
+	font-size: 14px;
+}
+/*.conditionItem1{
+	background: grey;
+}
+.conditionItem2{
+	background: yellow;
+}
+.conditionItem3{
+	background: green;
+}
+.conditionItem4{
+	background: blue;
+}*/
+
+.conditionItemsImg{
+	height: 7vh;
+	width: 7vh;
+}
+.ItemsImg{
+	height: 100%;
+	width: 100%;
+}
+.conditionItemsTitle{
+	text-align: center;
+	width: 60vh;
+	margin-left: 20px;
+	font-weight: bold;
+}
+.conditionItemsDetail{
+	text-align: center;
+	width: 30vw;
+	margin-left: 20px;
+}
+
+
+/*******************========********** END OF BECOME AN LEGAL ASSISTANTE CONDITIONS *********=========*********************/
+
+
+/***************************** BECOME AN LEGAL ASSISTANTE REQUEST ******************************/
+
+.becomeAnLegalAssistanteRequest{
+	height: 600px;
+}
+
+.becomeAnLegalAssistanteRequest h3{
+	margin-bottom: 35px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+.becomeAnLegalAssistanteRequest .requestImage{
+	background: maroon;
+	background: url("../../medias/hero17.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height:100%;
+}
+
+/*******************========********** END OF BECOME AN LEGAL ASSISTANTE REQUEST *********=========*********************/
+
+/***************************** FORM ******************************/
+
+ .becomeAnLegalAssistanteRequest .requestForm{
+	background-image: linear-gradient(to right top, #2c3e50, #1d4455, #074a54, #004f4f, #0b5345);
+	padding-top: 20px;
+	color: white;
+	height:100%;
+}
+
+.becomeAnLegalAssistanteRequest .requesteurInfo{
+	/*background: yellow;*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*******************========**********  RESPONSIVE *********=========********************
+
+
+@media screen and (min-width: 600px) and (max-width: 1015px){
+
+}
+
+*/
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+	.detailsDiv{
+	padding-bottom: 10px;
+	padding-left: 50px;
+	padding-right: 40px;
+	padding-top: 20px;
+}
+
+.detailsDiv div{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.detailsImg{
+	/*margin-top: 40px;*/
+	height: 6.5vh;
+	width: 6.5vh;
+	/*margin-left: 150px;
+	margin-bottom: -30px;*/
+}
+.detailsTitle{
+	font-size: 20px;
+	text-align: center;
+	padding-top: 0px;
+	/*margin-top: 50px;*/
+}
+.details{
+	font-size: 1em;
+	text-align: justify;
+}
+
+
+
+/*************Assitant juridiue ***************/
+
+
+
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+	.detailsDiv{
+	padding-bottom: 10px;
+	padding-left: 25px;
+	padding-right: 20px;
+	padding-top: 20px;
+}
+
+.detailsDiv div{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.detailsImg{
+	/*margin-top: 40px;*/
+	height: 6vh;
+	width: 6vh;
+	/*margin-left: 150px;
+	margin-bottom: -30px;*/
+}
+.detailsTitle{
+	font-size: 1.3em;
+	text-align: center;
+	padding-top: 0px;
+	/*margin-top: 50px;*/
+}
+.details{
+	font-size: 12px;
+	text-align: justify;
+}
+
+
+/*************************ASSISTANT REQUEST *********************/
+
+.conditionItemsDetail{
+	width: 31vw;
+	margin-left: 90px;
+}
+}
+
+
+
+
+@media screen and (max-width: 768px){
+
+/*****************cover modif *************/
+
+.title1{
+	margin-top: 20vh;
+	font-size: 4em;
+	font-weight: 600;
+}
+.title2{
+	font-size: 2em;
+}
+
+/***************** END cover modif *************/
+
+
+.detailsMenu{
+	background: linear-gradient(90deg, #3D952B, #336699);
+	color: white;
+	overflow: hidden;
+	height: 85vh;
+}
+
+.detailsDiv{
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 5px;
+	padding-top: 20px;
+}
+
+.detailsDiv div{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.detailsImg{
+	/*margin-top: 40px;*/
+	height: 6.5vh;
+	width: 6.5vh;
+	/*margin-left: 150px;
+	margin-bottom: -30px;*/
+}
+.detailsTitle{
+	font-size: 18px;
+	text-align: center;
+	padding-top: 0px;
+	/*margin-top: 50px;*/
+}
+.details{
+	font-size: 12px;
+	text-align: justify;
+}
+
+
+
+/*************************ASSISTANT REQUEST *********************/
+
+.conditionItemsDetail{
+	width: 60vw;
+	margin-left: 0px;
+}
+
+}
+
+
+
+@media screen and (min-width: 600px) and (max-width: 700px){
+	.conditionItemsDetail{
+	width: 60vw;
+	margin-left: 0px;
+	}
+}
+
+@media screen and (min-width: 438px) and (max-width: 601px){
+	.conditionItemsDetail{
+	width: 90vw;
+	margin-left: 10px;
+	}
+
+}

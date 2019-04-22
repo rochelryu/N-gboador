@@ -1,0 +1,921 @@
+body{
+  margin: 0px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
+  height; 100%;
+  overflow-x: hidden;
+  /*background: url('../../medias/back.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;*/
+}
+
+/*fixed bar*/
+.fixed-bar{
+  background: linear-gradient(90deg, #3D952B, #336699);
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  margin-top: 0px;
+  border-radius: 0px;
+}
+
+/*logo and text container*/
+.logo_and_text_container{
+  margin-left: 10%;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+/*logo icon*/
+.logo_icon{
+  margin-top: 5.5px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/*logo text */
+.logo_text{
+  margin-top: 8px;
+  font-weight: bold;
+  margin-left: -43%;
+}
+
+.logo_text > h5{
+  font-weight: bold;
+}
+
+/*home icons container*/
+.home_icons_container{
+  margin-top: 13px;
+  margin-left: 41%;
+  display: none;
+}
+
+/*cover top text*/
+.cover_text{
+  font-weight: bold;
+  margin-top: 20%;
+  text-align: center;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+.cover_text > h1{
+  font-size: 3.8em;
+  font-weight: bold;
+}
+
+.cover_text > h2{
+  font-size: 2.8em;
+  margin-top: 3%;
+  font-weight: bold;
+}
+
+
+/*row two*/
+.row_two{
+  background: url('../../medias/assist.jpeg');
+  background-size: cover;
+  height: 630px;
+
+}
+/*cover button*/
+.cover_button_contenair{
+    margin-top: 3%;
+}
+
+.image_cover_row_two{
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+}
+
+.cover_button{
+  width: 20%; border-radius: 20px; background-color: tomato; text-align: left; padding-left: 3.5%; margin-left: 30%;
+}
+
+.smilley_button{
+  margin-top: -12%; margin-left: 70%;
+}
+
+/*row three*/
+.row_three{
+  background: linear-gradient(90deg, #3D952B, #336699);
+
+}
+
+/*row four*/
+.row_four{
+  margin-top: 5%;
+}
+
+/*row four*/
+.row_five{
+  margin-top: 3%;
+  background: linear-gradient(90deg, #3D952B, #336699);
+  height: 60px;
+}
+
+/*row height*/
+.row_eight{
+  height: 640px;
+}
+
+/*row nine*/
+.row_nine{
+  margin-top: -0.1%;
+  background: linear-gradient(90deg, #3D952B, #336699);
+  height: 60px;
+
+}
+
+/*row ten*/
+.row_ten{
+  margin-top: 17%;
+  margin-bottom: 0%;
+
+}
+
+/*row eleven*/
+.row_eleven{
+  margin-top: 10%;
+  margin-bottom: 0%;
+  background: linear-gradient(90deg, #3D952B, #336699);
+  height: 60px;
+
+}
+
+/*row twelve*/
+.row_twelve{
+  margin-top: 0.1%;
+  margin-bottom: 0%;
+  background: linear-gradient(90deg, #3D952B, #336699);
+  height: 60px;
+
+}
+
+
+
+.row_ten_container{
+  margin-left: -5%;
+}
+
+/*image procedure*/
+.image_procedures{
+  height: 340px; width: 340px; border-radius: 50%; border: 5px solid #019939; margin-top: -5%;
+}
+
+.images_procedures_container{
+}
+
+/*text procedures container*/
+.text_procedures_container{
+  margin-top: -12%;
+}
+
+.text_proceures{
+  color: gray;
+}
+
+.text_proceures > p{
+  font-size: 15px;
+}
+
+/*row statistics container*/
+.row_statistics_container{
+  background: url('../../medias/cover17.jpeg');
+  background-size: cover; height: 530px;
+  background-repeat: no-repeat;
+  border: 1px solid silver; margin-top: 0.1%;
+}
+
+/*background cover assistant*/
+.background_cover_assistant{
+  background: url('../../medias/pix6.jpeg');
+  background-size: cover; height: 100%;
+  background-repeat: no-repeat;
+  border: 1px solid silver; margin-top: -0.1%;
+}
+
+.statistics_opac_background{
+  height: 100%; background: rgb(4,4,5, .85); opacity: .7;
+}
+
+.row_statistics_opac_background{
+  margin-left: 3%;
+}
+
+.statistics_text_explains{
+  padding-top: 12%;
+}
+
+.statistics_text_explains > h4{
+  text-align: center; margin-bottom: 8%;
+}
+
+.rowcont_block{
+  margin-top: 9.5%;
+}
+
+.container_juridic_assistant, .container_viewers{
+  margin-top: 15%
+}
+
+.icon_statistics{
+  border: 2px solid white; border-radius: 50%;
+}
+
+.statistic_number{
+  margin-top: 5%;
+}
+
+.statistic_type{
+  margin-top: -3%;
+}
+
+/*container of assistant steps*/
+.container_of_assistant_steps{
+  height: 638px; background: black; opacity: .8;
+}
+
+/*row level container*/
+.row_level_container{
+  margin-top: 3%;
+}
+
+/*level container*/
+.level_container{
+  margin-top: 4%; margin-left: -6%;
+}
+
+/*level_title*/
+.level_title{
+  margin-top: 1%;
+}
+/*level text*/
+.level_text{
+  text-align: justify;
+}
+
+.level_text > p{
+  font-size: 13px;
+}
+
+/*know the plateform*/
+.know_plateform_title > h2{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.know_plateform_title > h2{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.know_plateform_title > h5{
+  padding-top: 1%;
+}
+
+.know_plateform_title{
+  margin-top: -0.5%;
+}
+
+/*descriptions items*/
+.descriptions_items_text_container{
+  margin-top: 50px;
+  margin-bottom: -50px;
+}
+
+/*know plateform animation*/
+.know_plateform_animation_contenair{
+  margin-top: -10.4%;
+}
+
+.know_plateform_animation_contenair_copy{
+  margin-top: -9.7%;
+  margin-left: -2%;
+}
+
+.circle{
+  position: absolute;
+  top: 59%;
+  left: 55%;
+  margin-top: 7.1%;
+  transform: translate(-50%, -50%);
+}
+
+.circle_two{
+  margin-left: -0.3%;
+}
+
+/*assistant animation circle*/
+.circle_three{
+  position: relative;
+  left: -1%;
+  margin-top: 21%;
+}
+
+/*procedures animation circle*/
+.circle_four{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-top: 0%;
+  transform: translate(-50%, -50%);
+}
+
+/*procedures animation circle*/
+.circle_rowcount{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-top: 0%;
+  transform: translate(-50%, -50%);
+}
+
+span{
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  opacity: 0;
+  position: absolute;
+  left: 0%;
+  border-radius: 50%;
+  animation: fade 2s infinite linear;
+}
+
+.span{
+  background: white;
+  height: 340px;
+  width: 340px;
+}
+
+.spantwo{
+  background: white;
+  height: 60px;
+  width: 60px;
+}
+
+span:nth-child(2){
+  animation-delay: 0.2s;
+}
+
+span:nth-child(3){
+  animation-delay: 0.4s;
+}
+
+.span:nth-child(2){
+  animation-delay: 0.2s;
+}
+
+.span:nth-child(3){
+  animation-delay: 0.4s;
+}
+
+.spantwo:nth-child(2){
+  animation-delay: 0.2s;
+}
+
+.spantwo:nth-child(3){
+  animation-delay: 0.4s;
+}
+
+@keyframes fade {
+    0%{
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    25%{
+      opacity: .5;
+      transform: scale(0);
+    }
+
+    100%{
+      opacity: 0;
+      transform: scale(1);
+    }
+}
+
+/*services introducing*/
+.services_introducing{
+  margin-bottom: -0.2%;
+  width: 22%;
+  background-color: ;
+  border: 1px solid silver;
+  margin-left: 2.3%;
+}
+
+/*services images container*/
+.services_images_container{
+  margin-top: 15px;
+}
+
+/*icon services*/
+.icon_services{
+  height: 60px;
+  width: 60px;
+  margin-left: 40%;
+  margin-top: -25px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/*text services container*/
+.text_services_container{
+  margin-bottom: 10px;
+}
+
+.text_services_container > h4{
+  color: gray;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.text_services_container p{
+  color: gray;
+  text-align: center;
+  margin-top: -12px;
+}
+
+/*carousel testimonies*/
+#myCarousel{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: -2.5%;
+}
+
+.item{
+  color: gray;
+  padding: 10%;
+  padding-top: 8%;
+  margin-bottom: 0%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.item > h2{
+  color: gray;
+  font-weight: ;
+}
+
+.carousel-indicators > .active{
+  height: 60px;
+  opacity: 1;
+  width: 60px;
+  border: 3px solid #019939;
+  border-radius: 50%;
+}
+
+.carousel-indicators > li{
+  background-color: black;
+  border: 3px solid white;
+  opacity: .5;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+/*witness background*/
+.witnessOne{
+  background-image: url('../../medias/nelly.jpeg');
+  background-size: cover;
+}
+
+.witnessTwo{
+  background-image: url('../../medias/ce.jpeg');
+  background-size: cover;
+}
+
+.witnessThree{
+  background-image: url('../../medias/regina.jpeg');
+  background-size: cover;
+}
+
+.witnessFour{
+  background-image: url('../../medias/emma.jpeg');
+  background-size: cover;
+}
+
+.witnessFive{
+  background-image: url('../../medias/men.jpeg');
+  background-size: cover;
+}
+
+
+/* SCROLLBAR COSTUMER */
+/* width */
+
+/*RESPONSIVE DESIGN MEDIA QUERY*/
+
+/*md*/
+@media screen and (min-width: 992px) and (max-width: 1200px){
+
+  /*fixed bar*/
+  .fixed-bar{
+    background:;
+  }
+
+  .row_three{
+    margin-top: 0%;
+  }
+
+  .container_of_assistant_steps{
+    padding-top: 1%;
+  }
+
+  /*level_title*/
+  .level_title{
+    margin-top: -1%;
+    margin-left: 2%;
+  }
+
+  .level_title > h4{
+    font-size: 16px;
+    color: gray;
+  }
+
+
+  .level_text > p{
+    font-size: 12px;
+  }
+
+  .row_ten_container{
+    margin-left: -3%;
+  }
+
+  .images_procedures_container{
+    margin-bottom: 3.5%;
+  }
+
+  .span{
+    background: white;
+    height: 300px;
+    width: 300px;
+  }
+
+  /*image procedure*/
+  .image_procedures{
+    height: 300px; width: 300px; border-radius: 50%; border: 5px solid #019939; margin-top: -5%;
+  }
+
+  .row_container_procedures{
+    margin-top: -2%;
+  }
+
+  .text_proceures > p{
+    font-size: 0.9em;
+  }
+
+  .text_proceures > h2{
+    font-size: 1.5em;
+  }
+
+  .item > h2{
+    margin-bottom: 3.6%;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+
+  /*fixed bar*/
+  .fixed-bar{
+    background: ;
+  }
+
+  /*icon services*/
+  .icon_services{
+    height: 50px;
+    width: 50px;
+    margin-left: 35%;
+    margin-top: -25px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  /*cover top text*/
+  .cover_text{
+    font-weight: bold;
+    margin-top: 30%;
+    text-align: center;
+    color: white;
+  }
+
+  .cover_text > h1{
+    font-size: 2.9em;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .cover_text > h2{
+    font-size: 2.3em;
+    margin-top: 3%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .text_services_container > h4{
+    color: gray;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .text_services_container p{
+    color: gray;
+    text-align: center;
+    margin-top: -12px;
+    font-size: 0.9em;
+  }
+
+  .container_of_assistant_steps{
+    padding-top: 3.3%;
+  }
+
+  /*level_title*/
+  .level_title{
+    margin-top: -1%;
+    margin-left: 2%;
+  }
+
+  .level_title > h4{
+    font-size: 13px;
+    color: #336699;
+  }
+  /*level text*/
+  .level_text{
+    text-align: justify;
+    margin-left: 2%;
+  }
+
+  .level_text > p{
+    font-size: 12px;
+    margin-top: -8%;
+  }
+
+  .span{
+    background: white;
+    height: 250px;
+    width: 250px;
+  }
+
+  /*image procedure*/
+  .image_procedures{
+    height: 250px; width: 250px; border-radius: 50%; border: 5px solid #019939; margin-top: 6%;
+  }
+
+  .row_container_procedures{
+    margin-top: %;
+  }
+
+  .text_proceures > p{
+    font-size: 0.9em;
+  }
+
+  .text_proceures > h2{
+    font-size: 1.5em;
+  }
+
+  .row_images_procedures_and_text{
+    margin-left: 1.5%;
+  }
+
+  .statistics_text_explains{
+    display: none;
+  }
+
+  .rowcont_block{
+    padding-left: 8%;
+    margin-top: 13%;
+  }
+
+  .item > p{
+    font-size: 0.8em;
+  }
+
+  .item > h2{
+    font-size: 1.6em;
+    margin-bottom: 10%;
+  }
+
+
+}
+
+
+@media screen and (max-width: 768px){
+
+  /*fixed bar*/
+  .fixed-bar{
+    background: ;
+  }
+
+  /*cover top text*/
+  .cover_text{
+    font-weight: bold;
+    margin-top: 34%;
+    text-align: center;
+    color: white;
+  }
+
+  .cover_text > h1{
+    font-size: 2.8em;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .cover_text > h2{
+    font-size: 2.3em;
+    margin-top: 3%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /*services introducing*/
+  .services_introducing{
+    margin-bottom: 2%;
+    width: 95%;
+    background-color: ;
+    border: 1px solid silver;
+    margin-left: 2.5%;
+  }
+
+  /*icon services*/
+  .icon_services{
+    height: 80px;
+    width: 80px;
+    margin-left: 43%;
+    margin-top: -35px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  .text_services_container > h4{
+    color: gray;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .text_services_container p{
+    color: gray;
+    text-align: center;
+    margin-top: -12px;
+    font-size: 1.3em;
+  }
+
+  /*level container*/
+  .level_container{
+    margin-top: 5%; margin-left: -13%;
+  }
+
+  .level_text > p{
+    font-size: 12px;
+  }
+
+  .images_procedures_container{
+    display: none;
+  }
+
+  .text_proceures > p{
+    text-align: justify;
+  }
+
+  .text_proceures > h2{
+    text-align: center;
+  }
+
+  .boutton_procedures{
+    text-align: center;
+  }
+
+  .statistics_text_explains{
+    display: none;
+  }
+
+  .statistic_type > h5{
+    font-size: 12px;
+  }
+
+  .statistic_number > h1{
+    font-size: 2em;
+  }
+
+  .rowcont_block{
+    padding-left: 8%;
+    margin-top: 20%;
+  }
+
+  .carousel-indicators > .active{
+    height: 40px;
+    opacity: 1;
+    width: 40px;
+    border: 3px solid #019939;
+    border-radius: 50%;
+  }
+
+  .carousel-indicators > li{
+    background-color: black;
+    border: 3px solid white;
+    opacity: .5;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+  }
+
+  .item > p{
+    font-size: 0.8em;
+  }
+
+  .item > h2{
+    font-size: 1.2em;
+    margin-bottom: 8%;
+  }
+
+
+  .request_title > h2{
+    font-size: 1.8em;
+  }
+
+}
+
+@media screen and (max-width: 480px){
+
+  /*fixed bar*/
+  .fixed-bar{
+    background: ;
+  }
+
+  /*cover top text*/
+  .cover_text{
+    font-weight: bold;
+    margin-top: 55%;
+    text-align: center;
+    color: white;
+  }
+
+  .cover_text > h1{
+    font-size: 2.4em;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .cover_text > h2{
+    font-size: 1.5em;
+    margin-top: 3%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .level_title > h4{
+    font-size: 16px;
+  }
+
+  .icon_assistant{
+    height: 40px;
+    width: 40px;
+  }
+
+  .icon_assistant_two{
+    height: 38px;
+    width: 38px;
+  }
+
+  .level_text > p{
+    font-size: 11px;
+  }
+
+  .rowcont_block{
+    padding-left: 8%;
+    margin-top: 29%;
+  }
+
+  .carousel-inner{
+    width: 135%;
+    margin-left: -17.5%;
+  }
+
+  .item > p{
+    font-size: 0.8em;
+  }
+
+  .item > h2{
+    font-size: 1.2em;
+    margin-bottom: 9%;
+  }
+
+  .request_title > h2{
+    font-size: 1.4em;
+  }
+
+  .partner_icon_one{height: 76px; width: 70px;}
+  .partner_icon_two{height: 80px; width: 86px;}
+  .partner_icon_three{height: 80px; width: 86px;}
+  .partner_icon_four{height: 70px; width: 90px;}
+  .partner_icon_five{height: 75px; width: 120px;}
+
+
+}
