@@ -10,20 +10,23 @@ a{
 	text-transform: none;
 }
 
-
-.container{
-	/* margin-top: 15px; */
-}
-
 .img-cover{
-	background-image: url("../../image/couverture/guitar-756326_1920.jpg");
+	/* background-image: url("../../image/couverture/guitar-756326_1920.jpg"); */
 	background-size: cover;
-	background-repeat: no-repeat;
 	height: 300px;
 	margin: 0;
 	padding: 0;
 	position: relative;
 }
+
+.img-cover img {
+	position : absolute;
+	top: 0;
+	left: 0;
+
+}
+
+
 .profile-img{
 	/*width: 100%;*/
 	opacity: .95;
@@ -129,9 +132,6 @@ a{
 	background-color: #eee;
 	/* box-shadow: 0 5px 2px 0 rgba(0,0,0, 0.7);
 	margin-bottom: 15px; */
-}
-.publication:hover {
-	/*box-shadow: 4px 0 8px rgba(0, 0, 0, .1);*/
 }
 
 .publication .publication-block .published > img{
@@ -301,9 +301,6 @@ a{
 	transform: scale(1.1);
 }
 
-.publication-block .well{
-	/*background: #2984FF;*/
-}
 
 .desc-event {
 	font-weight: bold;
@@ -399,7 +396,7 @@ color: white;
 /*[placeholder] {
 /*
 	color: white;*/
-}/*
+/*
 input::-webkit-input-placeholder, textarea::-webkit-textarea-placeholder {
     color: red;
 }
@@ -422,4 +419,4 @@ input::-webkit-input-placeholder, textarea::-webkit-textarea-placeholder {
 
 
 
-*/*/
+*/

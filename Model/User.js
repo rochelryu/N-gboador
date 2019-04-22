@@ -335,6 +335,50 @@ let User = class {
             }
         )
     }
+    // retourne tout les groupes au plus grand level
+    static getAllBestLevelGroup(){
+        return new Promise((next) =>{
+            db.query("SELECT * from groupe WHERE level=1 LIMIT 2")
+                .then((result) =>{                    
+                    next(result);
+                }).catch((error) => {
+                next(error);
+            });
+        })
+    }
+    static getPictureProfileOfUser(user_id){
+        return new Promise((next) =>{
+            db.query("SELECT profil from user WHERE id= ?", [parseInt(user_id)])
+                .then((result) => {                    
+                    next(result[0]);
+                }).catch((error) => {
+                next(error);
+            });
+        })
+    }
+
+    static getCoverOfGroupOfUser(group_id){
+        return new Promise((next) =>{
+            db.query("SELECT couverture from groupe WHERE id= ?", [parseInt(group_id)])
+                .then((result) => {                    
+                    next(result[0]);
+                }).catch((error) => {
+                next(error);
+            });
+        })
+    }
+    // retourne tous les groupe auquel appartien l'utilisateur connecté
+    static getLimitGroupOfUser(emailcrypt){
+        return new Promise((next) =>{
+            db.query("SELECT * from groupe LIMIT 4")
+                .then((result) =>{
+                    next(result);
+                }).catch((error) => {
+                next(error);
+            });
+        })
+    }
+
 
 
     //Of Publication User

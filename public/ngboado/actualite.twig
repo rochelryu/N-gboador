@@ -813,6 +813,7 @@
 
 											<div class="row">
 												<!--======-- media container (image) --======-->
+
 												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 													<center>
                                                         <div class="swiper-container">
@@ -879,6 +880,7 @@
                                                         </div>
                                                     </center>
 												</div>
+
 												<!--======-- poster's profil picture and name container--======-->
 												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px;">
 													<div class="row">
@@ -1400,28 +1402,39 @@
 															</div>
 														</div>
 													</div>
-												<!------------------------------------------------->
+												{# <!------------------------------------------------->
 												<!-- 		RANDOM FRIENDS SUGGESTION END  		 -->
 												<!------------------------------------------------->
-												</div>
+												</div> #}
 
-												<!------------------------------------------------->
+												{# <!------------------------------------------------->
 												<!-- 			MEMBER GROUPS VIEWS  		 	 -->
-												<!------------------------------------------------->
+												<!-------------------------------------------------> #}
+																					
+														
 												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px; margin-left: 6px;">
 													<div class="row">
 														<!--======-- groupe one --======-->
-														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%;">
-															<div class="bloc">
-																<img src="medias/images/group10.jpg" alt="Avatar" class="image">
-																<div class="overlay">
-																	<div class="text">Nos Enfants</div>
+														{% if info %}
+															{% for group in info.two_best_level_group %}
+																<a href="/Community/{{ group.crypt }}"> <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%;">
+																	<div class="bloc">
+																		<img src="medias/images/{{group.couverture}}" alt="Avatar" class="image">
+																		<div class="overlay">
+																			<div class="text">{{group.id}}</div>
+																		</div>
+																	</div>
 																</div>
-															</div>
-														</div>
-
+																</a>														
+															{% endfor %}
+															{% if info.two_best_level_group|length != 1  %}
+																{% for group in info.two_best_level_group %}
+																
+																{% endfor %}
+															{% endif %}
+														{% endif %}														
 														<!--======-- groupe two --======-->
-														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-left: -11px;">
+														<div class="col-xl-5 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; ">
 															<div class="bloc">
 																<img src="medias/images/group1.jpg" alt="Avatar" class="image">
 																<div class="overlay">
@@ -1431,7 +1444,7 @@
 														</div>
 
 														<!--======-- groupe three --======-->
-														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-top: 15px;">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
 															<div class="bloc">
 																<img src="medias/images/group12.jpeg" alt="Avatar" class="image">
 																<div class="overlay">
@@ -1441,7 +1454,7 @@
 														</div>
 
 														<!--======-- groupe four --======-->
-														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-left: -11px; margin-top: 15px;">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
 															<div class="bloc">
 																<img src="medias/images/benevoles.jpg" alt="Avatar" class="image">
 																<div class="overlay">
@@ -1451,7 +1464,7 @@
 														</div>
 
 														<!--======-- groupe five --======-->
-														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-top: 15px;">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
 															<div class="bloc">
 																<img src="medias/images/group3.jpg" alt="Avatar" class="image">
 																<div class="overlay">
@@ -1461,45 +1474,55 @@
 														</div>
 
 														<!--======-- groupe size --======-->
-														<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="cursor: pointer; width: 50%; margin-left: -11px; margin-top: 15px;">
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
 															<div class="bloc">
 																<center><img src="medias/images/add5.png" alt="Avatar" class="image" id="plus"></center>
 																<div class="overlay" id="overlay-plus">
 																	<div class="text">Voir plus</div>
-																</div>
+																</div>															
 															</div>
 														</div>
+														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
+															<div class="bloc">
+																<center><img src="medias/images/add5.png" alt="Avatar" class="image" id="plus"></center>
+																<div class="overlay" id="overlay-plus">
+																	<div class="text">Creer ma communauté</div>
+																</div>															
+															</div>
+														</div>
+													
+														
 													</div>
-												<!------------------------------------------------->
+												{# <!------------------------------------------------->
 												<!-- 			MEMBER GROUPS VIEWS END  		 -->
-												<!------------------------------------------------->
+												<!-------------------------------------------------> #}
 												</div>
 
 											</div>
 										</div>
 
 									</div>
-								<!------------------------------------------------->
+								{# <!------------------------------------------------->
 								<!-- RIGHT SIDE BLOCK END (with friend request ) -->
-								<!------------------------------------------------->
+								<!-------------------------------------------------> #}
 								</div>
                                 <input type="hidden" value="false" id="microLan" disabled>
                                 <input type="hidden" value="{{ user.emailcrypt }}" id="del" disabled>
                                 <input type="hidden" value="{{ user.keyconfirm }}" id="pel" disabled>
 
-								<!------------------------------------------------->
+								{# <!------------------------------------------------->
 								<!-- 			CHAT'S COMMENTS COVER 			 -->
-								<!------------------------------------------------->
+								<!-------------------------------------------------> #}
 								<div class="comments-cover col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #273746; width: 100%; height: 100%; background-size: cover; position: fixed; top: 0px; opacity: .6; display: none">
-
+{# 
 								<!------------------------------------------------->
 								<!-- 			CHAT'S COMMENTS END COVER		 -->
-								<!------------------------------------------------->
+								<!-------------------------------------------------> #}
 								</div>
 
-								<!------------------------------------------------->
+								{# <!------------------------------------------------->
 								<!-- 			  INBOX CHAT CONTAINER           -->
-								<!------------------------------------------------->
+								<!-------------------------------------------------> #}
 								<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-push-9 col-sm-push-9 col-md-push-9 col-lg-push-9 col-xl-push-9 inbox-block">
 									<div class="row">
 										<!--======-- inbox container --======-->

@@ -2,7 +2,7 @@ $(document).ready(function () {
     var foo = ["sans-serif", 'Enchanted', 'Sketch Gothic School', 'Arapey', 'Boulevard', 'mexcellent', 'CHOCD TRIAL', 'Double_Bubble_shadow', 'Raleway', 'Gummy', 'ALBA', 'PAC-FONT', 'heavy heap', 'KeeponTruckin', 'Neon', 'Shocking', 'Consolas', "Arial Black", "Helvetica","Lucida Sans Unicode", 'Lucida Sans', 'Lucida Grande',  'Verdana', 'serif', 'monospace', 'cursive', 'fantasy'];
     var moo = ['linear-gradient(0deg, #bc3fcc, #3f48cc)', 'linear-gradient(180deg,#1a237E, #8C9d)', 'linear-gradient(180deg,#304, #4A148C)', '#304', 'linear-gradient(270deg,#ef9a9a, #f44336)', "#A0F9", "linear-gradient(to right, #c120d6, #f046c6)", "sans-serif",'linear-gradient(180deg,#d50000, #B71C1C)', 'linear-gradient(180deg,#a0f, #d500f9)', '#ad95f9', '#e86f84','#88001b', '#12ad2f', '#00a8f3','#222', '#ff7f27bb', "#E5FCC2", "#594F4F", "#9DE0AD", "#45ADA8", "#CC527A","#474747", "#363636", "#ABA7A7", "#EB175D", "#581845", "#900C3F", "#2B7A78", "#E91E63", "#7CB342", "#BA68C8", "#7B1FA2", "#AEEA00", "#827717", "#750D01", "#004D40"];
     var journ = true;
-    var gale = false;
+    var gale = false; //la gellery
     var about = false;
     var aucune = false;
     var monthFr = ['Jan', 'Fev', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Dec']

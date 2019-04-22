@@ -1,11 +1,11 @@
 {
   "rootApi": "/",
-  "port": "8080",
+  "port": "4000",
   "db": {
     "host": "localhost",
     "database": "bd_ngboador",
     "user": "root",
-    "password": "mamanPAPA225R#"
+    "password": ""
   },
   "email":{
     "user" : "",
