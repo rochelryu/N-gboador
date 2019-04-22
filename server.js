@@ -15,11 +15,6 @@ const cookieParser = require('cookie-parser');
 const ent = require('ent');
 const mysql = require('promise-mysql');
 
-<<<<<<< HEAD
-
-// connection à la base de donnée
-=======
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 mysql.createConnection({
     host: config.db.host,
     database: config.db.database,
@@ -32,9 +27,6 @@ mysql.createConnection({
     let io = require('socket.io')(https);
     const User = require('./Model/User')(db, config);
 
-<<<<<<< HEAD
-    // utilisation du middleware
-=======
     const storagePublish = multer.diskStorage({
         destination: './public/ngboado/medias/images/',
         filename: function (req, file, cb) {
@@ -46,7 +38,6 @@ mysql.createConnection({
     }).array("filepond", 19);
 
     // utilisation du middlewar
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.use(expressValidator());
     app.use(session({
         secret: config.session.secret,
@@ -59,28 +50,12 @@ mysql.createConnection({
     app.use(cookieParser());
     app.use(morgan);
 
-<<<<<<< HEAD
-
-    // Routing
-
-    // get of localhost
-    app.get('/', async (req, res) =>{
-        if(req.session.ngboador){           
-            res.redirect('/Accueil'); //Si le session existe l'utilisateur est redirigé vers Accueil directement
-        }
-        res.redirect('/login') // sinon il faut qu'il se connecte
-    });
-
-    
-    //get for login's page
-=======
     app.get('/', async (req, res) =>{
         if(req.session.ngboador){
             res.redirect('/Accueil');
         }
         res.redirect('/login')
     });
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.get('/login', async (req, res) =>{
         if(req.query.e == "1"){
             //const error = req.session.errors;
@@ -96,17 +71,9 @@ mysql.createConnection({
             res.render(`${__dirname}/public/ngboado/index.twig`, { user: "nil" })
         }
     });
-<<<<<<< HEAD
-
-    // Validation formulaire login
-    app.post('/login', async (req, res) =>{
-        req.check('user', "Username ne doit pas être vide").notEmpty();
-        req.check('pass', "Email ne doit pas être vide").notEmpty();
-=======
     app.post('/login', async (req, res) =>{
         req.check('user', "Email invalide").isEmail();
         req.check('pass', "Mot de pass ne doit pas être vide").notEmpty();
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 
         const error = req.validationErrors();
         if(error){
@@ -125,18 +92,8 @@ mysql.createConnection({
            else{
                res.render(`${__dirname}/public/ngboado/index.twig`, { error: 'Identification Echoué. Veuillez verifier vos cordonnées ou Inscrivez-vous' })
            }
-<<<<<<< HEAD
-        }//res.render(`${__dirname}/public/form.twig`, { user: "nil" })
-    });
-    
-    
-    // Fin validation formulaire login
-    
-    // validation formulaire signin
-=======
         }
     });
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.post('/signin', async (req, res)=>{
         req.check('name', "Le nom ne doit pas être vide").notEmpty();
         req.check('firstname', "Le prénom ne doit pas être vide").notEmpty();
@@ -181,7 +138,6 @@ mysql.createConnection({
             }
         }
     });
-<<<<<<< HEAD
     // End validation formulaire signin
     app.get('/Community/:id', async (req, res) => {
         console.log("identifiant demandé : " + req.params.id);
@@ -206,31 +162,18 @@ mysql.createConnection({
         }
     });
 
-=======
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.get('/Accueil', async (req, res)=>{
         if(req.session.ngboador){
             let info = {}
             let ll = req.session.ngboador.lieu.split(',');
-<<<<<<< HEAD
-            let NumberPublication = await User.getAllPublicationUsers(0,9); //toutes les 9 première publication
-            let sugl = await User.getAllSuggest(ll[0], req.session.ngboador.id, 0, 3);
-            let sugl2 = await User.getAllSuggest(ll[0], req.session.ngboador.id, 3, 3);
-            let two_best_level_group = await User.getAllBestLevelGroup();
-=======
             let NumberPublication = await User.getAllPublicationUsers(0,9);
             let sugl = await User.getAllSuggest(ll[0], req.session.ngboador.id, 0, 3);
             let sugl2 = await User.getAllSuggest(ll[0], req.session.ngboador.id, 3, 3);
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
             /*for(let i = 0; i< 6; i++){
                 const ele = Math.floor(Math.random() * Math.floor(sugTotal.length));
                 console.log(sugTotal[ele - 1]);
                 (sugl.length < 3) ? sugl.push(sugTotal[ele - 1]) : sugl2.push(sugTotal[ele - 1]);
             }*/
-<<<<<<< HEAD
-
-=======
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
             for(let i in NumberPublication){
                 const NombreLike = await User.getNumberLike(NumberPublication[i].id);
                 const NombreDoute = await User.getNumberDoute(NumberPublication[i].id);
@@ -248,16 +191,9 @@ mysql.createConnection({
             info.published = NumberPublication;
             info.sug = sugl;
             info.sug2 = sugl2;
-<<<<<<< HEAD
-            info.two_best_level_group = two_best_level_group;
-            let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
-            const userSearch = JSON.stringify(totalSearch);
-            fs.writeFile(__dirname + "/public/ngboado/part/usersSearch.txt", userSearch, "UTF-8", (err, file) => {
-=======
             let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
             const userSearch = JSON.stringify(totalSearch);
             fs.writeFile(__dirname + "/public/ngboado/part/"+ req.session.ngboador.emailcrypt +".txt", userSearch, "UTF-8", (err, file) => {
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                 if (err) {
                     console.log(err);
                 }
@@ -265,18 +201,12 @@ mysql.createConnection({
                     console.log("user ready to Search");
                 }
             });
-<<<<<<< HEAD
-            console.log(JSON.stringify(info.two_best_level_group))
-=======
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
             res.render(`${__dirname}/public/ngboado/actualite.twig`, {user: req.session.ngboador, info:info});
         }
         else res.redirect('/login')
     });
 
     /////////ACCOUNT
-<<<<<<< HEAD
-=======
     app.post('/profil', uploadPublish, async(req, res)=>{
         let contents = req.body.comment;
             contents = contents.replace(/(\r\n|\n|\r)/g,"<br />");
@@ -353,7 +283,6 @@ m                    case 2:
                 console.log(JSON.stringify(shareTab))
                 res.redirect('/profil');
     })
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.get('/profil', async (req, res)=>{
         if(req.session.ngboador) {
             let info = {}
@@ -387,11 +316,7 @@ m                    case 2:
             let ll = req.session.ngboador.lieu.split(',');
             let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
             const userSearch = JSON.stringify(totalSearch);
-<<<<<<< HEAD
-            fs.writeFile(__dirname + "/public/ngboado/part/usersSearch.txt", userSearch, "UTF-8", (err, file) => {
-=======
             fs.writeFile(__dirname + "/public/ngboado/part/"+ req.session.ngboador.emailcrypt +".txt", userSearch, "UTF-8", (err, file) => {
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                 if (err) {
                     console.log(err);
                 }
@@ -445,11 +370,7 @@ m                    case 2:
             let ll = req.session.ngboador.lieu.split(',');
             let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
             const userSearch = JSON.stringify(totalSearch);
-<<<<<<< HEAD
-            fs.writeFile(__dirname + "/public/ngboado/part/usersSearch.txt", userSearch, "UTF-8", (err, file) => {
-=======
             fs.writeFile(__dirname + "/public/ngboado/part/"+ req.session.ngboador.emailcrypt +".txt", userSearch, "UTF-8", (err, file) => {
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                 if (err) {
                     console.log(err);
                 }
@@ -463,9 +384,6 @@ m                    case 2:
         else res.redirect('/login')
     });
 
-<<<<<<< HEAD
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-=======
 
 
 
@@ -482,7 +400,6 @@ m                    case 2:
 
 
 
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 
     //Initialisation de mes socket
     io.on('connection', (socket)=>{
@@ -499,8 +416,6 @@ m                    case 2:
             }
             return false;
         });
-<<<<<<< HEAD
-=======
         socket.on('rec', async (data) => {
             let ctx = data.ctx.replace(/(\r\n|\n|\r)/g,"<br />");
             ctx =  data.ctx.replace(/<script>/g,"");
@@ -516,7 +431,6 @@ m                    case 2:
                 socket.emit('recres', data);
             }
         });
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
         socket.on('inbox', async (message)=>{
             if(message.context === ""){
                 socket.emit('eroorMsg', 'AUCUN CONTENU');
@@ -525,11 +439,7 @@ m                    case 2:
                 const user = await User.verifUserSimple(message.e, message.k);
                 if(!isErr(user)){
                     message.context = message.context.replace(/(\r\n|\n|\r)/g,"<br />");
-<<<<<<< HEAD
-                    message.context = message.context.replace(/<script>/g,"<br />");
-=======
                     message.context = message.context.replace(/<script>/g,"");
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                     message.context = ent.encode(message.context)
                     const setMessage = await User.setMessage(user.id, message.context);
                     if (!isErr(setMessage)){
@@ -1031,11 +941,7 @@ m                    case 2:
                 socket.emit('res_resetPass', send);
             }
         });
-<<<<<<< HEAD
-    });
-=======
         });
->>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 
 
     https.listen(config.port);
