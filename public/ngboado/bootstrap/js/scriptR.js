@@ -294,6 +294,16 @@ $(document).ready(function () {
             }
         }
     });
+    $('.Rec').on('click', function(){
+        var ctx = $('#form85').val()
+        if(ctx !== ""){
+        var e = $('#del').val()
+        var f = $('#unless').val()
+        socket.emit('rec', {ctx:ctx, e:e, f:f})
+        $('#form85').val('')
+        $('.close').click()
+        }
+    })
 
     $('#send_forum').on('click', function(){
         var nom = $('#form3').val();
@@ -354,6 +364,21 @@ $(document).ready(function () {
             $('.close').click();
         }
     })
+    $('#srch-term').keyup(function () {
+        $("#filter").html('');
+        var itemSearch = $(this);
+        var del = $("#del").val();
+        var userEnter = itemSearch.val();
+        var regexp = new RegExp(userEnter, "i");
+        $.getJSON('../part/'+ del +'.txt', function (data) {
+            $.each(data, function (key, value) {
+                if (value.nom.search(regexp) != -1 || value.email.search(regexp) != -1) {
+                    //$("#filter").append('<li class="list-group-item waves-effect"><a href="/profil/' + value.emailcryp + '"><img src="assets/img/profil/' + value.profil + '" class="img-circle" style="width:35px;height:35px; box-shadow: 0px 0px 10px #444; float:left"><small style="font-weight:bold">' + value.nom + '</small></a></li>');
+                    console.log(value.emailcrypt + ' ' + value.nom + ' ' + value.profil)
+                }
+            });
+        });
+    });
     $('.content_scroll').on('submit', '#blink', function () {
         var main = $('#del').val(); //mail
         main = main.replace(/<script>/g,"");
@@ -543,20 +568,6 @@ $(document).ready(function () {
         wap = wap.replace(/<script>/g,"");
         socket.emit('DelFollow', {cl:client,e:wap});
         $(this).removeClass('a_demo_fours').addClass('a_demo_four').html("Suivre");
-    });
-
-    $('#srch-term').keyup(function () {
-        $("#filter").html('');
-        var itemSearch = $(this);
-        var userEnter = itemSearch.val();
-        var regexp = new RegExp(userEnter, "i");
-        $.getJSON('../../usersSearch.txt', function (data) {
-            $.each(data, function (key, value) {
-                if (value.nom.search(regexp) != -1) {
-                    $("#filter").append('<li class="list-group-item waves-effect"><a href="/profil/' + value.emailcryp + '"><img src="assets/img/profil/' + value.profil + '" class="img-circle" style="width:35px;height:35px; box-shadow: 0px 0px 10px #444; float:left"><small style="font-weight:bold">' + value.nom + '</small></a></li>');
-                }
-            });
-        });
     });
 
     socket.on('InBiblio', function(data){
@@ -767,6 +778,25 @@ $(document).ready(function () {
         }
         return false;
     });
+    socket.on('recres', function(data){
+        console.log(data)
+        if(data.res == true){
+            $.notify({
+                position: 3,
+                type: 'success',
+                message: "Recommandation Enregistré ",
+                duration: 4000
+            });
+        }
+        else{
+            $.notify({
+                position: 3,
+                type: 'error',
+                message: "Erreur, Recommandation Echoué",
+                duration: 4000
+            });
+        }
+    })
     socket.on('infRM', function (dataR) {
         var main = $('#del').val();
         if(dataR.length == 0){

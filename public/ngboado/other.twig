@@ -3,6 +3,46 @@
 <head>
     <title>N'gboadô | Profil</title>
     {% include '../ngboado/partial/header.twig' %}
+    <div class="modal fade" id="modalRelatedContent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-side modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading">Recommandation</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="../medias/icon/user profil/africa/{{ profil.profil }}" class="img-fluid img-rec" alt="{{ profil.nom }}">
+          </div>
+
+          <div class="col-sm-7">
+            <div class="md-form">
+          <i class="fas fa-pencil-alt prefix grey-text"></i>
+          <textarea type="text" id="form85" class="md-textarea form-control" rows="4"></textarea>
+          <label data-error="wrong" data-success="right" for="form85">Qu'est-ce que vous penser de {{ profil.nom }}</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-unique Rec">Faire Part <i class="fas fa-paper-plane-o ml-1"></i></button>
+      </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
     <div class="card m-150 m-5 p-b-80" id="prev" align="center" style="background-color: #fff;">
 
         <!--Card image-->
@@ -41,6 +81,8 @@
                 {% endif %}
 
                 <button id="tchat_icon" type="button" class="btn btn-primary waves-effect btn-radius"><i class="fas fa-comments" aria-hidden="true"></i></button>
+
+                <button class="btn btn-outline-primary btn-r" data-toggle="modal" data-target="#modalRelatedContent">Recommander</button>
             </div>
         </div>
     </div>
@@ -339,123 +381,100 @@
                                         {% if info.gallery != "" %}
 
                                             {% for pub in info.gallery %}
-                                                {% if pub.file1 != undefined %}
-                                                    {% set foo111 = pub.file1|split('.') %}
-                                                    {% if foo111[foo111|length - 1] == "jpeg" or foo111[foo111|length - 1] == "JPEG" or foo111[foo111|length - 1] == "jpg" or foo111[foo111|length - 1] == "JPG"  or foo111[foo111|length - 1] == "png" or foo111[foo111|length - 1] == "PNG" or foo111[foo111|length - 1] == "gif" or foo111[foo111|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            <a href="../medias/images/{{ pub.file1 }}" class="sb">
-                                                                <figure>
-                                                                    <img src="../medias/images/{{ pub.file1 }}" alt=" " class="img-fluid" />
-                                                                </figure>
-                                                            </a>
-                                                        </div>
+                                                    {% if pub.file1 != undefined %}
+                                                        {% set foo111 = pub.file1|split('.') %}
+                                                        {% if foo111[foo111|length - 1] == "jpeg" or foo111[foo111|length - 1] == "JPEG" or foo111[foo111|length - 1] == "jpg" or foo111[foo111|length - 1] == "JPG"  or foo111[foo111|length - 1] == "png" or foo111[foo111|length - 1] == "PNG" or foo111[foo111|length - 1] == "gif" or foo111[foo111|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                                        <img src="../medias/images/{{ pub.file1 }}" alt=" " class="img-fluid" />
+                                                            </div>
+                                                        {% endif %}
                                                     {% endif %}
-                                                {% endif %}
-                                                {% if pub.file2 != undefined %}
-                                                    {% set foo211 = pub.file2|split('.') %}
-                                                    {% if foo211[foo211|length - 1] == "jpeg" or foo211[foo211|length - 1] == "JPEG" or foo211[foo211|length - 1] == "jpg" or foo211[foo211|length - 1] == "JPG"  or foo211[foo211|length - 1] == "png" or foo211[foo211|length - 1] == "PNG" or foo211[foo211|length - 1] == "gif" or foo211[foo211|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            <a href="../medias/images/{{ pub.file2 }}" class="sb">
-                                                                <figure>
-                                                                    <img src="../medias/images/{{ pub.file2 }}" alt=" " class="img-fluid" />
-                                                                </figure>
-                                                            </a>
-                                                        </div>
+                                                    {% if pub.file2 != undefined %}
+                                                        {% set foo211 = pub.file2|split('.') %}
+                                                        {% if foo211[foo211|length - 1] == "jpeg" or foo211[foo211|length - 1] == "JPEG" or foo211[foo211|length - 1] == "jpg" or foo211[foo211|length - 1] == "JPG"  or foo211[foo211|length - 1] == "png" or foo211[foo211|length - 1] == "PNG" or foo211[foo211|length - 1] == "gif" or foo211[foo211|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+
+                                                                        <img src="../medias/images/{{ pub.file2 }}" alt=" " class="img-fluid" />
+                                                            </div>
+                                                        {% endif %}
                                                     {% endif %}
-                                                {% endif %}
-                                                {% if pub.file3 != undefined %}
-                                                    {% set foo311 = pub.file3|split('.') %}
-                                                    {% if foo311[foo311|length - 1] == "jpeg" or foo311[foo311|length - 1] == "JPEG" or foo311[foo311|length - 1] == "jpg" or foo311[foo311|length - 1] == "JPG"  or foo311[foo311|length - 1] == "png" or foo311[foo311|length - 1] == "PNG" or foo311[foo311|length - 1] == "gif" or foo311[foo311|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file3 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file3 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
-                                                {% if pub.file4 != undefined %}
-                                                    {% set foo411 = pub.file4|split('.') %}
-                                                    {% if foo411[foo411|length - 1] == "jpeg" or foo411[foo411|length - 1] == "JPEG" or foo411[foo411|length - 1] == "jpg" or foo411[foo411|length - 1] == "JPG"  or foo411[foo411|length - 1] == "png" or foo411[foo411|length - 1] == "PNG" or foo411[foo411|length - 1] == "gif" or foo411[foo411|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file4 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file4 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
+                                                    {% if pub.file3 != undefined %}
+                                                        {% set foo311 = pub.file3|split('.') %}
+                                                        {% if foo311[foo311|length - 1] == "jpeg" or foo311[foo311|length - 1] == "JPEG" or foo311[foo311|length - 1] == "jpg" or foo311[foo311|length - 1] == "JPG"  or foo311[foo311|length - 1] == "png" or foo311[foo311|length - 1] == "PNG" or foo311[foo311|length - 1] == "gif" or foo311[foo311|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            
+                                                                    <img src="../medias/images/{{ pub.file3 }}" alt=" " class="img-fluid" />
+                                                            
+                                                            </div>{% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file4 != undefined %}
+                                                        {% set foo411 = pub.file4|split('.') %}
+                                                        {% if foo411[foo411|length - 1] == "jpeg" or foo411[foo411|length - 1] == "JPEG" or foo411[foo411|length - 1] == "jpg" or foo411[foo411|length - 1] == "JPG"  or foo411[foo411|length - 1] == "png" or foo411[foo411|length - 1] == "PNG" or foo411[foo411|length - 1] == "gif" or foo411[foo411|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            
+                                                                    <img src="../medias/images/{{ pub.file4 }}" alt=" " class="img-fluid" />
+                                                                
+                                                            </div>{% endif %}
+                                                    {% endif %}
 
-                                                {% if pub.file5 != undefined %}
-                                                    {% set foo511 = pub.file5|split('.') %}
-                                                    {% if foo511[foo511|length - 1] == "jpeg" or foo511[foo511|length - 1] == "JPEG" or foo511[foo511|length - 1] == "jpg" or foo511[foo511|length - 1] == "JPG"  or foo511[foo511|length - 1] == "png" or foo511[foo511|length - 1] == "PNG" or foo511[foo511|length - 1] == "gif" or foo511[foo511|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file5 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file5 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
+                                                    {% if pub.file5 != undefined %}
+                                                        {% set foo511 = pub.file5|split('.') %}
+                                                        {% if foo511[foo511|length - 1] == "jpeg" or foo511[foo511|length - 1] == "JPEG" or foo511[foo511|length - 1] == "jpg" or foo511[foo511|length - 1] == "JPG"  or foo511[foo511|length - 1] == "png" or foo511[foo511|length - 1] == "PNG" or foo511[foo511|length - 1] == "gif" or foo511[foo511|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                        
+                                                                    <img src="../medias/images/{{ pub.file5 }}" alt=" " class="img-fluid" />
+                                                                
+                                                            </div>{% endif %}
+                                                    {% endif %}
 
-                                                {% if pub.file6 != undefined %}
-                                                    {% set foo611 = pub.file6|split('.') %}
-                                                    {% if foo611[foo611|length - 1] == "jpeg" or foo611[foo611|length - 1] == "JPEG" or foo611[foo611|length - 1] == "jpg" or foo611[foo611|length - 1] == "JPG"  or foo611[foo611|length - 1] == "png" or foo611[foo611|length - 1] == "PNG" or foo611[foo611|length - 1] == "gif" or foo611[foo611|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file6 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file6 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
+                                                    {% if pub.file6 != undefined %}
+                                                        {% set foo611 = pub.file6|split('.') %}
+                                                        {% if foo611[foo611|length - 1] == "jpeg" or foo611[foo611|length - 1] == "JPEG" or foo611[foo611|length - 1] == "jpg" or foo611[foo611|length - 1] == "JPG"  or foo611[foo611|length - 1] == "png" or foo611[foo611|length - 1] == "PNG" or foo611[foo611|length - 1] == "gif" or foo611[foo611|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            
+                                                                    <img src="../medias/images/{{ pub.file6 }}" alt=" " class="img-fluid" />
+                                                                
+                                                            </div>{% endif %}
+                                                    {% endif %}
 
-                                                {% if pub.file7 != undefined %}
-                                                    {% set foo711 = pub.file7|split('.') %}
-                                                    {% if foo711[foo711|length - 1] == "jpeg" or foo711[foo711|length - 1] == "JPEG" or foo711[foo711|length - 1] == "jpg" or foo711[foo711|length - 1] == "JPG"  or foo711[foo711|length - 1] == "png" or foo711[foo711|length - 1] == "PNG" or foo711[foo711|length - 1] == "gif" or foo711[foo711|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file7 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file7 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
+                                                    {% if pub.file7 != undefined %}
+                                                        {% set foo711 = pub.file7|split('.') %}
+                                                        {% if foo711[foo711|length - 1] == "jpeg" or foo711[foo711|length - 1] == "JPEG" or foo711[foo711|length - 1] == "jpg" or foo711[foo711|length - 1] == "JPG"  or foo711[foo711|length - 1] == "png" or foo711[foo711|length - 1] == "PNG" or foo711[foo711|length - 1] == "gif" or foo711[foo711|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                           
+                                                                    <img src="../medias/images/{{ pub.file7 }}" alt=" " class="img-fluid" />
+                                                                
+                                                            </div>{% endif %}
+                                                    {% endif %}
 
-                                                {% if pub.file8 != undefined %}
-                                                    {% set foo811 = pub.file8|split('.') %}
-                                                    {% if foo811[foo811|length - 1] == "jpeg" or foo811[foo811|length - 1] == "JPEG" or foo811[foo811|length - 1] == "jpg" or foo811[foo811|length - 1] == "JPG"  or foo811[foo811|length - 1] == "png" or foo811[foo811|length - 1] == "PNG" or foo811[foo811|length - 1] == "gif" or foo811[foo811|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file8 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file8 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
-                                                {% if pub.file9 != undefined %}
-                                                    {% set foo911 = pub.file9|split('.') %}
-                                                    {% if foo911[foo911|length - 1] == "jpeg" or foo911[foo911|length - 1] == "JPEG" or foo911[foo911|length - 1] == "jpg" or foo911[foo911|length - 1] == "JPG"  or foo911[foo911|length - 1] == "png" or foo911[foo911|length - 1] == "PNG" or foo911[foo911|length - 1] == "gif" or foo911[foo911|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file9 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file9 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
-                                                {% if pub.file10 != undefined %}
-                                                    {% set foo011 = pub.file10|split('.') %}
-                                                    {% if foo011[foo011|length - 1] == "jpeg" or foo011[foo011|length - 1] == "JPEG" or foo011[foo011|length - 1] == "jpg" or foo011[foo011|length - 1] == "JPG"  or foo011[foo011|length - 1] == "png" or foo011[foo011|length - 1] == "PNG" or foo011[foo011|length - 1] == "gif" or foo011[foo011|length - 1] == "GIF" %}
-                                                        <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file10 }}" class="sb">
-                                                            <figure>
-                                                                <img src="../medias/images/{{ pub.file10 }}" alt=" " class="img-fluid" />
-                                                            </figure>
-                                                        </a>
-                                                        </div>{% endif %}
-                                                {% endif %}
-                                                <!-- A continuer jusqu'au 19 files-->
+                                                    {% if pub.file8 != undefined %}
+                                                        {% set foo811 = pub.file8|split('.') %}
+                                                        {% if foo811[foo811|length - 1] == "jpeg" or foo811[foo811|length - 1] == "JPEG" or foo811[foo811|length - 1] == "jpg" or foo811[foo811|length - 1] == "JPG"  or foo811[foo811|length - 1] == "png" or foo811[foo811|length - 1] == "PNG" or foo811[foo811|length - 1] == "gif" or foo811[foo811|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            
+                                                                    <img src="../medias/images/{{ pub.file8 }}" alt=" " class="img-fluid" />
+                                                                
+                                                            </div>{% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file9 != undefined %}
+                                                        {% set foo911 = pub.file9|split('.') %}
+                                                        {% if foo911[foo911|length - 1] == "jpeg" or foo911[foo911|length - 1] == "JPEG" or foo911[foo911|length - 1] == "jpg" or foo911[foo911|length - 1] == "JPG"  or foo911[foo911|length - 1] == "png" or foo911[foo911|length - 1] == "PNG" or foo911[foo911|length - 1] == "gif" or foo911[foo911|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            
+                                                                    <img src="../medias/images/{{ pub.file9 }}" alt=" " class="img-fluid" />
+                                                                
+                                                            </div>{% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file10 != undefined %}
+                                                        {% set foo011 = pub.file10|split('.') %}
+                                                        {% if foo011[foo011|length - 1] == "jpeg" or foo011[foo011|length - 1] == "JPEG" or foo011[foo011|length - 1] == "jpg" or foo011[foo011|length - 1] == "JPG"  or foo011[foo011|length - 1] == "png" or foo011[foo011|length - 1] == "PNG" or foo011[foo011|length - 1] == "gif" or foo011[foo011|length - 1] == "GIF" %}
+                                                            <div class="col-sm-4 col-xs-6 p-b-5">
+                                                            
+                                                                    <img src="../medias/images/{{ pub.file10 }}" alt=" " class="img-fluid" />
+                                                                
+                                                            </div>{% endif %}
+                                                    {% endif %}
+                                    <!-- A continuer jusqu'au 19 files-->
                                             {% endfor %}
                                         {% else %}
                                             <div class="card">
@@ -515,17 +534,8 @@
                                                 </div>
                                                 <div class="backend_rec">
                                                     <div class="card-body text-center">
-                                                        <form id="contact" name="contact-form" action="" method="POST">
                                                             <div class="row">
-                                                                <div class="col-md-1">
-                                                                    <div class="view overlay">
-                                                                        <img class="img_comment" src="medias/icon/user%20profil/arabe/{{ pub.profil }}" alt="Card image cap">
-                                                                        <a href="/ownL/{{ pub.emailcrypt }}">
-                                                                            <div class="mask rgba-white-slight"></div>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-11">
+                                                
                                                                     <div align="center">
                                                                         <p class="cat-member">{{ pub.name }}</p>
                                                                     </div>
@@ -533,9 +543,7 @@
                                                                         <small class="cat-member">
                                                                             <script>horodatage("{{ pub.register }}")</script></small>
                                                                     </div>
-                                                                </div>
                                                             </div>
-                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -554,6 +562,7 @@
         </div>
 
     </div>
+
     <!------------------------------------------------->
     <!-- THIRD BAR CONTAINER (chat bar fixed bottom) -->
     <!-------------------------------------------------->
@@ -835,6 +844,7 @@
         </div>
     </div>
 
+
     <!---------------------------------------------------->
     <!-- THIRD BAR CONTAINER END(chat bar fixed bottom) -->
     <!---------------------------------------------------->
@@ -1081,6 +1091,8 @@
                 <!--======-- inbox container end --======-->
             </div>
         </div>
+
+<!--Modal: modalRelatedContent-->
         <!------------------------------------------------->
         <!-- 			INBOX CHAT CONTAINER END         -->
         <!------------------------------------------------->
@@ -1142,9 +1154,9 @@
                         <!------------------------------------------------------------>
                     </div>
 
-                    <!------------------------------------------------->
+                    <!------------------------------------------------>
                     <!-- 			  SEND MESSAGE INPUT          	 -->
-                    <!------------------------------------------------->
+                    <!------------------------------------------------>
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left: -2.5%;">
                         <input type="text" class="form-control" id="" aria-describedby="textHelp" placeholder="Ecrire un commentaire..." style="border-radius: none; height: 48px; width: 105.5%; font-size: 1em; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
                     </div>
@@ -1152,9 +1164,9 @@
                 </div>
             </div>
         </div>
-        <!------------------------------------------------->
-        <!-- 			   POSTS COMMENTS           	 -->
-        <!------------------------------------------------->
+        <!------------------------------------------------>
+        <!-- 			   POSTS COMMENTS           	-->
+        <!------------------------------------------------>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
@@ -1162,10 +1174,12 @@
     <script src="../bootstrap/js/bootstrap.js"></script>
     <script src="../bootstrap/js/fontawesome-all.js"></script>
     <script src="../bootstrap/js/mdb.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/jquery.notify.min.js"></script>
+
     <script src="../bootstrap/js/scripts_actualite.js"></script>
     <script src="../bootstrap/js/swipe.js"></script>
     <script src="../bootstrap/js/jquery.pan.min.js"></script>
-    <script src="../bootstrap/js/jquery.prettyPhoto.js"></script>
+    <script src="../bootstrap/js/oimages.js"></script>
     <script src="../bootstrap/js/scriptR.js"></script>
     <script>
         //j'utilise ce script pour fixer mes remmandations
@@ -1201,6 +1215,79 @@
                 },900)
 
             });
+                    var meta = new Array();
+        {% for pub in info.gallery %}
+                                                    {% if pub.file1 != undefined %}
+                                                        {% set foo111 = pub.file1|split('.') %}
+                                                        {% if foo111[foo111|length - 1] == "jpeg" or foo111[foo111|length - 1] == "JPEG" or foo111[foo111|length - 1] == "jpg" or foo111[foo111|length - 1] == "JPG"  or foo111[foo111|length - 1] == "png" or foo111[foo111|length - 1] == "PNG" or foo111[foo111|length - 1] == "gif" or foo111[foo111|length - 1] == "GIF" %}
+meta.push('../medias/images/{{ pub.file1 }}')
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file2 != undefined %}
+                                                        {% set foo211 = pub.file2|split('.') %}
+                                                        {% if foo211[foo211|length - 1] == "jpeg" or foo211[foo211|length - 1] == "JPEG" or foo211[foo211|length - 1] == "jpg" or foo211[foo211|length - 1] == "JPG"  or foo211[foo211|length - 1] == "png" or foo211[foo211|length - 1] == "PNG" or foo211[foo211|length - 1] == "gif" or foo211[foo211|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file2 }}')
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file3 != undefined %}
+                                                        {% set foo311 = pub.file3|split('.') %}
+                                                        {% if foo311[foo311|length - 1] == "jpeg" or foo311[foo311|length - 1] == "JPEG" or foo311[foo311|length - 1] == "jpg" or foo311[foo311|length - 1] == "JPG"  or foo311[foo311|length - 1] == "png" or foo311[foo311|length - 1] == "PNG" or foo311[foo311|length - 1] == "gif" or foo311[foo311|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file3 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file4 != undefined %}
+                                                        {% set foo411 = pub.file4|split('.') %}
+                                                        {% if foo411[foo411|length - 1] == "jpeg" or foo411[foo411|length - 1] == "JPEG" or foo411[foo411|length - 1] == "jpg" or foo411[foo411|length - 1] == "JPG"  or foo411[foo411|length - 1] == "png" or foo411[foo411|length - 1] == "PNG" or foo411[foo411|length - 1] == "gif" or foo411[foo411|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file4 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+
+                                                    {% if pub.file5 != undefined %}
+                                                        {% set foo511 = pub.file5|split('.') %}
+                                                        {% if foo511[foo511|length - 1] == "jpeg" or foo511[foo511|length - 1] == "JPEG" or foo511[foo511|length - 1] == "jpg" or foo511[foo511|length - 1] == "JPG"  or foo511[foo511|length - 1] == "png" or foo511[foo511|length - 1] == "PNG" or foo511[foo511|length - 1] == "gif" or foo511[foo511|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file5 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+
+                                                    {% if pub.file6 != undefined %}
+                                                        {% set foo611 = pub.file6|split('.') %}
+                                                        {% if foo611[foo611|length - 1] == "jpeg" or foo611[foo611|length - 1] == "JPEG" or foo611[foo611|length - 1] == "jpg" or foo611[foo611|length - 1] == "JPG"  or foo611[foo611|length - 1] == "png" or foo611[foo611|length - 1] == "PNG" or foo611[foo611|length - 1] == "gif" or foo611[foo611|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file6 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+
+                                                    {% if pub.file7 != undefined %}
+                                                        {% set foo711 = pub.file7|split('.') %}
+                                                        {% if foo711[foo711|length - 1] == "jpeg" or foo711[foo711|length - 1] == "JPEG" or foo711[foo711|length - 1] == "jpg" or foo711[foo711|length - 1] == "JPG"  or foo711[foo711|length - 1] == "png" or foo711[foo711|length - 1] == "PNG" or foo711[foo711|length - 1] == "gif" or foo711[foo711|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file7 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+
+                                                    {% if pub.file8 != undefined %}
+                                                        {% set foo811 = pub.file8|split('.') %}
+                                                        {% if foo811[foo811|length - 1] == "jpeg" or foo811[foo811|length - 1] == "JPEG" or foo811[foo811|length - 1] == "jpg" or foo811[foo811|length - 1] == "JPG"  or foo811[foo811|length - 1] == "png" or foo811[foo811|length - 1] == "PNG" or foo811[foo811|length - 1] == "gif" or foo811[foo811|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file8 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file9 != undefined %}
+                                                        {% set foo911 = pub.file9|split('.') %}
+                                                        {% if foo911[foo911|length - 1] == "jpeg" or foo911[foo911|length - 1] == "JPEG" or foo911[foo911|length - 1] == "jpg" or foo911[foo911|length - 1] == "JPG"  or foo911[foo911|length - 1] == "png" or foo911[foo911|length - 1] == "PNG" or foo911[foo911|length - 1] == "gif" or foo911[foo911|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file9 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+                                                    {% if pub.file10 != undefined %}
+                                                        {% set foo011 = pub.file10|split('.') %}
+                                                        {% if foo011[foo011|length - 1] == "jpeg" or foo011[foo011|length - 1] == "JPEG" or foo011[foo011|length - 1] == "jpg" or foo011[foo011|length - 1] == "JPG"  or foo011[foo011|length - 1] == "png" or foo011[foo011|length - 1] == "PNG" or foo011[foo011|length - 1] == "gif" or foo011[foo011|length - 1] == "GIF" %}
+                                                            meta.push('../medias/images/{{ pub.file10 }}')
+                                                            {% endif %}
+                                                    {% endif %}
+                                    //A continuer jusqu'au 19 files
+                                    {% endfor %}
+        $('#galler img').click(function(e) {
+        // $(this).listImage()
+        $(this).listImage({
+            list: meta
+        })
 
             $(".friend-chat-container").click(function(){
                 $(".inbox-block").fadeIn(1000);

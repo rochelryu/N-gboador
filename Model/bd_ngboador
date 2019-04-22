@@ -1,0 +1,498 @@
+-- --------------------------------------------------------
+-- Hôte :                        localhost
+-- Version du serveur:           5.7.24 - MySQL Community Server (GPL)
+-- SE du serveur:                Win32
+-- HeidiSQL Version:             9.5.0.5337
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- Listage de la structure de la base pour bd_ngboador
+CREATE DATABASE IF NOT EXISTS `bd_ngboador` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `bd_ngboador`;
+
+-- Listage de la structure de la table bd_ngboador. admins
+CREATE TABLE IF NOT EXISTS `admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `picture` varchar(255) DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `contact` int(11) DEFAULT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `login_date` datetime DEFAULT NULL,
+  `role_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `role_id` (`role_id`),
+  CONSTRAINT `FK_admins_role` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table contenant des info sur l''admin';
+
+-- Listage des données de la table bd_ngboador.admins : ~0 rows (environ)
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. categorie_membre_sup
+CREATE TABLE IF NOT EXISTS `categorie_membre_sup` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `profil` varchar(255) NOT NULL,
+  `descrybe` text,
+  `type` int(11) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `level` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `type` (`type`),
+  CONSTRAINT `FK_categorie_membre_sup_statut` FOREIGN KEY (`type`) REFERENCES `statut` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='c''est la table qui est chargé de faire la différence entre les membres de niveau supperieur au membres simple et d''honneurs';
+
+-- Listage des données de la table bd_ngboador.categorie_membre_sup : ~4 rows (environ)
+/*!40000 ALTER TABLE `categorie_membre_sup` DISABLE KEYS */;
+INSERT INTO `categorie_membre_sup` (`id`, `name`, `profil`, `descrybe`, `type`, `register_date`, `level`) VALUES
+	(1, 'membres fondateurs', 'ambassadeur2.png', 'Lorem ipsmum de malade quoi', 5, '2019-01-23 00:22:18', 1),
+	(2, 'membres d\'honneurs', 'honor3.jpg', 'Lorem ipsmum de malade quoi Lorem ipsmum de malade quoi Lorem ipsmum de malade quoi', 5, '2019-01-23 00:23:56', 2),
+	(3, 'membres actifs', 'sympathisant3.png', 'Lorem ipsmum de malade quoi Lorem ipsmum de malade quoi Lorem ipsmum de malade quoi', 6, '2019-01-23 00:28:41', 3),
+	(4, 'membre sympathisants', 'volunter2.png', 'Lorem ipsmum de malade quoi Lorem ipsmum de malade quoi Lorem ipsmum de malade quoi', 6, '2019-01-23 00:35:20', 4);
+/*!40000 ALTER TABLE `categorie_membre_sup` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. comment
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `content_text` text,
+  `file1` varchar(255) DEFAULT NULL,
+  `publication_id` int(11) DEFAULT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `publication_id` (`publication_id`),
+  KEY `student_id` (`user_id`),
+  CONSTRAINT `FK_rs_comment_rs_publication` FOREIGN KEY (`publication_id`) REFERENCES `publication` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_comment_rs_student` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='le commentaire de chaque publicatipon par students ou admins';
+
+-- Listage des données de la table bd_ngboador.comment : ~2 rows (environ)
+/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+INSERT INTO `comment` (`id`, `content_text`, `file1`, `publication_id`, `user_id`, `register_date`) VALUES
+	(1, 'WAO', NULL, 1, 7, '2019-01-08 17:57:05'),
+	(2, 'Vraiment Waho', NULL, 1, 6, '2019-01-08 17:57:31');
+/*!40000 ALTER TABLE `comment` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. conersation_int
+CREATE TABLE IF NOT EXISTS `conersation_int` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content_text` text,
+  `files` varchar(255) DEFAULT NULL,
+  `conversation_parent_id` int(11) NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `conversation_parent_id` (`conversation_parent_id`),
+  KEY `student_id` (`user_id`),
+  CONSTRAINT `FK_rs_conersation_int_rs_conversation_parent` FOREIGN KEY (`conversation_parent_id`) REFERENCES `conversation_parent` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_conersation_int_rs_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='il s''agit du contenu de discussion des students....';
+
+-- Listage des données de la table bd_ngboador.conersation_int : ~0 rows (environ)
+/*!40000 ALTER TABLE `conersation_int` DISABLE KEYS */;
+/*!40000 ALTER TABLE `conersation_int` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. conversation_group_parent
+CREATE TABLE IF NOT EXISTS `conversation_group_parent` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='c''est la table de conversation parent de plusieurs personne qui discuttent. il a le principe de forum mais avec un form de tchat';
+
+-- Listage des données de la table bd_ngboador.conversation_group_parent : ~0 rows (environ)
+/*!40000 ALTER TABLE `conversation_group_parent` DISABLE KEYS */;
+/*!40000 ALTER TABLE `conversation_group_parent` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. conversation_parent
+CREATE TABLE IF NOT EXISTS `conversation_parent` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` longtext NOT NULL,
+  `user_prim_id` int(11) unsigned NOT NULL,
+  `user_sec_id` int(11) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `student_prim_id` (`user_prim_id`),
+  KEY `student_sec_id` (`user_sec_id`),
+  CONSTRAINT `FK_rs_conversation_parent_rs_student` FOREIGN KEY (`user_prim_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_conversation_parent_rs_student_2` FOREIGN KEY (`user_sec_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='c''est la table de conversation parent entre deux utilisateurs. c''est à dire que chaque conversation est rangé par conversation entre ami.\r\nsi robbert et cédric discute, les 2 discutes dans la conversation robert & cédric (ce qui va permettre de lister les différente conversation par ordre de dernières causerie. mais on poura aussi épinglé des discussion afin de les avoir constament en haut.\r\non poura épinglé 2 conversations';
+
+-- Listage des données de la table bd_ngboador.conversation_parent : ~0 rows (environ)
+/*!40000 ALTER TABLE `conversation_parent` DISABLE KEYS */;
+/*!40000 ALTER TABLE `conversation_parent` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. events
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL DEFAULT '0',
+  `title` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `content_text` text CHARACTER SET utf8,
+  `file1` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `file2` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `file3` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `tags` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `lieu` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `team_id` int(11) unsigned DEFAULT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `statuts_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Listage des données de la table bd_ngboador.events : ~3 rows (environ)
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` (`id`, `title`, `content_text`, `file1`, `file2`, `file3`, `tags`, `lieu`, `user_id`, `team_id`, `register_date`, `statuts_id`) VALUES
+	(1, 'Beta de ouf', 'the read operation, then the err object will contain the corresponding error, else data will', 'baby.jpg', 'aides.jpg', 'aide.jpeg', 'Ryu', NULL, 6, NULL, '2019-01-08 17:56:14', 2),
+	(2, NULL, '// Download the helper library from https://www.twilio.com/docs/node/install <br/>\r\n// Your Account Sid and Auth Token from twilio.com/console<br/>\r\nconst accountSid = \'AC2230703c07cca27f0a297f007a613d2f\';<br/>\r\nconst authToken = \'f4134e50019a98847403da72a7ef6572\';<br/>\r\nconst client = require(\'twilio\')(accountSid, authToken);<br/>\r\n<br/>\r\nclient.messages<br/>\r\n      .create({<br/>\r\n         body: \'McAvoy or Stewart? These timelines can get so confusing.\',<br/>\r\n         from: \'+15017122661\',<br/>\r\n         statusCallback: \'http://postb.in/1234abcd\',<br/>\r\n         to: \'+15558675310\'<br/>\r\n       })<br/>\r\n      .then(message => console.log(message.sid))<br/>\r\n      .done();<br/>\r\n<br/>\r\n<br/>\r\nNUmber: (385) 217-3081 :::: +13852173081<br/>\r\nACOUNT SSID : AC2230703c07cca27f0a297f007a613d2f;<br/>\r\nAUTH TOKEN : f4134e50019a98847403da72a7ef6572;<br/>', NULL, NULL, NULL, NULL, NULL, 14, NULL, '2019-01-18 15:35:06', 2),
+	(3, NULL, 'LECOLE/: <br/>\r\n\r\n/*L’école NaN est une école de programmation informatique gratuite, atypique et open-source. Pas de cours, pas de professeurs, ce sont les étudiants eux-mêmes qui sont responsables de leur apprentissage et de celui de leurs camarades. Pour progresser, les étudiants devront s’appuyer sur la force du groupe, savoir partager les informations et être à la fois formateur et apprenant. Chacun est responsable de sa réussite et de celle de ses camarades.<br/>\r\n\r\nL’école fournit le cadre, le matériel informatique et les ressources pédagogiques pour guider les étudiants (vidéos tutoriels, exercices et idées de projets).<br/>\r\n\r\nLe programme <br/>\r\nDans le but d’apprendre les notions clés de la programmation, les ressources pédagogiques sont dans un premier temps basées sur le langage JavaScript. Bien sûr, nous ne restreindrons pas les étudiants à l’utilisation d’un seul langage.<br/>\r\n\r\nDurée du cursus <br/>\r\nChaque étudiant progressant à son propre rythme, l’école l’accompagnera le temps qu’il lui sera nécessaire. Cependant c’est un point qu’il nous reste à clarifier et sur lequel nous travaillons encore.*/<br/>\r\n\r\n\r\n\r\nCOMMENT ENTRER A NAN/:<br/>\r\n/*Conditions d’accès <br/>\r\nL’école est ouverte à tous les jeunes de 18 à 25 ans sans pré-requis ou connaissances en programmation nécessaires.<br/>\r\n\r\nÊtre admissible \r\nL’admission à l’école se déroule en deux étapes. La 1ère étape est une épreuve en ligne d’environ 2h sous forme de jeu de logique. Si cette épreuve est réussie, tu passes à la 2ème étape. Il s’agit d’une semaine d’immersion à l’école NaN par groupe de 50 candidats. Tous les jours pendant une semaine, tu auras des exercices et des projets informatiques à faire en collaboration avec les autres candidats à NaN. La semaine d’immersion part de zéro, aborde les notions de manière progressive mais à un rythme très soutenu, elle ne demande donc aucune connaissance préalable mais simplement une forte motivation. Il est tout de même conseillé d’avoir des notions d’anglais et bien sûr, de savoir se servir d’une souris et d’un clavier. Cette semaine d’immersion nous permet d’identifier les personnes les plus motivées et de considérer l’aptitude des futurs étudiants pour le développement informatique. Cette semaine d’immersion va décider de ton admission définitive à l’école. Finalement, nous sélectionnerons 50 étudiants pour rejoindre officiellement le cursus de NaN en se basant sur des critères qu’il nous reste encore à définir. Démontrer d’une forte motivation, d’un esprit collaboratif, d’une bonne rigueur et organisation et d’une bonne progression sur les journées d’exercices durant la semaine d’immersion seront toutefois des éléments qui favoriseront ton admission.<br/>\r\n\r\nComment s’inscrire ? \r\nLorsque la première rentrée officielle sera annoncée, il sera possible de s’inscrire sur nan.ci. En attendant, vous pouvez renseigner votre email sur le site nan.ci en cliquant sur le bouton “Ça m’intéresse” et cocher la case “Je veux recevoir des emails pour suivre le projet”.\r\n\r\nQuand sera la prochaine rentrée ? <br/>\r\nFévrier 2018.<br/>\r\n\r\n*/\r\n\r\n<br/><br/>\r\n\r\nZone Cocody Angré 8ème tranche (proche du nouveau CHU - non loin de la pharmacie Analya) --> Google Map<br/>', 'Black_M_feat_Soprano_-_Fre_rot_-1.jpg', 'benevoles.jpg', NULL, NULL, NULL, 9, NULL, '2019-01-18 21:12:59', 2);
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. follow_group
+CREATE TABLE IF NOT EXISTS `follow_group` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) unsigned NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  `motif` text,
+  `role_group_id` int(11) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `statut_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `team_id` (`group_id`),
+  KEY `student_id` (`user_id`),
+  KEY `role_group_id` (`role_group_id`),
+  KEY `statut_id` (`statut_id`),
+  CONSTRAINT `FK_rs_naner_team_role_group` FOREIGN KEY (`role_group_id`) REFERENCES `role_group` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_naner_team_rs_student` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_naner_team_rs_team` FOREIGN KEY (`group_id`) REFERENCES `groupe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_naner_team_statut` FOREIGN KEY (`statut_id`) REFERENCES `statut` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='c''est la table de relation entre un student qui veut entrer dans un groupe en envoyant une demande et un motif\r\ndans cette table on trouve une colone qui permet de pointer le(s) student(s) qui sont admin du groupe.';
+
+-- Listage des données de la table bd_ngboador.follow_group : ~10 rows (environ)
+/*!40000 ALTER TABLE `follow_group` DISABLE KEYS */;
+INSERT INTO `follow_group` (`id`, `group_id`, `user_id`, `motif`, `role_group_id`, `register_date`, `statut_id`) VALUES
+	(1, 2, 10, NULL, 1, '2019-02-14 16:58:19', 4),
+	(2, 1, 6, NULL, 1, '2019-02-16 00:28:00', 4),
+	(3, 3, 6, NULL, 1, '2019-02-16 00:33:06', 4),
+	(4, 2, 11, 'eeklfnllenfkdcn lknfkl nzflkezn lzfn lkfen lzenf lzn l fkmqnmfn mlefnmezkn mf', 2, '2019-02-17 23:48:20', 4),
+	(5, 1, 7, 'ltel,mafmlzen mlfkn mlzfn mln mlgn lkgn lkzng ', 2, '2019-02-17 23:52:30', 4),
+	(6, 1, 14, 'Bonjour je suis interressé par ce groupe', 2, '2019-02-18 11:57:05', 4),
+	(7, 3, 12, 'Bonjour', 2, '2019-02-18 11:58:03', 4),
+	(8, 3, 10, 'Participant', 2, '2019-02-18 11:59:22', 4),
+	(9, 6, 6, 'Ce groupe est génial', 2, '2019-02-19 21:17:43', 4),
+	(10, 3, 11, 'interessant les postes', 2, '2019-02-19 21:20:37', 4);
+/*!40000 ALTER TABLE `follow_group` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. follow_user
+CREATE TABLE IF NOT EXISTS `follow_user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_prim_id` int(11) unsigned NOT NULL,
+  `user_sec_id` int(11) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `statut_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `student_prim_id` (`user_prim_id`),
+  KEY `student_sec` (`user_sec_id`),
+  KEY `statut_id` (`statut_id`),
+  CONSTRAINT `FK_rs_naner_student_rs_student` FOREIGN KEY (`user_prim_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_naner_student_rs_student_2` FOREIGN KEY (`user_sec_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_naner_student_statut` FOREIGN KEY (`statut_id`) REFERENCES `statut` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='la table de qui sert de relation pour une demande d''am entre student';
+
+-- Listage des données de la table bd_ngboador.follow_user : ~2 rows (environ)
+/*!40000 ALTER TABLE `follow_user` DISABLE KEYS */;
+INSERT INTO `follow_user` (`id`, `user_prim_id`, `user_sec_id`, `register_date`, `statut_id`) VALUES
+	(1, 9, 6, '2019-03-31 01:30:23', 4),
+	(2, 14, 6, '2019-03-31 01:30:28', 4);
+/*!40000 ALTER TABLE `follow_user` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. groupe
+CREATE TABLE IF NOT EXISTS `groupe` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `couverture` varchar(255) DEFAULT NULL,
+  `biblio` text NOT NULL,
+  `crypt` varchar(255) NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `level` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `FK_groupe_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='la table groupe prend des valeur pard defaut de profil et couverture (ne pas forcer un student à uploader forcement des images)\r\nles membres de chaque groupe ainsi que ces admins seront géré dans une table.';
+
+-- Listage des données de la table bd_ngboador.groupe : ~6 rows (environ)
+/*!40000 ALTER TABLE `groupe` DISABLE KEYS */;
+INSERT INTO `groupe` (`id`, `user_id`, `name`, `couverture`, `biblio`, `crypt`, `register_date`, `level`) VALUES
+	(1, 6, 'Nos Enfants', 'group10.jpg', 'Lorem', 'cdrcgftcvstgvtg', '2019-01-23 00:44:38', 1),
+	(2, 7, 'Helping Children', 'group1.jpg', 'Lorem', 'cftsv gbtbhtbhtybhvtvnhthbt', '2019-01-23 01:02:17', 0),
+	(3, 8, 'Outre regard', 'group12.jpg', 'Lorem', 'dgtsyfgydf', '2019-01-23 01:02:17', 0),
+	(4, 9, 'Music group', 'gradient.png', 'Comment allez-vous', 'hijdifji', '2019-02-19 21:09:27', 0),
+	(5, 10, 'Love group', 'guitar-756326_1920.jpg', 'Avoir de l\'amour pour son prochaiin est une bonne chose', 'fdjfgqsdyq', '2019-02-19 21:13:49', 0),
+	(6, 12, 'football group', 'group12.jpeg', 'Le sport c\'est la vie', '6', '2019-02-19 21:15:22', 0);
+/*!40000 ALTER TABLE `groupe` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. membre_sup
+CREATE TABLE IF NOT EXISTS `membre_sup` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `biblio` text NOT NULL,
+  `profil` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL DEFAULT '#',
+  `categorie` int(11) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `statut_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `statut_id` (`statut_id`),
+  KEY `categorie` (`categorie`),
+  CONSTRAINT `FK_membre_categorie_membre_sup` FOREIGN KEY (`categorie`) REFERENCES `categorie_membre_sup` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_entreprise_statut` FOREIGN KEY (`statut_id`) REFERENCES `statut` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table de chaque membre contenant son type(categorie) avec leur statut (en attente, en ligne)';
+
+-- Listage des données de la table bd_ngboador.membre_sup : ~0 rows (environ)
+/*!40000 ALTER TABLE `membre_sup` DISABLE KEYS */;
+/*!40000 ALTER TABLE `membre_sup` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. nbre_doute
+CREATE TABLE IF NOT EXISTS `nbre_doute` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `publication_id` int(11) DEFAULT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `register_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `publication_id` (`publication_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `FK__publication` FOREIGN KEY (`publication_id`) REFERENCES `publication` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_nbre_doute_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Listage des données de la table bd_ngboador.nbre_doute : ~0 rows (environ)
+/*!40000 ALTER TABLE `nbre_doute` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nbre_doute` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. nbre_like
+CREATE TABLE IF NOT EXISTS `nbre_like` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `publication_id` int(11) NOT NULL,
+  `users_id` int(11) unsigned DEFAULT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `publication_id` (`publication_id`),
+  KEY `students_id` (`users_id`),
+  CONSTRAINT `FK_rs_nbre_nan_rs_publication` FOREIGN KEY (`publication_id`) REFERENCES `publication` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_nbre_nan_rs_student` FOREIGN KEY (`users_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='table des likes (j''appel ça aussi commit ou nombre de nan) permettant de structurer le nombre de like pour chaque publication';
+
+-- Listage des données de la table bd_ngboador.nbre_like : ~0 rows (environ)
+/*!40000 ALTER TABLE `nbre_like` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nbre_like` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. publication
+CREATE TABLE IF NOT EXISTS `publication` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `content_text` text,
+  `file1` varchar(255) DEFAULT NULL,
+  `file2` varchar(255) DEFAULT NULL,
+  `file3` varchar(255) DEFAULT NULL,
+  `file4` varchar(255) DEFAULT NULL,
+  `file5` varchar(255) DEFAULT NULL,
+  `file6` varchar(255) DEFAULT NULL,
+  `file7` varchar(255) DEFAULT NULL,
+  `file8` varchar(255) DEFAULT NULL,
+  `file9` varchar(255) DEFAULT NULL,
+  `file10` varchar(255) DEFAULT NULL,
+  `file11` varchar(255) DEFAULT NULL,
+  `file12` varchar(255) DEFAULT NULL,
+  `file13` varchar(255) DEFAULT NULL,
+  `file14` varchar(255) DEFAULT NULL,
+  `file15` varchar(255) DEFAULT NULL,
+  `file16` varchar(255) DEFAULT NULL,
+  `file17` varchar(255) DEFAULT NULL,
+  `file18` varchar(255) DEFAULT NULL,
+  `file19` varchar(255) DEFAULT NULL,
+  `tags` varchar(255) DEFAULT NULL,
+  `lieu` varchar(255) DEFAULT NULL,
+  `user_id` int(11) unsigned DEFAULT NULL,
+  `team_id` int(11) unsigned DEFAULT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `statuts_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `students_id` (`user_id`),
+  KEY `statuts_id` (`statuts_id`),
+  KEY `team_id` (`team_id`),
+  CONSTRAINT `FK_rs_publication_rs_student` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_publication_rs_team` FOREIGN KEY (`team_id`) REFERENCES `groupe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_rs_publication_statut` FOREIGN KEY (`statuts_id`) REFERENCES `statut` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='table contenant les différents info sur une publication d''un etudiant, ou d''un admin.\r\nla colone tags répésente le mot clé qui désigne la publication';
+
+-- Listage des données de la table bd_ngboador.publication : ~3 rows (environ)
+/*!40000 ALTER TABLE `publication` DISABLE KEYS */;
+INSERT INTO `publication` (`id`, `title`, `content_text`, `file1`, `file2`, `file3`, `file4`, `file5`, `file6`, `file7`, `file8`, `file9`, `file10`, `file11`, `file12`, `file13`, `file14`, `file15`, `file16`, `file17`, `file18`, `file19`, `tags`, `lieu`, `user_id`, `team_id`, `register_date`, `statuts_id`) VALUES
+	(1, 'Beta de ouf', 'the read operation, then the err object will contain the corresponding error, else data will', 'baby.jpg', 'aides.jpg', 'aide.jpeg', 'cicr.jpg', 'font_sympatisant.jpeg', 'group5.jpg', 'benevoles.jpg', 'Black_M_feat_Soprano_-_Fre_rot_-1.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ryu', NULL, 6, NULL, '2019-01-08 17:56:14', 2),
+	(2, NULL, '// Download the helper library from https://www.twilio.com/docs/node/install <br/>\r\n// Your Account Sid and Auth Token from twilio.com/console<br/>\r\nconst accountSid = \'AC2230703c07cca27f0a297f007a613d2f\';<br/>\r\nconst authToken = \'f4134e50019a98847403da72a7ef6572\';<br/>\r\nconst client = require(\'twilio\')(accountSid, authToken);<br/>\r\n<br/>\r\nclient.messages<br/>\r\n      .create({<br/>\r\n         body: \'McAvoy or Stewart? These timelines can get so confusing.\',<br/>\r\n         from: \'+15017122661\',<br/>\r\n         statusCallback: \'http://postb.in/1234abcd\',<br/>\r\n         to: \'+15558675310\'<br/>\r\n       })<br/>\r\n      .then(message => console.log(message.sid))<br/>\r\n      .done();<br/>\r\n<br/>\r\n<br/>\r\nNUmber: (385) 217-3081 :::: +13852173081<br/>\r\nACOUNT SSID : AC2230703c07cca27f0a297f007a613d2f;<br/>\r\nAUTH TOKEN : f4134e50019a98847403da72a7ef6572;<br/>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 14, NULL, '2019-01-18 15:35:06', 2),
+	(3, NULL, 'LECOLE/: <br/>\r\n\r\n/*L’école NaN est une école de programmation informatique gratuite, atypique et open-source. Pas de cours, pas de professeurs, ce sont les étudiants eux-mêmes qui sont responsables de leur apprentissage et de celui de leurs camarades. Pour progresser, les étudiants devront s’appuyer sur la force du groupe, savoir partager les informations et être à la fois formateur et apprenant. Chacun est responsable de sa réussite et de celle de ses camarades.<br/>\r\n\r\nL’école fournit le cadre, le matériel informatique et les ressources pédagogiques pour guider les étudiants (vidéos tutoriels, exercices et idées de projets).<br/>\r\n\r\nLe programme <br/>\r\nDans le but d’apprendre les notions clés de la programmation, les ressources pédagogiques sont dans un premier temps basées sur le langage JavaScript. Bien sûr, nous ne restreindrons pas les étudiants à l’utilisation d’un seul langage.<br/>\r\n\r\nDurée du cursus <br/>\r\nChaque étudiant progressant à son propre rythme, l’école l’accompagnera le temps qu’il lui sera nécessaire. Cependant c’est un point qu’il nous reste à clarifier et sur lequel nous travaillons encore.*/<br/>\r\n\r\n\r\n\r\nCOMMENT ENTRER A NAN/:<br/>\r\n/*Conditions d’accès <br/>\r\nL’école est ouverte à tous les jeunes de 18 à 25 ans sans pré-requis ou connaissances en programmation nécessaires.<br/>\r\n\r\nÊtre admissible \r\nL’admission à l’école se déroule en deux étapes. La 1ère étape est une épreuve en ligne d’environ 2h sous forme de jeu de logique. Si cette épreuve est réussie, tu passes à la 2ème étape. Il s’agit d’une semaine d’immersion à l’école NaN par groupe de 50 candidats. Tous les jours pendant une semaine, tu auras des exercices et des projets informatiques à faire en collaboration avec les autres candidats à NaN. La semaine d’immersion part de zéro, aborde les notions de manière progressive mais à un rythme très soutenu, elle ne demande donc aucune connaissance préalable mais simplement une forte motivation. Il est tout de même conseillé d’avoir des notions d’anglais et bien sûr, de savoir se servir d’une souris et d’un clavier. Cette semaine d’immersion nous permet d’identifier les personnes les plus motivées et de considérer l’aptitude des futurs étudiants pour le développement informatique. Cette semaine d’immersion va décider de ton admission définitive à l’école. Finalement, nous sélectionnerons 50 étudiants pour rejoindre officiellement le cursus de NaN en se basant sur des critères qu’il nous reste encore à définir. Démontrer d’une forte motivation, d’un esprit collaboratif, d’une bonne rigueur et organisation et d’une bonne progression sur les journées d’exercices durant la semaine d’immersion seront toutefois des éléments qui favoriseront ton admission.<br/>\r\n\r\nComment s’inscrire ? \r\nLorsque la première rentrée officielle sera annoncée, il sera possible de s’inscrire sur nan.ci. En attendant, vous pouvez renseigner votre email sur le site nan.ci en cliquant sur le bouton “Ça m’intéresse” et cocher la case “Je veux recevoir des emails pour suivre le projet”.\r\n\r\nQuand sera la prochaine rentrée ? <br/>\r\nFévrier 2018.<br/>\r\n\r\n*/\r\n\r\n<br/><br/>\r\n\r\nZone Cocody Angré 8ème tranche (proche du nouveau CHU - non loin de la pharmacie Analya) --> Google Map<br/>', 'Black_M_feat_Soprano_-_Fre_rot_-1.jpg', 'benevoles.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL, '2019-01-18 21:12:59', 2);
+/*!40000 ALTER TABLE `publication` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. recommandation
+CREATE TABLE IF NOT EXISTS `recommandation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userV_id` int(11) unsigned NOT NULL,
+  `userC_id` int(11) unsigned NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `FK_recommandation_user` (`userV_id`),
+  KEY `FK_recommandation_user_2` (`userC_id`),
+  CONSTRAINT `FK_recommandation_user` FOREIGN KEY (`userV_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_recommandation_user_2` FOREIGN KEY (`userC_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Listage des données de la table bd_ngboador.recommandation : ~2 rows (environ)
+/*!40000 ALTER TABLE `recommandation` DISABLE KEYS */;
+INSERT INTO `recommandation` (`id`, `userV_id`, `userC_id`, `content`, `register_date`) VALUES
+	(1, 6, 14, 'THIS IS GREAT HUMAN....\n\nNobody have this mentality', '2019-03-26 20:48:11'),
+	(2, 7, 6, 'Limit the input file size\nLimit the total size of all files\nLimit the types of files that can be added\nShow preview for image files', '2019-03-26 20:52:07');
+/*!40000 ALTER TABLE `recommandation` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. role
+CREATE TABLE IF NOT EXISTS `role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='table permettant de dire qui est admin, super-admin';
+
+-- Listage des données de la table bd_ngboador.role : ~1 rows (environ)
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` (`id`, `name`) VALUES
+	(1, 'ADMIN');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. role_group
+CREATE TABLE IF NOT EXISTS `role_group` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `register_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='table partageants les roles de chaque personnes dans le groupe';
+
+-- Listage des données de la table bd_ngboador.role_group : ~2 rows (environ)
+/*!40000 ALTER TABLE `role_group` DISABLE KEYS */;
+INSERT INTO `role_group` (`id`, `name`, `register_date`) VALUES
+	(1, 'ADMIN GROUPE', '2018-08-13 00:54:50'),
+	(2, 'LOCKER GROUP', '2018-08-13 00:54:50');
+/*!40000 ALTER TABLE `role_group` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. role_user
+CREATE TABLE IF NOT EXISTS `role_user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='c''est la table des promotions';
+
+-- Listage des données de la table bd_ngboador.role_user : ~1 rows (environ)
+/*!40000 ALTER TABLE `role_user` DISABLE KEYS */;
+INSERT INTO `role_user` (`id`, `name`, `register_date`) VALUES
+	(1, 'membre simple', '2018-08-13 01:54:38');
+/*!40000 ALTER TABLE `role_user` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. service_product
+CREATE TABLE IF NOT EXISTS `service_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content_text` text NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `images1` varchar(255) NOT NULL,
+  `image2` varchar(255) DEFAULT NULL,
+  `video` varchar(255) DEFAULT NULL,
+  `statuts` int(11) unsigned NOT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `statuts` (`statuts`),
+  CONSTRAINT `FK_rs_service_product_statut` FOREIGN KEY (`statuts`) REFERENCES `statut` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='tables des produit et services offert par NaN';
+
+-- Listage des données de la table bd_ngboador.service_product : ~0 rows (environ)
+/*!40000 ALTER TABLE `service_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `service_product` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. statut
+CREATE TABLE IF NOT EXISTS `statut` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '0',
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='la table qui permet de dire si quelque chose est en ligne, en attente ou refusé..\r\nil sera rempli notament avec ses valeurs';
+
+-- Listage des données de la table bd_ngboador.statut : ~8 rows (environ)
+/*!40000 ALTER TABLE `statut` DISABLE KEYS */;
+INSERT INTO `statut` (`id`, `name`, `register_date`) VALUES
+	(1, 'En Attente', '2018-08-06 19:35:09'),
+	(2, 'En Ligne', '2018-08-06 19:35:25'),
+	(3, 'Rejeté', '2018-08-06 19:35:35'),
+	(4, 'Accepté', '2019-01-08 13:27:02'),
+	(5, 'Inner', '2019-01-23 00:19:13'),
+	(6, 'Owner', '2019-01-23 00:19:21'),
+	(7, 'Admin Group', '2019-02-20 17:16:24'),
+	(8, 'membre Groupe', '2019-02-20 17:16:38');
+/*!40000 ALTER TABLE `statut` ENABLE KEYS */;
+
+-- Listage de la structure de la table bd_ngboador. user
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `pseudo` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `contact` varchar(50) DEFAULT NULL,
+  `profession` varchar(255) DEFAULT NULL,
+  `profil` varchar(255) DEFAULT NULL,
+  `biblio` varchar(255) DEFAULT NULL,
+  `birth_day` datetime NOT NULL,
+  `sexe` varchar(255) NOT NULL,
+  `couverture` varchar(255) DEFAULT NULL,
+  `register_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lieu` varchar(255) NOT NULL,
+  `login_date` datetime DEFAULT NULL,
+  `range_id` int(11) unsigned NOT NULL,
+  `emailcrypt` text NOT NULL,
+  `keyconfirm` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `range_id` (`range_id`),
+  CONSTRAINT `FK_user_role_user` FOREIGN KEY (`range_id`) REFERENCES `role_user` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='la table utilisateur du reseaux social\r\nla photo de profil ainsi que la couverture ont des valeur par defaut (gravatar) selon le sexe de l''etudiant.\r\nvaut mieux choisir le gravatar depuis le php car mysql ne poura pas faire la diff entre sexe.';
+
+-- Listage des données de la table bd_ngboador.user : ~9 rows (environ)
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`id`, `name`, `firstname`, `pseudo`, `email`, `password`, `contact`, `profession`, `profil`, `biblio`, `birth_day`, `sexe`, `couverture`, `register_date`, `lieu`, `login_date`, `range_id`, `emailcrypt`, `keyconfirm`, `age`) VALUES
+	(6, 'cesar', 'Ryu Ryota', NULL, 'cesar@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userBoy18.png', NULL, '1993-06-19 12:58:39', 'Homme', NULL, '2019-01-08 12:58:38', 'Côte D\'Ivoire, Abdjan', '2019-04-11 10:56:56', 1, '58d41e38a431af44d40153eb38069660d9a69b13c3c3d5e65790371815813308', '484505719493985', 26),
+	(7, 'mezan', 'Fabienne', NULL, 'mezan@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userGirl05.jpg', NULL, '1993-06-17 13:12:03', 'Femme', NULL, '2019-01-08 13:12:03', 'Mali', '2019-03-26 20:50:59', 1, '82dfbf9c15e07121c5faf52641faf9198e05632977db2b7fe6b2a80da0b29629', '912132416137660', 26),
+	(8, 'Ze', 'Zean', NULL, 'zea@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userChild01.jpg', NULL, '2000-03-18 14:49:55', 'Homme', NULL, '2019-01-18 14:49:55', 'Côte D\'Ivoire, Abdjan', '2019-01-18 22:01:36', 1, 'e889b8398348d7c8dad7dedca369b74bafc2629a80fd5bda730f13eca155b031', '814632203935165', 19),
+	(9, 'Fred', 'Frederick', NULL, 'de@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userGirl28.png', NULL, '2007-03-19 14:52:37', 'Femme', NULL, '2019-01-18 14:52:36', 'Côte D\'Ivoire, Abdjan', '2019-01-18 14:52:36', 1, '25a034568eb90520728b208cf5247e576087423d8995483b493981066e356aa4', '556553313856923', 12),
+	(10, 'Patrick', 'Venon', NULL, 'ps@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userBoy18.png', NULL, '1996-10-01 14:55:46', 'Homme', NULL, '2019-01-18 14:55:45', 'Côte D\'Ivoire, Abdjan', '2019-01-18 14:55:45', 1, '2c5631fd02baa45c278c8765f175a295418e0aea43f740c3b61409ad392479d9', '760381319639541', 23),
+	(11, 'Check', 'Cheky', NULL, 'ch@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userGirl05.jpg', NULL, '1988-04-09 15:00:41', 'Femme', NULL, '2019-01-18 15:00:41', 'Côte D\'Ivoire, Abdjan', '2019-01-18 15:00:41', 1, 'b100388afdfe241d7b1395ae5adaef08621c38ab47d9a6202a2153193ded0754', '857170692762028', 31),
+	(12, 'tet', 'aze', NULL, 'az@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userGirl05.jpg', NULL, '1985-10-28 15:06:15', 'Femme', NULL, '2019-01-18 15:06:15', 'Côte D\'Ivoire, Abdjan', '2019-01-18 15:06:15', 1, '6be2faafe47483e375fa1ae5a7d1106c72c08873680b9eb02c058fcdd2785bf1', '872710092624333', 34),
+	(13, 'MElec', 'Roger', NULL, 'ro@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userBoy18.png', NULL, '1992-04-22 15:11:30', 'Homme', NULL, '2019-01-18 15:11:29', 'Côte D\'Ivoire, Abdjan', '2019-01-18 15:11:29', 1, '93530414f3b0a5ad84e6e8bc99b05d453a214cc1e4ee84b46cf0f421178d0676', '926715863203624', 27),
+	(14, 'MECH', 'DES', NULL, 'as@gmail.com', 'cc7b555a56ef4e4dea39c6f376474aa5bcb24232590e85d8db1014a42da78800', NULL, NULL, 'userBoy18.png', NULL, '1988-04-21 15:13:49', 'Homme', NULL, '2019-01-18 15:13:48', 'Côte D\'Ivoire, Abdjan', '2019-03-26 12:42:15', 1, 'fbda122c9fc8e5726aab54fe6656019134b56a82645ff65853f006d4df938061', '668709871065589', 31);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -6715,7 +6715,7 @@ body.scrollable {
   @media (min-width: 992px) {
     .modal .modal-side {
       position: absolute;
-      bottom: 10px;
+      bottom: 10%;
       right: 10px;
       margin: 0;
       width: 400px; } }

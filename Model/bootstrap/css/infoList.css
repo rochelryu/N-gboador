@@ -1,0 +1,228 @@
+body{
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.navbar{
+	background: linear-gradient(90deg, #3D952B, #336699);
+	border:black;
+}
+
+/*logo and text container*/
+.logo_and_text_container{
+  margin-left: 10%;
+}
+
+/*logo icon*/
+.logo_icon{
+  margin-top: 5.5px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/*logo text */
+.logo_text{
+  margin-top: 8px;
+  font-weight: bold;
+  margin-left: -43%;
+}
+
+.logo_text > h5{
+  font-weight: bold;
+	font-family: 'Nunito Sans', sans-serif;
+	color: white;
+}
+
+
+
+
+
+/********************* COVER PART ************************/
+
+.CoverContainer{
+	margin-top: 50px;
+}
+
+.Cover{
+	background: url('../../medias/adult-beautiful-black-dress-1266193.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 92.5vh;
+	overflow: hidden;
+}
+
+.textSlide{
+	text-align: center;
+	height: 100%;
+	color: white;
+}
+
+.title1{
+	margin-top: 20vh;
+	font-size: 4.3em;
+	font-weight: 600;
+}
+.title2{
+	font-size: 2.3em;
+}
+
+.Leboutton{
+	background: tomato;
+	width: 250px;
+	border:0;
+	border-radius: 16px;
+	margin-top: 50px;
+	height: 30px;
+	line-height: 15px;
+}
+
+/***********===========********** END OF THE COVER PART ************==========***********/
+
+/***************************** MAIN CONTAINER ******************************/
+
+
+.PrincipalContainer{
+	margin-top: 0.25%;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.menu{
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	height: 250px;
+	padding-top: 3.7%;
+	padding-right: 2%;
+	padding-left: 2%;
+	color: white;
+}
+
+
+.menu1{
+	background-image: linear-gradient(to right top, #2c3e50, #1d4455, #074a54, #004f4f, #0b5345);
+}
+.menu2{
+	background-image: linear-gradient(to left top, #f1c40c, #e2a100, #cf7f00, #b95f00, #a04000);
+}
+.menu3{
+	background-image: linear-gradient(to right top, #e74c3c, #e06129, #d57517, #c78608, #b7950b);
+}
+.menu4{
+	background-image: linear-gradient(to right top, #17202a, #192837, #1a3144, #193a52, #154360);
+}
+.menu5{
+	background-image: linear-gradient(to right top, #784242, #732133, #562b46, #312c44, #1b2631);
+}
+
+.details{
+	text-align: center;
+	margin-top: 30px;
+	font-size: 1em;
+}
+
+
+
+
+
+/***************************** FOOTER ******************************/
+
+.BeforTheFooter{
+	height: 30vh;
+	background:linear-gradient(90deg, #3D952B, #336699);
+}
+
+.BeforTheFooterImg{
+	height: 100%;
+	background: white;
+	text-align: center;
+}
+.BeforTheFooterImg p{
+	margin-top: 15px;
+	font-size: 15px;
+	font-weight: bold;
+}
+.ImgContaineur{
+	height: 15vh;
+	width: 15vh;
+	overflow: hidden;
+	border-radius: 1000px;
+	margin-top: 35px;
+	border-style: solid;
+	border-color: blue;
+	transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+}
+.ImgContaineur:hover{
+	border:none;
+}
+.ImgContaineur img{
+	transition-property: all;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+
+}
+.ImgContaineur img:hover{
+ 	transform: scale(1.3);
+}
+
+
+.BeforTheFooterPart1{
+	height: 100%;
+	/*background: maroon;*/
+	display: flex;
+	flex-wrap: nowrap;
+}
+.BeforTheFooterPart2{
+	height: 100%;
+	/*background: orange;*/
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.BeforTheFooterPart1 hr{
+	width: 25%;
+	margin-right: 0;
+	margin-top: 15vh;
+}
+.BeforTheFooterPart2 hr{
+	width: 27%;
+	margin-left: 0;
+	margin-top: 15vh;
+}
+
+.part1{
+	height: 100%;
+	width: 75%;
+	/*background: green;*/
+}
+.serviceDiv{
+	/*background: grey;*/
+	display: flex;
+	padding: 5%;
+	flex-wrap: wrap;
+}
+.service{
+	background: #D35400;
+	height: 25.5px;
+	border-radius: 3.5px;
+	text-align: center;
+	width: 80px;
+	margin: 5px;
+}
+
+.part2{
+	height: 100%;
+	width: 75%;
+	/*background: green;*/
+}
+.othersLink{
+	/*background: grey;*/
+	display: flex;
+	padding: 5%;
+	flex-wrap: wrap;
+}

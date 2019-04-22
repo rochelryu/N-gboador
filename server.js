@@ -15,8 +15,11 @@ const cookieParser = require('cookie-parser');
 const ent = require('ent');
 const mysql = require('promise-mysql');
 
+<<<<<<< HEAD
 
 // connection à la base de donnée
+=======
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 mysql.createConnection({
     host: config.db.host,
     database: config.db.database,
@@ -29,7 +32,21 @@ mysql.createConnection({
     let io = require('socket.io')(https);
     const User = require('./Model/User')(db, config);
 
+<<<<<<< HEAD
     // utilisation du middleware
+=======
+    const storagePublish = multer.diskStorage({
+        destination: './public/ngboado/medias/images/',
+        filename: function (req, file, cb) {
+            cb(null, req.session.nanNew.keyconfirm + '_' + Date.now() + '_' +file.originalname);
+        }
+    });
+    let uploadPublish = multer({
+        storage: storagePublish,
+    }).array("filepond", 19);
+
+    // utilisation du middlewar
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.use(expressValidator());
     app.use(session({
         secret: config.session.secret,
@@ -42,6 +59,7 @@ mysql.createConnection({
     app.use(cookieParser());
     app.use(morgan);
 
+<<<<<<< HEAD
 
     // Routing
 
@@ -55,6 +73,14 @@ mysql.createConnection({
 
     
     //get for login's page
+=======
+    app.get('/', async (req, res) =>{
+        if(req.session.ngboador){
+            res.redirect('/Accueil');
+        }
+        res.redirect('/login')
+    });
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.get('/login', async (req, res) =>{
         if(req.query.e == "1"){
             //const error = req.session.errors;
@@ -70,11 +96,17 @@ mysql.createConnection({
             res.render(`${__dirname}/public/ngboado/index.twig`, { user: "nil" })
         }
     });
+<<<<<<< HEAD
 
     // Validation formulaire login
     app.post('/login', async (req, res) =>{
         req.check('user', "Username ne doit pas être vide").notEmpty();
         req.check('pass', "Email ne doit pas être vide").notEmpty();
+=======
+    app.post('/login', async (req, res) =>{
+        req.check('user', "Email invalide").isEmail();
+        req.check('pass', "Mot de pass ne doit pas être vide").notEmpty();
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 
         const error = req.validationErrors();
         if(error){
@@ -93,6 +125,7 @@ mysql.createConnection({
            else{
                res.render(`${__dirname}/public/ngboado/index.twig`, { error: 'Identification Echoué. Veuillez verifier vos cordonnées ou Inscrivez-vous' })
            }
+<<<<<<< HEAD
         }//res.render(`${__dirname}/public/form.twig`, { user: "nil" })
     });
     
@@ -100,6 +133,10 @@ mysql.createConnection({
     // Fin validation formulaire login
     
     // validation formulaire signin
+=======
+        }
+    });
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.post('/signin', async (req, res)=>{
         req.check('name', "Le nom ne doit pas être vide").notEmpty();
         req.check('firstname', "Le prénom ne doit pas être vide").notEmpty();
@@ -144,6 +181,7 @@ mysql.createConnection({
             }
         }
     });
+<<<<<<< HEAD
     // End validation formulaire signin
     app.get('/Community/:id', async (req, res) => {
         console.log("identifiant demandé : " + req.params.id);
@@ -168,20 +206,31 @@ mysql.createConnection({
         }
     });
 
+=======
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.get('/Accueil', async (req, res)=>{
         if(req.session.ngboador){
             let info = {}
             let ll = req.session.ngboador.lieu.split(',');
+<<<<<<< HEAD
             let NumberPublication = await User.getAllPublicationUsers(0,9); //toutes les 9 première publication
             let sugl = await User.getAllSuggest(ll[0], req.session.ngboador.id, 0, 3);
             let sugl2 = await User.getAllSuggest(ll[0], req.session.ngboador.id, 3, 3);
             let two_best_level_group = await User.getAllBestLevelGroup();
+=======
+            let NumberPublication = await User.getAllPublicationUsers(0,9);
+            let sugl = await User.getAllSuggest(ll[0], req.session.ngboador.id, 0, 3);
+            let sugl2 = await User.getAllSuggest(ll[0], req.session.ngboador.id, 3, 3);
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
             /*for(let i = 0; i< 6; i++){
                 const ele = Math.floor(Math.random() * Math.floor(sugTotal.length));
                 console.log(sugTotal[ele - 1]);
                 (sugl.length < 3) ? sugl.push(sugTotal[ele - 1]) : sugl2.push(sugTotal[ele - 1]);
             }*/
+<<<<<<< HEAD
 
+=======
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
             for(let i in NumberPublication){
                 const NombreLike = await User.getNumberLike(NumberPublication[i].id);
                 const NombreDoute = await User.getNumberDoute(NumberPublication[i].id);
@@ -199,10 +248,16 @@ mysql.createConnection({
             info.published = NumberPublication;
             info.sug = sugl;
             info.sug2 = sugl2;
+<<<<<<< HEAD
             info.two_best_level_group = two_best_level_group;
             let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
             const userSearch = JSON.stringify(totalSearch);
             fs.writeFile(__dirname + "/public/ngboado/part/usersSearch.txt", userSearch, "UTF-8", (err, file) => {
+=======
+            let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
+            const userSearch = JSON.stringify(totalSearch);
+            fs.writeFile(__dirname + "/public/ngboado/part/"+ req.session.ngboador.emailcrypt +".txt", userSearch, "UTF-8", (err, file) => {
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                 if (err) {
                     console.log(err);
                 }
@@ -210,13 +265,95 @@ mysql.createConnection({
                     console.log("user ready to Search");
                 }
             });
+<<<<<<< HEAD
             console.log(JSON.stringify(info.two_best_level_group))
+=======
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
             res.render(`${__dirname}/public/ngboado/actualite.twig`, {user: req.session.ngboador, info:info});
         }
         else res.redirect('/login')
     });
 
     /////////ACCOUNT
+<<<<<<< HEAD
+=======
+    app.post('/profil', uploadPublish, async(req, res)=>{
+        let contents = req.body.comment;
+            contents = contents.replace(/(\r\n|\n|\r)/g,"<br />");
+            contents = ent.encode(contents)
+            let shareTab = new Array();
+                for (let file in req.files){
+                    shareTab.push(req.files[file].filename);
+                    if(req.files[file].mimetype === "image/jpeg" || req.files[file].mimetype === "image/jpg" || req.files[file].mimetype === "image/png" || req.files[file].mimetype === "image/gif"){
+                        const minFileName = "min"+ req.files[file].filename;
+                        console.log(minFileName)
+                         Jimp.read(`./public/ngboado/medias/images/${req.files[file].filename}`)
+                            .then(image => {
+                                return image
+                                    .resize(Jimp.AUTO,450)
+                                    .quality(100)
+                                    .write(`${__dirname}/public/ngboado/medias/images/min/${minFileName}`);
+                            })
+                            .catch((err)=>{
+                                console.log(`MINATURISATION ECHOUé du fichier ${err}`)
+                            });
+                    }
+                    continue;
+                }
+                /*switch (shareTab.length){
+                    case 0:
+                        const publishedContent = await User.setPublicationUniqueContent(contents, req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 1:
+                        const publishedfile1 = await User.setPublishedOnFiles(contents, shareTab[0], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+m                    case 2:
+                        const publishedfile2 = await User.setPublishedTwoFiles(contents, shareTab[0], shareTab[1], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 3:
+                        const publishedfile3 = await User.setPublishedThreeFiles(contents, shareTab[0], shareTab[1], shareTab[2], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 4:
+                        const publishedfile4 = await User.setPublishedFourFiles(contents, shareTab[0], shareTab[1], shareTab[2], shareTab[3], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 5:
+                        const publishedfile5 = await User.setPublishedFiveFiles(contents, shareTab[0], shareTab[1], shareTab[2], shareTab[3], shareTab[4], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 6:
+                        const publishedfile6 = await User.setPublishedSixFiles(contents, shareTab[0], shareTab[1], shareTab[2], shareTab[3], shareTab[4], shareTab[5], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 7:
+                        const publishedfile7 = await User.setPublishedSevenFiles(contents, shareTab[0], shareTab[1], shareTab[2], shareTab[3], shareTab[4], shareTab[5], shareTab[6], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 8:
+                        const publishedfile8 = await User.setPublishedEightFiles(contents, shareTab[0], shareTab[1], shareTab[2], shareTab[3], shareTab[4], shareTab[5], shareTab[6], shareTab[7], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 9:
+                        const publishedfile9 = await User.setPublishedNineFiles(contents, shareTab[0], shareTab[1], shareTab[2], shareTab[3], shareTab[4], shareTab[5], shareTab[6], shareTab[7], shareTab[8], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    case 10:
+                        const publishedfile10 = await User.setPublishedTenFiles(contents, shareTab[0], shareTab[1], shareTab[2], shareTab[3], shareTab[4], shareTab[5], shareTab[6], shareTab[7], shareTab[8], shareTab[9], req.session.nanNew.id);
+                        req.session.nanNew.send = true;
+                        break;
+                    default:
+                        console.log(`je suis dans le dafault du switch ${shareTab.length} et ${shareTab}`);
+                        break;
+                }
+                res.redirect('/myAcount');*/
+                console.log(JSON.stringify(shareTab))
+                res.redirect('/profil');
+    })
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
     app.get('/profil', async (req, res)=>{
         if(req.session.ngboador) {
             let info = {}
@@ -250,7 +387,11 @@ mysql.createConnection({
             let ll = req.session.ngboador.lieu.split(',');
             let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
             const userSearch = JSON.stringify(totalSearch);
+<<<<<<< HEAD
             fs.writeFile(__dirname + "/public/ngboado/part/usersSearch.txt", userSearch, "UTF-8", (err, file) => {
+=======
+            fs.writeFile(__dirname + "/public/ngboado/part/"+ req.session.ngboador.emailcrypt +".txt", userSearch, "UTF-8", (err, file) => {
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                 if (err) {
                     console.log(err);
                 }
@@ -304,7 +445,11 @@ mysql.createConnection({
             let ll = req.session.ngboador.lieu.split(',');
             let totalSearch = await User.getAllUserLocal(ll[0], req.session.ngboador.id);
             const userSearch = JSON.stringify(totalSearch);
+<<<<<<< HEAD
             fs.writeFile(__dirname + "/public/ngboado/part/usersSearch.txt", userSearch, "UTF-8", (err, file) => {
+=======
+            fs.writeFile(__dirname + "/public/ngboado/part/"+ req.session.ngboador.emailcrypt +".txt", userSearch, "UTF-8", (err, file) => {
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                 if (err) {
                     console.log(err);
                 }
@@ -318,7 +463,26 @@ mysql.createConnection({
         else res.redirect('/login')
     });
 
+<<<<<<< HEAD
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 
     //Initialisation de mes socket
     io.on('connection', (socket)=>{
@@ -335,6 +499,24 @@ mysql.createConnection({
             }
             return false;
         });
+<<<<<<< HEAD
+=======
+        socket.on('rec', async (data) => {
+            let ctx = data.ctx.replace(/(\r\n|\n|\r)/g,"<br />");
+            ctx =  data.ctx.replace(/<script>/g,"");
+            let e =  data.e.replace(/<script>/g,"");
+            let f =  data.f.replace(/<script>/g,"");
+            let user = await User.setRecommandation(f,e, ctx);
+            if (!isErr(user)){
+                data.res = true
+                    socket.emit('recres', data);
+            }
+            else{
+                data.res = false
+                socket.emit('recres', data);
+            }
+        });
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
         socket.on('inbox', async (message)=>{
             if(message.context === ""){
                 socket.emit('eroorMsg', 'AUCUN CONTENU');
@@ -343,7 +525,11 @@ mysql.createConnection({
                 const user = await User.verifUserSimple(message.e, message.k);
                 if(!isErr(user)){
                     message.context = message.context.replace(/(\r\n|\n|\r)/g,"<br />");
+<<<<<<< HEAD
                     message.context = message.context.replace(/<script>/g,"<br />");
+=======
+                    message.context = message.context.replace(/<script>/g,"");
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
                     message.context = ent.encode(message.context)
                     const setMessage = await User.setMessage(user.id, message.context);
                     if (!isErr(setMessage)){
@@ -845,7 +1031,11 @@ mysql.createConnection({
                 socket.emit('res_resetPass', send);
             }
         });
+<<<<<<< HEAD
     });
+=======
+        });
+>>>>>>> c062a4a05073b9a18bac83f914f452eb1f6cb1db
 
 
     https.listen(config.port);

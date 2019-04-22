@@ -1,0 +1,36 @@
+								DIRECTIVES ET CONSIGNES DE TRAVAIL
+
+
+- PAGE INDEX : faire transiter la session du reseau social du USER par les deux bouttons continuer  vers le reste de la plateforme ou se retourner au reseau social
+
+- PAGE D'ACCUEIL (HOME) : 
+ * permettre au USER dans la continuité de sa session de visiter le reste des pages de la plateforme et de pouvoir souscrire aux service selon les restrictions 
+	ou accès accordés.
+ * En clair le but premier de cette page c'est de permettre aux users de transiter avec leurs sessions vers toutes les autres pages.
+
+- PAGE INFORMATION (INFOINDEX) : Toujours avec la continuité de sa session, le user doit voir les information juridiques et judiciaires qui sont proposer et à
+	partir de cette page, qui est en quelques sortes une page index et les consulter specifiquement.
+
+- PAGE INFORMATIONS PAR CATEGORIES (INFOLIST) : il y a 4 types d'informations proposées dans la page INFOINDEX, ainsi sur la page INFOLIST, le USER dpoit avoir accès à
+	la catégorie précise qu'il a sélectionné afin de consulter les informations spécifiquement et individuellement
+
+- PAGE SERVICES : toujours continuant avec sa session, et un peu comme la page INFOINDEX, cette page va lister un ensemble de services ou procedures 
+	juridiques et judiciaires sur lesquelles le USER pourra consulter individuellement et spéciquement.
+
+- PAGE JURIDIQUE : 
+	* Toujours dans sa continuité de sa session, le USER doit naturellement voir les informations concernant le juridiques énoncées sur la page
+	* Mais la fonction première de cette page est de donner la possibilité au USERS de remplir les deux formulaire et de postuler à leurs services à savoir
+		démander une assistance juridique et postuler pour devenir un assitant juridique. En clair faudrait créer les tables et la base de données pour ces services.
+		Mais je précise que les receptions de ces requêtes seront visitées par les administrateurs dans le système de gestion COMMUN. donc il ne s'agit pas de faire,
+		un autre système de gestion mais peut être son esquisse.
+
+- PAGE JUDICIAIRE : Les consignes sont idem que ceux de la page JURIDIQUE, à la différence près que dans la page JUDICIAIRE ol n'y a qu'un seul formulaire à remplir.
+
+
+NB: - les informations, services et procédures seront donnés par N'GBOADÔ. Ce qui vous est demandé c'est de mettre le système en place.
+    - pour la navbar fixée en haut il doit y avoir le menu et le logo de l'assistance juridique. Cela vous sera donné dans quelques temps.
+    - Pour toutes informations et précisions veuillez vous adresser au chef de projet afin de finir dans les délais. Merci, bon courage et bon travail !
+
+
+PUISSE DIEU, OUVRIR NOTRE INTELLECT.	
+		
