@@ -468,6 +468,30 @@ let User = class {
         })
     }
 
+    static setPublishedWithout(content_text, lieu, user_id){
+        return new Promise((next)=>{
+            db.query("INSERT INTO publication (content_text, lieu, user_id, statuts_id) VALUES (?,?,?, 2)", [content_text, lieu, parseInt(user_id,10)])
+                .then((resul)=>{
+                    db.query("SELECT id FROM publication WHERE content_text = ? AND lieu = ? AND user_id = ? ORDER BY id DESC", [content_text, lieu, parseInt(user_id,10)])
+                        .then((resultat)=>{
+                            next(resultat[0]);
+                        }).catch((err)=>{next(err)})
+                }).catch((err)=>{next(err)})
+            })
+    }
+
+
+    static setPublishedWitFile(pub, parentId){
+        return new Promise((next)=>{
+            db.query("UPDATE publication SET " + pub.table + "= ? WHERE id = ?", [pub.fil, parseInt(parentId, 10)])
+                .then((resul)=>{
+                    next(resul[0]);
+                }).catch((err)=>{next(err)})
+            })
+    }
+
+
+
     static getAllPublicationofGroup(group_id, beg, end){
         return new Promise((next) =>{
             db.query("SELECT events.id as id,DAY(events.Mois) as jr, MONTH(events.Mois) as mt, HOUR(events.Heur) as hr, MINUTE(events.Heur) as mn, events.id as id, events.title as title, events.content_text as content, events.file1 as file1, events.file2 as file2, events.file3 as file3,  events.register_date as register_date, DAY(events.register_date) as jour, CONCAT(user.name, ' ', user.firstname) as nom, user.profil as profil, user.emailcrypt as emailcrypt FROM events LEFT JOIN user ON events.user_id = user.id WHERE events.team_id = ? ORDER BY id DESC LIMIT ?, ?", [parseInt(group_id, 10), parseInt(beg, 10), parseInt(end, 10)])

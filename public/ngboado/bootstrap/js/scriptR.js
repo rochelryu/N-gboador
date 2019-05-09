@@ -229,6 +229,60 @@ $(document).ready(function () {
             return false;
         }
     });
+    $('.content_social').on('click', '.com .des', function () {
+        var ele = $(this);
+        $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
+        ele.removeClass('des').addClass('true');
+        var main = $('#del').val(); //mail
+            main = main.replace(/<script>/g,"");
+            var tain = $('#pel').val(); //config
+            var attr = $(this).parent().parent().attr('data-ryu');
+            console.log("like true")
+
+        socket.emit("reaction like ", {e:main,k:tain,ans:attr})
+        //$(this).removeClass('des');
+    });
+    $('.content_social').on('click', '.com .true',function () {
+        $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
+        var main = $('#del').val(); //mail
+            main = main.replace(/<script>/g,"");
+            var tain = $('#pel').val(); //config
+            var attr = $(this).parent().parent().attr('data-ryu');
+            console.log("like False")
+        socket.emit("reaction like", {e:main,k:tain,ans:attr})
+        //$(this).addClass('des');
+        //$(this).removeClass('true');
+    });
+    $('.content_social').on('click', '.ford .des', function () {
+        var ele = $(this);
+        $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
+        ele.removeClass('des').addClass('true');
+        var main = $('#del').val(); //mail
+            main = main.replace(/<script>/g,"");
+            var tain = $('#pel').val(); //config
+            var attr = $(this).parent().parent().attr('data-ryu');
+            console.log("Dislike true")
+
+        socket.emit("reaction dislike", {e:main,k:tain,ans:attr})
+        //$(this).removeClass('des');
+    });
+    $('.content_social').on('click', '.ford .true',function () {
+        $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
+        var main = $('#del').val(); //mail
+            main = main.replace(/<script>/g,"");
+            var tain = $('#pel').val(); //config
+            var attr = $(this).parent().parent().attr('data-ryu');
+            console.log("Dislike False")
+        socket.emit("reaction dislike", {e:main,k:tain,ans:attr})
+        //$(this).addClass('des');
+        //$(this).removeClass('true');
+    });
+    socket.on('newReaction', function(data){
+        var tat = ".romm" + data.key;
+        $(tat).find('.com span').html(data.like);
+        $(tat).find('.ford span').html(data.dis);
+        $(tat).find('.coments span').html(data.cmt);
+    })
     socket.on('newPass', function(data){
         $('#modifP').html('<i class="fa fa-check"></i>');
         if(data == 0){

@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const multer = require('multer');
 let Jimp = require('jimp');
 const twig = require('twig');
-const {isErr, strinfToDate} = require('./src/utilities');
+const {isErr, strinfToDate, purifyData} = require('./src/utilities');
 const fs = require('fs');
 const config = require('./setting/config')
 let bodyParser = require('body-parser');
@@ -30,7 +30,7 @@ mysql.createConnection({
     const storagePublish = multer.diskStorage({
         destination: './public/ngboado/medias/images/',
         filename: function (req, file, cb) {
-            cb(null, req.session.nanNew.keyconfirm + '_' + Date.now() + '_' +file.originalname);
+            cb(null, req.session.ngboador.keyconfirm + '_' + Date.now() + '_' +file.originalname);
         }
     });
     let uploadPublish = multer({
@@ -139,6 +139,73 @@ mysql.createConnection({
         }
     });
     // End validation formulaire signin
+
+    app.post('/login', async (req, res) =>{
+        req.check('user', "Email invalide").isEmail();
+        req.check('pass', "Mot de pass ne doit pas être vide").notEmpty();
+
+        const error = req.validationErrors();
+        if(error){
+            res.render(`${__dirname}/public/ngboado/index.twig`, { errors: error })
+        }
+        else{
+           let user = req.body.user;
+           let pass = req.body.pass;
+           let password = crypto.createHmac('sha256', pass).update('I love cupcakes').digest('hex');
+            const personC = await User.userExist(user, password);
+           if (!isErr(personC)){
+               console.log(password)
+               req.session.ngboador = personC;
+               res.redirect('/Accueil');
+           }
+           else{
+               res.render(`${__dirname}/public/ngboado/index.twig`, { error: 'Identification Echoué. Veuillez verifier vos cordonnées ou Inscrivez-vous' })
+           }
+        }
+    });
+
+
+    app.post('/publish', uploadPublish, async (req, res)=>{
+        if(req.session.ngboador){
+            let contents = purifyData(req.body.comment);
+            let shareTab = new Array();
+                for (let file in req.files){
+                    shareTab.push({fil:req.files[file].filename, table: "file" + (parseInt(file, 10) + 1)});
+                    if(req.files[file].mimetype === "image/jpeg" || req.files[file].mimetype === "image/jpg" || req.files[file].mimetype === "image/png" || req.files[file].mimetype === "image/gif"){
+                        const minFileName = "min"+ req.files[file].filename;
+                        console.log(minFileName)
+                         Jimp.read(`./public/ngboado/medias/images/${req.files[file].filename}`)
+                            .then(image => {
+                                return image
+                                    .resize(Jimp.AUTO,450)
+                                    .quality(100)
+                                    .write(`${__dirname}/public/ngboado/medias/images/min/${minFileName}`);
+                            })
+                            .catch((err)=>{
+                                console.log(`MINATURISATION ECHOUé du fichier ${err}`)
+                            });
+                    }
+                    continue;
+                }
+                const intent = await User.setPublishedWithout(contents, req.session.ngboador.lieu, req.session.ngboador.id);
+                if(!isErr(intent)){
+                    for(let j in shareTab){
+                        const joker = await User.setPublishedWitFile(shareTab[j], intent.id);
+                        continue;
+                    }
+                res.redirect('/profil');
+                }
+                else{
+                    console.log(JSON.stringify(shareTab) + "  \n " + JSON.stringify(contents))
+                res.redirect('/profil');
+                }
+                
+        }
+        else{
+            res.redirect('/login')
+        }
+    });
+    // End validation formulaire signin
     app.get('/Community/:id', async (req, res) => {
         if( req.session.ngboador ){
             let info = {};
@@ -208,10 +275,8 @@ mysql.createConnection({
     });
 
     /////////ACCOUNT
-    app.post('/profil', uploadPublish, async(req, res)=>{
-        let contents = req.body.comment;
-            contents = contents.replace(/(\r\n|\n|\r)/g,"<br />");
-            contents = ent.encode(contents)
+    app.post('/post', async(req, res)=>{
+        let contents = purifyData(req.body.comment);
             let shareTab = new Array();
                 for (let file in req.files){
                     shareTab.push(req.files[file].filename);
@@ -563,6 +628,16 @@ m                    case 2:
             Message = ent.encode(Message);
             const creatMessage = await User.setMessageWithFormContact(nom,first,email,Message);
         });
+        socket.on('reaction dislike', async (data)=>{
+            console.log(data)
+            const focus = {like: Math.floor(Math.random() * 3), dis: Math.floor(Math.random() * 3), cmt: Math.floor(Math.random() * 3), key:7}
+            socket.emit("newReaction", focus)
+        })
+        socket.on('reaction like', async (data)=>{
+            console.log(data)
+            const focus = {like: Math.floor(Math.random() * 3), dis: Math.floor(Math.random() * 3), cmt: Math.floor(Math.random() * 3), key:7}
+            socket.emit("newReaction", focus)
+        })
         socket.on('sendSMS', async (data)=>{
             let email = data.e.replace(/<script>/g,"");
             let client = data.k.replace(/<script>/g,"");

@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="bootstrap/css/swiper.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/jquery.pan.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/smoothbox.css">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/styleCommon.css">
 		<!--------------------------------------------->
 		<!-- 	    IMPORTED CSS'S BALISES           -->
 		<!--------------------------------------------->
@@ -909,28 +910,28 @@
 												</div>
 
                                                 <!--======-- reactions icons --======-->
-                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <div class="row">
-                                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-8 col-xs-push-7 col-sm-push-7 col-md-push-8 col-lg-push-8 col-xl-push-8">
-                                                            <div class="row">
-                                                                <div class="coments col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative" >
-                                                                    <span class="mont">{{ pub.nombreComment }}</span>
-                                                                    <img src="medias/icon/reactions/coment.png" alt="coment icon" height="25" class="reaction Comments" >
-                                                                </div>
+                                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="row">
+                                                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-8 col-xs-push-7 col-sm-push-7 col-md-push-8 col-lg-push-8 col-xl-push-8">
+                                                                                    <div class="row content_social romm{{pub.id}}" data-ryu="{{pub.id}}">
+                                                                                        <div class="coments col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative" >
+                                                                                            <span class="mont">{{ pub.nombreComment }}</span>
+                                                                                            <img src="medias/icon/reactions/coment.png" alt="coment icon" height="25" class="reactions Comments" >
+                                                                                        </div>
 
-                                                                <div class="com col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
-                                                                    <span class="mont">{{ pub.nombreFolie }}</span>
-                                                                    <img src="medias/icon/reactions/like1.png" alt="like icon" height="25" class="Comments reaction {{ (pub.isLike == 0)? 'des' : 'true' }}">
-                                                                </div>
+                                                                                        <div class="com col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
+                                                                                            <span class="mont">{{ pub.nombreFolie }}</span>
+                                                                                            <img src="medias/icon/reactions/like1.png" alt="like icon" height="25" class="Comments reaction {{ (pub.isLike == 0)? 'des' : 'true' }}">
+                                                                                        </div>
 
-                                                                <div class="ford col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
-                                                                    <span class="mont">{{ pub.nombreLike }}</span>
-                                                                    <img src="medias/icon/reactions/sad.png" alt="sad icon" height="25" class="reaction {{ (pub.isDoute == 0)? 'des' : 'true' }}">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--======-- reactions icons end --======-->
+                                                                                        <div class="ford col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
+                                                                                            <span class="mont">{{ pub.nombreLike }}</span>
+                                                                                            <img src="medias/icon/reactions/sad.png" alt="sad icon" height="25" class="reaction dis {{ (pub.isDoute == 0)? 'des' : 'true' }}">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        <!--======-- reactions icons end --======-->
 												</div>
 
 											<!--======-- row article one block end --======-->
@@ -1256,10 +1257,10 @@
 																			<img class="right-side-suggestion-profil-add" src="medias/images/add3.png">
 																		</div>
 																	</div>
-																<!--======-- suggestion four end --======-->
+																	{# <!--======-- suggestion four end --======--> #}
 																</div>
 
-																<!--======-- suggestion five --======-->
+																{# <!--======-- suggestion five --======--> #}
 																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
 																	<div class="row">
 																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -1274,10 +1275,10 @@
 																			<img class="right-side-suggestion-profil-add" src="medias/images/add3.png">
 																		</div>
 																	</div>
-																<!--======-- suggestion five end --======-->
+																{# <!--======-- suggestion five end --======--> #}
 																</div>
 
-																<!--======-- suggestion six --======-->
+																{# <!--======-- suggestion six --======--> #}
 																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
 																	<div class="row">
 																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -1292,10 +1293,10 @@
 																			<img class="right-side-suggestion-profil-add" src="medias/images/add3.png">
 																		</div>
 																	</div>
-																<!--======-- suggestion six end --======-->
+																	{# <!--======-- suggestion six end --======--> #}
 																</div>
 
-																<!--======-- suggestion six --======-->
+																	{# <!--======-- suggestion six --======--> #}
 																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
 																	<div class="row">
 																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -1310,10 +1311,10 @@
 																			<img class="right-side-suggestion-profil-add" src="medias/images/add3.png">
 																		</div>
 																	</div>
-																<!--======-- suggestion six end --======-->
+																	{# <!--======-- suggestion six end --======--> #}
 																</div>
 
-																<!--======-- suggestion seven --======-->
+																	{# <!--======-- suggestion seven --======--> #}
 																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
 																	<div class="row">
 																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -1328,10 +1329,10 @@
 																			<img class="right-side-suggestion-profil-add" src="medias/images/add3.png">
 																		</div>
 																	</div>
-																<!--======-- suggestion seven end --======-->
+																	{# <!--======-- suggestion seven end --======--> #}
 																</div>
 
-																<!--======-- suggestion eight --======-->
+																	{# <!--======-- suggestion eight --======--> #}
 																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
 																	<div class="row">
 																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -1346,10 +1347,10 @@
 																			<img class="right-side-suggestion-profil-add" src="medias/images/add3.png">
 																		</div>
 																	</div>
-																<!--======-- suggestion eight end --======-->
+																	{# <!--======-- suggestion eight end --======--> #}
 																</div>
 
-																<!--======-- suggestion nine --======-->
+																	{# <!--======-- suggestion nine --======--> #}
 																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer;">
 																	<div class="row">
 																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -1364,10 +1365,10 @@
 																			<img class="right-side-suggestion-profil-add" src="medias/images/add3.png">
 																		</div>
 																	</div>
-																<!--======-- suggestion nine end --======-->
+																	{# <!--======-- suggestion nine end --======--> #}
 																</div>
 
-																<!--======-- suggestion ten --======-->
+																	{# <!--======-- suggestion ten --======--> #}
 																<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px; cursor: pointer; margin-bottom: 5px;">
 																	<div class="row">
 																		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -1428,13 +1429,62 @@
 															{% endfor %}
 													
 														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
-															<div class="bloc">
+														
+															<div class="bloc">																
 																<center><img src="medias/images/add5.png" alt="Avatar" class="image" id="plus"></center>
 																<div class="overlay" id="overlay-plus">
-																	<div class="text">Creer ma communauté</div>
+																	<div class="text">Voir plus de communautés</div>
+																	
 																</div>															
 															</div>
 														</div>
+														<div class="col-lg-12 col-md-12 col-sm-12" style="cursor: pointer;">
+															<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="width: 100%">Une communauté</button>
+  																<!-- Modal -->
+																<div class="modal fade" id="myModal" role="dialog">
+																	<div class="modal-dialog modal-lg">
+																	<div class="modal-content">
+																		<div class="modal-header">
+																			<button type="button" class="close" data-dismiss="modal">&times;</button>
+																			<h4 class="modal-title">Créer une nouvelle communauté</h4>
+																		</div>
+																		<div class="modal-body">
+																			<form class="form-horizontal" action="/action_page.php">
+																				<div class="form-group">
+																					<label class="control-label col-sm-2" for="email">Nom : </label>
+																					<div class="col-sm-10">
+																						<input type="text" class="form-control" id="email" placeholder="Quelle nom donnez vous à votre communauté ?">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label class="control-label col-sm-2" for="slogan">Slogan</label>
+																					<div class="col-sm-10"> 
+																						<input type="text" class="form-control" id="slogan" placeholder="Votre slogan ?">
+																					</div>
+																				</div>
+																				<div class="form-group">
+																					<label class="control-label col-sm-2" for="file">Charger une image</label>
+																					<div class="col-sm-10">
+																						<input type="file" class="form-control" id="file" placeholder="Votre slogan ?">
+																					</div>
+																				</div>
+
+																				<div class="form-group"> 
+																					<div class="col-sm-offset-2 col-sm-10">
+																					<button type="submit" class="btn btn-default">Valider</button>
+																					</div>
+																				</div>
+																			</form>
+																			
+																		</div>
+																		<div class="modal-footer">
+																		<button type="button" class="btn btn-default" data-dismiss="modal">Fer</button>
+																		</div>
+																	</div>
+																</div>
+															</div>															
+														</div>
+														
 													
 														
 													</div>

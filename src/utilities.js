@@ -1,6 +1,13 @@
 const path = require('path');
+const ent = require('ent');
 exports.isErr = (_data) =>{
     return _data instanceof Error;
+}
+
+exports.purifyData = (_data) =>{
+    let contents = _data.replace(/(\r\n|\n|\r)/g,"<br />");
+    contents = ent.encode(contents)
+    return contents;
 }
 exports.uploadProfil = (_data) =>{
     if (_data.mimetype === "image/png" || _data.mimetype === "image/jpg" || _data.mimetype === "image/jpeg" || _data.mimetype === "image/gif"){}

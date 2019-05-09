@@ -97,6 +97,7 @@
                                             </section>
                                             <br>
                                             <input type="hidden" value="{{ user.emailcrypt }}" id="del" readonly disabled>
+                                            <input type="hidden" value="{{ user.keyconfirm }}" id="pel" disabled>
                                             <section class="">
                                                 <div class="container-fluid">
                                                 <div class="row pa-50">
@@ -104,26 +105,7 @@
             <div class="row">
               <div class="panel-heading  title-of-pub" style="font-weight: bold; position: relative;">Publier un article dans la Communauté maintenant ! <span class="glyphicon glyphicon-plus" style="font-size: 14px; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></span></div>
               <div class="col-sm-12 reduce" style="padding-top:15px;  border-radius: 0;">
-                <form action="" method="POST" style="" id="comment-form" enctype="multipart/form-data" style="display: none;">
-                  <div class="form-group col-sm-12 ">
-                    <textarea name="comment" id="comment" class="form-control demoTextarea" rows="1" placeholder="Publiez dans la Communauté.."></textarea>
-                  </div>
-                  <div class="media_publish col-xs-12">
-                    <input type="file"  class="filepond"
-    name="filepond" 
-    multiple 
-    data-max-file-size="20MB"
-    data-max-files="18">
-                    </div>
-                    <div class="media-button">
-                      <button class="btn btn-default btn-md stopComment" style="border-radius:1px; margin: 4px 0;">Annuler
-                      </button>
-                      <button type="submit" class="btn btn-md" id="send-comment" style="border-radius:1px; background: linear-gradient(90deg, #3D952B, #336699); color: white; margin: 4px 0">Publier
-                      </button><br><br>
-                    </div>
-
-                  </div>
-                </form>
+              <button type="button" data-toggle="modal" data-target="#hint_brand" > Pub </button>
               </div>
             </div>
           </div>
@@ -159,7 +141,7 @@
                                                                                                 </a>
                                                                                             {% elseif foo1[foo1.length - 1] == "jpeg" or foo1[foo1.length - 1] == "JPEG" or foo1[foo1.length - 1] == "jpg" or foo1[foo1.length - 1] == "JPG" or foo1[foo1.length - 1] == "png" or foo1[foo1.length - 1] == "PNG" or foo1[foo1|length - 1] == "gif" or foo1[foo1.length - 1] == "GIF" %}
                                                                                             <a class="viewEngine" data-big="medias/images/{{ pub.file1 }}" href="">
-                                                                                                <img src="medias/images/{{ pub.file1 }}" class="img-responsive"/>
+                                                                                                <img src="/medias/images/min/min{{ pub.file1 }}" class="img-responsive"/>
                                                                                             </a>
                                                                                             {% endif %}
                                                                                         </div>
@@ -175,7 +157,7 @@
                                                                                                     </a>
                                                                                                 {% elseif foo2[foo2.length - 1] == "jpeg" or foo2[foo2.length - 1] == "JPEG" or foo2[foo2.length - 1] == "jpg" or foo2[foo2.length - 1] == "JPG" or foo2[foo2.length - 1] == "png" or foo2[foo2.length - 1] == "PNG" or foo2[foo2|length - 1] == "gif" or foo2[foo2.length - 1] == "GIF" %}
                                                                                                     <a class="viewEngine" data-big="medias/images/{{ pub.file2 }}" href="">
-                                                                                                        <img src="medias/images/{{ pub.file2 }}" class="img-responsive"/>
+                                                                                                        <img src="/medias/images/min/min{{ pub.file2 }}" class="img-responsive"/>
                                                                                                     </a>
                                                                                                 {% endif %}
                                                                                             </div>
@@ -191,7 +173,23 @@
                                                                                                     </a>
                                                                                                 {% elseif foo3[foo3.length - 1] == "jpeg" or foo3[foo3.length - 1] == "JPEG" or foo3[foo3.length - 1] == "jpg" or foo3[foo3.length - 1] == "JPG" or foo3[foo3.length - 1] == "png" or foo3[foo3.length - 1] == "PNG" or foo3[foo3|length - 1] == "gif" or foo3[foo3.length - 1] == "GIF" %}
                                                                                                     <a class="viewEngine" data-big="medias/images/{{ pub.file3 }}" href="">
-                                                                                                        <img src="medias/images/{{ pub.file3 }}" class="img-responsive"/>
+                                                                                                        <img src="/medias/images/min/min{{ pub.file3 }}" class="img-responsive"/>
+                                                                                                    </a>
+                                                                                                {% endif %}
+                                                                                            </div>
+                                                                                        {% endif %}
+                                                                                        {% if pub.file4 != undefined %}
+                                                                                            <div class="swiper-slide">
+                                                                                                {% set foo4 = pub.file4|split('.') %}
+                                                                                                {% if foo4[foo4.length - 1] == "mp4" or foo4[foo4.length - 1] == "MP4" or foo4[foo4.length - 1] == "avi" or foo4[foo4.length - 1] == "AVI" or foo4[foo4.length - 1] == "MKV" or foo4[foo4.length - 1] == "mkv"  or foo4[foo4.length - 1] == "3gp" or foo4[foo4.length - 1] == "3GP" %}
+                                                                                                    <video src="medias/images/{{ pub.file4 }}" width="95%" height="310" controls style=""></video>
+                                                                                                {% elseif foo4[foo4.length - 1] == "pdf" or foo4[foo4.length - 1] == "PDF" %}
+                                                                                                    <a href="medias/images/{{ pub.file4 }}">
+                                                                                                        <img src="medias/images/71.jpg" class="img-responsive"/>
+                                                                                                    </a>
+                                                                                                {% elseif foo4[foo4.length - 1] == "jpeg" or foo4[foo4.length - 1] == "JPEG" or foo4[foo4.length - 1] == "jpg" or foo4[foo4.length - 1] == "JPG" or foo4[foo4.length - 1] == "png" or foo4[foo4.length - 1] == "PNG" or foo4[foo4|length - 1] == "gif" or foo4[foo4.length - 1] == "GIF" %}
+                                                                                                    <a class="viewEngine" data-big="medias/images/{{ pub.file4 }}" href="">
+                                                                                                        <img src="/medias/images/min/min{{ pub.file4 }}" class="img-responsive"/>
                                                                                                     </a>
                                                                                                 {% endif %}
                                                                                             </div>
@@ -239,14 +237,14 @@
                                                                             </p>
                                                                         </div>
 
-                                                                        <!--======-- reactions icons --======-->
+                                                                         <!--======-- reactions icons --======-->
                                                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                                             <div class="row">
                                                                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-8 col-xs-push-7 col-sm-push-7 col-md-push-8 col-lg-push-8 col-xl-push-8">
-                                                                                    <div class="row">
+                                                                                    <div class="row content_social romm{{pub.id}}" data-ryu="{{pub.id}}">
                                                                                         <div class="coments col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative" >
                                                                                             <span class="mont">{{ pub.nombreComment }}</span>
-                                                                                            <img src="medias/icon/reactions/coment.png" alt="coment icon" height="25" class="reaction Comments" >
+                                                                                            <img src="medias/icon/reactions/coment.png" alt="coment icon" height="25" class="reactions Comments" >
                                                                                         </div>
 
                                                                                         <div class="com col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
@@ -256,13 +254,13 @@
 
                                                                                         <div class="ford col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 position-relative">
                                                                                             <span class="mont">{{ pub.nombreLike }}</span>
-                                                                                            <img src="medias/icon/reactions/sad.png" alt="sad icon" height="25" class="reaction des {{ (pub.isDoute == 0)? 'des' : 'true' }}">
+                                                                                            <img src="medias/icon/reactions/sad.png" alt="sad icon" height="25" class="reaction dis {{ (pub.isDoute == 0)? 'des' : 'true' }}">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         <!--======-- reactions icons end --======-->
-                                                                        </div>
+												</div>
 
                                                                     <!--======-- row article one block end --======-->
                                                                     </div>
@@ -1076,6 +1074,9 @@
           <!------------------------------------------------->
           </div>
 
+        <!--boostatrp modal-->
+    
+    <!--bootstrap modal end-->
         <!-- Modal -->
         <div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -1097,6 +1098,38 @@
             </div>
         </div>
         <!-- Modal -->
+        <div class="modal fade popups" id="hint_brand" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content clearfix">
+                <div class="modal-body login-box clearfix">
+                    <!--user post text -wrap-->
+                 <form action="/publish" method="POST" style="" id="comment-form" enctype="multipart/form-data">
+                    <div class="user-post-text-wrap">
+                        <div class="user-pic-post">
+                            <img src="medias/icon/user profil/africa/{{ user.profil }}">
+                        </div>
+                        <div class="user-txt-post">
+                            <textarea name="comment" class="form-control upostTextarea" placeholder="What's on your mind"></textarea>
+                            <!--input type="file" name="filepond" click-type="type1" class="picupload" multiple /-->
+                        </div>
+                    </div>
+                    <!--user post text -wrap end-->
+                    <ul id="media-list" class="clearfix">
+                        <li class="myupload">
+                            <span><i class="fa fa-plus" aria-hidden="true"></i><input type="file" name="filepond" click-type="type2" id="picupload" class="picupload" multiple></span>
+                        </li>
+                    </ul>
+
+                    <!--post btn wrap-->
+                    <div class="user-post-btn-wrap clearfix">
+                        <input type="submit" class="btn" value="post">
+                    </div>
+                </form>
+                    <!--post btn wrap end-->
+                </div>
+            </div>
+        </div>
+    </div>
         <script src="/socket.io/socket.io.js"></script>
         <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/js/popper.min.js"></script>
@@ -1108,20 +1141,21 @@
     <script src="bootstrap/js/scripts_actualite.js"></script>
     <script src="bootstrap/js/swipe.js"></script>
     <script src="bootstrap/js/jquery.pan.min.js"></script>
+    <script src="bootstrap/js/app2.js"></script>
     <script src="bootstrap/js/scriptR.js"></script>
     <script>
     
         //j'utilise ce script pour fixer mes remmandations
         var rc_pr = document.querySelector('#recommandation_profil');
         var prev = document.querySelector('#prev');
-        const inputElement = document.querySelector('input[type="file"]');
+        ///const inputElement = document.querySelector('input[type="file"]');
         /*FilePond.registerPlugin(
   FilePondPluginImagePreview,
   FilePondPluginImageExifOrientation,
   FilePondPluginFileValidateSize
 );*/
 
-        // Create the FilePond instance
+        /* Create the FilePond instance
 const pond = FilePond.create(inputElement,{
     labelIdle: `Envoyer un Fichier <span class="filepond--label-action">Ici</span>`,
     imageCropAspectRatio: '1:1',
@@ -1131,7 +1165,7 @@ const pond = FilePond.create(inputElement,{
     styleButtonProcessItemPosition: 'right bottom',
 
     // Use Doka.js as image editor
-  });
+  });*/
         function scrolled() {
             var cuurentScroll = document.body.scrollTop || document.documentElement.scrollTop;
             rc_pr.className = (cuurentScroll >= prev.clientHeight + 197) ? "fixed" : "";
