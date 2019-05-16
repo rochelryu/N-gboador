@@ -228,9 +228,9 @@ mysql.createConnection({
             res.redirect('/login')
         }
     });
-    app.get('/Community', async (req, res) => {
+    app.get('/single', async (req, res) => {
         if( req.session.ngboador ){
-            res.render(`${__dirname}/public/ngboado/groupes.twig`);
+            res.render(`${__dirname}/public/ngboado/single.twig`);
             // let info = {};
             // let id = req.params.id;
             // info.group = await User.getGroupOfUser(id)
