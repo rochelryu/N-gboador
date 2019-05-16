@@ -1099,37 +1099,37 @@
         </div>
         <!-- Modal -->
         <div class="modal fade popups" id="hint_brand" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content clearfix">
-                <div class="modal-body login-box clearfix">
-                    <!--user post text -wrap-->
-                 <form action="/publish" method="POST" style="" id="comment-form" enctype="multipart/form-data">
-                    <div class="user-post-text-wrap">
-                        <div class="user-pic-post">
-                            <img src="medias/icon/user profil/africa/{{ user.profil }}">
+            <div class="modal-dialog">
+                <div class="modal-content clearfix">
+                    <div class="modal-body login-box clearfix">
+                        <!--user post text -wrap-->
+                    <form action="/publish" method="POST" style="" id="comment-form" enctype="multipart/form-data">
+                        <div class="user-post-text-wrap">
+                            <div class="user-pic-post">
+                                <img src="medias/icon/user profil/africa/{{ user.profil }}">
+                            </div>
+                            <div class="user-txt-post">
+                                <textarea name="comment" class="form-control upostTextarea" placeholder="What's on your mind"></textarea>
+                                <!--input type="file" name="filepond" click-type="type1" class="picupload" multiple /-->
+                            </div>
                         </div>
-                        <div class="user-txt-post">
-                            <textarea name="comment" class="form-control upostTextarea" placeholder="What's on your mind"></textarea>
-                            <!--input type="file" name="filepond" click-type="type1" class="picupload" multiple /-->
-                        </div>
-                    </div>
-                    <!--user post text -wrap end-->
-                    <ul id="media-list" class="clearfix">
-                        <li class="myupload">
-                            <span><i class="fa fa-plus" aria-hidden="true"></i><input type="file" name="filepond" click-type="type2" id="picupload" class="picupload" multiple></span>
-                        </li>
-                    </ul>
+                        <!--user post text -wrap end-->
+                        <ul id="media-list" class="clearfix">
+                            <li class="myupload">
+                                <span><i class="fa fa-plus" aria-hidden="true"></i><input type="file" name="filepond" click-type="type2" id="picupload" class="picupload" multiple></span>
+                            </li>
+                        </ul>
 
-                    <!--post btn wrap-->
-                    <div class="user-post-btn-wrap clearfix">
-                        <input type="submit" class="btn" value="post">
+                        <!--post btn wrap-->
+                        <div class="user-post-btn-wrap clearfix">
+                            <input type="submit" class="btn" value="post">
+                        </div>
+                    </form>
+                        <!--post btn wrap end-->
                     </div>
-                </form>
-                    <!--post btn wrap end-->
                 </div>
             </div>
         </div>
-    </div>
         <script src="/socket.io/socket.io.js"></script>
         <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
     <script src="bootstrap/js/popper.min.js"></script>

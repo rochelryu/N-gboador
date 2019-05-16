@@ -228,6 +228,29 @@ mysql.createConnection({
             res.redirect('/login')
         }
     });
+    app.get('/Community', async (req, res) => {
+        if( req.session.ngboador ){
+            res.render(`${__dirname}/public/ngboado/groupes.twig`);
+            // let info = {};
+            // let id = req.params.id;
+            // info.group = await User.getGroupOfUser(id)
+            //  let admin = await User.isAdmin(id, req.session.ngboador.id)
+            // let getAllMemberOfThisGroup = await User.getAllMemberOfThisGroup(info.group.id);
+            // let publish = await User.getAllPublicationofGroup(info.group.id, 0, 9)
+            // for(let i in publish){
+            //     const number = await User.getNumberLikeGroup(publish[i].id)
+            //     publish[i].numberLike = number.NumberLike;
+            //     continue
+            // }
+            // info.publish = publish;
+            // info.membre = getAllMemberOfThisGroup;
+            // info.isAdmin = admin.level
+            // res.render(`${__dirname}/public/ngboado/groupes.twig`, {user: req.session.ngboador, info : info})
+        }
+        else{
+            res.redirect('/login')
+        }
+    });
 
     app.get('/Accueil', async (req, res)=>{
         if(req.session.ngboador){
