@@ -114,12 +114,13 @@
                                                 <div class="row m-4">
                                                     <!-- Grid column -->
                                                     {% if info.published|length > 0 %}
+                                                    {% for pub in info.published %}
+
                                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                                         <div class="row">
                                                             <!-------------------------------------------->
                                                             <!--  			 ARTICLE ONE BLOCK  		-->
                                                             <!-------------------------------------------->
-                                                            {% for pub in info.published %}
                                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 flot" style="padding-top: 15px; background-color: white;  padding-bottom: 15px; margin-bottom: 30px;">
 
                                                                 <div class="row">
@@ -269,10 +270,32 @@
                                                                 <!--  			 ARTICLE ONE BLOCK END 	 -->
                                                                 <!-------------------------------------------->
                                                             </div>
-                                                            {% endfor %}
                                                         </div>
                                                     </div>
-                                                            {% else %}
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="box{{ pub.id }}">
+                                                        <div class="core" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:10px; margin-left: -13px">
+                                                            {% for item in pub.comment %}
+                                                                <div class="team1">
+                                                                    <div class="col-xs-3 team-img1">
+                                                                        <img src="../medias/icon/user profil/africa/{{ item.profilComment }}" alt="" />
+                                                                    </div>
+                                                                    <div class="col-xs-9 team-info" data-animate-scroll='{"x": "100","y":"100","rotation":"-25","alpha": "0","duration": "1.5", "scaleX": "0", "scaleY": "0"}'>
+                                                                        <p>{{ item.nomComment }}</p>
+                                                                        <p>{{ item.content_text }}</p>
+                                                                        <div class="timesTchat" align="right">
+                                                                            <small>
+                                                                                <script>horodatage("{{ item.dates }}")</script></small>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="clearfix"></div>
+                                                                </div>
+                                                            {% endfor %}
+
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+
+                                                    {% else %}
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="row" align="center">
 
@@ -366,7 +389,7 @@
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
 <a href="../medias/images/{{ pub.file1 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file1 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file1 }}" alt=" " class="img-fluid" />
                                     </figure>
                                 </a>                                                            </div>
                                                         {% endif %}
@@ -375,7 +398,7 @@
                                                         {% set foo211 = pub.file2|split('.') %}
                                                         {% if foo211[foo211|length - 1] == "jpeg" or foo211[foo211|length - 1] == "JPEG" or foo211[foo211|length - 1] == "jpg" or foo211[foo211|length - 1] == "JPG"  or foo211[foo211|length - 1] == "png" or foo211[foo211|length - 1] == "PNG" or foo211[foo211|length - 1] == "gif" or foo211[foo211|length - 1] == "GIF" %}
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            <a href="../medias/images/{{ pub.file2 }}" class="sb">
+                                                            <a href="../medias/images/min/min{{ pub.file2 }}" class="sb">
                                     <figure>
                                         <img src="../medias/images/{{ pub.file2 }}" alt=" " class="img-fluid" />
                                     </figure>
@@ -386,24 +409,24 @@
                                                         {% set foo311 = pub.file3|split('.') %}
                                                         {% if foo311[foo311|length - 1] == "jpeg" or foo311[foo311|length - 1] == "JPEG" or foo311[foo311|length - 1] == "jpg" or foo311[foo311|length - 1] == "JPG"  or foo311[foo311|length - 1] == "png" or foo311[foo311|length - 1] == "PNG" or foo311[foo311|length - 1] == "gif" or foo311[foo311|length - 1] == "GIF" %}
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            
+
 <a href="../medias/images/{{ pub.file3 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file3 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file3 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                   
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
                                                     {% if pub.file4 != undefined %}
                                                         {% set foo411 = pub.file4|split('.') %}
                                                         {% if foo411[foo411|length - 1] == "jpeg" or foo411[foo411|length - 1] == "JPEG" or foo411[foo411|length - 1] == "jpg" or foo411[foo411|length - 1] == "JPG"  or foo411[foo411|length - 1] == "png" or foo411[foo411|length - 1] == "PNG" or foo411[foo411|length - 1] == "gif" or foo411[foo411|length - 1] == "GIF" %}
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            
+
 <a href="../medias/images/{{ pub.file4 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file4 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file4 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                       
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
 
@@ -411,11 +434,11 @@
                                                         {% set foo511 = pub.file5|split('.') %}
                                                         {% if foo511[foo511|length - 1] == "jpeg" or foo511[foo511|length - 1] == "JPEG" or foo511[foo511|length - 1] == "jpg" or foo511[foo511|length - 1] == "JPG"  or foo511[foo511|length - 1] == "png" or foo511[foo511|length - 1] == "PNG" or foo511[foo511|length - 1] == "gif" or foo511[foo511|length - 1] == "GIF" %}
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
-                                                        <a href="../medias/images/{{ pub.file5 }}" class="sb">
+                                                        <a href="../medias/images{{ pub.file5 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file5 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file5 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                       
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
 
@@ -425,9 +448,9 @@
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
                                                             <a href="../medias/images/{{ pub.file6 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file6 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file6 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                       
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
 
@@ -437,9 +460,9 @@
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
                                                             <a href="../medias/images/{{ pub.file7 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file7 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file7 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                       
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
 
@@ -447,36 +470,36 @@
                                                         {% set foo811 = pub.file8|split('.') %}
                                                         {% if foo811[foo811|length - 1] == "jpeg" or foo811[foo811|length - 1] == "JPEG" or foo811[foo811|length - 1] == "jpg" or foo811[foo811|length - 1] == "JPG"  or foo811[foo811|length - 1] == "png" or foo811[foo811|length - 1] == "PNG" or foo811[foo811|length - 1] == "gif" or foo811[foo811|length - 1] == "GIF" %}
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            
+
 <a href="../medias/images/{{ pub.file8 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file8 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file8 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                       
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
                                                     {% if pub.file9 != undefined %}
                                                         {% set foo911 = pub.file9|split('.') %}
                                                         {% if foo911[foo911|length - 1] == "jpeg" or foo911[foo911|length - 1] == "JPEG" or foo911[foo911|length - 1] == "jpg" or foo911[foo911|length - 1] == "JPG"  or foo911[foo911|length - 1] == "png" or foo911[foo911|length - 1] == "PNG" or foo911[foo911|length - 1] == "gif" or foo911[foo911|length - 1] == "GIF" %}
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            
+
 <a href="../medias/images/{{ pub.file9 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file9 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file9 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                       
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
                                                     {% if pub.file10 != undefined %}
                                                         {% set foo011 = pub.file10|split('.') %}
                                                         {% if foo011[foo011|length - 1] == "jpeg" or foo011[foo011|length - 1] == "JPEG" or foo011[foo011|length - 1] == "jpg" or foo011[foo011|length - 1] == "JPG"  or foo011[foo011|length - 1] == "png" or foo011[foo011|length - 1] == "PNG" or foo011[foo011|length - 1] == "gif" or foo011[foo011|length - 1] == "GIF" %}
                                                             <div class="col-sm-4 col-xs-6 p-b-5">
-                                                            
+
 <a href="../medias/images/{{ pub.file10 }}" class="sb">
                                     <figure>
-                                        <img src="../medias/images/{{ pub.file10 }}" alt=" " class="img-fluid" />
+                                        <img src="../medias/images/min/min{{ pub.file10 }}" alt=" " class="img-fluid" />
                                     </figure>
-                                </a>                                                                       
+                                </a>
                                                             </div>{% endif %}
                                                     {% endif %}
                                     <!-- A continuer jusqu'au 19 files-->
@@ -1014,7 +1037,7 @@
                   <!-- 			 TITLE POSTS COMMENTS            -->
                   <!------------------------------------------------->
                   <div class="title-answer-text col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h4><center> Repondre à Mondesir Coré </center></h4>
+                    <h4><center>  </center></h4>
                   <!------------------------------------------------->
                   <!-- 		    TITLE POSTS COMMENTS END         -->
                   <!------------------------------------------------->
@@ -1026,21 +1049,21 @@
                   <div class="poster-profil-with-commmented-post col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row">
                       <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-top: 36px;">
-                        <img src="medias/icon/user profil/africa/userBoy09.jpg" height="40" width="40" style="border-radius: 50%; margin-left: 16px; border: 1px solid white;">
+                        <img src="" height="40" width="40" style="border-radius: 50%; margin-left: 16px; border: 1px solid white;">
                       </div>
 
                       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" style="margin-top: 24px; margin-left: -80px;">
                         <blockquote>
-                          <p style="font-weight: bold; font-size: 12px; color: white; width: 160%;">Mondesir Coré</p>
-                          <small style="font-size: 10px; color: white;">il y a 2 jours</small>
+                          <p style="font-weight: bold; font-size: 12px; color: white; width: 160%;"></p>
+                          <small style="font-size: 10px; color: white;"></small>
                         </blockquote>
                       </div>
 
-                      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-5" style="height: 110px; width: 30%; margin-left: 140px; margin-top: 3px;">
+                      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-5" style="height: 110px; width: 30%; margin-left: 140px; margin-top: 3px;">
                         <div class="row">
                           <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
                             <center>
-                              <img src="medias/images/benevoles.jpg" class="img-responsive" style="opacity: .5; margin-left: 15px; margin-bottom: 5px;"/>
+                              <img src="" class="img-responsive" style="opacity: .5; margin-left: 15px; margin-bottom: 5px;"/>
                             </center>
                           </div>
 
@@ -1062,8 +1085,9 @@
                   <!------------------------------------------------->
                   <!-- 			  SEND MESSAGE INPUT          	 -->
                   <!------------------------------------------------->
-                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left: -2.5%;">
-                    <input type="text" class="form-control" id="" aria-describedby="textHelp" placeholder="Ecrire un commentaire..." style="border-radius: none; height: 48px; width: 105.5%; font-size: 1em; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                  <div class="col-xl-12 position-relative col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left: -2.5%;">
+                    <input type="text" class="form-control" id="zen" aria-describedby="textHelp" placeholder="Ecrire un commentaire...">
+                      <button class="commentButton"><i class="fa fa-share-alt"></i></button>
                   </div>
 
                 </div>
@@ -1075,7 +1099,7 @@
           </div>
 
         <!--boostatrp modal-->
-    
+
     <!--bootstrap modal end-->
         <!-- Modal -->
         <div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
@@ -1122,7 +1146,7 @@
 
                         <!--post btn wrap-->
                         <div class="user-post-btn-wrap clearfix">
-                            <input type="submit" class="btn" value="post">
+                            <input type="submit" class="btn btn-black" value="Envoyer">
                         </div>
                     </form>
                         <!--post btn wrap end-->
@@ -1144,7 +1168,7 @@
     <script src="bootstrap/js/app2.js"></script>
     <script src="bootstrap/js/scriptR.js"></script>
     <script>
-    
+
         //j'utilise ce script pour fixer mes remmandations
         var rc_pr = document.querySelector('#recommandation_profil');
         var prev = document.querySelector('#prev');

@@ -830,7 +830,7 @@
                                                                             </a>
                                                                         {% elseif foo1[foo1.length - 1] == "jpeg" or foo1[foo1.length - 1] == "JPEG" or foo1[foo1.length - 1] == "jpg" or foo1[foo1.length - 1] == "JPG" or foo1[foo1.length - 1] == "png" or foo1[foo1.length - 1] == "PNG" or foo1[foo1|length - 1] == "gif" or foo1[foo1.length - 1] == "GIF" %}
                                                                             <a class="viewEngine" data-big="medias/images/{{ pub.file1 }}" href="">
-                                                                                <img src="medias/images/{{ pub.file1 }}" class="img-responsive"/>
+                                                                                <img src="medias/images/min/min{{ pub.file1 }}" class="img-responsive"/>
                                                                             </a>
                                                                         {% endif %}
                                                                     </div>
@@ -846,7 +846,7 @@
                                                                             </a>
                                                                         {% elseif foo2[foo2.length - 1] == "jpeg" or foo2[foo2.length - 1] == "JPEG" or foo2[foo2.length - 1] == "jpg" or foo2[foo2.length - 1] == "JPG" or foo2[foo2.length - 1] == "png" or foo2[foo2.length - 1] == "PNG" or foo2[foo2|length - 1] == "gif" or foo2[foo2.length - 1] == "GIF" %}
                                                                             <a class="viewEngine" data-big="medias/images/{{ pub.file2 }}" href="">
-                                                                                <img src="medias/images/{{ pub.file2 }}" class="img-responsive"/>
+                                                                                <img src="medias/images/min/min{{ pub.file2 }}" class="img-responsive"/>
                                                                             </a>
                                                                         {% endif %}
                                                                     </div>
@@ -862,7 +862,7 @@
                                                                             </a>
                                                                         {% elseif foo3[foo3.length - 1] == "jpeg" or foo3[foo3.length - 1] == "JPEG" or foo3[foo3.length - 1] == "jpg" or foo3[foo3.length - 1] == "JPG" or foo3[foo3.length - 1] == "png" or foo3[foo3.length - 1] == "PNG" or foo3[foo3|length - 1] == "gif" or foo3[foo3.length - 1] == "GIF" %}
                                                                             <a class="viewEngine" data-big="medias/images/{{ pub.file3 }}" href="">
-                                                                                <img src="medias/images/{{ pub.file3 }}" class="img-responsive"/>
+                                                                                <img src="medias/images/min/min{{ pub.file3 }}" class="img-responsive"/>
                                                                             </a>
                                                                         {% endif %}
                                                                     </div>
@@ -1411,8 +1411,8 @@
 												{# <!------------------------------------------------->
 												<!-- 			MEMBER GROUPS VIEWS  		 	 -->
 												<!-------------------------------------------------> #}
-																					
-														
+
+
 												<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px; margin-left: 6px;">
 													<div class="row">
 														<!--======-- groupe one --======-->
@@ -1425,17 +1425,17 @@
 																		</div>
 																	</div>
 																</div>
-																</a>														
+																</a>
 															{% endfor %}
-													
+
 														<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" style="cursor: pointer; width: 50%; margin-top: 15px;">
-														
-															<div class="bloc">																
+
+															<div class="bloc">
 																<center><img src="medias/images/add5.png" alt="Avatar" class="image" id="plus"></center>
 																<div class="overlay" id="overlay-plus">
 																	<div class="text">Voir plus de communautés</div>
-																	
-																</div>															
+
+																</div>
 															</div>
 														</div>
 														<div class="col-lg-12 col-md-12 col-sm-12" style="cursor: pointer;">
@@ -1458,7 +1458,7 @@
 																				</div>
 																				<div class="form-group">
 																					<label class="control-label col-sm-2" for="slogan">Slogan</label>
-																					<div class="col-sm-10"> 
+																					<div class="col-sm-10">
 																						<input type="text" class="form-control" id="slogan" placeholder="Votre slogan ?">
 																					</div>
 																				</div>
@@ -1469,24 +1469,24 @@
 																					</div>
 																				</div>
 
-																				<div class="form-group"> 
+																				<div class="form-group">
 																					<div class="col-sm-offset-2 col-sm-10">
 																					<button type="submit" class="btn btn-default">Valider</button>
 																					</div>
 																				</div>
 																			</form>
-																			
+
 																		</div>
 																		<div class="modal-footer">
 																		<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
 																		</div>
 																	</div>
 																</div>
-															</div>															
+															</div>
 														</div>
-														
-													
-														
+
+
+
 													</div>
 												{# <!------------------------------------------------->
 												<!-- 			MEMBER GROUPS VIEWS END  		 -->
@@ -1509,7 +1509,7 @@
 								<!-- 			CHAT'S COMMENTS COVER 			 -->
 								<!-------------------------------------------------> #}
 								<div class="comments-cover col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #273746; width: 100%; height: 100%; background-size: cover; position: fixed; top: 0px; opacity: .6; display: none">
-{# 
+{#
 								<!------------------------------------------------->
 								<!-- 			CHAT'S COMMENTS END COVER		 -->
 								<!-------------------------------------------------> #}
@@ -1532,7 +1532,7 @@
 
 																<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
 																	<img src="medias/icon/icon services/parametres/settings.png" title="paramètres" height="17" class="setting-chat-icon">
-																</div>																
+																</div>
 
 															</div>
 														<!--======-- exit and settings chat container end --======-->

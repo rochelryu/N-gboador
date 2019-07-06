@@ -21,8 +21,8 @@ $(document).ready(function(){
 	});
 
 	$(".coments").click(function(){
-		$(".comments-cover").fadeIn(1000);
-		$(".posts-comments-great-container").fadeIn(1000);
+		$(".comments-cover").fadeIn();
+		$(".posts-comments-great-container").fadeIn();
 	});
 
 	$(".comments-cover").click(function(){

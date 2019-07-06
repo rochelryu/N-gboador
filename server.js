@@ -199,7 +199,7 @@ mysql.createConnection({
                     console.log(JSON.stringify(shareTab) + "  \n " + JSON.stringify(contents))
                 res.redirect('/profil');
                 }
-                
+
         }
         else{
             res.redirect('/login')
@@ -651,16 +651,84 @@ m                    case 2:
             Message = ent.encode(Message);
             const creatMessage = await User.setMessageWithFormContact(nom,first,email,Message);
         });
-        socket.on('reaction dislike', async (data)=>{
-            console.log(data)
-            const focus = {like: Math.floor(Math.random() * 3), dis: Math.floor(Math.random() * 3), cmt: Math.floor(Math.random() * 3), key:7}
-            socket.emit("newReaction", focus)
+
+        socket.on('reaction comm', async (data)=>{
+            const focus = await User.getPublication(data.ans);
+            socket.emit("newReactionComm", focus)
         })
-        socket.on('reaction like', async (data)=>{
-            console.log(data)
-            const focus = {like: Math.floor(Math.random() * 3), dis: Math.floor(Math.random() * 3), cmt: Math.floor(Math.random() * 3), key:7}
-            socket.emit("newReaction", focus)
+        socket.on('commentSend', async data =>{
+            console.log(JSON.stringify(data))
+            let Message = data.context.replace(/<script>/g,'');
+            let e = data.e.replace(/<script>/g,'');
+            let k = data.k.replace(/<script>/g,'');
+            let ans = data.ans.replace(/<script>/g,'');
+            Message = ent.encode(Message);
+            const Comment = await User.setComment(e,k,ans,Message);
+            if (!isErr(Comment)){
+                Message = ent.decode(Message);
+                const user = await User.getUserByEmail(e);
+                io.emit("retourFinalComment", {ryu:ans, message:Message, user:user})
+            }
+            else {
+                console.log(Comment)
+            }
         })
+
+
+
+
+
+
+        socket.on('dislikeTrue', async (data)=>{
+            let id = data.ans.replace(/<script>/g,'');
+            var email = data.e.replace(/<script>/g,'');
+            let k = data.k.replace(/<script>/g,'');
+            id = parseInt(id, 10);
+            const dislike = await User.actionLike(id, email, k);
+            if(!isErr(dislike)){
+                let info = {}
+                const numLike = await User.getNumberLike(id);
+                const numDislike = await User.getNumberDoute(id, email, k);
+                const numComm = await User.getNumberComment(id, email, k);
+                info.numLike = numLike.NumberLike;
+                info.numDislike = numDislike.NumberDoute;
+                info.numComm = numComm.NumberComment;
+                info.check = id;
+                io.emit("newReaction", info);
+            }
+            else{
+                console.log(dislike)
+            }
+        })
+
+
+        socket.on('DouteFalse', async (data)=>{
+            console.log("douteFalse");
+            let id = data.ans.replace(/<script>/g,'');
+            var email = data.e.replace(/<script>/g,'');
+            let k = data.k.replace(/<script>/g,'');
+            id = parseInt(id, 10);
+            const dislike = await User.actionDoute(id, email, k);
+            if(!isErr(dislike)){
+                let info = {}
+                const numLike = await User.getNumberLike(id);
+                const numDislike = await User.getNumberDoute(id, email, k);
+                const numComm = await User.getNumberComment(id, email, k);
+                info.numLike = numLike.NumberLike;
+                info.numDislike = numDislike.NumberDoute;
+                info.numComm = numComm.NumberComment;
+                info.check = id;
+                io.emit("newReaction", info);
+            }
+            else{
+                console.log(dislike)
+            }
+
+        })
+
+
+
+
         socket.on('sendSMS', async (data)=>{
             let email = data.e.replace(/<script>/g,"");
             let client = data.k.replace(/<script>/g,"");

@@ -192,7 +192,7 @@ let User = class {
         })
     }
 
-   
+
 
     static getTwoLastRecommandation(emailcrypt){
         return new Promise((next)=>{
@@ -234,6 +234,26 @@ let User = class {
                 next(error)
             })
         });
+    }
+
+    static  setComment(emailcrypt,keyconfirm,publication_id,Message){
+        return new Promise((next) =>{
+            db.query("SELECT * FROM user WHERE emailcrypt = ? and keyconfirm = ?", [emailcrypt, keyconfirm])
+                .then((result)=>{
+                    if (result[0] !== undefined){
+                        db.query("INSERT INTO comment (publication_id, user_id, content_text) VALUES (?,?,?)", [parseInt(publication_id, 10), parseInt(result[0].id, 10), Message])
+                            .then((results) =>{
+                                next(results);
+                            })
+                            .catch((error)=>{
+                                console.log("LES DONNEES SONT MAL TYPEE:" + error)
+                                next(error)})
+                    }
+                    else {next(new Error("User non Authentifié"))
+                    }
+                }).catch((error) =>{
+                next(error)})
+        })
     }
 
     static setUser(element, range, confirm){
@@ -341,7 +361,7 @@ let User = class {
     static getAllBestLevelGroup(pays){
         return new Promise((next) =>{
             db.query("SELECT * from groupe WHERE level = 1 AND lieu = ? LIMIT 2", [pays])
-                .then((result) =>{                    
+                .then((result) =>{
                     next(result);
                 }).catch((error) => {
                 next(error);
@@ -351,7 +371,7 @@ let User = class {
     static getPictureProfileOfUser(user_id){
         return new Promise((next) =>{
             db.query("SELECT profil from user WHERE id = ?", [parseInt(user_id)])
-                .then((result) => {                    
+                .then((result) => {
                     next(result[0]);
                 }).catch((error) => {
                 next(error);
@@ -362,7 +382,7 @@ let User = class {
     static getGroupOfUser(group_crypt){
         return new Promise((next) =>{
             db.query("SELECT * from groupe WHERE crypt = ?", [group_crypt])
-                .then((result) => {                    
+                .then((result) => {
                     next(result[0]);
                 }).catch((error) => {
                 next(error);
@@ -416,6 +436,110 @@ let User = class {
                         else{
                             next(new Error('Aucun user TRouvé'))
                         }
+                    })
+                    .catch((err)=>{
+                        next(err);
+                    })
+            }
+        )
+    }
+    static actionLike(publiction_id, emailcrypt, key){
+        return new Promise((next)=>{
+                db.query("SELECT id FROM user WHERE emailcrypt = ? and keyconfirm = ?", [emailcrypt,key])
+                    .then((result)=>{
+                        if (result[0] != undefined){
+                            db.query("SELECT * FROM nbre_like WHERE users_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                .then((resultz)=>{
+                                    if (resultz[0] !== undefined){
+                                        db.query("DELETE FROM nbre_like WHERE users_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                            .then((results) => {
+                                                next(results);
+                                            }).catch(error => {next(error);})
+                                    }
+                                    else{
+                                        db.query("SELECT * FROM nbre_doute WHERE user_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                            .then((resultz) => {
+                                                if (resultz[0] !== undefined){
+                                                    db.query("DELETE FROM nbre_doute WHERE user_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                                        .then((resultss) => {
+                                                            db.query("INSERT INTO nbre_like (users_id, publication_id) VALUES (?,?)", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                                                .then(results =>{
+                                                                    next(results);
+                                                                }).catch(error => {next(error)})
+                                                        }).catch(error => next(error))
+                                                }
+                                                else{
+                                                    db.query("INSERT INTO nbre_like (users_id, publication_id) VALUES (?,?)", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                                        .then((resultsss) =>{
+                                                            next(resultsss);
+                                                        }).catch((error) => {next(error)})
+                                                }
+                                            }).catch((error) => next(error));
+                                    }
+                                }).catch((err)=>{next(error)})
+                        }
+                        else{
+                            next(new Error('Aucun user TRouvé'))
+                        }
+                    })
+                    .catch((err)=>{
+                        next(err);
+                    })
+            }
+        )
+    }
+    static actionDoute(publiction_id, emailcrypt, key){
+        return new Promise((next)=>{
+                db.query("SELECT id FROM user WHERE emailcrypt = ? and keyconfirm = ?", [emailcrypt,key])
+                    .then((result)=>{
+                        if (result[0] != undefined){
+                            db.query("SELECT * FROM nbre_doute WHERE user_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                .then((resultz)=>{
+                                    if (resultz[0] !== undefined){
+                                        db.query("DELETE FROM nbre_doute WHERE user_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                            .then((results) => {
+                                                next(results);
+                                            }).catch(error => {next(error);})
+                                    }
+                                    else{
+                                        db.query("SELECT * FROM nbre_like WHERE users_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                            .then((resultz) => {
+                                                if (resultz[0] !== undefined){
+                                                    db.query("DELETE FROM nbre_like WHERE users_id = ? AND publication_id = ?", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                                        .then((resultss) => {
+                                                            db.query("INSERT INTO nbre_doute (user_id, publication_id) VALUES (?,?)", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                                                .then(results =>{
+                                                                    next(results);
+                                                                }).catch(error => {next(error)})
+                                                        }).catch(error => next(error))
+                                                }
+                                                else{
+                                                    db.query("INSERT INTO nbre_doute (user_id, publication_id) VALUES (?,?)", [parseInt(result[0].id, 10), parseInt(publiction_id, 10)])
+                                                        .then((resultsss) =>{
+                                                            next(resultsss);
+                                                        }).catch((error) => {next(error)})
+                                                }
+                                            }).catch((error) => next(error));
+                                    }
+                                }).catch((err)=>{next(error)})
+                        }
+                        else{
+                            next(new Error('Aucun user TRouvé'))
+                        }
+                    })
+                    .catch((err)=>{
+                        next(err);
+                    })
+            }
+        )
+    }
+
+
+    static getPublication(publ){
+        return new Promise((next)=>{
+                db.query("SELECT CONCAT(user.name , ' ', user.firstname) nom, user.profil, publication.file1, publication.register_date FROM publication LEFT JOIN user ON publication.user_id = user.id WHERE publication.id = ?", [parseInt(publ,10)])
+                    .then((result)=>{
+                        next(result);
                     })
                     .catch((err)=>{
                         next(err);

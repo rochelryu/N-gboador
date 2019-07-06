@@ -14,7 +14,10 @@ $(document).ready(function () {
     var id= 1;
     var indexFont = 1;
     var indexBack = 1;
-
+    var comme = "";
+    function actual() {
+        return ""+new Date().getHours() + "h:" +new Date().getMinutes();
+    }
 
     //tactikeRT();
     function horo(date) {
@@ -229,30 +232,52 @@ $(document).ready(function () {
             return false;
         }
     });
+
+
+    $('.content_social').on('click', '.reactions.Comments', function () {
+        comme = $(this).parent().parent().attr('data-ryu');
+        socket.emit("reaction comm", {ans:comme})
+    });
+
+    $('.commentButton').on('click', function () {
+        var main = $('#del').val(); //mail
+        main = main.replace(/<script>/g,"");
+        var tain = $('#pel').val(); //config
+        var context = $('#zen').val();
+        $('#zen').val('');
+        socket.emit('commentSend', {e:main,k:tain, context:context, ans:comme});
+        $('#pel').parent().click();
+    })
+
+
+
     $('.content_social').on('click', '.com .des', function () {
         var ele = $(this);
         $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
         ele.removeClass('des').addClass('true');
         var main = $('#del').val(); //mail
-            main = main.replace(/<script>/g,"");
-            var tain = $('#pel').val(); //config
-            var attr = $(this).parent().parent().attr('data-ryu');
-            console.log("like true")
-
-        socket.emit("reaction like ", {e:main,k:tain,ans:attr})
-        //$(this).removeClass('des');
+        main = main.replace(/<script>/g,"");
+        var tain = $('#pel').val(); //config
+        var attr = $(this).parent().parent().attr('data-ryu');
+        socket.emit("dislikeTrue", {e:main,k:tain,ans:attr})
     });
+
+
     $('.content_social').on('click', '.com .true',function () {
         $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
         var main = $('#del').val(); //mail
-            main = main.replace(/<script>/g,"");
-            var tain = $('#pel').val(); //config
-            var attr = $(this).parent().parent().attr('data-ryu');
-            console.log("like False")
-        socket.emit("reaction like", {e:main,k:tain,ans:attr})
-        //$(this).addClass('des');
-        //$(this).removeClass('true');
+        main = main.replace(/<script>/g,"");
+        var tain = $('#pel').val(); //config
+        var attr = $(this).parent().parent().attr('data-ryu');
+        socket.emit("dislikeTrue", {e:main,k:tain,ans:attr})
     });
+
+
+
+
+
+
+
     $('.content_social').on('click', '.ford .des', function () {
         var ele = $(this);
         $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
@@ -263,8 +288,7 @@ $(document).ready(function () {
             var attr = $(this).parent().parent().attr('data-ryu');
             console.log("Dislike true")
 
-        socket.emit("reaction dislike", {e:main,k:tain,ans:attr})
-        //$(this).removeClass('des');
+        socket.emit("DouteFalse", {e:main,k:tain,ans:attr})
     });
     $('.content_social').on('click', '.ford .true',function () {
         $(this).parent().parent().find('.reaction').removeClass('true').addClass('des');
@@ -273,16 +297,64 @@ $(document).ready(function () {
             var tain = $('#pel').val(); //config
             var attr = $(this).parent().parent().attr('data-ryu');
             console.log("Dislike False")
-        socket.emit("reaction dislike", {e:main,k:tain,ans:attr})
+        socket.emit("DouteFalse", {e:main,k:tain,ans:attr})
         //$(this).addClass('des');
         //$(this).removeClass('true');
     });
-    socket.on('newReaction', function(data){
-        var tat = ".romm" + data.key;
-        $(tat).find('.com span').html(data.like);
-        $(tat).find('.ford span').html(data.dis);
-        $(tat).find('.coments span').html(data.cmt);
+    $('#zen').on('keyup', function () {
+        if($(this).val() !== ""){
+            var el = "box"+comme;
+            var text = $(this).val();
+            console.log(el)
+
+            $(el).find('.team3').fadeIn().html('<div class="col-xs-4 team-img1">\n' +
+                '                                                                    <img src="" alt="" />\n' +
+                '                                                                </div>\n' +
+                '                                                                <div class="col-xs-8 team-info" data-animate-scroll=\'{"x": "100","y":"100","rotation":"-25","alpha": "0","duration": "1.5", "scaleX": "0", "scaleY": "0"}\'>\n' +
+                '                                                                    <p>'+ text +'</p>\n' +
+                '                                                                    <div class="timesTchat" align="right">\n' +
+                '                                                                        <small></small>\n' +
+                '                                                                    </div>\n' +
+                '                                                                </div>\n' +
+                '                                                                <div class="clearfix"></div>')
+        }
+        else{
+            console.log("ailleur")
+            var el = "box"+comme;
+            $(el).find('.team3').fadeOut().html('')
+        }
     })
+    socket.on("newReactionComm", function (data) {
+        $(".posts-comments-great-container").find(".col-xl-3.col-lg-3.col-md-3.col-sm-3.col-xs-3 img").attr("src", "../medias/icon/user profil/africa/"+data[0].profil);
+        $(".posts-comments-great-container").find(".col-xl-10.col-lg-10.col-md-10.col-sm-10.col-xs-10 center img").attr("src", "../medias/images/min/min"+data[0].file1);
+        $(".posts-comments-great-container").find(".col-xl-4.col-lg-4.col-md-4.col-sm-4.col-xs-4 blockquote p").html(data[0].nom);
+        $(".posts-comments-great-container").find(".col-xl-4.col-lg-4.col-md-4.col-sm-4.col-xs-4 blockquote small").html(data[0].register_date);
+    })
+
+    socket.on('retourFinalComment', function (data) {
+        var choice = "#box"+data.ryu;
+        $(choice).find('.core').prepend("<div class=\"team1 animated flash slower\">\n" +
+            "                                                                <div class=\"col-xs-3 team-img1\">\n" +
+            "                                                                    <img src=\"../medias/icon/user profil/africa/"+ data.user.profil +"\" alt=\"\" />\n" +
+            "                                                                </div>\n" +
+            "                                                                <div class=\"col-xs-9 team-info\" data-animate-scroll='{\"x\": \"100\",\"y\":\"100\",\"rotation\":\"-25\",\"alpha\": \"0\",\"duration\": \"1.5\", \"scaleX\": \"0\", \"scaleY\": \"0\"}'>\n" +
+            "                                                                    <h5>"+ data.user.nom +"</h5>\n" +
+            "                                                                    <p>"+ data.message+"</p>\n" +
+            "                                                                    <div class=\"timesTchat\" align=\"right\">\n" +
+            "                                                                        <small>"+ actual() +"</small>\n" +
+            "                                                                    </div>\n" +
+            "                                                                </div>\n" +
+            "                                                                <div class=\"clearfix\"></div>\n" +
+            "                                                            </div>")
+    });
+
+    socket.on('newReaction', function(data){
+        let tat = ".romm" + data.check;
+        $(tat).find('.com span').html(data.numLike);
+        $(tat).find('.ford span').html(data.numDislike);
+        $(tat).find('.coments span').html(data.numComm);
+    });
+
     socket.on('newPass', function(data){
         $('#modifP').html('<i class="fa fa-check"></i>');
         if(data == 0){

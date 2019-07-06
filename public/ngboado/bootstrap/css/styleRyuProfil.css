@@ -445,7 +445,6 @@ bloc de publication
     position: absolute;
     width: 100%;
     backface-visibility: hidden;
-	box-shadow: 0 0 10px #000
     transform: rotateY(180deg);
     background-color: #FFF;
 }
@@ -1710,3 +1709,10 @@ blockquote{
 	}
 }
 /*********** END GOUROU PART***********/
+.team3{
+    display: none;
+}
+
+/*
+Comment
+ */
