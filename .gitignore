@@ -1,9 +1,12 @@
 # Node modules
-node_modules
-package-lock.json
-setting
-
-.idea
+.DS_Store
+.terraform/
+npm-debug.log
+node_modules/
+./package-lock.json
+setting/
+.idea/
+.vscode/
 # Adonis directory for storing tmp files
 tmp
 
