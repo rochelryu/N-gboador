@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<!--
+    INFORMATIONS 1:
+    VOICI LE MODELE DE COMMENTAIRE POUR TOUT LE SITE EST CELUI DANS LEQUEL J'ECRIS CE TEXTE
+
+-->
+
+<!-- INFORMATIONS 2: les petites annonces seront affichées comme cela -->
+
+
+<!------------------------------------------------------------------------------------------------------->
+<!--   INFORMATIONS 3 : ET VOICI LE MODELE DES COMMENTAIRES MARQUANT DES REQUÊTES VERS LA DATABASE     -->
+<!-------------------------------------------------------------------------------------------------------->
+
+
+
+<head>
+    <!--
+		LES BALISES METAS
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Selowiner Group pour L'ONG N'Gboadô">
+
+    <!--
+		LES BALISES DE STYLES (LIENS BOOTSTRAP 4, LE LIEN CSS DE LA PAGE ET POLICE DE CARACTERE DE GOOGLE FONT EN LIGNE)
+	-->
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/authentification.css">
+
+    <!--
+		FAVICON LOGO DE N'GBOADÔ
+	-->
+    <link rel="icon" type="image/png" href="../../assets/les-logos/logo.png" />
+
+    <!--
+		TITRE DE LA PAGE
+	-->
+    <title> SYSTEME DE GESTION </title>
+</head>
+
+<body>
+
+
+    <!--
+		BALISE HEADER DEBUT
+	-->
+    <header>
+
+        <!--
+            NAVBAR DU HAUT AVEC LE MENU DEBUT
+        -->
+        <div class="navbar navbar-top">
+
+            <!--
+                LE CONTAINER DU MENU DEBUT
+            -->
+            <div class="container-fluid">
+
+                <!-- le logo et le nom de n'gboadô -->
+                <a class="navbar-brand" href="home.html">
+                    <img src="../../assets/les-logos/logo.png" class="mr-1 logo-de-ngboado-dans-la-navbar" alt="logo-ngboadô" height="60">
+                </a>
+
+                <!-- les rubriques du menu debut -->
+                <div class="justify-content-md-center mr-2">
+                    <h3> SYSTEME DE GESTION</h3>
+                </div>
+
+                <!-- les icones à l'extrême droite de la navbar -->
+                <div class="form-inline">
+                    <button class="btn btn-create btn-inscript" role="button" type="button"> Créer un Compte </button>
+                    <button class="btn btn-connect" role="button" type="button"> Se Connecter </button>
+                </div>
+
+
+            </div>
+            <!--
+                LE CONTAINER DU MENU FIN
+            -->
+
+
+
+        </div>
+        <!--
+            LA NAVBAR DU HAUT AVEC LE MENU FIN
+        -->
+
+
+    </header>
+    <!--
+        BALISE HEADER FIN
+    -->
+
+
+
+
+
+
+
+
+
+
+    <!--
+        BALISE MAIN DEBUT
+    -->
+    <main role="main">
+
+        <div class="container-fluid container-block">
+            <div class="row">
+                <div class="col-12 container-text-et-image">
+                    <h5> ADMIN SECTION </h5>
+                    <p> Bienvenue Administrateur , Authentifiez vous et Travaillez ! </p>
+                    <img src="../../assets/les-logos/userBoy09.jpg" height="130" class="icon-user">
+                </div>
+
+                <!-- FORM CONNEXION -->
+                <div class="col-12 container-connexion">
+                    <form>
+                        <div class="row">
+
+                            <div class="col-3 bloc">
+                                <!-- nom complet -->
+                                <fieldset class="form-group">
+                                    <label for="nomComplet">Nom Complet</label>
+                                    <input type="text" class="form-control" name="nomComplet" id="nomComplet">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-3 bloc">
+                                <!-- code secret -->
+                                <fieldset class="form-group">
+                                    <label for="secretCode">Code Secret</label>
+                                    <input type="password" class="form-control" name="secretCode" id="secretCode">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-3 bloc">
+                                <!-- password -->
+                                <fieldset class="form-group">
+                                    <label for="passWord">Password</label>
+                                    <input type="password" class="form-control" name="passWord" id="passWord">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-3 bloc">
+                                <!-- role -->
+                                <fieldset class="form-group">
+                                    <label for="adminRole"> Rôle </label>
+                                    <select class="form-control" id="adminRole" name="adminRole">
+                                        <option>Supervisor</option>
+                                        <option>Editeur</option>
+                                        <option>Assistant</option>
+                                      </select>
+                                </fieldset>
+                            </div>
+
+                            <div class="login-btn">
+                                <button class="btn btn-create" role="button" type="submit"><a href="dashboard.html"> Demander La Session</a> </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+
+                <!-- FORM INSCRIPTION -->
+                <div class="col-12 container-inscription">
+                    <form>
+                        <div class="row">
+
+                            <div class="col-4 bloc">
+                                <!-- nom complet -->
+                                <fieldset class="form-group">
+                                    <label for="nomComplet">Nom Complet</label>
+                                    <input type="text" class="form-control" name="nomComplet" id="nomComplet">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-4 bloc">
+                                <!-- code secret -->
+                                <fieldset class="form-group">
+                                    <label for="secretCode">Code Secret</label>
+                                    <input type="password" class="form-control" name="secretCode" id="secretCode">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-4 bloc">
+                                <!-- confirmation code secret -->
+                                <fieldset class="form-group">
+                                    <label for="secretCodeConfirm">Confirmation Du Secret</label>
+                                    <input type="password" class="form-control" name="secretCodeConfirm" id="secretCodeConfirm">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-4 bloc">
+                                <!-- password -->
+                                <fieldset class="form-group">
+                                    <label for="passWord">Password</label>
+                                    <input type="password" class="form-control" name="passWord" id="passWord">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-4 bloc">
+                                <!-- confirmation password -->
+                                <fieldset class="form-group">
+                                    <label for="passWordConfirm">Confirmation du Password</label>
+                                    <input type="password" class="form-control" name="passWordConfirm" id="passWordConfirm">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-4 bloc">
+                                <!-- role -->
+                                <fieldset class="form-group">
+                                    <label for="adminRole"> Rôle </label>
+                                    <select class="form-control" id="adminRole" name="adminRole">
+                                        <option>Supervisor</option>
+                                        <option>Editeur</option>
+                                        <option>Assistant</option>
+                                      </select>
+                                </fieldset>
+                            </div>
+
+                            <div class="login-btn">
+                                <button class="btn btn-create" role="button" type="submit"><a href="dashboard.html"> Créer La Session </a> </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </main>
+    <!--
+         BALISE MAIN FIN
+    -->
+
+
+
+
+</body>
+
+<!--
+       BALISE JAVASCRIPT (lIEN BOOTSTRAP 4 ET JQUERY)
+  -->
+<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/universelScript.js"></script>
+
+</html>

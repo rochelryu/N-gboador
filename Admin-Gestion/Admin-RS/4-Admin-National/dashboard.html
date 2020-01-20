@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<!--
+    INFORMATIONS 1:
+    VOICI LE MODELE DE COMMENTAIRE POUR TOUT LE SITE EST CELUI DANS LEQUEL J'ECRIS CE TEXTE
+
+  -->
+
+<!-- INFORMATIONS 2: les petites annonces seront affichées comme cela -->
+
+
+<!------------------------------------------------------------------------------------------------------->
+<!--   INFORMATIONS 3 : ET VOICI LE MODELE DES COMMENTAIRES MARQUANT DES REQUÊTES VERS LA DATABASE     -->
+<!-------------------------------------------------------------------------------------------------------->
+
+
+
+<head>
+    <!--
+		LES BALISES METAS
+	-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Selowiner Group pour L'ONG N'Gboadô">
+
+    <!--
+		LES BALISES DE STYLES (LIENS BOOTSTRAP 4, LE LIEN CSS DE LA PAGE ET POLICE DE CARACTERE DE GOOGLE FONT EN LIGNE)
+    -->
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+
+    <!--
+		FAVICON LOGO DE N'GBOADÔ
+	-->
+    <link rel="icon" type="image/png" href="../../assets/les-logos/logo.png" />
+
+    <!--
+		TITRE DE LA PAGE
+	-->
+    <title> SYSTEME DE GESTION </title>
+</head>
+
+<body>
+
+
+    <!--
+		BALISE HEADER DEBUT
+	-->
+    <header>
+
+        <!--
+            NAVBAR DU HAUT AVEC LE MENU DEBUT
+        -->
+        <div class="navbar navbar-top">
+
+            <!--
+                LE CONTAINER DU MENU DEBUT
+            -->
+            <div class="container-fluid">
+
+                <!-- le logo et le nom de n'gboadô -->
+                <a class="navbar-brand">
+                    <img src="../../assets/les-logos/logo.png" class="mr-1 logo-de-ngboado-dans-la-navbar" alt="logo-ngboadô" height="45">
+                    <span class="nom-de-ngboado-a-cote-du-logo"> N'GBOADÔ  </span>
+                </a>
+
+                <!-- les rubriques du menu debut -->
+                <div class="justify-content-md-center mr-2">
+                    <h3> SYSTEME DE GESTION</h3>
+                </div>
+
+                <!-- les icones à l'extrême droite de la navbar -->
+                <div class="form-inline">
+                    <!-- notifications -->
+                    <a href="#"><img src="../../assets/les-logos/not.png" class="mr-3 image-rounded" height="25"></a>
+                    <!-- profil icon -->
+                    <a href="#"><img src="../../assets/les-logos/userBoy09.jpg" class="mr-3 image-rounded" height="25"></a>
+                    <!-- boutton de deconnexion -->
+                    <a href="#"><img src="../../assets/les-logos/logout5.png" class="mr-3 image-rounded" height="28"></a>
+                </div>
+
+
+            </div>
+            <!--
+                LE CONTAINER DU MENU FIN
+            -->
+
+
+
+        </div>
+        <!--
+            LA NAVBAR DU HAUT AVEC LE MENU FIN
+        -->
+
+
+    </header>
+    <!--
+        BALISE HEADER FIN
+    -->
+
+
+
+
+
+
+
+
+
+
+    <!--
+         BALISE MAIN DEBUT
+    -->
+    <main role="main">
+
+        <div class="container-fluid container-block">
+            <div class="row">
+
+                <!-- SIDE BAR DU MENUS A GAUCHE -->
+                <div class="col-2 sidebar-menus">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <hr size="3">
+                        </div>
+
+                        <div class="col-12">
+                            <a class="navbar-brand user-sidebar-info" href="home.html">
+                                <img src="../../assets/les-logos/userBoy09.jpg" class="mr-1 image-rounded" height="30">
+                                <span class="nom-user"> Nathanael - <span> Superviseur </span> </span>
+                            </a>
+                        </div>
+
+                        <div class="col-12">
+                            <hr size="3">
+                        </div>
+
+
+                        <!--
+		                   RUBRIQUES DE LA SIDEBAR DEBUT
+	                    -->
+                        <div class="col-12 rubriques-bloc">
+                            <div class="row">
+
+                                <!-- item Dashboard -->
+                                <div class="col-12 item item-active">
+                                    <a class="navbar-brand" href="dashboard.html">
+                                        <img src="../../assets/les-logos/speedometer.png" height="25">
+                                        <span class="nom-item"> &nbsp; Dashboard </span>
+                                    </a>
+                                </div>
+
+                                <!-- item Messages -->
+                                <div class="col-12 item">
+                                    <a class="navbar-brand" href="messages.html">
+                                        <img src="../../assets/les-logos/mail.png" height="25">
+                                        <span class="nom-item"> &nbsp; Messages </span>
+                                    </a>
+                                </div>
+
+                                <!-- item nouveau bureau -->
+                                <div class="col-12 item">
+                                    <a class="navbar-brand" href="bureaux.html">
+                                        <img src="../../assets/les-logos/building.png" height="25">
+                                        <span class="nom-item"> &nbsp; Créer Bureau </span>
+                                    </a>
+                                </div>
+
+                                <!-- item Communautés -->
+                                <div class="col-12 item">
+                                    <a class="navbar-brand" href="communautes.html">
+                                        <img src="../../assets/les-logos/sway.png" height="25">
+                                        <span class="nom-item"> &nbsp; Communautés </span>
+                                    </a>
+                                </div>
+
+                                <!-- item Assistants Juridiques -->
+                                <div class="col-12 item">
+                                    <a class="navbar-brand" href="assistance.html">
+                                        <img src="../../assets/les-logos/law.png" height="25">
+                                        <span class="nom-item"> &nbsp; Assistants </span>
+                                    </a>
+                                </div>
+
+                                <!-- item Administrateurs -->
+                                <div class="col-12 item">
+                                    <a class="navbar-brand" href="administrateurs.html">
+                                        <img src="../../assets/les-logos/working.png" height="25">
+                                        <span class="nom-item"> &nbsp; Administrateurs </span>
+                                    </a>
+                                </div>
+
+                                <!-- item Administrateurs -->
+                                <div class="col-12 item">
+                                    <a class="navbar-brand" href="timeline.html">
+                                        <img src="../../assets/les-logos/timeline.png" height="25">
+                                        <span class="nom-item"> &nbsp;Timeline </span>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!--
+		                   RUBRIQUES DE LA SIDEBAR FIN
+                        -->
+
+                    </div>
+                </div>
+
+
+
+
+                <!--
+		            CONTAINER DES STATISTIQUES DEBUT
+                -->
+                <div class="col-10 container-des-statistiques">
+                    <div class="row">
+
+                        <!-- CONTAINER BLOC GENERAL -->
+                        <div class="col-12 block-stat">
+                            <div class="row">
+                                <div class="block-scrollable">
+
+                                    <!-- STATISTIQUE DES ADMINS -->
+                                    <div class="col-12 bloc-admins">
+                                        <div class="row">
+
+                                            <div class="col-12 admin-titre">
+                                                <h6> - ADMINS NATIONAUX</h6>
+                                            </div>
+
+                                            <!-- Admins -->
+                                            <div class="container-item container-item-1">
+                                                <div class="block-color color-1">
+                                                    <h5> ADMINS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Total Admins : 8 </span> <span class="login-status status-hidden disconnected">. </span></div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <!-- Admin EDITEURS -->
+                                            <div class="container-item container-item-2">
+                                                <div class="block-color color-2">
+                                                    <h5> EDITEURS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Editeurs : 4</span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Admin SUPERVISEURS -->
+                                            <div class="container-item container-item-3">
+                                                <div class="block-color color-3">
+                                                    <h5> SUPERVISEURS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Superviseurs : 2 </span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Admin ASSISTANTS -->
+                                            <div class="container-item container-item-4">
+                                                <div class="block-color color-4">
+                                                    <h5> ASSISTANTS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span> Assistants : 2 </span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- Admin GRAPH 1 -->
+                                            <div class="graph-1">
+
+                                            </div>
+
+
+                                            <!-- Admin GRAPH 2 -->
+                                            <div class="graph-2">
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                    <!-- STATISTIQUE DES ADMINS MONDIAUX -->
+                                    <div class="col-12 bloc-admins">
+                                        <div class="row">
+
+                                            <div class="col-12 admin-titre">
+                                                <h6> - ASSISTANTS NATIONAUX </h6>
+                                            </div>
+
+                                            <!-- ASSISTANTS ADMINS -->
+                                            <div class="container-item container-item-1">
+                                                <div class="block-color color-5">
+                                                    <h5> ADMINS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span> Total Admins Assistants : 80 </span> <span class="login-status status-hidden disconnected">. </span></div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <!-- ADMINS CONNECTES -->
+                                            <div class="container-item container-item-2">
+                                                <div class="block-color color-6">
+                                                    <h5> CONNECTES </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Admins connectés : 38</span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- ASSISTANTS MONDIAUX -->
+                                            <div class="container-item container-item-3">
+                                                <div class="block-color color-7">
+                                                    <h5> ASSISTANTS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Total Assistants : 700 </span> <span class="login-status status-hidden connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Admin ASSISTANTS -->
+                                            <div class="container-item container-item-4">
+                                                <div class="block-color color-8">
+                                                    <h5> CONNECTES </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span> Assistants Connectes : 205 </span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- Admin GRAPH 1 -->
+                                            <div class="graph-1">
+
+                                            </div>
+
+
+                                            <!-- Admin GRAPH 2 -->
+                                            <div class="graph-2">
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+                                    <!-- STATISTIQUE DES BUREAUX CONTINENTS -->
+                                    <div class="col-12 bloc-admins">
+                                        <div class="row">
+
+                                            <div class="col-12 admin-titre">
+                                                <h6> - UTILISATEURS NATIONAUX </h6>
+                                            </div>
+
+                                            <!-- Utilsateurs  -->
+                                            <div class="container-item container-item-1">
+                                                <div class="block-color color-9">
+                                                    <h5> UTILISATEURS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Total  : 3 500 000 </span> <span class="login-status status-hidden disconnected">. </span></div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <!-- Hommes -->
+                                            <div class="container-item container-item-2">
+                                                <div class="block-color color-10">
+                                                    <h5> HOMMES </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span> Total : 1 500 000</span> <span class="login-status status-hidden connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Femmes -->
+                                            <div class="container-item container-item-3">
+                                                <div class="block-color color-11">
+                                                    <h5> FEMMES </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Total : 2 000 000 </span> <span class="login-status status-hidden connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- CONNECTES MAINTENANT -->
+                                            <div class="container-item container-item-4">
+                                                <div class="block-color color-12">
+                                                    <h5> CONNECTES </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span> Utilisateurs Connectés : 900 000 </span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- Admin GRAPH 1 -->
+                                            <div class="graph-user-1">
+
+                                            </div>
+
+
+                                            <!-- Admin GRAPH 2 -->
+                                            <div class="graph-user-2">
+
+                                            </div>
+
+                                            <!-- Admin GRAPH 3 -->
+                                            <div class="graph-user-3">
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+                                    <!-- STATISTIQUE DES BUREAUX CONTINENTS -->
+                                    <div class="col-12 bloc-admins">
+                                        <div class="row">
+
+                                            <div class="col-12 admin-titre">
+                                                <h6> - BUREAUX REGIONAUX </h6>
+                                            </div>
+
+                                            <!-- Bureaux -->
+                                            <div class="container-item container-item-1">
+                                                <div class="block-color color-1">
+                                                    <h5> BUREAUX </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Total Bureaux : 6 </span> <span class="login-status status-hidden disconnected">. </span></div>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <!-- Admin BUREAUX -->
+                                            <div class="container-item container-item-2">
+                                                <div class="block-color color-2">
+                                                    <h5> CONNECTES </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Bureaux connectés : 6</span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Admin Connected -->
+                                            <div class="container-item container-item-3">
+                                                <div class="block-color color-3">
+                                                    <h5> ADMINS </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span>Total Admins : 60 </span> <span class="login-status status-hidden connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Admin ASSISTANTS -->
+                                            <div class="container-item container-item-4">
+                                                <div class="block-color color-4">
+                                                    <h5> CONNECTES </h5>
+                                                </div>
+
+                                                <div class="item-text">
+                                                    <hr/>
+                                                    <div class="item-session"><span> Admins Connectes : 45 </span> <span class="login-status connected"> . </span></div>
+
+                                                </div>
+                                            </div>
+
+                                            <!-- Admin GRAPH 1 -->
+                                            <div class="graph-1">
+
+                                            </div>
+
+
+                                            <!-- Admin GRAPH 2 -->
+                                            <div class="graph-2">
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--
+		            CONTAINER DES STATISTIQUES DEBUT
+                -->
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </main>
+    <!--
+         BALISE MAIN FIN
+    -->
+
+
+
+
+</body>
+
+<!--
+       BALISE JAVASCRIPT (lIEN BOOTSTRAP 4 ET JQUERY)
+  -->
+<script type=" text/javascript " src="../../js/jquery-3.3.1.min.js "></script>
+<script type="text/javascript " src="../../js/bootstrap.min.js "></script>
+<script type="text/javascript " src="js/universelScript.js "></script>
+
+</html>

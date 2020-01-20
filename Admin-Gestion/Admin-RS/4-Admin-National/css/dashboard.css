@@ -1,0 +1,274 @@
+/*/
+  INFORMATIONS :
+  1- LES COMMENTAIRES DU CSS SERONT AFFICHES COMME CELA
+  2- LE CODE DU STYLE SERA TRAITE LINEAIREMENT (Sur un ligne et non sur plusieurs comme d'habitude.)
+     AINSI SI LE CODE NE TIENT PAS SUR UNE LIGNE ALORS L'ON POURRA PASSER SUR UNE AUTRE LIGNE
+/*/
+
+
+/*/
+  DEBUT DU CODE CSS AVEC LA BALISE BODY
+/*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    background: rgb(1, 0, 17);
+    color: silver;
+    height: 10vh;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: silver;
+}
+
+
+/*/
+  NAVBAR : TOUT CE QUI EST CONTENU DANS LA NAVBAR
+/*/
+
+.navbar-top {
+    border-bottom: 2px solid silver;
+}
+
+.logo-de-ngboado-dans-la-navbar {
+    border-radius: 50%;
+}
+
+.nom-de-ngboado-a-cote-du-logo {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.image-rounded {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+/*/
+  SIDEBAR A GAUCHE
+/*/
+
+.sidebar-menus {
+    background: #050715;
+    height: 100vh;
+    padding-top: 5vh;
+    position: fixed;
+}
+
+.logo-name {
+    margin-top: 15px;
+}
+
+hr {
+    border-color: silver;
+}
+
+.nom-user {
+    font-size: 0.65rem;
+}
+
+.nom-item {
+    font-size: 0.7rem;
+}
+
+.nom-user>span {
+    color: #F72002;
+    font-weight: bold;
+}
+
+.rubriques-bloc {
+    margin-top: 3vh;
+}
+
+.item {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.item-active,
+.item:hover {
+    background: rgb(1, 0, 17);
+}
+
+
+/*/
+  CONTAINER DES STATISTIQUES
+/*/
+
+.container-des-statistiques {
+    margin-left: 18%;
+}
+
+.block-stat {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.block-scrollable {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.bloc-admins {
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.admin-titre {
+    color:
+}
+
+
+/*UNE STATISTIQUE*/
+
+.container-item {
+    background: #050715;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px;
+    padding-bottom: 5px;
+    margin-right: 1%;
+    margin-top: 8vh;
+    width: 24%;
+}
+
+.graph-1,
+.graph-2 {
+    background: #050715;
+    border-radius: 5px;
+    height: 250px;
+    width: 49%;
+    margin-top: 2vh;
+    padding: 20px;
+    padding-bottom: 5px;
+    margin-right: 1%;
+}
+
+.graph-user-1,
+.graph-user-2,
+.graph-user-3 {
+    background: #050715;
+    border-radius: 5px;
+    height: 250px;
+    width: 32.2%;
+    margin-top: 2vh;
+    padding: 20px;
+    padding-bottom: 5px;
+    margin-right: 1%;
+}
+
+
+/*LES BLOCS DE COULEURS*/
+
+.block-color {
+    margin-top: -50px;
+    padding: 20px 5px 20px 5px;
+    text-align: center;
+    color: white;
+    width: 45%;
+    border-radius: 5px;
+}
+
+.block-color>h5 {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.color-1 {
+    background: #E01C01;
+}
+
+.color-2 {
+    background: #2874A6;
+}
+
+.color-3 {
+    background: #F39C12;
+}
+
+.color-4 {
+    background: #0E6655;
+}
+
+.color-5 {
+    background: #458764;
+}
+
+.color-6 {
+    background: #A7014A;
+}
+
+.color-7 {
+    background: #B00207;
+}
+
+.color-8 {
+    background: #071A00;
+}
+
+.color-9 {
+    background: #148F77;
+}
+
+.color-10 {
+    background: #243C1B;
+}
+
+.color-11 {
+    background: #B4550B;
+}
+
+.color-12 {
+    background: #F39C12;
+}
+
+.item-text>span,
+.item-text>div {
+    margin-left: 10px;
+}
+
+
+/*BOUTTON DE SESSIONS*/
+
+.item-session {
+    margin-top: -42px;
+    font-size: 0.8rem;
+}
+
+.login-status {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.connected {
+    color: #229954;
+}
+
+.disconnected {
+    color: #E74C3C;
+}
+
+.status-hidden {
+    visibility: hidden;
+}
+
+
+/*/
+    ORDINATEUR DE PLUS DE 12.5 POUCES (LG)
+/*/
+
+@media only screen and (max-width: 1248px) {
+    .container-fluid {
+        display: none;
+    }
+    .navbar-top {
+        display: none;
+    }
+}

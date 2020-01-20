@@ -1,0 +1,146 @@
+/*/
+  INFORMATIONS :
+  1- LES COMMENTAIRES DU CSS SERONT AFFICHES COMME CELA
+  2- LE CODE DU STYLE SERA TRAITE LINEAIREMENT (Sur un ligne et non sur plusieurs comme d'habitude.)
+     AINSI SI LE CODE NE TIENT PAS SUR UNE LIGNE ALORS L'ON POURRA PASSER SUR UNE AUTRE LIGNE
+/*/
+
+
+/*/
+  DEBUT DU CODE CSS AVEC LA BALISE BODY
+/*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    background: rgb(1, 0, 17);
+    color: grey;
+    height: 10vh;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: grey;
+}
+
+
+/*/
+  NAVBAR : TOUT CE QUI EST CONTENU DANS LA NAVBAR
+/*/
+
+.navbar-top {
+    z-index: 3;
+    background: ;
+}
+
+.logo-de-ngboado-dans-la-navbar {
+    border-radius: 50%;
+    border: 5px solid #050715;
+}
+
+.justify-content-md-center>h3 {
+    font-weight: bold;
+    ;
+}
+
+.btn-create,
+.btn-create:hover,
+.btn-connect,
+.btn-connect:hover {
+    border: 2px solid gray;
+    color: gray;
+    font-weight: bold;
+}
+
+.btn-connect {
+    display: none;
+}
+
+button {
+    font-size: 0.7rem;
+}
+
+
+/*/
+ MAIN
+/*/
+
+.container-text-et-image {
+    text-align: center;
+    background: #050715;
+    padding-top: 65px;
+    height: 32vh;
+}
+
+.container-text-et-image>h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.icon-user {
+    border: 10px solid #050715;
+    border-radius: 50%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.container-connexion {
+    margin-top: 12vh;
+}
+
+.container-connexion>form>.row {
+    padding: 40px 100px 40px 100px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.form-group>input,
+.form-group>select,
+.form-group>input:hover,
+.form-group>select:hover,
+.form-group>input:focus,
+.form-group>select:focus {
+    border: 1px solid grey;
+    background: #050715;
+    color: silver;
+}
+
+.select>option {
+    background: #050715;
+}
+
+.login-btn {
+    text-align: center;
+    margin-left: 42%;
+    margin-top: 25px;
+}
+
+.container-inscription {
+    display: none;
+    margin-top: 3vh;
+}
+
+.container-inscription>form>.row {
+    padding: 40px 220px 40px 220px;
+}
+
+
+/*/
+    ORDINATEUR DE PLUS DE 12.5 POUCES (LG)
+/*/
+
+@media only screen and (max-width: 1248px) {
+    .container-fluid {
+        display: none;
+    }
+    .navbar-top {
+        display: none;
+    }
+}
