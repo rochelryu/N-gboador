@@ -1,0 +1,278 @@
+/*/
+  INFORMATIONS :
+  1- LES COMMENTAIRES DU CSS SERONT AFFICHES COMME CELA
+  2- LE CODE DU STYLE SERA TRAITE LINEAIREMENT (Sur un ligne et non sur plusieurs comme d'habitude.)
+     AINSI SI LE CODE NE TIENT PAS SUR UNE LIGNE ALORS L'ON POURRA PASSER SUR UNE AUTRE LIGNE
+/*/
+
+
+/*/
+  DEBUT DU CODE CSS AVEC LA BALISE BODY
+/*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    background: rgb(1, 0, 17);
+    color: silver;
+    height: 10vh;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: silver;
+}
+
+
+/*/
+  NAVBAR : TOUT CE QUI EST CONTENU DANS LA NAVBAR
+/*/
+
+.navbar-top {
+    border-bottom: 2px solid silver;
+}
+
+.logo-de-ngboado-dans-la-navbar {
+    border-radius: 50%;
+}
+
+.nom-de-ngboado-a-cote-du-logo {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.image-rounded {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+/*/
+  SIDEBAR A GAUCHE
+/*/
+
+.sidebar-menus {
+    background: #050715;
+    height: 100vh;
+    padding-top: 5vh;
+    position: fixed;
+}
+
+.logo-name {
+    margin-top: 15px;
+}
+
+hr {
+    border-color: silver;
+}
+
+.nom-user {
+    font-size: 0.65rem;
+}
+
+.nom-item {
+    font-size: 0.7rem;
+}
+
+.nom-user>span {
+    color: #F72002;
+    font-weight: bold;
+}
+
+.rubriques-bloc {
+    margin-top: 3vh;
+}
+
+.item {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.item-active,
+.item:hover {
+    background: rgb(1, 0, 17);
+}
+
+
+/*/
+  CONTAINER DES ELEMENTS
+/*/
+
+.container-des-elements {
+    margin-left: 18%;
+}
+
+.block-elements {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.block-scrollable {
+    width: 100%;
+}
+
+
+/* CONTAINER DU FORMULAIRE*/
+
+.container-creation-form {
+    height: 100vh;
+    width: 100%;
+}
+
+
+/* IMAGE BOUTTON ET TEXTE*/
+
+.container-text-et-image,
+.container-text-et-boutton {
+    text-align: center;
+    background: #050715;
+    padding-top: 65px;
+    height: 35vh;
+    margin-top: 15px;
+}
+
+.bureaux-existants-btn,
+.bureaux-create-btn {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+.btn-exist,
+.btn-exist:hover,
+.btn-create,
+.btn-create:hover,
+.btn-create-br,
+.btn-create-br:hover {
+    border: 2px solid gray;
+    color: silver;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.icon-user {
+    border: 10px solid #050715;
+    border-radius: 50%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+/*BLOCK DE CREATION DU BUREAU*/
+
+.container-creation-bureau {
+    margin-top: 9vh;
+}
+
+.container-creation-bureau>form>.row {
+    padding: 40px 100px 40px 100px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.form-group>input,
+.form-group>input:hover,
+.form-group>select:hover,
+.form-group>input:focus {
+    border: 1px solid grey;
+    background: #050715;
+    color: silver;
+}
+
+.create-btn {
+    text-align: center;
+    margin-left: 42%;
+    margin-top: 25px;
+}
+
+
+/* CONTAINER AFFICHAGE DES BUREAUX EXISTANTS*/
+
+.container-affichage-bureaux-existants {
+    width: 100%;
+    display: none;
+    background: #050715;
+}
+
+.container-text-et-boutton {
+    background: rgb(1, 0, 17);
+}
+
+.bureaux-create-btn {
+    margin-top: -15px;
+}
+
+.container-bureau-affiche {
+    background: #050715;
+    margin-top: -3vh;
+    width: 100%;
+}
+
+.container-bureau-affiche>.row {
+    padding: 10px;
+}
+
+.affichage-d-un-bureau {
+    width: 100%;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.affichage-d-un-bureau>.row {
+    padding: 10px;
+    padding-left: 0px;
+}
+
+.logo-bureau-block {
+    margin-left: -5px;
+}
+
+.bureau-logo {
+    border-radius: 4px;
+}
+
+.infos-bureau-block {
+    margin-left: -150px;
+}
+
+.infos-bureau-block>a>h5 {
+    font-size: 1.1rem;
+}
+
+.infos-bureau-block>a>h5>span {
+    font-size: 0.7rem;
+    margin-left: 10px;
+}
+
+.bureau-online {
+    color: #019939;
+}
+
+.bureau-offline {
+    color: #F72002;
+}
+
+.infos-bureau-block>a>p {
+    margin-top: 10px;
+    position: relative;
+    top: 8px;
+}
+
+@media only screen and (max-width: 1248px) {
+    .container-fluid {
+        display: none;
+    }
+    .navbar-top {
+        display: none;
+    }
+}

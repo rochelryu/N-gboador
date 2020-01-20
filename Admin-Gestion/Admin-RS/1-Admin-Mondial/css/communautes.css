@@ -1,0 +1,266 @@
+/*/
+  INFORMATIONS :
+  1- LES COMMENTAIRES DU CSS SERONT AFFICHES COMME CELA
+  2- LE CODE DU STYLE SERA TRAITE LINEAIREMENT (Sur un ligne et non sur plusieurs comme d'habitude.)
+     AINSI SI LE CODE NE TIENT PAS SUR UNE LIGNE ALORS L'ON POURRA PASSER SUR UNE AUTRE LIGNE
+/*/
+
+
+/*/
+  DEBUT DU CODE CSS AVEC LA BALISE BODY
+/*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    background: #E0E0E0;
+    color: silver;
+    height: 10vh;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: silver;
+}
+
+
+/*/
+  NAVBAR : TOUT CE QUI EST CONTENU DANS LA NAVBAR
+/*/
+
+.navbar-top {
+    border-bottom: 2px solid #E0E0E0;
+    background: rgb(1, 0, 17);
+}
+
+.logo-de-ngboado-dans-la-navbar {
+    border-radius: 50%;
+}
+
+.nom-de-ngboado-a-cote-du-logo {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.image-rounded {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+/*/
+  SIDEBAR A GAUCHE
+/*/
+
+.sidebar-menus {
+    background: #050715;
+    height: 100vh;
+    padding-top: 5vh;
+    position: fixed;
+}
+
+.logo-name {
+    margin-top: 15px;
+}
+
+hr {
+    border-color: silver;
+}
+
+.nom-user {
+    font-size: 0.65rem;
+}
+
+.nom-item {
+    font-size: 0.7rem;
+}
+
+.nom-user>span {
+    color: #F72002;
+    font-weight: bold;
+}
+
+.rubriques-bloc {
+    margin-top: 3vh;
+}
+
+.item {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.item-active,
+.item:hover {
+    background: rgb(1, 0, 17);
+}
+
+
+/*/
+  CONTAINER DES ELEMENTS
+/*/
+
+.container-des-elements {
+    margin-left: 18%;
+}
+
+.block-container {
+    height: 85vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.block-scrollable {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+
+/*CONTAINER DES ELEMENTS EAU DESSUS DES ARTICLES*/
+
+.titre-communautes {
+    height: 60px;
+    background: white;
+    margin-left: -20px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.titre-communautes>h4 {
+    color: #4A4B4B;
+    padding-top: 13px;
+    padding-left: 20px;
+}
+
+.container-buttons {
+    margin-left: 28%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.btn-com-1,
+.btn-com-1:hover {
+    background: rgb(1, 0, 17);
+    color: silver;
+    font-size: 0.9rem;
+}
+
+.block-add-statut {
+    background: white;
+    height: 30px;
+    margin-left: 29.5%;
+    border-radius: 4px;
+    margin-bottom: -40px;
+}
+
+
+/*CONTAINER DES ARTICLES*/
+
+.container-un-article {
+    margin-top: 40px;
+    margin-left: 7%;
+    margin-bottom: -70px;
+}
+
+.date-statut>h6 {
+    font-weight: bold;
+    line-height: 30px;
+    color: gray;
+    margin-top: 100px;
+}
+
+.block-icon {
+    margin-left: -1.7%;
+    margin-top: 2%;
+}
+
+.logo-bureau {
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.contenu-d-article {
+    border-left: 2px solid white;
+    margin-left: 19.8%;
+    margin-top: -10%;
+}
+
+.contenu-elements {
+    background: white;
+    width: 90%;
+    margin-left: 7%;
+    margin-top: -30px;
+}
+
+.nom-user-et-menu-de-la-publication-block {
+    margin-top: 20px;
+    margin-left: -15px;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+    text-decoration: none;
+}
+
+.photo-publier {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.nom-publier {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #336699
+}
+
+.menu-publication-icon {
+    cursor: pointer;
+}
+
+.publication-text {
+    margin-top: 10px;
+}
+
+.publication-text>p {
+    color: #4A4B4B;
+    font-size: 0.75rem;
+}
+
+.status-publier {
+    font-size: 0.7rem;
+    color: #4A4B4B;
+}
+
+.button-reaction>.row {
+    padding: 15px 30px 20px 60px;
+}
+
+.btn-reac>button {
+    background: silver;
+    font-size: 0.7rem;
+    color: #4A4B4B;
+}
+
+.coment-block>input {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    border: 1px solid silver;
+    border-radius: 4px;
+    padding: 4px 20px 5px 20px;
+    color: #4A4B4B;
+}
+
+@media only screen and (max-width: 1248px) {
+    .container-fluid {
+        display: none;
+    }
+    body {
+        background: rgb(1, 0, 17);
+    }
+    .navbar-top {
+        display: none;
+    }
+}

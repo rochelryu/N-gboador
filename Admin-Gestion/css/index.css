@@ -1,0 +1,157 @@
+/*/
+  INFORMATIONS :
+  1- LES COMMENTAIRES DU CSS SERONT AFFICHES COMME CELA
+  2- LE CODE DU STYLE SERA TRAITE LINEAIREMENT (Sur un ligne et non sur plusieurs comme d'habitude.)
+     AINSI SI LE CODE NE TIENT PAS SUR UNE LIGNE ALORS L'ON POURRA PASSER SUR UNE AUTRE LIGNE
+/*/
+
+
+/*/
+  DEBUT DU CODE CSS AVEC LA BALISE BODY
+/*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    background: rgb(1, 0, 17);
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.container-block {
+    padding: 100px 20px 50px 80px;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+.row-container {
+    width: 100%;
+}
+
+.container-1,
+.container-1>.row {
+    width: 100%;
+}
+
+.container-item {
+    background: #050715;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px;
+    padding-bottom: 10px;
+    margin-right: 1%;
+    width: 24%;
+}
+
+.block-color {
+    margin-top: -50px;
+    padding: 30px 10px 30px 10px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+.block-color>h5 {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.color-1 {
+    background: #0E6655;
+}
+
+.color-2 {
+    background: #2874A6;
+}
+
+.color-3 {
+    background: #F39C12;
+}
+
+.color-4 {
+    background: #512E5F;
+}
+
+.color-5 {
+    background: #2E4053;
+}
+
+.color-6 {
+    background: #E67E22;
+}
+
+.color-7 {
+    background: #641E16;
+}
+
+.color-8 {
+    background: #58D68D;
+}
+
+.item-text {
+    color: grey;
+    margin-top: 15px;
+}
+
+.item-text>span,
+.item-text>div {
+    margin-left: 10px;
+}
+
+.login-status-autres {
+    visibility: hidden;
+}
+
+.item-session {
+    margin-top: -42px;
+}
+
+.login-status {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.connected {
+    color: #229954;
+}
+
+.disconnected {
+    color: #E74C3C;
+}
+
+.blc-2 {
+    margin-top: 110px;
+}
+
+.container-setting {
+    position: fixed;
+    top: 15px;
+    right: -265px;
+    cursor: pointer;
+}
+
+.container-setting>img {
+    border-radius: 5px;
+}
+
+
+/*/
+    FULL RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN --- RESPONSIVE DESIGN
+/*/
+
+
+/*/
+    ORDINATEUR DE PLUS DE 12.5 POUCES (LG)
+/*/
+
+@media only screen and (max-width: 1248px) {
+    .container-fluid {
+        display: none;
+    }
+}

@@ -1,0 +1,257 @@
+/*/
+  INFORMATIONS :
+  1- LES COMMENTAIRES DU CSS SERONT AFFICHES COMME CELA
+  2- LE CODE DU STYLE SERA TRAITE LINEAIREMENT (Sur un ligne et non sur plusieurs comme d'habitude.)
+     AINSI SI LE CODE NE TIENT PAS SUR UNE LIGNE ALORS L'ON POURRA PASSER SUR UNE AUTRE LIGNE
+/*/
+
+
+/*/
+  DEBUT DU CODE CSS AVEC LA BALISE BODY
+/*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    background: rgb(1, 0, 17);
+    color: silver;
+    height: 10vh;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: silver;
+}
+
+
+/*/
+  NAVBAR : TOUT CE QUI EST CONTENU DANS LA NAVBAR
+/*/
+
+.navbar-top {
+    border-bottom: 2px solid silver;
+}
+
+.logo-de-ngboado-dans-la-navbar {
+    border-radius: 50%;
+}
+
+.nom-de-ngboado-a-cote-du-logo {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.image-rounded {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+/*/
+  SIDEBAR A GAUCHE
+/*/
+
+.sidebar-menus {
+    background: #050715;
+    height: 100vh;
+    padding-top: 5vh;
+    position: fixed;
+}
+
+.logo-name {
+    margin-top: 15px;
+}
+
+hr {
+    border-color: silver;
+}
+
+.nom-user {
+    font-size: 0.65rem;
+}
+
+.nom-item {
+    font-size: 0.7rem;
+}
+
+.nom-user>span {
+    color: #F72002;
+    font-weight: bold;
+}
+
+.rubriques-bloc {
+    margin-top: 3vh;
+}
+
+.item {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.item-active,
+.item:hover {
+    background: rgb(1, 0, 17);
+}
+
+
+/*/
+  CONTAINER DES STATISTIQUES
+/*/
+
+.container-des-messages {
+    margin-left: 18%;
+}
+
+.block-messages {
+    height: 78vh;
+    border: 1px solid silver;
+    margin-top: 2.5vh;
+    overflow-y: scroll;
+}
+
+.block-scrollable {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+
+/*MENUS MESSAGE*/
+
+.menu-messages {
+    width: 15%;
+    height: 77vh;
+    position: fixed;
+    padding: 15px;
+}
+
+.nvMessage {
+    background: #F72002;
+    padding-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nvMessage>h6 {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.nvMessage>h6>a {
+    text-decoration: none;
+    color: white;
+}
+
+.item-message {
+    font-size: 0.7rem;
+}
+
+.item-message:hover {
+    color: #F72002;
+}
+
+.item-message-active {
+    color: #F72002;
+}
+
+
+/*CONTAINER DES MESSAGES*/
+
+.bloc-messages {
+    width: 80%;
+    border: 1px solid silver;
+    border-top: none;
+    border-right: none;
+    margin-left: 20%;
+}
+
+.item-title {
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+
+.message-aff {
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    padding-top: 7px;
+}
+
+.message-aff:hover {
+    background-color: #050715;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.message-view {
+    height: 10px;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.timing {
+    margin-top: 8px;
+    font-size: 0.7rem;
+}
+
+
+/*/
+   CODE DE LA PAGE DE NOUVEAU MESSAGE 
+/*/
+
+.bloc-page-nvMessage {
+    border: 1px solid silver;
+    margin-top: 35px;
+    padding: 20px 0px 20px 0px;
+}
+
+.form-nv>.row {
+    padding-left: 30px;
+}
+
+.bloc-file {
+    margin-top: 34px;
+}
+
+.form-control,
+.form-control:hover,
+.form-control:focus,
+.btn-file,
+.btn-file:hover,
+.btn-file:focus,
+.btn-submit-form,
+.btn-submit-form:hover,
+.btn-submit-form:focus {
+    background: #050715;
+    border: 1px solid grey;
+    color: silver;
+}
+
+.custom-control-label,
+.label {
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.submit-form {
+    margin-left: 30%;
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 1248px) {
+    .container-fluid {
+        display: none;
+    }
+    .navbar-top {
+        display: none;
+    }
+}
