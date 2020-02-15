@@ -64,10 +64,8 @@ let User = class {
             db.query("SELECT id FROM user WHERE emailcrypt = ?", [emailcrypt])
                 .then((result)=>{
                     if (result[0] != undefined){
-                        console.log('user_id ' + result[0].id)
                         db.query("SELECT statut_id FROM follow_user WHERE (user_prim_id = ? AND user_sec_id = ?) OR (user_prim_id = ? AND user_sec_id = ?)", [parseInt(result[0].id, 10), parseInt(user_id, 10), parseInt(user_id, 10), parseInt(result[0].id, 10)])
                             .then((results)=>{
-                                console.log("resultats est ! " + results[0]);
                                 next(results[0]);
                             })
                             .catch((err)=>{
@@ -236,6 +234,7 @@ let User = class {
         });
     }
 
+    
     static  setComment(emailcrypt,keyconfirm,publication_id,Message){
         return new Promise((next) =>{
             db.query("SELECT * FROM user WHERE emailcrypt = ? and keyconfirm = ?", [emailcrypt, keyconfirm])
@@ -246,7 +245,6 @@ let User = class {
                                 next(results);
                             })
                             .catch((error)=>{
-                                console.log("LES DONNEES SONT MAL TYPEE:" + error)
                                 next(error)})
                     }
                     else {next(new Error("User non Authentifié"))
@@ -262,7 +260,6 @@ let User = class {
                 .then((result)=>{
                     if (result[0] !== undefined){
                         req.session.errors = [{msg: "CET EMAIL EXISTE DEJA"}];
-                        console.log("EMAIL ALREADY")
                         next(new Error("EMAIL ALREADY"))
                     }
                     else {
@@ -276,11 +273,9 @@ let User = class {
                                 })
                             })
                             .catch((error)=>{
-                                console.log("LES DONNEES SONT MAL TYPEE:" + error)
                                 next(error)})
                     }
                 }).catch((error) =>{
-                console.log("JE N'ARRIVE MEME PAS A VERIFIER L'UNICITE DU MAIL"+ error)
                 next(error.message)})
         })
     }
@@ -748,7 +743,6 @@ let User = class {
                          db.query("SELECT id FROM user WHERE emailcrypt = ?", [emailcrypt2])
                             .then((result)=>{
                                 if (result[0] != undefined){
-                                    console.log(results[0].id + '  ' + result[0].id)
                                     db.query("INSERT INTO recommandation(userV_id,userC_id,content) VALUES (?,?,?)", [result[0].id,results[0].id, content])
                                     .then((ress)=>{
                                         next(ress)

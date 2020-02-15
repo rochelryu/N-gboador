@@ -37,7 +37,7 @@ mysql.createConnection({
         storage: storagePublish,
     }).array("filepond", 19);
 
-    // utilisation du middlewar
+    // utilisation du middleware
     app.use(expressValidator());
     app.use(session({
         secret: config.session.secret,
@@ -67,13 +67,12 @@ mysql.createConnection({
             res.render(`${__dirname}/public/ngboado/index.twig`, { user: "nil", errors: error })
         }
         else{
-            console.log('ici sans e')
             res.render(`${__dirname}/public/ngboado/index.twig`, { user: "nil" })
         }
     });
     app.post('/login', async (req, res) =>{
         req.check('user', "Email invalide").isEmail();
-        req.check('pass', "Mot de pass ne doit pas être vide").notEmpty();
+        req.check('pass', "Mot de passe ne doit pas être vide").notEmpty();
 
         const error = req.validationErrors();
         if(error){
@@ -138,31 +137,9 @@ mysql.createConnection({
             }
         }
     });
+
     // End validation formulaire signin
 
-    app.post('/login', async (req, res) =>{
-        req.check('user', "Email invalide").isEmail();
-        req.check('pass', "Mot de pass ne doit pas être vide").notEmpty();
-
-        const error = req.validationErrors();
-        if(error){
-            res.render(`${__dirname}/public/ngboado/index.twig`, { errors: error })
-        }
-        else{
-           let user = req.body.user;
-           let pass = req.body.pass;
-           let password = crypto.createHmac('sha256', pass).update('I love cupcakes').digest('hex');
-            const personC = await User.userExist(user, password);
-           if (!isErr(personC)){
-               console.log(password)
-               req.session.ngboador = personC;
-               res.redirect('/Accueil');
-           }
-           else{
-               res.render(`${__dirname}/public/ngboado/index.twig`, { error: 'Identification Echoué. Veuillez verifier vos cordonnées ou Inscrivez-vous' })
-           }
-        }
-    });
 
 
     app.post('/publish', uploadPublish, async (req, res)=>{
@@ -490,6 +467,9 @@ m                    case 2:
 
 
 
+
+
+
     //Initialisation de mes socket
     io.on('connection', (socket)=>{
         socket.on('login', async (userE) => {
@@ -505,6 +485,8 @@ m                    case 2:
             }
             return false;
         });
+
+        // Pour faire une recommandation de profil
         socket.on('rec', async (data) => {
             let ctx = data.ctx.replace(/(\r\n|\n|\r)/g,"<br />");
             ctx =  data.ctx.replace(/<script>/g,"");
@@ -520,6 +502,7 @@ m                    case 2:
                 socket.emit('recres', data);
             }
         });
+
         socket.on('inbox', async (message)=>{
             if(message.context === ""){
                 socket.emit('eroorMsg', 'AUCUN CONTENU');
@@ -538,6 +521,7 @@ m                    case 2:
                 }
             }
         });
+
         socket.on('newForumWithInCode', async (data)=>{
             let nom = data.nom.replace(/<script>/g, '');
             let key = data.key.replace(/<script>/g, '');
@@ -569,6 +553,8 @@ m                    case 2:
             }
 
         });
+
+        // Faire un commentaire
         socket.on('commentaire',async (data) =>{
             if(data.comment_pub === ""){
                 return false;
@@ -578,6 +564,8 @@ m                    case 2:
             Lastcomment.pub = data.pub_id;
             io.emit('newcomment', Lastcomment);
         });
+
+        // Like de Pub pas encore fonctionnel
         socket.on("likePub",async (data)=>{
             const setLike = await User.setLikeByPublicationAndUserId(data.pub_id,data.user_id);
             let getLike = await User.getNumberLike(data.pub_id);
@@ -585,6 +573,8 @@ m                    case 2:
             getLike.id = data.pub_id;
             io.emit('getLike', getLike);
         });
+
+        // infinite scroll : refresh data
         socket.on("inf",async (data)=>{
             const publihedAll = await User.getAllPublicationUsers(data.mv, 6);
             const em = await User.getUserByEmail(data.e);
@@ -633,16 +623,21 @@ m                    case 2:
                 socket.emit('infRv', publihedAll);
             }
         });
+
+        // pour supprimer la demande amis.
         socket.on('DelFollow', async (data)=>{
             var emailMe = data.e.replace(/<script>/g,'');
             var emailUser = data.cl.replace(/<script>/g,'');
             const follow = await User.delUserFollowing(emailUser,emailMe);
         });
+
+        // pour faire la demande amis.
         socket.on('newFollow', async (data)=>{
             var emailMe = data.e.replace(/<script>/g,'');
             var emailUser = data.cl.replace(/<script>/g,'');
             const follow = await User.setUserFollowing(emailUser,emailMe);
         });
+        
         socket.on('messageContact', async (data)=>{
             var nom = data.name.replace(/<script>/g,'');
             var email = data.email.replace(/<script>/g,'');
