@@ -19,7 +19,8 @@ mysql.createConnection({
     host: config.db.host,
     database: config.db.database,
     user: config.db.user,
-    password: config.db.password
+    password: config.db.password,
+    port: config.db.port,
 }).then((db) => {
     console.log(`CONNEXION ETABLIE AVEC LA BD`);
     const app = express();

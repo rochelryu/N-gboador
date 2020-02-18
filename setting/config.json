@@ -5,7 +5,8 @@
     "host": "localhost",
     "database": "bd_ngboador",
     "user": "root",
-    "password": "oeildufaucon225R#"
+    "password": "root",
+    "port": 8889
   },
   "email":{
     "user" : "",
